@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+            <a href="#"><li>autos</li></a>
+            <a href="#"><li>mascotas</li></a>
+            <a href="#"><li>personas</li></a>
+            <a href="#"><li>hogar</li></a>
+            <a href="#"><li>contactos</li></a>
+            <a href="#"><li>conoce easy</li></a>
+    
+          </ul>
+        </div>
+      </nav>
+    </div>
