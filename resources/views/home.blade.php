@@ -9,7 +9,7 @@
             </div>
 
             <div class="item-slick1"
-                style="background-image:  url('public/includes/images/slider/insurance2.jpg')">
+                style="background-image: url('public/includes/images/slider/insurance2.jpg')">
 
             </div>
 
