@@ -4,13 +4,14 @@
     --easyRose: #FF0180;
     --easyBlue: #033777;
     --easyGray: #595959;
+    --background_color: #F5F5F7;
 }
 
 
 body,
 html {
     font-family: 'Montserrat', sans-serif;
-    background-color: white
+    background-color: var(--background_color);
 }
 
 
@@ -99,7 +100,7 @@ html {
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #ECEFF1;
+    background-color: var(--background_color);
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     transition-duration: .25s;
     overflow: auto;
@@ -223,34 +224,18 @@ html {
 }
 
 .menu-container .menu-container__submenu a {
-    background: #fff;
+    background:var(--easyRose);
     box-shadow: 0 2px 7px rgb(104 107 113 / 25%);
     border-radius: 5px;
     padding: 4px 8px;
     margin-right: 20px;
     white-space: nowrap;
     text-decoration: none;
-    color: inherit;
+    color: white;
     font-size: medium;
     font-weight: 800;
     transition: font-size 2s;
 }
-
-/* @media screen and (max-width:425px) {
-
-    .menu-container {
-
-        justify-content: flex-start;
-
-    }
-
-    .menu-container .menu-container__submenu a {
-
-        font-size: inherit;
-
-    }
-
-} */
 
 /*//////////////////////////////////////////////////////////////////
 [ Slick1 ]*/
@@ -436,4 +421,101 @@ html {
     background: #e74c3c;
 }
 
+
+
 /*//////////////////////////////////////////////////////////////////
+[ BLOQUE CATEGORIAS ]*/
+
+.container-home {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /* background-color: BLACK; */
+}
+
+.drops-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 100px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+
+}
+
+.drops-category {
+    width: 34%;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--easyRose);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 30px;
+    /* background-color: violet; */
+    border-style: solid;
+    border-color: var(--easyBlue);
+    border-width: 0.1rem;
+    margin-right: 6%;
+    margin-left: 10%;
+}
+
+.drops-category>div {
+    padding-top: calc(192px / 2);
+}
+
+@media screen and (min-width: 768px) {
+    .container-home {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container-home {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container-home {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container-home {
+        padding-right: 0;
+        padding-left: 0;
+        justify-content: space-around;
+    }
+
+    .drops-category {
+        width: 45%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ BLOQUE PROCESO DE COMPRAS ]*/
+
+.container-steps-to-buy{
+    display: flex;
+    height: 110px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    justify-content: center;
+    position: relative;
+}
+
+.container-steps-to-buy > span{
+    position: relative;
+    top: 50%;
+}

@@ -70,6 +70,6 @@
     <div class="menu-container__submenu"><a href="">MASCOTAS</a></div>
     <div class="menu-container__submenu"><a href="">PERSONAS</a></div>
     <div class="menu-container__submenu"><a href="">HOGAR</a></div>
+    <div class="menu-container__submenu"><a href="">DENTAL</a></div>
     <div class="menu-container__submenu"><a href="">CONTACTOS</a></div>
-    <div class="menu-container__submenu"><a href="">CONOCE EASY.</a></div>
 </div>
