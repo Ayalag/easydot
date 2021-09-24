@@ -66,10 +66,10 @@
 </div>
 <hr class="hr-text">
 <div class="menu-container container-fluid">
-    <div class="menu-container__submenu"><a href="">AUTOS</a></div>
-    <div class="menu-container__submenu"><a href="">MASCOTAS</a></div>
-    <div class="menu-container__submenu"><a href="">PERSONAS</a></div>
-    <div class="menu-container__submenu"><a href="">HOGAR</a></div>
-    <div class="menu-container__submenu"><a href="">DENTAL</a></div>
-    <div class="menu-container__submenu"><a href="">CONTACTOS</a></div>
+    <x-btn-main link="/autos">AUTOS</x-btn-main>
+    <x-btn-main link="/mascotas">MASCOTAS</x-btn-main>
+    <x-btn-main link="/personas">PERSONAS</x-btn-main>
+    <x-btn-main link="/hogar">HOGAR</x-btn-main>
+    <x-btn-main link="/dental">DENTAL</x-btn-main>
+    <x-btn-main link="/contactos">CONTACTOS</x-btn-main>
 </div>

@@ -245,7 +245,7 @@ html {
 }
 
 .item-slick1 {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 104px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

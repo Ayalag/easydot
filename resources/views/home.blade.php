@@ -4,13 +4,13 @@
 <!-- Slider -->
 <div class="wrap-slick1">
     <div class="slick1">
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance1.jpg')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance1.png')">
         </div>
 
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance2.jpg')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance2.png')">
         </div>
 
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance3.jpg')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance3.png')">
         </div>
     </div>
 </div>
