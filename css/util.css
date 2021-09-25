@@ -7,6 +7,13 @@
     --background_color: #F5F5F7;
 }
 
+.fntw-800{
+    font-weight: 800;
+}
+.fntw-900{
+    font-weight: 900;
+}
+
 
 body,
 html {
@@ -175,8 +182,7 @@ html {
 .header-container__logo {
     width: 100%;
     text-align: center;
-    left: 0;
-    position: absolute;
+    position: relative;
 }
 
 .hr-text {
@@ -223,7 +229,7 @@ html {
     margin-bottom: 15px;
 }
 
-.menu-container .menu-container__submenu a {
+.menu-container__submenu a {
     background:var(--easyRose);
     box-shadow: 0 2px 7px rgb(104 107 113 / 25%);
     border-radius: 5px;
@@ -233,7 +239,6 @@ html {
     text-decoration: none;
     color: white;
     font-size: medium;
-    font-weight: 800;
     transition: font-size 2s;
 }
 
@@ -406,22 +411,45 @@ html {
     }
 }
 
-/* progress bar */
-.slider-progress {
-    width: 100%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    bottom: 0;
+.slider-btn__comprar{
+    padding: 9px 8px !important;
 }
 
-.slider-progress .progress {
-    width: 0%;
-    height: 10px;
-    background: #e74c3c;
+.container-slider{
+    position: relative;
+    top: 12%;
+    left: 6%;
 }
 
+@media screen and (min-width: 1900px) {
+    .container-slider{
 
+        top: 18%;
+        left: 0;
+    }
+}
+
+.submenu--item::before {
+    content: '_';
+    color: var(--easyRose);
+    cursor: pointer;
+}
+
+.slider-text-16-rose {
+    color: var(--easyRose);
+    font-size: 32.333px;
+    font-weight: 900;
+}
+
+.slider-text-24-blue {
+    color: var(--easyBlue);
+    font-size: 40px;
+    font-weight: 900;
+}
+.slider-text-24-blue::before {
+    content: '_';
+    color: var(--easyRose)
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ BLOQUE CATEGORIAS ]*/

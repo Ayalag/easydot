@@ -4,13 +4,58 @@
 <!-- Slider -->
 <div class="wrap-slick1">
     <div class="slick1">
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance1.png')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
+            <div class="container container-slider">
+                <div class="layer-slick1">
+                    <span class="slider-text-24-blue">adquiere tu póliza  <br> de AUTO desde</span>
+                </div>
+
+                <div class="layer-slick1 slider-text-16-rose">
+                    <div>
+                        autos 111.93 / año
+                    </div>
+                    <div>
+                        motos 75.18 / año
+                    </div>
+                </div>
+                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+            </div>
         </div>
 
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance2.png')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
+            <div class="container container-slider">
+                <div class="layer-slick1">
+                    <span class="slider-text-24-blue">adquiere tu póliza  <br> de PERSONA desde</span>
+                </div>
+
+                <div class="layer-slick1 slider-text-16-rose">
+                    <div>
+                        basico 175.00 / año
+                    </div>
+                    <div>
+                        completa 275.00 / año
+                    </div>
+                </div>
+                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+            </div>
         </div>
 
-        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance3.png')">
+        <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
+            <div class="container container-slider">
+                <div class="layer-slick1">
+                    <span class="slider-text-24-blue">adquiere tu póliza <br> de HOGAR desde</span>
+                </div>
+
+                <div class="layer-slick1 slider-text-16-rose">
+                    <div>
+                        basico 325.93 / año
+                    </div>
+                    <div>
+                        completa 4255.18 / año
+                    </div>
+                </div>
+                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+            </div>
         </div>
     </div>
 </div>
@@ -37,6 +82,6 @@
 </div>
 
 <div class="container container-steps-to-buy">
-    <span>Ejemplo de proceso de compra en pasos</span> 
+    <span>Ejemplo de proceso de compra en pasos</span>
 </div>
 @endsection

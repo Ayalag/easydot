@@ -61,15 +61,15 @@
         </div>
     </div>
     <div class="header-container__logo">
-        <a href="/"><img src="public/includes/images/logos/easydot_138x71.png" alt="easydot.com.pa"></a>
+        <a href="/"><img src="public/includes/images/logos/easydot_276x143.png" alt="easydot.com.pa"></a>
     </div>
 </div>
 <hr class="hr-text">
 <div class="menu-container container-fluid">
-    <x-btn-main link="/autos">AUTOS</x-btn-main>
-    <x-btn-main link="/mascotas">MASCOTAS</x-btn-main>
-    <x-btn-main link="/personas">PERSONAS</x-btn-main>
-    <x-btn-main link="/hogar">HOGAR</x-btn-main>
-    <x-btn-main link="/dental">DENTAL</x-btn-main>
-    <x-btn-main link="/contactos">CONTACTOS</x-btn-main>
+    <x-btn-main link="/autos">Autos</x-btn-main>
+    <x-btn-main link="/mascotas">Mascotas</x-btn-main>
+    <x-btn-main link="/personas">Personas</x-btn-main>
+    <x-btn-main link="/hogar">Hogar</x-btn-main>
+    <x-btn-main link="/dental">Dental</x-btn-main>
+    <x-btn-main link="/contactos">Contactos</x-btn-main>
 </div>
