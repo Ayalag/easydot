@@ -170,6 +170,13 @@ html {
     transition: visibility 0.5s;
 }
 
+.container-crear__cuenta{
+    position: absolute;
+    text-align: center;
+    bottom: 25px;
+    display: block;
+}
+
 .header-container {
     display: inline-flex;
 }
