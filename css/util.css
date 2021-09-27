@@ -411,7 +411,7 @@ html {
     }
 }
 
-.slider-btn__comprar{
+.slider_btn__comprar {
     padding: 9px 8px !important;
 }
 
@@ -446,6 +446,7 @@ html {
     font-size: 40px;
     font-weight: 900;
 }
+
 .slider-text-24-blue::before {
     content: '_';
     color: var(--easyRose)

@@ -4,16 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class btnMain extends Component
+class alink extends Component
 {
+    public $link;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($link)
     {
-
+        $this->link = $link;
     }
 
     /**
@@ -23,6 +25,6 @@ class btnMain extends Component
      */
     public function render()
     {
-        return view('components.btn-main');
+        return view('components.a-link');
     }
 }

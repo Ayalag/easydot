@@ -18,7 +18,11 @@
                         motos 75.18 / año
                     </div>
                 </div>
-                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+                <x-btn-main class='fntw-800'>
+                    <x-a-link class="slider_btn__comprar" link='/autos'>
+                        Comprar Ahora
+                    </x-a-link>
+                </x-btn-main>
             </div>
         </div>
 
@@ -36,7 +40,11 @@
                         completa 275.00 / año
                     </div>
                 </div>
-                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+                <x-btn-main class='fntw-800'>
+                    <x-a-link class="slider_btn__comprar" link='/persona'>
+                        Comprar Ahora
+                    </x-a-link>
+                </x-btn-main>
             </div>
         </div>
 
@@ -54,7 +62,11 @@
                         completa 4255.18 / año
                     </div>
                 </div>
-                <x-btn-main classname="fntw-800 pt-2" classname2="slider-btn__comprar" link="/autos">COMPRAR AHORA</x-btn-main>
+                <x-btn-main class='fntw-800'>
+                    <x-a-link class="slider_btn__comprar" link='/hogar'>
+                        Comprar Ahora
+                    </x-a-link>
+                </x-btn-main>
             </div>
         </div>
     </div>

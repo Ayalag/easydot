@@ -66,10 +66,34 @@
 </div>
 <hr class="hr-text">
 <div class="menu-container container-fluid">
-    <x-btn-main link="/autos">Autos</x-btn-main>
-    <x-btn-main link="/mascotas">Mascotas</x-btn-main>
-    <x-btn-main link="/personas">Personas</x-btn-main>
-    <x-btn-main link="/hogar">Hogar</x-btn-main>
-    <x-btn-main link="/dental">Dental</x-btn-main>
-    <x-btn-main link="/contactos">Contactos</x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/autos'>
+            Autos
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/mascotas'>
+            Mascotas
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/persona'>
+            Persona
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/hogar'>
+            Hogar
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/dental'>
+            Dental
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/contactos'>
+            Contactos
+        </x-a-link>
+    </x-btn-main>
 </div>
