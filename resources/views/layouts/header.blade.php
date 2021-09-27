@@ -57,6 +57,19 @@
                         </ul>
                     </div>
                 </li>
+                <li>
+                    <div class="container container-crear__cuenta">
+                        <div class="mb-2">
+                            <span>Aún no tienes una cuenta¿?</span>
+                        </div>
+                        
+                        <x-btn-main>
+                            <x-a-link link='/easydot/register'>
+                                Crear Cuenta
+                            </x-a-link>
+                        </x-btn-main>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
