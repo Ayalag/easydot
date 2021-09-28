@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/easyd0a3/public_html/
-    - /bin/rsync -av public/ $DEPLOYPATH
-
