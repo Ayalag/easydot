@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/easyd0a3/public_html/
-    - /bin/cp -R easydot1 $DEPLOYPATH
+    - - /bin/cp -R /home/easyd0a3/repositories/easydot1 $DEPLOYPATH
