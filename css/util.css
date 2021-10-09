@@ -14,6 +14,15 @@
     font-weight: 900;
 }
 
+.fnt-size-22px{
+    font-size: 22px
+}
+
+.underline::before{
+    content: '_';
+    color: var(--easyRose);
+}
+
 
 body,
 html {
@@ -82,7 +91,7 @@ html {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: var(--easyRose);
+    background-color: var(--easyGray);
     transition-duration: .25s;
 }
 
@@ -179,6 +188,10 @@ html {
 
 .header-container {
     display: inline-flex;
+    background-color: white;
+    box-shadow: 0px 34px 32px -8px rgba(0,0,0,0.17);
+    -webkit-box-shadow: 0px 34px 32px -8px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 34px 32px -8px rgba(0,0,0,0.17);
 }
 
 .header-container__sidebar {
@@ -462,96 +475,258 @@ html {
 /*//////////////////////////////////////////////////////////////////
 [ BLOQUE CATEGORIAS ]*/
 
-.container-home {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    /* background-color: BLACK; */
-}
-
-.drops-categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 100px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-
-}
-
-.drops-category {
-    width: 34%;
-    height: 230px;
-    display: flex;
-    justify-content: center;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--easyRose);
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 30px;
-    border-radius: 25px;
+.box-container{
+    margin-top: -8%;
+    z-index: 9;
     position: relative;
-    margin-bottom: 30px;
-    /* background-color: violet; */
-    border-style: solid;
-    border-color: var(--easyBlue);
-    border-width: 0.1rem;
-    margin-right: 6%;
-    margin-left: 10%;
 }
 
-.drops-category>div {
-    padding-top: calc(192px / 2);
+.box-container__title{
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 33px;
+    font-weight: 800;
 }
 
-@media screen and (min-width: 768px) {
-    .container-home {
-        max-width: 768px;
-    }
+.box-container__title p {
+    margin: 0;
+    padding: 0;
 }
 
-@media screen and (min-width: 992px) {
-    .container-home {
-        max-width: 960px;
-    }
+.wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 }
 
-@media screen and (min-width: 768px) {
-    .container-home {
-        max-width: 768px;
-    }
+.box {
+	margin: 10px;
+	width: 195px;
+	height: 295px;
+	text-align: center;
+	border-radius: 25px;
+	-webkit-transition: 200ms ease-in-out;
+	-o-transition: 200ms ease-in-out;
+	transition: 200ms ease-in-out;
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.box:hover {
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
+	        box-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 
-@media screen and (max-width: 767px) {
-    .container-home {
-        padding-right: 0;
-        padding-left: 0;
-        justify-content: space-around;
-    }
+.box-category__logo{
+    position: relative;
+    top: 20%;
+}
 
-    .drops-category {
-        width: 45%;
-        margin-left: 0;
-        margin-right: 0;
-    }
+.categories_logo{
+    width: 43%;
+}
+
+.box h1 {
+	padding: 30px;
+	margin-top: 70px;
+	text-align: center;
+	font-size: 25px;
+    color: var(--easyBlue);
+    font-weight: 800;
+}
+
+.card-categories__btn {
+    position: relative;
+    bottom: 2%;
+}
+
+.card-categories__btn a {
+    background:var(--easyRose);
+    border-radius: 20px;
+    padding: 12px 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
 }
 
 /*//////////////////////////////////////////////////////////////////
 [ BLOQUE PROCESO DE COMPRAS ]*/
 
-.container-steps-to-buy{
-    display: flex;
-    height: 110px;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    justify-content: center;
-    position: relative;
+.step-to-buy{
+    /* display: inline; */
+    text-align: center;
+    color: var(--easyBlue);
+    font-weight: 800;
+    font-size: 35px;
+}
+.step-to-buy span{
+    color: var(--easyRose);
 }
 
-.container-steps-to-buy > span{
+.step-to-buy__title p {
+    margin: 0;
+    padding: 0;
+}
+
+.step-to-buy-image{
+    display: flex;
+}
+
+.step-to-buy__image1{
     position: relative;
-    top: 50%;
+    text-align: start;
+    left: 12%;
+    bottom: 10%;
+    height: fit-content;
+}
+
+
+.container-steps{
+    display: block;
+}
+
+.container-step__one{
+    position: relative;
+    display: flex;
+    height: fit-content;
+    left: 120px;
+    top: 0;
+
+}
+
+.step-one-to-buy {
+    position: relative;
+    color: var(--easyRose);
+    font-size: 100px;
+}
+
+.step-one-letter{
+    position: relative;
+    text-align: start;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-one-letter p{
+    margin: 0;
+    padding: 0;
+}
+
+.container-step__two{
+    position: relative;
+    display: flex;
+    height: fit-content;
+    left: 161px;
+    top: 0;
+}
+
+.step-two {
+    position: relative;
+    color: var(--easyRose);
+    font-size: 100px;
+}
+
+.step-two-letter{
+    position: relative;
+    text-align: start;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-two-letter p{
+    margin: 0;
+    padding: 0;
+}
+
+.container-step__three{
+    position: relative;
+    display: flex;
+    height: fit-content;
+    /* left: 161px; */
+    top: 0;
+}
+
+.step-three {
+    position: relative;
+    color: var(--easyRose);
+    font-size: 100px;
+}
+
+.step-three-letter{
+    position: relative;
+    text-align: start;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-three-letter p{
+    margin: 0;
+    padding: 0;
+}
+
+.step-to-buy__image2{
+    position: relative;
+    height: fit-content;
+    top: 292px;
+    right: 90px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ BLOQUE ASEGURADORAS ALIADAS ]*/
+
+
+.container-aliados{
+    text-align: center;
+    color: var(--easyBlue);
+    font-weight: 800;
+    font-size: 25px;
+    margin-top: 125px;
+    border-radius: 25px;
+}
+
+.container-aliados p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ BLOQUE COMMENTARIOS EASY ]*/
+
+.container-comments{
+    /* display: inline; */
+    text-align: center;
+    color: var(--easyBlue);
+    font-weight: 800;
+    font-size: 25px;
+}
+.container-comments span{
+    color: var(--easyRose);
+}
+
+.container-comments p{
+    margin: 0;
+    padding: 0;
 }

@@ -64,7 +64,7 @@
                         </div>
                         
                         <x-btn-main>
-                            <x-a-link link='/easydot/register'>
+                            <x-a-link link='/register'>
                                 Crear Cuenta
                             </x-a-link>
                         </x-btn-main>
@@ -74,10 +74,9 @@
         </div>
     </div>
     <div class="header-container__logo">
-        <a href="/"><img src="public/includes/images/logos/easydot_276x143.png" alt="easydot.com.pa"></a>
+        <a href="/"><img src="public/includes/images/logos/easydot_276x143_formated.png" alt="easydot.com.pa"></a>
     </div>
 </div>
-<hr class="hr-text">
 <div class="menu-container container-fluid">
     <x-btn-main>
         <x-a-link link='/autos'>
