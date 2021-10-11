@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -23,7 +25,7 @@
     <!--===============================================================================================-->
     <link href="{{ url('css/util.css') }}" rel="stylesheet">
     <!--===============================================================================================-->
-    @livewireStyles
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!--===============================================================================================-->
 
 </head>
@@ -36,6 +38,8 @@
 
     <div>@yield('content')</div>
 
+    <div>@include('layouts.footer')</div>
+
     <!--===============================================================================================-->
     <script src="{{ url('js/app.js') }}"></script>
     <!--===============================================================================================-->
@@ -47,7 +51,7 @@
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--===============================================================================================-->
-    @livewireScripts
+
     <!--===============================================================================================-->
 
 </body>

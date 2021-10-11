@@ -7,10 +7,10 @@
         <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
             <div class="container container-slider">
                 <div class="layer-slick1">
-                    <span class="slider-text-24-blue">adquiere tu póliza  <br> de AUTO desde</span>
+                    <span class="slider-text-descripcion">adquiere tu póliza  <br> de AUTO desde</span>
                 </div>
 
-                <div class="layer-slick1 slider-text-16-rose">
+                <div class="layer-slick1 slider-text-price">
                     <div>
                         autos 111.93 / año
                     </div>
@@ -25,10 +25,10 @@
         <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
             <div class="container container-slider">
                 <div class="layer-slick1">
-                    <span class="slider-text-24-blue">adquiere tu póliza  <br> de PERSONA desde</span>
+                    <span class="slider-text-descripcion">adquiere tu póliza  <br> de PERSONA desde</span>
                 </div>
 
-                <div class="layer-slick1 slider-text-16-rose">
+                <div class="layer-slick1 slider-text-price">
                     <div>
                         basico 175.00 / año
                     </div>
@@ -43,10 +43,10 @@
         <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
             <div class="container container-slider">
                 <div class="layer-slick1">
-                    <span class="slider-text-24-blue">adquiere tu póliza <br> de HOGAR desde</span>
+                    <span class="slider-text-descripcion">adquiere tu póliza <br> de HOGAR desde</span>
                 </div>
 
-                <div class="layer-slick1 slider-text-16-rose">
+                <div class="layer-slick1 slider-text-price">
                     <div>
                         basico 325.93 / año
                     </div>
