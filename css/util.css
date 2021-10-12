@@ -18,6 +18,10 @@
     color: var(--easyRose);
 }
 
+div > p > span{
+    color: var(--easyRose);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,7 +70,7 @@ body,
 html {
     font-family: "Montserrat", sans-serif;
     background-color: var(--background_color);
-    /* height: 100%; */
+    height: 100vh;
 }
 
 /*-------------------------------*/
@@ -679,7 +683,6 @@ html {
 
 .box-container__title {
     color: white;
-    /* display: block; */
     text-align: center;
     font-size: 33px;
     font-weight: 800;
@@ -802,10 +805,6 @@ html {
     font-size: 2rem;
 }
 
-.step-to-buy__title div > p > span{
-    color: var(--easyRose);
-}
-
 .container-steps {
     text-align: end;
     font-size: 100px;
@@ -852,10 +851,6 @@ html {
 .step-four-letter{
     font-weight: 800;
     font-size: 36px;
-}
-
-.step-four-letter > p > span{
-    color: var(--easyRose);
 }
 
 .container-step__image1 > img{
@@ -934,9 +929,9 @@ html {
     font-size: 25px;
 }
 
-.container-comments span {
+/* .container-comments span {
     color: var(--easyRose);
-}
+} */
 
 .container-comments p {
     margin: 0;
@@ -977,10 +972,15 @@ html {
     margin: 50px auto;
     text-align: center;
     color: var(--easyBlue);
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.container-userconfirm__title > p:first-child{
+.container-account{
+    display: none;
+}
+
+.container-userconfirm__title > p:first-child,
+.container-account__title > p:first-child{
     font-weight: 800;
     margin-bottom: 5px;
 }
@@ -990,6 +990,67 @@ html {
     margin: auto;
 }
 
+input[type='radio'] {
+    -webkit-appearance:none;
+    width:18px;
+    height:18px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+  }
+  
+  
+  input[type='radio']:before {
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    border-radius:50%;    
+  }
+
+  input[type='radio']:checked:before {
+    background:var(--easyRose);
+  }
+
+  input[type='email'], 
+  input[type='password']{
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    
+    padding: 10px 5px 10px 20px;
+    text-indent: 20px;
+    
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 2s;
+    transition: all 0.2s;
+    
+    /* width: 200px; */
+}
+
+button[class="btn-login"] {
+    font-size: 15px;
+    background-color: var(--easyRose);
+    border-radius: 5px;
+    border-style: none;
+    /* box-shadow: #38549D 0 5px 0 0; */
+    color: #FFFFFF;
+    outline-style: none;
+    padding: 5px 15px;
+  }
+
+.nRegister{
+    margin-top: 8px;
+    font-size: 10px;
+    text-align: end;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 599px) {
     .container-check{

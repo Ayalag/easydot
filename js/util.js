@@ -28,6 +28,36 @@ $(document).ready(function () {
         },
     });
 
+
+    /*[ Sidebar ]
+            ===========================================================*/
+    var trigger = $(".hamburger"),
+        overlay = $(".overlay"),
+        isClosed = false;
+
+    trigger.click(function () {
+        hamburger_cross();
+    });
+
+    function hamburger_cross() {
+        if (isClosed == true) {
+            overlay.hide();
+            trigger.removeClass("is-open");
+            trigger.addClass("is-closed");
+            isClosed = false;
+        } else {
+            overlay.show();
+            trigger.removeClass("is-closed");
+            trigger.addClass("is-open");
+            isClosed = true;
+        }
+    }
+
+    $('[data-toggle="offcanvas"]').click(function () {
+        $("#wrapper").toggleClass("toggled");
+    });
+
+
     /*==================================================================
                    [ Slick1 ]*/
     $(".wrap-slick1").each(function () {
@@ -184,41 +214,10 @@ $(document).ready(function () {
         ],
     });
 
-    // document.querySelector('#menu__toggle').addEventListener('click', function (e) {
-
-    //     var body = document.body;
-
-    //     if (body.classList.contains('noscroll')){
-    //         body.classList.remove('noscroll');
-    //     }
-    //     else{
-    //         body.classList.add("noscroll");
-    //     }
-    // });
-
-    var trigger = $(".hamburger"),
-        overlay = $(".overlay"),
-        isClosed = false;
-
-    trigger.click(function () {
-        hamburger_cross();
-    });
-
-    function hamburger_cross() {
-        if (isClosed == true) {
-            overlay.hide();
-            trigger.removeClass("is-open");
-            trigger.addClass("is-closed");
-            isClosed = false;
-        } else {
-            overlay.show();
-            trigger.removeClass("is-closed");
-            trigger.addClass("is-open");
-            isClosed = true;
-        }
-    }
-
-    $('[data-toggle="offcanvas"]').click(function () {
-        $("#wrapper").toggleClass("toggled");
+    /*==================================================================
+                   [ user Confirmation]*/
+     document.querySelector('#yes_account').addEventListener('click', function (e) {
+        var cAccount = document.querySelector('.container-account');
+        $(cAccount).slideDown("slow");
     });
 });
