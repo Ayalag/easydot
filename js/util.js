@@ -2,35 +2,34 @@ $(document).ready(function () {
     "use strict";
 
     /*[ Load page ]
-    ===========================================================*/
+            ===========================================================*/
     $(".animsition").animsition({
-        inClass: 'fade-in',
-        outClass: 'fade-out',
+        inClass: "fade-in",
+        outClass: "fade-out",
         inDuration: 1500,
         outDuration: 800,
-        linkElement: '.animsition-link',
+        linkElement: ".animsition-link",
         // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
         loading: true,
-        loadingParentElement: 'html', //animsition wrapper element
-        loadingClass: 'animsition-loading',
+        loadingParentElement: "html", //animsition wrapper element
+        loadingClass: "animsition-loading",
         loadingInner: '<div class="loader05"></div>', // e.g '<img src="loading.svg" />'
         timeout: false,
         timeoutCountdown: 5000,
         onLoadEvent: true,
-        browser: ['animation-duration', '-webkit-animation-duration'],
+        browser: ["animation-duration", "-webkit-animation-duration"],
         // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
         // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
         overlay: false,
-        overlayClass: 'animsition-overlay-slide',
-        overlayParentElement: 'html',
+        overlayClass: "animsition-overlay-slide",
+        overlayParentElement: "html",
         transition: function (url) {
             window.location.href = url;
-        }
+        },
     });
 
-
     /*==================================================================
-           [ Slick1 ]*/
+                   [ Slick1 ]*/
     $(".wrap-slick1").each(function () {
         var wrapSlick1 = $(this);
         var slick1 = $(this).find(".slick1");
@@ -55,7 +54,7 @@ $(document).ready(function () {
                     function (index) {
                         $(layerCurrentItem[index]).addClass(
                             $(layerCurrentItem[index]).data("appear") +
-                            " visible-true"
+                                " visible-true"
                         );
                     },
                     $(layerCurrentItem[i]).data("delay"),
@@ -81,8 +80,10 @@ $(document).ready(function () {
             autoplaySpeed: 6000,
             arrows: false,
             appendArrows: $(wrapSlick1),
-            prevArrow: '<button class="arrow-slick1 prev-slick1"><i class="zmdi zmdi-caret-left"></i></button>',
-            nextArrow: '<button class="arrow-slick1 next-slick1"><i class="zmdi zmdi-caret-right"></i></button>',
+            prevArrow:
+                '<button class="arrow-slick1 prev-slick1"><i class="zmdi zmdi-caret-left"></i></button>',
+            nextArrow:
+                '<button class="arrow-slick1 next-slick1"><i class="zmdi zmdi-caret-right"></i></button>',
             dots: showDot,
             appendDots: $(wrapSlick1).find(".wrap-slick1-dots"),
             dotsClass: "slick1-dots",
@@ -118,7 +119,7 @@ $(document).ready(function () {
                     function (index) {
                         $(layerCurrentItem[index]).addClass(
                             $(layerCurrentItem[index]).data("appear") +
-                            " visible-true"
+                                " visible-true"
                         );
                     },
                     $(layerCurrentItem[i]).data("delay"),
@@ -128,7 +129,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.menu-container').slick({
+    $(".menu-container").slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         autoplaySpeed: 2000,
@@ -137,9 +138,10 @@ $(document).ready(function () {
         // centerMode: true,
         variableWidth: true,
         mobilrFirst: true,
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 9999,
-                settings: "unslick"
+                settings: "unslick",
             },
             {
                 breakpoint: 767,
@@ -150,51 +152,73 @@ $(document).ready(function () {
                     arrows: false,
                     infinite: false,
                     mobilrFirst: true,
-                }
-            }
-        ]
+                },
+            },
+        ],
     });
 
-    $('.container-box__one').slick({
+    $(".container-box__one").slick({
         centerMode: true,
-        centerPadding: '60px',
+        centerPadding: "60px",
         arrows: false,
         slidesToShow: 3,
         responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "40px",
+                    slidesToShow: 1,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: "40px",
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    });
 
-        
-document.querySelector('#menu__toggle').addEventListener('click', function (e) {
+    // document.querySelector('#menu__toggle').addEventListener('click', function (e) {
 
-    var body = document.body;
+    //     var body = document.body;
 
-    if (body.classList.contains('noscroll')){
-        body.classList.remove('noscroll');
+    //     if (body.classList.contains('noscroll')){
+    //         body.classList.remove('noscroll');
+    //     }
+    //     else{
+    //         body.classList.add("noscroll");
+    //     }
+    // });
+
+    var trigger = $(".hamburger"),
+        overlay = $(".overlay"),
+        isClosed = false;
+
+    trigger.click(function () {
+        hamburger_cross();
+    });
+
+    function hamburger_cross() {
+        if (isClosed == true) {
+            overlay.hide();
+            trigger.removeClass("is-open");
+            trigger.addClass("is-closed");
+            isClosed = false;
+        } else {
+            overlay.show();
+            trigger.removeClass("is-closed");
+            trigger.addClass("is-open");
+            isClosed = true;
+        }
     }
-    else{
-        body.classList.add("noscroll");
-    }
-});
 
-    
-
+    $('[data-toggle="offcanvas"]').click(function () {
+        $("#wrapper").toggleClass("toggled");
+    });
 });
