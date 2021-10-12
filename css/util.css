@@ -7,17 +7,11 @@
     --background_color: #f5f5f7;
 }
 
-.fntw-800 {
-    font-weight: 800;
-}
+.fntw-800 {font-weight: 800;}
 
-.fntw-900 {
-    font-weight: 900;
-}
+.fntw-900 {font-weight: 900;}
 
-.fnt-size-22px {
-    font-size: 22px;
-}
+.fnt-size-22px {font-size: 22px;}
 
 .underline::before {
     content: "_";
@@ -812,4 +806,34 @@ html {
 
 .basic-drop-shadow {
     box-shadow: 0 0 10px;
+}
+
+@media screen and (max-width: 960px) {
+    .container-comments{
+        font-size: 20px;
+    }
+    .box-easy_comments{
+        font-size: 15px;
+    }
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ BLOQUE USER CONFIRMATION EASY ]*/
+
+.container-userconfirm{
+    margin: 50px auto;
+    text-align: center;
+    color: var(--easyBlue);
+    font-size: 20px;
+}
+
+.container-userconfirm__title > p:first-child{
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.container-check{
+    width: 30%;
+    margin: auto;
 }

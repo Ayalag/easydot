@@ -164,7 +164,6 @@
               font-weight: 600
           }
       }
-
   </style>
 
   <!-- Site footer -->
