@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/userconfirmation', function () {
-    return view('productos.userConfirmation');
+    return view('userConfirmation');
 })->name('userconfirmation');
+
+Route::get('/motor', function () {
+    return view('productos.motor');
+})->name('motor');
 
 Auth::routes();
 
