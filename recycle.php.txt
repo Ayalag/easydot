@@ -320,3 +320,47 @@
         </script>
     </body>
 </html>
+
+
+
+    <div class="container-fluid container-registro-datos bg-white shadow-lg ">
+        <form class="p-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nombres">nombres</label>
+                    <input type="text" class="form-control" id="nombres" placeholder="nombres">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="apellidos">apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" placeholder="apellidos">
+                </div>
+            </div>
+            <div class="form-row mt-2 bg-primary">
+                <div class="col-2 form-check form-check-inline">
+                    <label class="form-check-label pr-2" for="inlineRadio1">cedula</label>
+                    <input class="form-check-input" type="radio" name="identificacion" id="cedula" value="option1">
+                </div>
+                <div class="col-3 form-check form-check-inline">
+                    <label class="form-check-label mr-3" for="inlineRadio1">pasaporte</label>
+                    <input class="form-check-input" type="radio" name="identificacion" id="pasaporte" value="option1">
+                </div>
+                <label for="nombres">fecha de nacimiento</label>
+                <div class="col-5">
+                    <input type="text" class="form-control" id="identificacion" placeholder="identificacion">
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="text" class="form-control ml-4 mr-2" id="day" placeholder="dd" style="width: 15%">
+                    <input type="text" class="form-control mr-2" id="month" placeholder="mm" style="width: 15%">
+                    <input type="text" class="form-control mr-2" id="year" placeholder="aa" style="width: 15%">
+                </div>
+                <div class="col-2 form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">cedula</label>
+                    <input class="form-check-input" type="radio" name="identificacion" id="cedula" value="option1">
+                </div>
+                <div class="col-3 form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">pasaporte</label>
+                    <input class="form-check-input" type="radio" name="identificacion" id="pasaporte" value="option1">
+                </div>
+            </div>
+        </form>
+    </div>

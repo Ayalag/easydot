@@ -28,43 +28,14 @@ div>p>span {
     color: var(--easyRose);
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,a,
+abbr,acronym,address,
+big,cite,code,del,dfn,
+em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,
 tt,
 var,
 b,
@@ -521,7 +492,7 @@ html {
     /* background-color: rgba(250,250,250,.8); */
     background-color: rgba(0, 0, 0, 0.6);
 
-    z-index: 1;
+    z-index: 10;
 }
 
 /*-------------------------------*/
@@ -919,8 +890,9 @@ html {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ BLOQUE PROCESO DE COMPRAS ]*/
+/*-------------------------------*/
+/*       proceso de compra       */
+/*-------------------------------*/
 
 .step-to-buy {
     position: relative;
@@ -1027,8 +999,13 @@ html {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ BLOQUE ASEGURADORAS ALIADAS ]*/
+/*-------------------------------*/
+/*       proceso de compra       */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*    aseguradoras aliadas       */
+/*-------------------------------*/
 
 .container-aliados {
     text-align: center;
@@ -1044,8 +1021,13 @@ html {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ BLOQUE COMMENTARIOS EASY ]*/
+/*-------------------------------*/
+/*    aseguradoras aliadas       */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*       comentarios easy.       */
+/*-------------------------------*/
 
 .container-comments {
     /* display: inline; */
@@ -1054,10 +1036,6 @@ html {
     font-weight: 800;
     font-size: 25px;
 }
-
-/* .container-comments span {
-    color: var(--easyRose);
-} */
 
 .container-comments p {
     margin: 0;
@@ -1089,6 +1067,10 @@ html {
         font-size: 15px;
     }
 }
+
+/*-------------------------------*/
+/*       comentarios easy.       */
+/*-------------------------------*/
 
 
 /*-------------------------------*/
@@ -1315,3 +1297,112 @@ button[class="btn-comprar"] {
 /*-------------------------------*/
 /*        Product Page           */
 /*-------------------------------*/
+
+/*-------------------------------*/
+/*       Register Page Auto      */
+/*-------------------------------*/
+
+.container-registro{
+    display: flex;
+}
+
+.product-card-selected{
+    width: 34em;
+}
+
+.cPoliza,.detail-selected{
+    color: var(--easyBlue);
+}
+
+.card-subtitle__poliza{
+    color: var(--easyRose);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.registro-datos__title,
+.registro-contactos__title{
+    font-size: 2.1rem;
+    color: var(--easyBlue);
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+    
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    font-size: 18px;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+    position: relative;
+    z-index: 1;
+    font-weight: 800;
+    
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 14px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    /* z-index: -1;  */
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+    
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: var(--easyBlue);
+    color: white;
+}
+
+.container-registro-datos,
+.container-registro-contactos{
+    color: var(--easyBlue);
+    border-radius: 1%;
+    height: max-content;
+}
+
+
+
+/*-------------------------------*/
+/*       Register Page Auto      */
+/*-------------------------------*/
+
+
+
+

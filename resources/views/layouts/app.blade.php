@@ -41,7 +41,7 @@
 
     <div>@yield('content')</div>
 
-    {{-- <div>@include('layouts.footer')</div> --}}
+    <div>@include('layouts.footer')</div>
 
     <!--===============================================================================================-->
     <script src="{{ url('js/app.js') }}"></script>

@@ -25,6 +25,10 @@ Route::get('/motor', function () {
     return view('productos.motor');
 })->name('motor');
 
+Route::get('/registro', function () {
+    return view('registro.registro');
+})->name('registro-motor');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

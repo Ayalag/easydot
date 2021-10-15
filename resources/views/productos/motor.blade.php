@@ -584,7 +584,6 @@
             }
             $(basico).addClass("hide");
             $(estandar).addClass("hide");
-            $('#soat-slider').slick('refresh');
         });
         $('input[id="basico"]').change(function () {
             if($(basico).hasClass('hide')){
@@ -594,7 +593,6 @@
             }
             $(soat).addClass("hide");
             $(estandar).addClass("hide");
-            $('#soat-slider').slick('refresh');
         });
         $('input[id="estandar"]').change(function () {
             if($(estandar).hasClass('hide')){
@@ -604,7 +602,6 @@
             }
             $(soat).addClass("hide");
             $(basico).addClass("hide");
-            $('#soat-slider').slick('refresh');
         });
     });
 </script> 

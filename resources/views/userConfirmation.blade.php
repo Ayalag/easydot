@@ -55,8 +55,6 @@
                             </div>
 
                             <div class="form-group row justify-content-center">
-                                {{-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                                --}}
                                 <div class="col-md-12">
                                     <input style="background-image: url(public/includes/images/icons8-lock-24.png)"
                                         id="password" type="password"
@@ -70,50 +68,34 @@
                                     @enderror
                                 </div>
                             </div>
-                            {{-- <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn-login">
+                                        {{ __('ingresar') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div> --}}
-            <div class="form-group row mb-0">
-                <div class="col-md-12">
-                    <button type="submit" class="btn-login">
-                        {{ __('ingresar') }}
-                    </button>
-
-                    {{-- @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                <div class="col-12 nRegister ">
+                    <a href="/motor">
+                        <p class="underline">continuar sin ingresar</p>
                     </a>
-                    @endif --}}
                 </div>
             </div>
-            </form>
         </div>
     </div>
-    <div class="col-12 nRegister ">
-        <a href="#">
-            <p class="underline">continuar sin ingresar</p>
-        </a>
-    </div>
-</div>
-</div>
-</div>
 </div>
 @endsection
 
 @section('scripts')
 
 <script>
-                    /*-------------------------------*/
-                    /*        User confirm           */
-                    /*-------------------------------*/
+    /*-------------------------------*/
+    /*        User confirm           */
+    /*-------------------------------*/
 
     document.querySelector('#yes_account').addEventListener('click', function (e) {
         var cAccount = document.querySelector('.container-account');
