@@ -7,17 +7,10 @@
     --background_color: #f5f5f7;
 }
 
-.fntw-800 {
-    font-weight: 800;
-}
-
-.fntw-900 {
-    font-weight: 900;
-}
-
-.fnt-size-22px {
-    font-size: 22px;
-}
+.fntw-800 {font-weight: 800;}
+.fntw-900 {font-weight: 900;}
+.fnt-size-22px {font-size: 22px;}
+.hide{display: none;}
 
 .underline::before {
     content: "_";
@@ -36,50 +29,15 @@ abbr,acronym,address,
 big,cite,code,del,dfn,
 em,img,ins,kbd,q,s,samp,
 small,strike,strong,sub,sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+tt,var,b,u,i,center,dl,dt,dd,
+ol,ul,li,fieldset,form,label,
+legend,table,caption,tbody,
+tfoot,thead,tr,th,td,article,
+aside,canvas,details,embed,
+figure,figcaption,footer,header,
+hgroup,menu,nav,output,ruby,
+section,summary,time,mark,
+audio,video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -89,16 +47,9 @@ video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
+article,aside,details,
+figcaption,figure,footer,
+header,hgroup,menu,nav,
 section {
     display: block;
 }
@@ -1108,7 +1059,6 @@ input[type='radio'] {
     outline: none;
 }
 
-
 input[type='radio']:before {
     content: '';
     display: block;
@@ -1139,8 +1089,6 @@ input[type='password'] {
     -webkit-transition: all 0.2s;
     -moz-transition: all 2s;
     transition: all 0.2s;
-
-    /* width: 200px; */
 }
 
 button[class="btn-login"] {
@@ -1230,7 +1178,6 @@ input[name="categoria"]:checked+.clickable {
 
 .card-container{
     text-align: center;
-    /* width: 11% !important; */
 }
 
 .card-subtitle {
@@ -1284,11 +1231,10 @@ button[class="btn-comprar"] {
     width: 100%;
 }
 
-.hide{
-    display: none;
+button[class="btn-comprar"] > a{
+    color:#FFFFFF;
+    text-decoration: none;
 }
-
-
 
 /*-------------------------------*/
 /*       insurance  card         */
@@ -1307,10 +1253,14 @@ button[class="btn-comprar"] {
 }
 
 .product-card-selected{
-    width: 34em;
+    width: 30rem;
 }
 
-.cPoliza,.detail-selected{
+.detail-selected{
+    text-align: end;
+}
+
+.cPoliza,.detail-selected_title{
     color: var(--easyBlue);
 }
 

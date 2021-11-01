@@ -98,7 +98,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -326,7 +326,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -442,7 +442,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -498,7 +498,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                        <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>
@@ -554,7 +554,7 @@
                             <div class="row mb-1">
                                 <div class="col-12 text-center">
                                     <button class="btn-comprar">
-                                        comprar
+                                       <a href="/registro">comprar</a> 
                                     </button>
                                 </div>
                             </div>

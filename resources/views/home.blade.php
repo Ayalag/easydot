@@ -166,7 +166,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-7 col-sm-8 col-10">
                 <div class="step-three-letter">
                     <div>3</div>
                     <div>

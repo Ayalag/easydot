@@ -13,8 +13,8 @@
                 <a href="#works" data-toggle="dropdown">autos <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="#">soat</a></li>
-                    <li><a class="underline" href="#">cobertura Completa</a></li>
+                    <li><a class="underline" href="/userconfirmation">soat</a></li>
+                    <li><a class="underline" href="/userconfirmation">cobertura Completa</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -84,32 +84,27 @@
 
 <div class="menu-container container-fluid">
     <x-btn-main>
-        <x-a-link link='/autos'>
+        <x-a-link link='/userconfirmation'>
             Autos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/mascotas'>
+        <x-a-link link='/userconfirmation'>
             Mascotas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/persona'>
+        <x-a-link link='/userconfirmation'>
             Persona
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/hogar'>
+        <x-a-link link='/userconfirmation'>
             Hogar
         </x-a-link>
     </x-btn-main>
-    {{-- <x-btn-main>
-        <x-a-link link='/dental'>
-            Dental
-        </x-a-link>
-    </x-btn-main> --}}
     <x-btn-main>
-        <x-a-link link='/contactos'>
+        <x-a-link link='/userconfirmation'>
             Contactos
         </x-a-link>
     </x-btn-main>

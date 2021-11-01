@@ -15,13 +15,15 @@
                         value="option1">
                 </div>
             </div>
-            <div class="col">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label pr-2" for="inlineRadio1">no</label>
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_account"
-                        value="option1">
+            {{-- <a href="/motor"> --}}
+                <div class="col">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label pr-2" for="inlineRadio1">no</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_account"
+                            value="option1">
+                    </div>
                 </div>
-            </div>
+            {{-- </a> --}}
         </div>
     </div>
     <div class="container-account pt-4">
