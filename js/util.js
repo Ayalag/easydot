@@ -188,41 +188,25 @@ $(document).ready(function () {
     });
 
     $(".container-box__one").slick({
-        centerMode: true,
-        centerPadding: "60px",
-        arrows: false,
-        slidesToShow: 3,
+
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
         speed: 8000,
-		autoplay: false,
-		autoplaySpeed: 0,
-		cssEase: 'linear',
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: "40px",
-                    slidesToShow: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: "40px",
-                    slidesToShow: 1,
-                },
-            },
-        ],
+        pauseOnHover: true,
+        cssEase: 'linear',
+        infinite: true,
+        variableWidth: true,
     });
 
+
+    
     $('#soat-slider').slick({
         dots: false,
         infinite: false,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows:true,
         prevArrow: '<button class="slick-prev slick-arrow"></button>',

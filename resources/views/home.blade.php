@@ -222,7 +222,7 @@
             <div class="box-easy_comments basic-drop-shadow">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
-                        <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/51.jpg" alt="">
+                        <img class="rounded-circle " src="https://randomuser.me/api/portraits/med/women/51.jpg" alt="">
                     </div>
                     <div class="user-profile__name">
                         <span>Hailey Ennis </span>

@@ -1000,9 +1000,13 @@ html {
     padding: 0;
 }
 
+.container-box__one, .slick-track{
+    display: flex;
+}
+
 .box-easy_comments {
     height: 195px;
-    width: 338px;
+    width: 409px;
     background-color: white;
     border-radius: 5px;
     padding-left: 15px;
