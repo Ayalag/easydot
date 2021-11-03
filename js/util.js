@@ -192,6 +192,10 @@ $(document).ready(function () {
         centerPadding: "60px",
         arrows: false,
         slidesToShow: 3,
+        speed: 8000,
+		autoplay: false,
+		autoplaySpeed: 0,
+		cssEase: 'linear',
         responsive: [
             {
                 breakpoint: 768,
@@ -225,10 +229,10 @@ $(document).ready(function () {
         nextArrow: '<button class="slick-next slick-arrow"></button>',
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 768,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               infinite: true,
               dots: true
             }

@@ -28,12 +28,12 @@
     </div>
     <div class="container-account pt-4">
         <div class="container-account__title">
-            <p>¡WOW SÚPER BIEN!</p>
+            <p>¡wow super bien!</p>
             <p class="underline">ingresa a tu cuenta para una <br /> experiencia más <span>easy.</span></p>
         </div>
         <div class="row justify-content-center pt-4">
             <div class="col-md-6 col-sm-4 col-xl-4 col-lg-4">
-                <div class="card shadow-lg bg-white rounded">
+                <div class="shadow-lg bg-white rounded">
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -89,6 +89,12 @@
             </div>
         </div>
     </div>
+    <div class="new-account pt-4">
+        <div class="container-new-account__title">
+           <a href="#"><p class="underline mb-2">crear una cuenta</p></a> 
+           <a href="#"><p class="underline">continuar sin ingresar</p></a> 
+        </div>
+    </div>
 </div>
 @endsection
 
@@ -99,9 +105,18 @@
     /*        User confirm           */
     /*-------------------------------*/
 
+    var cAccount = document.querySelector('.container-account');
+    var nAccount = document.querySelector('.new-account');
+
     document.querySelector('#yes_account').addEventListener('click', function (e) {
-        var cAccount = document.querySelector('.container-account');
+       
         $(cAccount).slideDown("slow");
+        $(nAccount).slideUp("slow");
+    });
+    document.querySelector('#no_account').addEventListener('click', function (e) {
+        
+        $(cAccount).slideUp("slow");
+        $(nAccount).slideDown("slow");
     });
 
 </script>

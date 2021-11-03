@@ -85,27 +85,37 @@
 <div class="menu-container container-fluid">
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            Autos
+            autos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            Mascotas
+            mascotas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            Persona
+            persona
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            Hogar
+            hogar
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            Contactos
+            motos
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/userconfirmation'>
+            dental
+        </x-a-link>
+    </x-btn-main>
+    <x-btn-main>
+        <x-a-link link='/userconfirmation'>
+            contactos
         </x-a-link>
     </x-btn-main>
 </div>

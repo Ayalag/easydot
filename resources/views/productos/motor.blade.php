@@ -35,14 +35,14 @@
         </div>
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
-            <input id="basico" type="radio" name="categoria">
-            <label for="basico" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">basico</span>
+            <input id="básico" type="radio" name="categoria">
+            <label for="básico" class="clickable"><span class="checked-box">&#10004;</span></label>
+            <span class="product_text_2">básico</span>
         </div>
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
-            <input id="estandar" type="radio" name="categoria">
-            <label for="estandar" class="clickable"><span class="checked-box">&#10004;</span></label>
+            <input id="estándar" type="radio" name="categoria">
+            <label for="estándar" class="clickable"><span class="checked-box">&#10004;</span></label>
             <span class="product_text_2">éstandar</span>
         </div>
     </div>
@@ -60,7 +60,7 @@
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -116,7 +116,7 @@
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -172,7 +172,7 @@
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -219,7 +219,7 @@
                 </div>
             </div>
         </div>
-        <div class="basico hide">
+        <div class="básico hide">
             <div id="soat-slider" class="card-deck">
                 <div class="card shadow">
                     <div class="card-body">
@@ -227,12 +227,12 @@
                             <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
                         </div>
                         <div class="container">
-                            <div class="card-subtitle">basico</div>
+                            <div class="card-subtitle">básico</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -283,12 +283,12 @@
                             <img src="public/includes/images/logos-aliados/color/mapfre_color.png" alt="">
                         </p>
                         <div class="container">
-                            <div class="card-subtitle">basico</div>
+                            <div class="card-subtitle">básico</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -339,12 +339,12 @@
                             <img src="public/includes/images/logos-aliados/color/Bac_credomatic_logo.png" alt="">
                         </p>
                         <div class="container">
-                            <div class="card-subtitle">basico</div>
+                            <div class="card-subtitle">básico</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -391,7 +391,7 @@
                 </div>
             </div>
         </div>
-        <div class="estandar hide">
+        <div class="estándar hide">
             <div id="soat-slider" class="card-deck">
                 <div class="card shadow">
                     <div class="card-body">
@@ -399,12 +399,12 @@
                             <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
                         </div>
                         <div class="container">
-                            <div class="card-subtitle">estandar</div>
+                            <div class="card-subtitle">estándar</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -455,12 +455,12 @@
                             <img src="public/includes/images/logos-aliados/color/mapfre_color.png" alt="">
                         </p>
                         <div class="container">
-                            <div class="card-subtitle">estandar</div>
+                            <div class="card-subtitle">estándar</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -511,12 +511,12 @@
                             <img src="public/includes/images/logos-aliados/color/Bac_credomatic_logo.png" alt="">
                         </p>
                         <div class="container">
-                            <div class="card-subtitle">estandar</div>
+                            <div class="card-subtitle">estándar</div>
                             <p class="card-text underline mb-3">cobertura por accidente</p>
                             <div class="card-detail">
                                 <div class="row no-gutters mb-3">
                                     <div class="col-9">
-                                        Lesiosnes corporales
+                                        Lesiones corporales
                                     </div>
                                     <div class="col-3 justify-content-end">
                                         10,000
@@ -573,8 +573,8 @@
     $(document).ready(function () {
 
         var soat = document.querySelector('.soat');
-        var basico = document.querySelector('.basico');
-        var estandar = document.querySelector('.estandar');
+        var básico = document.querySelector('.básico');
+        var estándar = document.querySelector('.estándar');
 
         $('input[id="soat"]').change(function () {
             if($(soat).hasClass('hide')){
@@ -582,26 +582,26 @@
             }else{
                 $(soat).removeClass('hide');
             }
-            $(basico).addClass("hide");
-            $(estandar).addClass("hide");
+            $(básico).addClass("hide");
+            $(estándar).addClass("hide");
         });
-        $('input[id="basico"]').change(function () {
-            if($(basico).hasClass('hide')){
-                $(basico).removeClass('hide');
+        $('input[id="básico"]').change(function () {
+            if($(básico).hasClass('hide')){
+                $(básico).removeClass('hide');
             }else{
-                $(basico).removeClass('hide');
+                $(básico).removeClass('hide');
             }
             $(soat).addClass("hide");
-            $(estandar).addClass("hide");
+            $(estándar).addClass("hide");
         });
-        $('input[id="estandar"]').change(function () {
-            if($(estandar).hasClass('hide')){
-                $(estandar).removeClass('hide');
+        $('input[id="estándar"]').change(function () {
+            if($(estándar).hasClass('hide')){
+                $(estándar).removeClass('hide');
             }else{
-                $(estandar).removeClass('hide');
+                $(estándar).removeClass('hide');
             }
             $(soat).addClass("hide");
-            $(basico).addClass("hide");
+            $(básico).addClass("hide");
         });
     });
 </script> 
