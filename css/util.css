@@ -5,6 +5,10 @@
     --easyBlue: #033777;
     --easyGray: #595959;
     --background_color: #f5f5f7;
+    
+    --star-size: 1.8rem;
+    --star-color: #595959;
+    --star-background: #fc0;
 }
 
 .fntw-800 {font-weight: 800;}
@@ -764,17 +768,19 @@ html {
 }
 
 .box {
+    position: relative;
     margin: 10px;
     width: 195px;
     height: 295px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 5px;
     -webkit-transition: 200ms ease-in-out;
     -o-transition: 200ms ease-in-out;
     transition: 200ms ease-in-out;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     background-color: white;
+    
 }
 
 .box:hover {
@@ -782,36 +788,40 @@ html {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-.box-category__logo {
+.box-category-logo {
     position: relative;
-    top: 15%;
+    top: 28%;
 }
 
-.categories_logo {
+.box-category-logo__image {
     width: 43%;
 }
 
-.box h1 {
-    padding: 30px;
-    margin: 40px auto;
-    text-align: center;
+.box-category__title{
+    position: absolute;
+    bottom: 28%;
+    width: 100%;
+}
+
+.box-category__title > h1{
     font-size: 25px;
     color: var(--easyBlue);
     font-weight: 800;
 }
 
-.card-categories__btn {
-    position: relative;
-    bottom: 2%;
+.box-category__button{
+    width: 100%;
+    position: absolute;
+    bottom: 25px;
 }
 
-.card-categories__btn a {
-    background: var(--easyRose);
-    border-radius: 20px;
+.box-category__button > a{
+    background-color: var(--easyRose);
     padding: 12px 35px;
+    border-radius: 5px;
     text-decoration: none;
     color: white;
-    font-size: 17px;
+    font-size: 1rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -820,24 +830,21 @@ html {
         height: 190px;
     }
 
-    .box-category__logo {
-        top: 10%;
+    .box-category-logo {
+        top: 23%;
     }
 
-    .box h1 {
-        padding: 0;
-        margin: 35px auto;
+    .box-category__title{
+        bottom: 30%;
+    }
+
+    .box-category__title > h1{
         font-size: 20px;
     }
 
-    .card-categories__btn {
-        top: 6px;
-    }
-
-    .card-categories__btn a {
+    .box-category__button > a{
         padding: 9px 12px;
-        font-size: 15px;
-
+        font-size: 1rem;
     }
 }
 
@@ -880,7 +887,7 @@ html {
 .step-one-letter>div:last-child,
 .step-two-letter>div:last-child,
 .step-three-letter>div:last-child {
-    margin: auto 0;
+    margin: auto 16px;
 }
 
 .step-one-letter,
@@ -942,6 +949,7 @@ html {
 
     .step-four-letter {
         justify-content: center;
+        font-size: 29px;
     }
 
     .container-step__image1,
@@ -981,7 +989,6 @@ html {
 /*-------------------------------*/
 
 .container-comments {
-    /* display: inline; */
     text-align: center;
     color: var(--easyBlue);
     font-weight: 800;
@@ -994,20 +1001,55 @@ html {
 }
 
 .box-easy_comments {
-    width: 50%;
-    text-align: center;
-    margin: 20px 20px;
-    margin-bottom: 30px;
-    padding: 50px 15px;
+    height: 195px;
+    width: 338px;
     background-color: white;
-    color: gray;
-    vertical-align: middle;
-    border-radius: 20px;
+    border-radius: 5px;
+    padding-left: 15px;
+    margin: 25px;
 }
 
 .basic-drop-shadow {
-    box-shadow: 0 0 10px;
+    box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 31px 30px -18px
 }
+
+.user-profile__box{
+    display: flex;
+    align-items: center;   
+}
+
+.user-profile__image,
+.comments {
+    padding: 10px;
+}
+
+.user-profile__name{
+    text-align: left;
+    display: grid;
+}
+
+.comments{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.1rem;
+}
+
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times;
+    line-height: 1;
+  }
+  .Stars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 
 @media screen and (max-width: 960px) {
     .container-comments {
@@ -1035,14 +1077,25 @@ html {
     font-size: 18px;
 }
 
-.container-account {
+.container-account,
+.new-account {
     display: none;
+}
+
+.container-userconfirm__title>p:first-child{
+    font-size: 25px;
 }
 
 .container-userconfirm__title>p:first-child,
 .container-account__title>p:first-child {
     font-weight: 800;
     margin-bottom: 5px;
+}
+
+.container-new-account__title a ,
+.nRegister a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .container-check {
