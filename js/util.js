@@ -193,6 +193,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
+        arrows:false,
         speed: 8000,
         pauseOnHover: true,
         cssEase: 'linear',
@@ -202,42 +203,35 @@ $(document).ready(function () {
 
 
     
-    $('#soat-slider').slick({
+    $('.soat-slider').slick({
         dots: false,
         infinite: false,
         speed: 300,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows:true,
         prevArrow: '<button class="slick-prev slick-arrow"></button>',
         nextArrow: '<button class="slick-next slick-arrow"></button>',
         responsive: [
           {
+            breakpoint: 960,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          },
+          {
             breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              infinite: true,
-              dots: true
             }
           },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
           // You can unslick at a given breakpoint now by adding:
           // settings: "unslick"
           // instead of a settings object
         ]
       });
+
 });
+

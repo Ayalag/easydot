@@ -42,12 +42,12 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">contactos <span class="caret"></span></a>
-                <ul class="dropdown-menu animated fadeInLeft" role="menu">
-                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+                <a href="#works" data-toggle="dropdown">centro de ayuda <span class="caret"></span></a>
+                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                    <div class="dropdown-header">Dropdown heading</div>
                     <li><a class="underline" href="#">contacto easy.</a></li>
                     <li><a class="underline" href="#">contactos de aseguradoras</a></li>
-                </ul>
+                </ul> --}}
             </li>
             <li class="dropdown">
                 <a href="#works" data-toggle="dropdown">Conoce easy. <span class="caret"></span></a>
@@ -77,7 +77,7 @@
     <!-- /#page-content-wrapper -->
 
 </div>
-<div class="header-container__logo">
+<div class="header-container__logo basic-drop-shadow">
     <a href="/"><img src="public/includes/images/logos/easydot_276x143_formated.png" alt="easydot.com.pa"></a>
 </div>
 <!-- /#wrapper -->
@@ -115,7 +115,7 @@
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/userconfirmation'>
-            contactos
+            Centro de ayuda
         </x-a-link>
     </x-btn-main>
 </div>

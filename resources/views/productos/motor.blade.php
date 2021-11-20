@@ -35,21 +35,21 @@
         </div>
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
-            <input id="básico" type="radio" name="categoria">
-            <label for="básico" class="clickable"><span class="checked-box">&#10004;</span></label>
+            <input id="basico" type="radio" name="categoria">
+            <label for="basico" class="clickable"><span class="checked-box">&#10004;</span></label>
             <span class="product_text_2">básico</span>
         </div>
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
-            <input id="estándar" type="radio" name="categoria">
-            <label for="estándar" class="clickable"><span class="checked-box">&#10004;</span></label>
+            <input id="estandar" type="radio" name="categoria">
+            <label for="estandar" class="clickable"><span class="checked-box">&#10004;</span></label>
             <span class="product_text_2">éstandar</span>
         </div>
     </div>
     <div class="container pb-5">
         <div class="soat">
-            <div id="soat-slider" class="card-deck">
-                <div class="card shadow">
+            <div class="soat-slider">
+                <div class="card">
                     <div class="card-body">
                         <div class="card-title d-flex justify-content-end">
                             <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
@@ -219,9 +219,9 @@
                 </div>
             </div>
         </div>
-        <div class="básico hide">
-            <div id="soat-slider" class="card-deck">
-                <div class="card shadow">
+        <div class="basico hide">
+            <div class="soat-slider">
+                <div class="card">
                     <div class="card-body">
                         <div class="card-title d-flex justify-content-end">
                             <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
@@ -391,9 +391,9 @@
                 </div>
             </div>
         </div>
-        <div class="estándar hide">
-            <div id="soat-slider" class="card-deck">
-                <div class="card shadow">
+        <div class="estandar hide">
+            <div class="soat-slider">
+                <div class="card">
                     <div class="card-body">
                         <div class="card-title d-flex justify-content-end">
                             <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
@@ -573,8 +573,8 @@
     $(document).ready(function () {
 
         var soat = document.querySelector('.soat');
-        var básico = document.querySelector('.básico');
-        var estándar = document.querySelector('.estándar');
+        var basico = document.querySelector('.basico');
+        var estandar = document.querySelector('.estandar');
 
         $('input[id="soat"]').change(function () {
             if($(soat).hasClass('hide')){
@@ -582,26 +582,28 @@
             }else{
                 $(soat).removeClass('hide');
             }
-            $(básico).addClass("hide");
-            $(estándar).addClass("hide");
+            $(basico).addClass("hide");
+            $(estandar).addClass("hide");
         });
-        $('input[id="básico"]').change(function () {
-            if($(básico).hasClass('hide')){
-                $(básico).removeClass('hide');
+        $('input[id="basico"]').change(function () {
+            if($(basico).hasClass('hide')){
+                $(basico).removeClass('hide');
             }else{
-                $(básico).removeClass('hide');
+                $(basico).removeClass('hide');
             }
             $(soat).addClass("hide");
-            $(estándar).addClass("hide");
+            $(estandar).addClass("hide");
+            $('.soat-slider').get(1).slick.setPosition()
         });
-        $('input[id="estándar"]').change(function () {
-            if($(estándar).hasClass('hide')){
-                $(estándar).removeClass('hide');
+        $('input[id="estandar"]').change(function () {
+            if($(estandar).hasClass('hide')){
+                $(estandar).removeClass('hide');
             }else{
-                $(estándar).removeClass('hide');
+                $(estandar).removeClass('hide');
             }
             $(soat).addClass("hide");
-            $(básico).addClass("hide");
+            $(basico).addClass("hide");
+            $('.soat-slider').get(2).slick.setPosition()
         });
     });
 </script> 

@@ -364,3 +364,119 @@
             </div>
         </form>
     </div>
+
+
+
+
+
+    </div>
+    <div class="container-steps">
+        <div class="row">
+            {{-- <div class="col-md-4 container-step__image1">
+                    <img src="{{ asset('/public/includes/images/iphone-mascotas.png') }}" alt="">
+        </div> --}}
+        <div class="col-12">
+            <div class="step-one-letter">
+                <div>1</div>
+                <div>
+                    <p>Selecciona la categoria de seguros que</p>
+                    <p>buscas y elige tu opcion favorita.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="step-two-letter">
+                <div>2</div>
+                <div>
+                    <p>Ingresa tus datos y los del</p>
+                    <p>seguro que seleccionaste.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="step-three-letter">
+                <div>3</div>
+                <div>
+                    <p>Realiza el pago y listo, estarás</p>
+                    <p>recibiendo el certificado de la</p>
+                    <p>póliza en tu correo electronico</p>
+                </div>
+            </div>
+            {{-- <div class="step-four-letter mt-3">
+                        <p>súper <span>eeeasy</span> !!</p>
+                    </div> --}}
+        </div>
+        {{-- <div class="col-md-5 container-step__image2">
+                    <img src="{{ asset('/public/includes/images/iphone.png') }}" alt="">
+    </div> --}}
+    </div>
+</div>
+
+
+
+<div class="container container-aliados shadow-lg bg-white mb-5">
+    <div class="container_aliados__title p-3">
+        <p class="underline">trabajamos y estamos respaldados por las</p>
+        <p>mejores compañias del mercado panameño</p>
+    </div>
+    <div class="row pb-2">
+        <div class="col-sm  my-auto">
+            <img src="{{ asset('/public/includes/images/logos-aliados/sura.png') }}" alt="Sura">
+        </div>
+        <div class="col-sm my-auto">
+            <img src="{{ asset('/public/includes/images/logos-aliados/mapfre.png') }}" alt="Mapfre">
+        </div>
+        <div class="col-sm my-auto">
+            <img src="{{ asset('/public/includes/images/logos-aliados/sonrie.png') }}" alt="Mapfre">
+        </div>
+    </div>
+    <div class="row pb-3">
+        <div class="col-sm my-auto">
+            <img src="{{ asset('/public/includes/images/logos-aliados/bac.png') }}" alt="Bac">
+        </div>
+        <div class="col-sm my-auto">
+            <img src="{{ asset('/public/includes/images/logos-aliados/bg.png') }}" alt="Bac">
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+        <div class="row container-super">
+          <div class="col container-super__super">
+            <span>SÚPER</span>
+          </div>
+          <div class="col super-easy__logo">
+            <img src="public/includes/images/logos/super_easy.png" alt="easydot.com.pa">
+          </div>
+        </div>
+    </div>
+
+    .container-super__easy{
+    display: flex;
+    align-items: center;
+    height: 500px;
+    background-color: #eff1f4;
+    color: var(--easyBlue);  
+}
+
+.container-super__super{
+    font-size: 155px;
+    font-weight: 800;
+}
+
+.super-easy__logo > img{
+    width: inherit;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .container-super__super{
+        font-size: 75px;
+        font-weight: 800;
+    }
+}

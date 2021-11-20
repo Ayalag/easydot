@@ -164,6 +164,21 @@
               font-weight: 600
           }
       }
+
+      .container-footer_ssrp{
+          display: flex;
+          align-items: center;
+      }
+
+      .container-footer_ssrp>div:first-child{
+          margin-right: 10px
+      }
+
+      @media screen and (max-width: 768px) {
+        .container-footer_ssrp{
+            font-size: 0.8rem
+      }
+      }
   </style>
 
   <!-- Site footer -->
@@ -221,14 +236,11 @@
      
   </footer>
 
-  <div class="container ssrp">
-    <div class="row">
-        <div class="col-md-1 col-sm-6 col-xs-12">
+  <div class="container container-footer_ssrp">
+        <div>
            <img src="{{ asset('/public/includes/images/SSRPLogo.png') }}" alt="">
         </div>
-        <div class="col-md-8 col-sm-6 col-xs-12 d-flex align-items-center">
-            <p class="p-0 m-0">REGULADO Y SUPERVISADO POR LA SUPERINTENDENCIA <br> DE SEGUROS Y REASEGUROS DE PANAMÁ.</p>
-            {{-- <p class="p-0 m-0"></p> --}}
+        <div>
+            <h4>REGULADO Y SUPERVISADO POR LA SUPERINTENDENCIA <br> DE SEGUROS Y REASEGUROS DE PANAMÁ.</h4>
         </div>
-    </div>
 </div>
