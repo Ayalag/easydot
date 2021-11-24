@@ -787,6 +787,26 @@ html {
     }
 }
 
+@media screen and (max-width: 20rem) {
+    .blue-square__container__title {
+        font-size: 1.3rem;
+    }
+
+    .blue_square__container__btn button {
+        margin-left: 0;
+        width: 6rem;
+    }
+
+    .btn{
+        font-size: 0.6rem;
+    }
+
+    .box-container {
+        margin-top: -80%;
+    }
+
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ BLUE SQUARE ]*/
@@ -925,6 +945,13 @@ html {
         padding: 9px 12px;
         font-size: 1rem;
     }
+}
+
+@media screen and (max-width: 20rem) {
+    .box-container {
+        margin-top: -80%;
+    }
+
 }
 
 /*-------------------------------*/
@@ -1134,7 +1161,7 @@ html {
 
     .box-super_easy .container-super__title{
         margin-right: 0;
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     .box-super_easy  .container-super__image{
@@ -1146,59 +1173,20 @@ html {
         position: absolute;
         bottom: 2rem;
     }
-}
 
-/* .container-super__easy{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: space-evenly;
-    height: 400px;
-    background-color: #eff1f4;
-    color: var(--easyBlue);  
-}
-
-.container-super__title{
-    font-size: 155px;
-    font-weight: 800;
-    margin-right: 5%;
-}
-
-.container-super__image{
-    margin-top: 60px; 
-}
-
-.container-super__subtitle{
-    color: var(--easyBlue);
-    font-weight:800;
-}
-
-@media screen and (max-width: 1024px) {
-    .container-super__image{
-        margin-top: 0; 
+    .container-super__image img {
+        width: 20rem;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .container-super__title{
-        font-size: 115px;
+@media screen and (max-width: 20rem){
+    .box-super_easy .container-super__title{
+        font-size: 5rem;
     }
-    .container-super__image{
-        text-align: center;
-    }
-    .container-super__image > img{
-        width: 75%;
+    .container-super__image img{
+        width: 18rem;
     }
 }
-@media screen and (max-width: 568px) {
-    .container-super__title{
-        font-size: 85px;
-    }
-    .container-super__image > img{
-        width: 90%;
-    }
-} */
 
 /*-------------------------------*/
 /*         Super Easy            */
