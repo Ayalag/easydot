@@ -218,6 +218,7 @@
                     </div>
                 </div>
             </div>
+            <a href=""><p class="underline">terminos y condiciones</p></a> 
         </div>
         <div class="basico hide">
             <div class="soat-slider">
