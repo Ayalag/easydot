@@ -786,6 +786,14 @@ html {
         margin-bottom: 1.5rem;
     }
 }
+@media screen and (max-width: 23.4375rem) {
+    .blue_square__container__btn button {
+        margin-left: 0;
+    }
+
+}
+
+
 
 @media screen and (max-width: 20rem) {
     .blue-square__container__title {
