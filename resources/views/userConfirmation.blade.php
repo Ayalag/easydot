@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="col-12 nRegister ">
-                    <a href="/motor">
+                    <a href="{{ route('autos-cobertura') }}">
                         <p class="underline">continuar sin ingresar</p>
                     </a>
                 </div>
@@ -92,7 +92,7 @@
     <div class="new-account pt-4">
         <div class="container-new-account__title">
            <a href="#"><p class="underline mb-2">crear una cuenta</p></a> 
-           <a href="#"><p class="underline">continuar sin ingresar</p></a> 
+           <a href="{{ route('autos-cobertura') }}"><p class="underline">continuar sin ingresar</p></a> 
         </div>
     </div>
 </div>

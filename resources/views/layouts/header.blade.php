@@ -14,7 +14,7 @@
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
                     <li><a class="underline" href="/userconfirmation">soat</a></li>
-                    <li><a class="underline" href="/userconfirmation">cobertura Completa</a></li>
+                    <li><a class="underline" href="{{ route('autos-landing') }}">cobertura Completa</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -94,12 +94,12 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/personas/landing'>
             persona
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/hogar/landing'>
             hogar
         </x-a-link>
     </x-btn-main>

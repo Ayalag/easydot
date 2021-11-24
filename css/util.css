@@ -25,6 +25,27 @@ div>p>span {
     color: var(--easyRose);
 }
 
+/* input[type='radio'] {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid darkgray;
+    border-radius: 50%;
+    outline: none;
+} */
+
+input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+input[type='radio']:checked:before {
+    background: var(--easyRose);
+}
+
 html,body,div,span,
 applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,
@@ -1425,26 +1446,7 @@ html {
     margin: auto;
 }
 
-input[type='radio'] {
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 1px solid darkgray;
-    border-radius: 50%;
-    outline: none;
-}
 
-input[type='radio']:before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-input[type='radio']:checked:before {
-    background: var(--easyRose);
-}
 
 .login_mail,
 .login_pass {
@@ -1797,6 +1799,10 @@ button[class="btn-comprar"] > a{
     width: 44.5rem;
 }
 
+/* .container-landing__subtitulo-1{
+    font-weight: 600;
+} */
+
 .container-landing__subtitulo-2{
     width: 50rem;
     display: flex;
@@ -1839,5 +1845,26 @@ button[class="btn-comprar"] > a{
 /*        landings  /fin\        */
 /*-------------------------------*/
 
+
+/*-------------------------------*/
+/*       Coberura Autos           */
+/*-------------------------------*/
+
+.container-cobertura{
+    height: 100vh;
+    color: var(--easyBlue);
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.container-daños__terceros,
+.container-cobertura__completa {
+    padding: 1rem;
+    width: 16rem;
+}
+
+/*-------------------------------*/
+/*      Coberura Autos  /fin\    */
+/*-------------------------------*/
 
 
