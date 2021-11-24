@@ -78,7 +78,7 @@
 
 </div>
 <div class="header-container__logo basic-drop-shadow">
-    <a href="/"><img src="public/includes/images/logos/easydot_276x143_formated.png" alt="easydot.com.pa"></a>
+    <a href="/"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}" alt="easydot.com.pa"></a>
 </div>
 <!-- /#wrapper -->
 

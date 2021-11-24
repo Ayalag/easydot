@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap);
 
 :root {
     --easyRose: #ff0180;
@@ -724,10 +724,82 @@ html {
 }
 
 /*//////////////////////////////////////////////////////////////////
+[ BLUE SQUARE ]*/
+
+.blue-square__container{
+    height: 23rem;
+    background-color: var(--easyBlue);
+    margin-top: -10px;
+}
+
+.blue-square__container__container{
+    padding: 2.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.blue-square__container__container > hr{
+    color: var(--easyGray);
+    width: 500px;
+}
+
+.blue_square__container__btn{
+    justify-content: start;
+}
+
+.blue_square__container__btn button{
+    margin-left: 1rem;
+}
+
+.blue-square__container__title{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.blue_square__container__btn  > button{
+    background-color: #d9d9d9;
+    color: var(--easyBlue);
+    font-weight: 600;
+}
+
+.container-hr{
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 48rem) {
+    .blue-square__container__title {
+        font-size: 1.5rem;
+    }
+    .blue-square__container__container{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .blue_square__container__btn{
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .container-hr{
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ BLUE SQUARE ]*/
+/*//////////////////////////////////////////////////////////////////
 [ BLOQUE CATEGORIAS ]*/
 
+.container-hr{
+    width: 80%;
+    max-width: 80%;
+}
+
 .box-container {
-    margin-top: -7%;
+    margin-top: -16rem;
     display: block;
     position: relative;
 }
@@ -735,18 +807,12 @@ html {
 .box-container__title {
     color: white;
     text-align: center;
-    font-size: 33px;
-    font-weight: 800;
+    font-size: 1.8rem;
+    /* font-weight: 800; */
 }
 
 @media screen and (max-width: 40rem) {
-    .box-container__title {
-        font-size: 20px;
-    }
 
-    .box-container {
-        margin-top: -26%;
-    }
 }
 
 .wrap {
@@ -825,6 +891,15 @@ html {
 }
 
 @media screen and (max-width: 40rem) {
+
+    .box-container__title {
+        font-size: 20px;
+    }
+
+    .box-container {
+        margin-top: -55%;
+    }
+
     .box {
         width: 116px;
         height: 190px;
@@ -878,6 +953,7 @@ html {
     display: flex;
     margin: 12px;
     width: 119%;
+    border-radius: 10px;
 }
 
 .step-one-letter>div:first-child,
@@ -974,6 +1050,27 @@ html {
     }
 }
 
+
+@media screen and (max-width: 20rem){
+
+    .step-one-letter>div:last-child{
+        width: 170px;
+    }
+
+    .step-two-letter>div:last-child{
+        width: 135px;
+    }
+
+    .step-three-letter>div:last-child {
+        width: 110px;
+    }
+
+    .container-step__image2{
+        left: 9rem;
+    }
+
+}
+
 /*-------------------------------*/
 /*       proceso de compra       */
 /*-------------------------------*/
@@ -1049,8 +1146,6 @@ html {
         position: absolute;
         bottom: 2rem;
     }
-
-    
 }
 
 /* .container-super__easy{
@@ -1305,6 +1400,7 @@ html {
     text-align: center;
     color: var(--easyBlue);
     font-size: 18px;
+    height: 100vh;
 }
 
 .container-account,
@@ -1354,8 +1450,8 @@ input[type='radio']:checked:before {
     background: var(--easyRose);
 }
 
-input[type='email'],
-input[type='password'] {
+.login_mail,
+.login_pass {
     background-position: 10px center;
     background-repeat: no-repeat;
     border: 1px solid #ccc;
@@ -1644,6 +1740,108 @@ button[class="btn-comprar"] > a{
 /*       Register Page Auto      */
 /*-------------------------------*/
 
+
+
+/*-------------------------------*/
+/*       formulario contactos    */
+/*-------------------------------*/
+
+.container-formulario__info{
+    padding: 1.5rem;
+    color: var(--easyBlue);
+    border-radius: 10px;
+    width: 20rem;
+}
+
+.container-formulario__titulo{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.form-group label{
+    margin: 0 0 4px 7px;
+}
+
+.footer button[type='submit']{
+    width: 7rem;
+
+}
+
+
+
+
+
+/*-------------------------------*/
+/*       landings autos /fin\    */
+/*-------------------------------*/
+/*-------------------------------*/
+/*            landings           */
+/*-------------------------------*/
+
+.container-landing{
+    display: flex;
+    position: relative;
+    height: 100vh;
+}
+
+.container-landing__descripciones{
+    color: var(--easyBlue);
+}
+
+.container-landing__titulo,
+.container-landing__personas__titulo{
+    width: 38.5rem;
+    line-height: normal;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.container-landing__personas__titulo{
+    width: 44.5rem;
+}
+
+.container-landing__subtitulo-2{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    line-height: normal;
+    font-size: 23px;
+    font-weight: 800;
+}
+.container-landing__hogar__subtitulo-2{
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    line-height: normal;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.container-image__hogar{
+    position: relative;
+    bottom: 5rem;
+    left: 6rem;
+}
+
+.container-image__persona{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    bottom: 0;
+    right: 12rem;
+}
+
+
+/*-------------------------------*/
+/*        landings  /fin\        */
+/*-------------------------------*/
 
 
 

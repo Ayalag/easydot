@@ -71,11 +71,28 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid blue-square__container">
+        <div class="blue-square__container__container">
+            <div class="blue-square__container__title">
+                ¡Empecemos Hoy!
+            </div>
+            <div class="blue_square__container__btn">
+                <button type="submit" class="btn">iniciar sesión</button>
+                <button type="submit" class="btn">crear cuenta</button>
+            </div>
+        </div>        
+    </div>
 @endsection
 
 @section('content')
+
+
     <div class="container box-container mb-5">
-        <div class="row box-container__title">
+        <div class="container container-hr">
+            <hr size="20" color="grey">
+        </div>
+        <div class="row box-container__title mb-5">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <p class="underline">conoce las increíbles opciones que</p>
             </div>

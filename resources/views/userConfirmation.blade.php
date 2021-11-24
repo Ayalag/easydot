@@ -44,7 +44,7 @@
                                 <div class="col-md-12">
                                     <input style="background-image: url(public/includes/images/icons8-mail-24.png)"
                                         id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        class="form-control login_mail @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus
                                         placeholder="correo electrónico">
 
@@ -60,7 +60,7 @@
                                 <div class="col-md-12">
                                     <input style="background-image: url(public/includes/images/icons8-lock-24.png)"
                                         id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        class="form-control login_pass @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password" placeholder="contraseña">
 
                                     @error('password')

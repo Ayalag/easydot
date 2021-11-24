@@ -21,13 +21,17 @@ Route::get('/userconfirmation', function () {
     return view('userConfirmation');
 })->name('userconfirmation');
 
-Route::get('/motor', function () {
-    return view('productos.motor');
+Route::get('/producto/motor', function () {
+    return view('productos.motor.motor');
 })->name('motor');
 
 Route::get('/registro', function () {
     return view('registro.registro');
 })->name('registro-motor');
+
+Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
+Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
+Route::view('/producto/personas/landing','productos.personas.landing')->name('personas-landing');
 
 Auth::routes();
 
