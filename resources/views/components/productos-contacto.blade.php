@@ -11,14 +11,14 @@
         </div>
         <div class="form-group">
             <label for="mail">Correo electrónico</label>
-            <input type="email" class="form-control" id="mail" placeholder="correo electronico" required>
+            <input type="email" class="form-control" id="mail" placeholder="correo electrónico" required>
         </div>
         <div class="form-group">
             <label for="contacto">Medio de contacto preferido</label>
             <select class="selectpicker"  data-width="100%" title="Escoja una opción" required>
                 <option>Whatsapp</option>
                 <option>Correo electrónico</option>
-                <option>LLamada telefónica</option>
+                <option>Llamada telefónica</option>
               </select>
         </div>
         <div class="footer text-center">

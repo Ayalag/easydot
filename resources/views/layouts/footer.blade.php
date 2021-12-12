@@ -68,7 +68,7 @@
           margin-left: 6px;
           margin-right: 0;
           border-radius: 100%;
-          background-color: #33353d
+          background-color: white
       }
 
       .copyright-text {
@@ -113,7 +113,7 @@
 
       .social-icons a {
           background-color: #eceeef;
-          color: #818a91;
+          color: #033777;
           font-size: 16px;
           display: inline-block;
           line-height: 44px;
@@ -165,53 +165,56 @@
           }
       }
 
-      .container-footer_ssrp{
+      .container-footer_ssrp {
           display: flex;
           align-items: center;
       }
 
-      .container-footer_ssrp>div:first-child{
+      .container-footer_ssrp {
+              font-size: 0.8rem
+          }
+
+      .container-footer_ssrp>div:first-child {
           margin-right: 10px
       }
 
-      @media screen and (max-width: 768px) {
-        .container-footer_ssrp{
-            font-size: 0.8rem
-      }
-      }
+      /* @media screen and (max-width: 768px) {
+          .container-footer_ssrp {
+              font-size: 0.8rem
+          }
+      } */
+
   </style>
 
   <!-- Site footer -->
   <footer class="site-footer">
       <div class="container">
           <div class="row">
-              <div class="col-sm-12 col-md-6">
-                  <h6>Acerca de easydot</h6>
-                  <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, odio blanditiis? Illum placeat consequuntur voluptate dolores aspernatur quo maxime nesciunt ea tempore eveniet, neque non. Ea voluptates veritatis quo eaque?</p>
-              </div>
-
               <div class="col-xs-6 col-md-3">
                   <h6>Categorias</h6>
                   <ul class="footer-links">
                       <li><a href="">Autos</a></li>
-                      <li><a href="">Mascotas</a></li>
-                      <li><a href="">Persona</a></li>
                       <li><a href="">Hogar</a></li>
-                      <li><a href="">Dental</a></li>
-                      <li><a href="">Contactanos</a></li>
+                      <li><a href="">Motos</a></li>
+                      <li><a href="">Mascotas</a></li>
+                      <li><a href="">Personas</a></li>
                   </ul>
               </div>
 
               <div class="col-xs-6 col-md-3">
                   <h6>Quick Links</h6>
                   <ul class="footer-links">
-                      <li><a href="">About Us</a></li>
-                      <li><a href="">Contact Us</a></li>
-                      <li><a href="">Contribute</a></li>
-                      <li><a href="">Privacy Policy</a></li>
-                      <li><a href="">Sitemap</a></li>
+                      <li><a href="">Conoce easy</a></li>
+                      <li><a href="">Centro de ayuda</a></li>
+                      <li><a href="">Términos y condiciones</a></li>
                   </ul>
               </div>
+              <div class="col-sm-12 col-md-6">
+                {{-- <h6>Acerca de easydot</h6>
+                <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, odio
+                    blanditiis? Illum placeat consequuntur voluptate dolores aspernatur quo maxime nesciunt ea tempore
+                    eveniet, neque non. Ea voluptates veritatis quo eaque?</p> --}}
+            </div>
           </div>
           <hr>
       </div>
@@ -225,22 +228,21 @@
 
               <div class="col-md-4 col-sm-6 col-xs-12">
                   <ul class="social-icons">
-                      <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                      <li><a class="dribbble" href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li><a class="facebook" href="https://www.facebook.com/easydotpanama" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a class="dribbble" href="https://www.instagram.com/easydotpanama/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                       <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
                   </ul>
               </div>
           </div>
       </div>
-     
+
   </footer>
 
   <div class="container container-footer_ssrp">
-        <div>
-           <img src="{{ asset('/public/includes/images/SSRPLogo.png') }}" alt="">
-        </div>
-        <div>
-            <h4>REGULADO Y SUPERVISADO POR LA SUPERINTENDENCIA <br> DE SEGUROS Y REASEGUROS DE PANAMÁ.</h4>
-        </div>
-</div>
+      <div>
+          <img src="{{ asset('/public/includes/images/SSRPLogo.png') }}" alt="">
+      </div>
+      <div>
+          <p> REGULADO Y SUPERVISADO POR LA SUPERINTENDENCIA DE SEGUROS Y REASEGUROS DE PANAMÁ.</p>
+      </div>
+  </div>

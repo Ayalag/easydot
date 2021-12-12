@@ -12,10 +12,10 @@
 
                     <div class="layer-slick1 slider-text-price">
                         <div>
-                            autos 111.93 / año
+                            autos 99.75 / año
                         </div>
                         <div>
-                            motos 75.18 / año
+                            motos 65.00 / año
                         </div>
                     </div>
                     <x-btn-main class='fntw-800 mt-3'>
@@ -150,8 +150,8 @@
         </div>
     </div>
 
-    <div class="container container-step-to-buy mb-5">
-        <div class="row step-to-buy__title">
+    <div class="container container-step-to-buy p-5">
+        <div class="row step-to-buy__title p-5">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <p>¡compra súper <span>easy</span>!</p>
             </div>
@@ -207,13 +207,13 @@
                 <img src="public/includes/images/logos/super_easy.png" alt="easydot.com.pa">
             </div>
         </div>
-        <div class="container-super__subtitle">
+        <div class="container-super__subtitle p-5">
             <p>sin papeleo<span>.</span> sin estrés</p>
         </div>
     </div>
 
     <div class="container-fluid container-comments pb-5">
-        <div class="container-comments__title">
+        <div class="container-comments__title p-5">
             <p class="underline">comentarios que nos hacen sentir orgullosos</p>
             <p>¿y tú qué opinas?</p>
         </div>
@@ -223,7 +223,7 @@
                 <img src="public/includes/images/persona_logo.png" alt="">
             </div>
             <div class="container-box__one">
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle " src="https://randomuser.me/api/portraits/med/women/51.jpg" alt="">
@@ -241,7 +241,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/14.jpg" alt="">
@@ -260,7 +260,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/23.jpg" alt="">
@@ -279,7 +279,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/45.jpg" alt="">
@@ -298,7 +298,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/38.jpg" alt="">
@@ -317,7 +317,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/7.jpg" alt="">
@@ -336,7 +336,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/92.jpg" alt="">
@@ -355,7 +355,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/18.jpg" alt="">
@@ -374,7 +374,7 @@
                         laudantium cupiditate excepturi officia!
                     </div>
                 </div>
-                <div class="box-easy_comments basic-drop-shadow">
+                <div class="box-easy_comments shadow">
                     <div class="user-profile__box">
                         <div class="user-profile__image">
                             <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/18.jpg" alt="">
@@ -413,7 +413,7 @@
                     <img src="{{ asset('/public/includes/images/logos-aliados/mapfre.png') }}" alt="Mapfre">
                 </div>
                 <div class="col-sm-4 col-4 my-auto sonrie">
-                    <img src="{{ asset('/public/includes/images/logos-aliados/sonrie.png') }}" alt="Panama Sonrie">
+                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
                 </div>
             </div>
         </div>

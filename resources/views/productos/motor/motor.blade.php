@@ -8,7 +8,7 @@
             <input id="auto" type="radio" name="motor" checked>
             <label for="auto" class="clickable"><span class="checked-box">&#10004;</span></label>
             <div>
-                <img src="public/includes/images/icons8-car-64.png" alt="easydot_automoviles">
+                <img src="{{ asset('/public/includes/images/icons8-car-64.png') }}" alt="easydot_automoviles">
             </div>
             <div>
                 <span class="product_text_1">autos</span>
@@ -19,7 +19,7 @@
             <input id="moto" type="radio" name="motor">
             <label for="moto" class="clickable"><span class="checked-box">&#10004;</span></label>
             <div>
-                <img src="public/includes/images/icons8-motorcycle-64.png" alt="easydot_automoviles">
+                <img src="{{ asset('/public/includes/images/icons8-motorcycle-64.png') }}" alt="easydot_automoviles">
             </div>
             <div>
                 <span class="product_text_1">motos</span>
@@ -49,518 +49,574 @@
     <div class="container pb-5">
         <div class="soat">
             <div class="soat-slider">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
-                        </div>
-                        <div class="container">
-                            <div class="card-subtitle">soat</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
-                                    </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
-                                    </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
-                                    </div>
-                                </div>
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/sura_color.png') }}"
+                                    alt="">
                             </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 103.39
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/mapfre_color.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">soat</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                            <div class="container">
+                                <div class="card-subtitle">soat</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 103.39
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 155.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-SURA-AUTOS.pdf') }}"
+                        target="_blank">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/Bac_credomatic_logo.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">soat</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/mapfre_color.png') }}"
+                                    alt="">
+                            </p>
+                            <div class="container">
+                                <div class="card-subtitle">soat</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 155.00
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 135.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-MAPFRE-AUTOS.pdf') }}"
+                        target="_blank">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
                 </div>
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/Bac_credomatic_logo.png') }}"
+                                    alt="">
+                            </p>
+                            <div class="container">
+                                <div class="card-subtitle">soat</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
+                                    </div>
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 135.00
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
+                </div>
+
             </div>
-            <a href=""><p class="underline">terminos y condiciones</p></a> 
         </div>
         <div class="basico hide">
             <div class="soat-slider">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
-                        </div>
-                        <div class="container">
-                            <div class="card-subtitle">básico</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
-                                    </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
-                                    </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
-                                    </div>
-                                </div>
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('public/includes/images/logos-aliados/color/sura_color.png') }}"
+                                    alt="">
                             </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 103.39
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/mapfre_color.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">básico</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                            <div class="container">
+                                <div class="card-subtitle">básico</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 103.39
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 155.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-SURA-AUTOS.pdf') }}"
+                        target="_blank">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/Bac_credomatic_logo.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">básico</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('public/includes/images/logos-aliados/color/mapfre_color.png') }}"
+                                    alt="">
+                            </div>
+                            <div class="container">
+                                <div class="card-subtitle">básico</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 103.39
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 135.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-MAPFRE-AUTOS.pdf') }}"
+                        target="_blank">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
                 </div>
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/Bac_credomatic_logo.png') }}"
+                                    alt="">
+                            </p>
+                            <div class="container">
+                                <div class="card-subtitle">básico</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
+                                    </div>
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 135.00
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" target="_blank">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
+                </div>
+
             </div>
         </div>
         <div class="estandar hide">
             <div class="soat-slider">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/sura_color.png" alt="">
-                        </div>
-                        <div class="container">
-                            <div class="card-subtitle">estándar</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('public/includes/images/logos-aliados/color/sura_color.png') }}"
+                                    alt="">
+                            </div>
+                            <div class="container">
+                                <div class="card-subtitle">estándar</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 103.39
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 103.39
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-SURA-AUTOS.pdf') }}" target="_blank"><p class="underline condicion_poliza">condiciones de la póliza</p></a>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/mapfre_color.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">estándar</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/mapfre_color.png') }}"
+                                    alt="">
+                            </p>
+                            <div class="container">
+                                <div class="card-subtitle">estándar</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 155.00
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 155.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                        <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-MAPFRE-AUTOS.pdf') }}" target="_blank"><p class="underline condicion_poliza">condiciones de la póliza</p></a>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title d-flex justify-content-end">
-                            <img src="public/includes/images/logos-aliados/color/Bac_credomatic_logo.png" alt="">
-                        </p>
-                        <div class="container">
-                            <div class="card-subtitle">estándar</div>
-                            <p class="card-text underline mb-3">cobertura por accidente</p>
-                            <div class="card-detail">
-                                <div class="row no-gutters mb-3">
-                                    <div class="col-9">
-                                        Lesiones corporales
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title d-flex justify-content-end">
+                                <img src="{{ asset('/public/includes/images/logos-aliados/color/Bac_credomatic_logo.png') }}"
+                                    alt="">
+                            </p>
+                            <div class="container">
+                                <div class="card-subtitle">estándar</div>
+                                <p class="card-text underline mb-3">cobertura por accidente</p>
+                                <div class="card-detail">
+                                    <div class="row no-gutters mb-3">
+                                        <div class="col-9">
+                                            Lesiones corporales
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            10,000
+                                        </div>
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        10,000
+                                    <div class="row no-gutters">
+                                        <div class="col-9">
+                                            Daños a la propiedad ajena
+                                        </div>
+                                        <div class="col-3 justify-content-end">
+                                            5,000
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row no-gutters">
-                                    <div class="col-9">
-                                        Daños a la propiedad ajena
+                                <hr>
+                                <div class="card-list__items">
+                                    <ul>
+                                        <li>Revisado vehicular gratuito</li>
+                                        <li>3 servicios de grúa al año</li>
+                                        <li>Servicios de asistencia vial</li>
+                                        <li>Ambulancia</li>
+                                        <li>Descuento en trámite de placa</li>
+                                    </ul>
+                                </div>
+                                <div class="row mt-4 annuity">
+                                    <div class="col-12 text-muted text-center">
+                                        anual
                                     </div>
-                                    <div class="col-3 justify-content-end">
-                                        5,000
+                                </div>
+                                <div class="row mb-3 price">
+                                    <div class="col-12 text-center">
+                                        $ 135.00
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="card-list__items">
-                                <ul>
-                                    <li>Revisado vehicular gratuito</li>
-                                    <li>3 servicios de grúa al año</li>
-                                    <li>Servicios de asistencia vial</li>
-                                    <li>Ambulancia</li>
-                                    <li>Descuento en trámite de placa</li>
-                                </ul>
-                            </div>
-                            <div class="row mt-4 annuity">
-                                <div class="col-12 text-muted text-center">
-                                    anual
-                                </div>
-                            </div>
-                            <div class="row mb-3 price">
-                                <div class="col-12 text-center">
-                                    $ 135.00
-                                </div>
-                            </div>
-                            <div class="row mb-1">
-                                <div class="col-12 text-center">
-                                    <button class="btn-comprar">
-                                       <a href="/registro">comprar</a> 
-                                    </button>
+                                <div class="row mb-1">
+                                    <div class="col-12 text-center">
+                                        <button class="btn-comprar">
+                                            <a href="/registro">comprar</a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a href="">
+                        <p class="underline condicion_poliza">condiciones de la póliza</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -578,18 +634,18 @@
         var estandar = document.querySelector('.estandar');
 
         $('input[id="soat"]').change(function () {
-            if($(soat).hasClass('hide')){
+            if ($(soat).hasClass('hide')) {
                 $(soat).removeClass('hide');
-            }else{
+            } else {
                 $(soat).removeClass('hide');
             }
             $(basico).addClass("hide");
             $(estandar).addClass("hide");
         });
         $('input[id="basico"]').change(function () {
-            if($(basico).hasClass('hide')){
+            if ($(basico).hasClass('hide')) {
                 $(basico).removeClass('hide');
-            }else{
+            } else {
                 $(basico).removeClass('hide');
             }
             $(soat).addClass("hide");
@@ -597,9 +653,9 @@
             $('.soat-slider').get(1).slick.setPosition()
         });
         $('input[id="estandar"]').change(function () {
-            if($(estandar).hasClass('hide')){
+            if ($(estandar).hasClass('hide')) {
                 $(estandar).removeClass('hide');
-            }else{
+            } else {
                 $(estandar).removeClass('hide');
             }
             $(soat).addClass("hide");
@@ -607,6 +663,7 @@
             $('.soat-slider').get(2).slick.setPosition()
         });
     });
-</script> 
+
+</script>
 
 @endsection

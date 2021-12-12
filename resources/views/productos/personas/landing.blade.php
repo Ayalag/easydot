@@ -5,11 +5,11 @@
 <div class="container container-landing pt-5">
     <div class="container-landing__descripciones">
         <div class="container-landing__personas__titulo">
-            Protege tu bienestar y el de tus seres queridos con las bondades que una póliza de vida puede ofrecer<span>.</span>
+            Protege tu bienestar y el de tus seres queridos con las bondades que una póliza de vida puede ofrecer<span style="color:#009ee2">.</span>
         </div>
         <div class="container-landing__subtitulo-1 mt-3">
           <p>Sabemos que no podemos predecir el futuro, pero si podemos planificar como proteger a nuestros<br>
-            seres queridos y hacerle frente a situaciones inesperadas, para esto las pólizas de vida son una de las <br>
+            seres queridos y hacerle frente a situaciones inesperadas, para esto las pólizas de vida son una de las
             mejores opciones.
          </p>  
          <br>

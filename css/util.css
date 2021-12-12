@@ -322,7 +322,7 @@ html {
 
 .hamburger {
     position: absolute;
-    top: 20px;
+    top: 30px;
     z-index: 999;
     display: block;
     width: 32px;
@@ -366,7 +366,7 @@ html {
 .hamburger.is-open .hamb-bottom {
     position: absolute;
     left: 0;
-    height: 4px;
+    height: 3px;
     width: 100%;
 }
 
@@ -532,7 +532,7 @@ html {
 }
 
 .item-slick1 {
-    height: calc(100vh - 104px);
+    height: calc(100vh - 248px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -549,7 +549,8 @@ html {
 
 @media (max-width: 991px) {
     .item-slick1 {
-        height: calc(100vh - 70px) !important;
+        height: calc(100vh - 315px) !important;
+        background-image: none !important;
     }
 }
 
@@ -908,6 +909,14 @@ html {
     top: 3rem;
 }
 
+.box-category-logo.auto{
+    top: 5rem;
+}
+
+/* .box-category-logo.persona{
+    top: 2rem;
+} */
+
 .box-category-logo__image {
     width: 8rem;
 }
@@ -1000,7 +1009,7 @@ html {
 
 .steps-container__box{
     display: flex;
-    justify-content:center
+    justify-content:space-around
 }
 
 .steps-by-steps .step-one-letter,
@@ -1008,7 +1017,7 @@ html {
 .steps-by-steps .step-three-letter{
     display: flex;
     margin: 12px;
-    width: 119%;
+    width: 120%;
     border-radius: 10px;
 }
 
@@ -1026,9 +1035,9 @@ html {
 .step-two-letter>div:last-child,
 .step-three-letter>div:last-child {
     text-align: start;
-    margin: auto 16px;
+    margin: auto 34px;
     font-size: 20px;
-    width: 320px;
+    width: 500px;
 }
 
 .container-step__image2{
@@ -1296,12 +1305,17 @@ html {
     text-align: left;
     display: grid;
 }
+.user-profile__name span{
+   font-size: 1rem;
+}
 
 .comments{
     font-size: 1rem;
     font-weight: 400;
     text-align: left;
     line-height: 1.1rem;
+    color: var(--easyGray);
+    padding: 1rem;
 }
 
 .Stars {
@@ -1621,6 +1635,13 @@ button[class="btn-comprar"] > a{
     text-decoration: none;
 }
 
+.condicion_poliza{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--easyBlue);
+    margin-top: 0.5rem;
+}
+
 /*-------------------------------*/
 /*       insurance  card         */
 /*-------------------------------*/
@@ -1732,10 +1753,61 @@ button[class="btn-comprar"] > a{
     height: max-content;
 }
 
+/*-------------------------------*/
+/*       Register Page Auto      */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*   Register Page Mascotas      */
+/*-------------------------------*/
+
+
+.registro-datos__title__mascotas{
+    color: var(--easyBlue);
+    font-size: 2rem;
+    font-weight: 800;
+    padding-bottom: 5px;
+}
+
+.registro-datos__subtitle__mascotas{
+    color: var(--easyBlue);
+    font-size: 1.5rem;
+}
+
+.container-identity__pets{
+    display: flex;
+}
+
+.container-card__selected{
+    width: 50%;
+    background-color: tan;
+}
+
+.container-icon__pet{
+    background-color: violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: 1.3rem;
+}
+
+.container-icon__pet>.pet__dog,
+.container-icon__pet>.pet__cat{
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--easyBlue);
+    font-weight: 600;
+}
+
+
+
 
 
 /*-------------------------------*/
-/*       Register Page Auto      */
+/*   Register Page Mascotas      */
 /*-------------------------------*/
 
 
@@ -1767,9 +1839,6 @@ button[class="btn-comprar"] > a{
 }
 
 
-
-
-
 /*-------------------------------*/
 /*       landings autos /fin\    */
 /*-------------------------------*/
@@ -1799,16 +1868,18 @@ button[class="btn-comprar"] > a{
     width: 44.5rem;
 }
 
-/* .container-landing__subtitulo-1{
-    font-weight: 600;
-} */
+.container-landing__subtitulo-1{
+    line-height: initial;
+}
 
 .container-landing__subtitulo-2{
+    position: relative;
+    left: 7rem;
     width: 50rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: flex-end;
+    /* align-content: flex-end; */
     align-items: center;
     margin-top: 2rem;
     line-height: normal;
@@ -1827,17 +1898,17 @@ button[class="btn-comprar"] > a{
 
 .container-image__hogar{
     position: relative;
-    bottom: 5rem;
+    bottom: 7rem;
     left: 6rem;
 }
 
 .container-image__persona{
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: flex-end;
-    flex-direction: row;
-    bottom: 0;
-    right: 12rem;
+    /* flex-direction: row; */
+    bottom: 7.25rem;
+    /* right: 12rem; */
 }
 
 
@@ -1865,6 +1936,101 @@ button[class="btn-comprar"] > a{
 
 /*-------------------------------*/
 /*      Coberura Autos  /fin\    */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*      Centro de Ayuda          */
+/*-------------------------------*/
+
+
+.container-helpcenter{
+    color: var(--easyBlue);
+    height: 100%;
+    position: relative;
+}
+
+.container-helpcenter__title,
+.container-frequent-question__title{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.container-helpcenter__paragraph{
+    text-align: center;
+    line-height: 1.3;
+    font-size: 1.5rem;
+}
+
+.container-general__info{
+    display: flex;
+    text-align: center;
+    margin-top: 9rem;
+}
+
+.container-genreal__info__easy,
+.container-genreal__info__bartoli{
+    width: 50%;
+}
+
+.container-general__info_partners{
+    background-image: url("/easydot/public/includes/images/centro-de-ayuda/linea-back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 541px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-genreal__info__easy_partner{ 
+    text-align: center;
+    font-weight: 600;
+    color: var(--easyBlue);
+}
+
+.card-general__info{
+    height: 32rem;
+    margin: 1rem;
+    width: 23rem;
+    min-width: 16rem;
+    border-radius: 15px;
+}
+
+.container-frequent-question__title{
+    color: var(--easyBlue);
+}
+
+.container-frequent-question__response__categories{
+    z-index: 3;
+    width: 100%;
+}
+
+.container-frequent-question__response__easy,
+.container-frequent-question__response__autos,
+.container-frequent-question__response__mascotas,
+.container-frequent-question__response__hogar{
+    font-size: 3rem;
+    font-weight: 900;
+    border-radius: 15px;
+    padding: 0.7rem;
+    padding-left: 2rem;
+    margin: 1rem;
+}
+
+.container-frequent-question__image{
+    position: relative;
+    right: 73px;
+    z-index: 1;
+}
+
+
+/*-------------------------------*/
+/*      Centro de Ayuda /fin\    */
 /*-------------------------------*/
 
 

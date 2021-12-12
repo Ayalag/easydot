@@ -32,11 +32,12 @@ Route::get('/registro', function () {
 Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
 Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
 
-
-
-
 Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
 Route::view('/producto/personas/landing','productos.personas.landing')->name('personas-landing');
+
+Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
+
+Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 
 Auth::routes();
 

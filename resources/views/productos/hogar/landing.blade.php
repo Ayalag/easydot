@@ -5,7 +5,7 @@
 <div class="container container-landing pt-5">
     <div class="container-landing__descripciones">
         <div class="container-landing__titulo">
-            Vive la paz y la tranquilidad que genera contar con una póliza con cobertura completa para el hogar<span>.</span>
+            Vive la paz y la tranquilidad que genera contar con una póliza con cobertura completa para el hogar<span style="color:#009ee2">.</span>
         </div>
         <div class="container-landing__subtitulo-1 mt-3">
           <p>Estas pólizas también conocidas como pólizas multiprotección son seguros diseñados para cubrir <br>
@@ -19,7 +19,7 @@
 
         </div>
         <div class="container-landing__hogar__subtitulo-2">
-            <p>No esperes más y solicta tu cotización. </p>
+            <p>No esperes más y solicita tu cotización. </p>
             <p>¡Ya verás lo <span>easy </span>que será!</p>
         </div>
         <div class="container container-image__hogar">

@@ -95,7 +95,7 @@
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/personas/landing'>
-            persona
+            personas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
@@ -114,7 +114,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/centro-de-ayuda'>
             Centro de ayuda
         </x-a-link>
     </x-btn-main>
