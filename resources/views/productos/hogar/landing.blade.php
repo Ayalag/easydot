@@ -31,3 +31,9 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+<script>
+    document.getElementById("landing-area").value = "hogar";
+</script>
+@endsection

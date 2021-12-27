@@ -48,3 +48,9 @@
 </div>
 
 @endsection
+
+@section('scripts')
+<script>
+    document.getElementById("landing-area").value = "mascota";
+</script>
+@endsection

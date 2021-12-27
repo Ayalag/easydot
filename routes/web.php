@@ -1,7 +1,11 @@
 <?php
 
+use App\Mail\ContactoMailable;
+use App\Mail\landingMailContactForm;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\landing\MailSender;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +42,10 @@ Route::view('/producto/personas/landing','productos.personas.landing')->name('pe
 Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
 
 Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
+
+Route::view('/producto/correo/contacto','emails.productos.productosMail')->name('productos-mail');  //Plantilla de correo de productos
+
+Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
 
 Auth::routes();
 
