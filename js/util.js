@@ -28,7 +28,6 @@ $(document).ready(function () {
         },
     });
 
-
     /*[ Sidebar ]
             ===========================================================*/
     var trigger = $(".hamburger"),
@@ -56,7 +55,6 @@ $(document).ready(function () {
     $('[data-toggle="offcanvas"]').click(function () {
         $("#wrapper").toggleClass("toggled");
     });
-
 
     /*==================================================================
                    [ Slick1 ]*/
@@ -188,50 +186,48 @@ $(document).ready(function () {
     });
 
     $(".container-box__one").slick({
-
         slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
-        arrows:false,
+        arrows: false,
         speed: 8000,
         pauseOnHover: true,
-        cssEase: 'linear',
+        cssEase: "linear",
         infinite: true,
         variableWidth: true,
     });
 
-
-    
-    $('.soat-slider').slick({
+    $(".soat-slider, .soat-slider-motor").slick({
         dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows:true,
+        arrows: true,
         prevArrow: '<button class="slick-prev slick-arrow"></button>',
         nextArrow: '<button class="slick-next slick-arrow"></button>',
         responsive: [
-          {
-            breakpoint: 960,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            }
-          },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ]
-      });
+            {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ],
+    });
 
+    /*==================================================================
+    [ conoce-easyyy ]*/
 });
-

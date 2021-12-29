@@ -42,6 +42,8 @@ Route::view('/producto/personas/landing','productos.personas.landing')->name('pe
 Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
 
 Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
+Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');
+Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('terminos-y-condiciones');
 
 Route::view('/producto/correo/contacto','emails.productos.productosMail')->name('productos-mail');  //Plantilla de correo de productos
 

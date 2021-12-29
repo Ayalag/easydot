@@ -81,7 +81,7 @@
                 <button type="submit" class="btn">iniciar sesión</button>
                 <button type="submit" class="btn">crear cuenta</button>
             </div>
-        </div>        
+        </div>
     </div>
 @endsection
 
@@ -120,7 +120,7 @@
                     <h1>hogar</h1>
                 </div>
                 <div class="box-category__button">
-                    <a href="{{route ('hogar-landing') }}">ver planes</a>
+                    <a href="{{ route('hogar-landing') }}">ver planes</a>
                 </div>
             </div>
             <div class="box ">
@@ -169,25 +169,25 @@
                     <div class="step-one-letter shadow-lg">
                         <div>1</div>
                         <div>
-                            Selecciona la categoria del 
-                                producto que buscas y elige 
-                                tu opción favorita.
+                            Selecciona la categoria del
+                            producto que buscas y elige
+                            tu opción favorita.
                         </div>
                     </div>
                     <div class="step-two-letter shadow-lg">
                         <div>2</div>
                         <div>
-                            Ingresa tus datos y los del 
-                               producto que seleccionaste.
+                            Ingresa tus datos y los del
+                            producto que seleccionaste.
                         </div>
                     </div>
                     <div class="step-three-letter shadow-lg">
                         <div>3</div>
                         <div>
-                           Realiza el pago y listo,
-                                estarás recibiendo el 
-                                certificado en tu correo 
-                                electronico
+                            Realiza el pago y listo,
+                            estarás recibiendo el
+                            certificado en tu correo
+                            electronico
                         </div>
                     </div>
                 </div>
@@ -413,7 +413,8 @@
                     <img src="{{ asset('/public/includes/images/logos-aliados/mapfre.png') }}" alt="Mapfre">
                 </div>
                 <div class="col-sm-4 col-4 my-auto sonrie">
-                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
+                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}"
+                        alt="Panama Sonrie">
                 </div>
             </div>
         </div>

@@ -53,10 +53,10 @@
                 <a href="#works" data-toggle="dropdown">Conoce easy. <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="#">reseña easy</a></li>
-                    <li><a class="underline" href="#">compañías aliadas</a></li>
-                    <li><a class="underline" href="#">preguntas frecuentes</a></li>
-                    <li><a class="underline" href="#">términos y Condiciones</a></li>
+                    <li><a class="underline" href="/conoce-easy">reseña easy</a></li>
+                    <li><a class="underline" href="/centro-de-ayuda#partners">compañías aliadas</a></li>
+                    <li><a class="underline" href="/centro-de-ayuda#faq">preguntas frecuentes</a></li>
+                    <li><a class="underline" href="/terminos-y-condiciones">términos y Condiciones</a></li>
                 </ul>
             </li>
             {{-- <li><a href="#followme">Follow me</a></li> --}}
@@ -78,7 +78,8 @@
 
 </div>
 <div class="header-container__logo basic-drop-shadow">
-    <a href="/"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}" alt="easydot.com.pa"></a>
+    <a href="/"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}"
+            alt="easydot.com.pa"></a>
 </div>
 <!-- /#wrapper -->
 
