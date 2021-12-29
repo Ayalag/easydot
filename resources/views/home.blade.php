@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
+            <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final2.png')">
                 <div class="container container-slider">
                     <div class="layer-slick1">
                         <span class="slider-text-descripcion">adquiere tu póliza <br> de PERSONA desde</span>
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
+            {{-- <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
                 <div class="container container-slider">
                     <div class="layer-slick1">
                         <span class="slider-text-descripcion">adquiere tu póliza <br> de HOGAR desde</span>
@@ -68,7 +68,7 @@
                         </x-a-link>
                     </x-btn-main>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 

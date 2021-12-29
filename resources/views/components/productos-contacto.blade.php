@@ -26,7 +26,6 @@
         <div class="footer text-center">
             <button type="submit" class="btn btn-primary btn-sm">enviar</button>
         </div>
-
     </form>
 </div>
 

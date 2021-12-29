@@ -2030,7 +2030,7 @@ button[class="btn-comprar"] > a {
 }
 
 .container-general__info_partners {
-    background-image: url("/easydot/public/includes/images/centro-de-ayuda/linea-back.png");
+    background-image: url("/public/includes/images/centro-de-ayuda/linea-back.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2284,7 +2284,7 @@ button[class="btn-comprar"] > a {
     -moz-background-size: cover;
     -o-background-size: cover;
     height: 541px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 /*-------------------------------*/
@@ -2331,4 +2331,25 @@ button[class="btn-comprar"] > a {
 
 /*-------------------------------*/
 /* terminos y condiciones /fin\  */
-/*-------------------------------*/ ;
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*     formulario Contact US     */
+/*-------------------------------*/
+.container-formulario__contact-us {
+    padding: 1.5rem;
+    color: var(--easyBlue);
+    border-radius: 10px;
+    width: 20rem;
+    margin: 0 12rem;
+    background: white;
+}
+
+.container-formulario__contact-us__titulo {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+/*-------------------------------*/
+/* formulario Contact US  /fin\  */
+/*-------------------------------*/

@@ -135,7 +135,8 @@
     </div>
     <div class="container-fluid container-footer">
         <div class="container container-form">
-            Hola mundo
+            {{-- Hola mundo --}}
+            <x-contact-us />
         </div>
     </div>
 
