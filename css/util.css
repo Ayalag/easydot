@@ -2276,7 +2276,7 @@ button[class="btn-comprar"] > a {
 }
 
 .container-footer {
-    background-image: url("/easydot/public/includes/images/conocenos/footer-conocenos.png");
+    background-image: url("/public/includes/images/conocenos/footer-conocenos.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
