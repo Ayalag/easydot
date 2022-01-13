@@ -15,9 +15,10 @@
     <!--===============================================================================================-->
     {{-- <link rel="icon" href="{{ url('css/favicon.jpg') }}"> --}}
     <!--===============================================================================================-->
-    <link href="{{ url('css/app.css')}}" rel="stylesheet">
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ url('public/includes/vendor/animsition/css/animsition.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ url('public/includes/vendor/animsition/css/animsition.min.css') }}">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
         integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
@@ -30,8 +31,10 @@
     <!--===============================================================================================-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!--===============================================================================================-->
+
 
 </head>
 

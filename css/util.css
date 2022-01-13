@@ -1458,7 +1458,7 @@ html {
     line-height: 1;
     justify-content: center;
     text-align: center;
-    height: 300px;
+    height: auto;
     background-color: #333333;
     color: #ffffff;
     font-size: 1.5rem;
@@ -1466,17 +1466,16 @@ html {
     z-index: 2;
 }
 
-@media screen and (max-width: 768px) {
-    .sura > img {
+/* @media screen and (max-width: 768px) {
+    .bartoli__aliados,
+    .mapfre__aliados,
+    .optima__aliados,
+    .sura__aliados,
+    .nacional__aliados,
+    .panamasonrie__aliados > img {
         width: 110px;
     }
-    .mapfre > img {
-        width: 125px;
-    }
-    .sonrie > img {
-        width: 100px;
-    }
-}
+} */
 
 /*-------------------------------*/
 /*            Aliados            */
@@ -1633,9 +1632,12 @@ input[name="categoria"]:checked + .clickable {
 }
 
 .card-container__insurance {
-    height: 528px;
+    height: 595px;
     width: 350px;
 }
+/* .card-container__insurance.erm {
+    height: 595px;
+} */
 
 .card_box {
     margin-left: 15px;
@@ -1975,27 +1977,6 @@ button[class="btn-comprar"] > a {
 /*-------------------------------*/
 
 /*-------------------------------*/
-/*       Coberura Autos           */
-/*-------------------------------*/
-
-.container-cobertura {
-    height: 100vh;
-    color: var(--easyBlue);
-    font-weight: 800;
-    font-size: 2rem;
-}
-
-.container-daños__terceros,
-.container-cobertura__completa {
-    padding: 1rem;
-    width: 16rem;
-}
-
-/*-------------------------------*/
-/*      Coberura Autos  /fin\    */
-/*-------------------------------*/
-
-/*-------------------------------*/
 /*      Centro de Ayuda          */
 /*-------------------------------*/
 
@@ -2030,7 +2011,7 @@ button[class="btn-comprar"] > a {
 }
 
 .container-general__info_partners {
-    background-image: url("/public/includes/images/centro-de-ayuda/linea-back.png");
+    background-image: url("/easydot/public/includes/images/centro-de-ayuda/linea-back.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2276,7 +2257,7 @@ button[class="btn-comprar"] > a {
 }
 
 .container-footer {
-    background-image: url("/public/includes/images/conocenos/footer-conocenos.png");
+    background-image: url("/easydot/public/includes/images/conocenos/footer-conocenos.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2352,4 +2333,57 @@ button[class="btn-comprar"] > a {
 }
 /*-------------------------------*/
 /* formulario Contact US  /fin\  */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*       Coberura Buttons           */
+/*-------------------------------*/
+
+.container-cobertura {
+    height: 100vh;
+    color: var(--easyBlue);
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.container-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-bottom {
+    font-size: 1.5rem;
+    position: relative;
+    margin: 10px;
+    width: 30%;
+    height: 7rem;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    cursor: pointer;
+}
+
+.box:hover {
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.muted-buttons {
+    font-size: 0.8rem;
+}
+
+/* .container-daños__terceros,
+.container-cobertura__completa {
+    padding: 1rem;
+    width: 16rem;
+} */
+
+/*-------------------------------*/
+/*      Coberura Buttons  /fin\    */
 /*-------------------------------*/

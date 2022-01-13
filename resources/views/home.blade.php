@@ -132,7 +132,7 @@
                     <h1>personas</h1>
                 </div>
                 <div class="box-category__button">
-                    <a href="{{ route('personas-landing') }}">ver planes</a>
+                    <a href="{{ route('personas-cobertura') }}">ver planes</a>
                 </div>
             </div>
             <div class="box ">
@@ -400,23 +400,60 @@
     </div>
 
     <div class="container-fluid container-aliados">
-        <div class="container-aliados_title pt-5">
+        <div class="container-aliados_title p-5">
             <p>Trabajamos y estamos respaldados por las mejores compañías del</p>
             <p>mercado panameño</p>
         </div>
-        <div class="container container_aliados__image">
+        <div class="containerl-fluid container_aliados__image pb-5">
             <div class="row">
-                <div class="col-sm-4 col-4 my-auto sura">
+                <div class="col-sm bartoli__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/bartoli/bartoli.png') }}"
+                        alt="Bartoli">
+                </div>
+                <div class="col-sm mapfre__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/mpfre/mapfre.png') }}" alt="Mapfre">
+                </div>
+                <div class="col-sm optima__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/optima/optima.png') }}" alt="optima">
+                </div>
+                <div class="col-sm sura__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/sura/sura.png') }}" alt="sura">
+                </div>
+                <div class="col-sm nacional__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/nacional/nacional.png') }}"
+                        alt="nacional">
+                </div>
+                <div class="col-sm panamasonrie__aliados">
+                    <img src="{{ asset('/public/includes/images/logos-aliados/gris/panamasonrie/panamsonrie.png') }}"
+                        alt="panamsonrie">
+                </div>
+            </div>
+        </div>
+        {{-- <div class="container container_aliados__image">
+            <div class="row">
+                <div class="col-sm my-auto-2 col-2 my-auto sura">
                     <img src="{{ asset('/public/includes/images/logos-aliados/sura.png') }}" alt="Sura">
                 </div>
-                <div class="col-sm-4 col-4 my-auto mapfre">
+                <div class="col-sm-2 col-2 my-auto mapfre">
                     <img src="{{ asset('/public/includes/images/logos-aliados/mapfre.png') }}" alt="Mapfre">
                 </div>
-                <div class="col-sm-4 col-4 my-auto sonrie">
+                <div class="col-sm-2 col-2 my-auto sonrie">
+                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}"
+                        alt="Panama Sonrie">
+                </div>
+                <div class="col-sm-2 col-2 my-auto sonrie">
+                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}"
+                        alt="Panama Sonrie">
+                </div>
+                <div class="col-sm-2 col-2 my-auto sonrie">
+                    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}"
+                        alt="Panama Sonrie">
+                </div>
+                <div class="col-sm-2 col-2 my-auto sonrie">
                     <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}"
                         alt="Panama Sonrie">
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection

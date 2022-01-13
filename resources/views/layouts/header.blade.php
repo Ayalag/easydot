@@ -28,9 +28,9 @@
                 <a href="#works" data-toggle="dropdown">personas <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="#">ap + gastos médicos</a></li>
-                    <li><a class="underline" href="#">ap motos</a></li>
-                    <li><a class="underline" href="#">seguro de vida</a></li>
+                    <li><a class="underline" href="/producto/personas/er">ap + gastos médicos</a></li>
+                    <li><a class="underline" href="/producto/personas/em">ap motos</a></li>
+                    <li><a class="underline" href="/producto/personas/landing">seguro de vida</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -95,7 +95,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/producto/personas/landing'>
+        <x-a-link link='/producto/personas/cobertura'>
             personas
         </x-a-link>
     </x-btn-main>
@@ -110,7 +110,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/personas/dental'>
             dental
         </x-a-link>
     </x-btn-main>
