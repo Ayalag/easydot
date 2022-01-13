@@ -37,9 +37,16 @@ Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-la
 Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
 
 Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
+
+Route::view('/producto/personas/cobertura','productos.personas.cobertura')->name('personas-cobertura');
 Route::view('/producto/personas/landing','productos.personas.landing')->name('personas-landing');
+Route::view('/producto/personas/er','productos.personas.er')->name('personas-er');
+Route::view('/producto/personas/erm','productos.personas.erm')->name('personas-erm');
+Route::view('/producto/personas/dental','productos.personas.dental')->name('personas-dental');
 
 Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
+Route::view('/producto/mascotas/coberturas','productos.mascotas.coberturas')->name('mascotas-cobertura');
+Route::view('/producto/mascotas/veterinario','productos.mascotas.veterinario')->name('mascotas-veterinario');
 
 Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');
@@ -51,4 +58,6 @@ Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('/pagosFacil','pagos')->name('pagalofacil');//pruebas de pago
