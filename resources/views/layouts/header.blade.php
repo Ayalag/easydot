@@ -37,12 +37,13 @@
                 <a href="#works" data-toggle="dropdown">hogar <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="#">contenido del hogar</a></li>
-                    <li><a class="underline" href="#">cobertura Completa</a></li>
+                    <li><a class="underline" href="/producto/hogar/hogar">contenido del hogar</a></li>
+                    <li><a class="underline" href="producto/hogar/landing">cobertura Completa</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">centro de ayuda <span class="caret"></span></a>
+                <a href="/centro-de-ayuda" data-toggle="dropdown">centro de ayuda <span
+                        class="caret"></span></a>
                 {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     <div class="dropdown-header">Dropdown heading</div>
                     <li><a class="underline" href="#">contacto easy.</a></li>
@@ -100,7 +101,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/producto/hogar/landing'>
+        <x-a-link link='/producto/hogar/cobertura'>
             hogar
         </x-a-link>
     </x-btn-main>

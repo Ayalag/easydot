@@ -120,7 +120,7 @@
                     <h1>hogar</h1>
                 </div>
                 <div class="box-category__button">
-                    <a href="{{ route('hogar-landing') }}">ver planes</a>
+                    <a href="{{ route('hogar-cobertura') }}">ver planes</a>
                 </div>
             </div>
             <div class="box ">
