@@ -27,10 +27,13 @@ class HomeController extends Controller
     }
 
     public function pay(){
+
+
+
         $data = array(
             "CCLW" => '1930E9ADB324756FBF714E52D7EFB6B67F362B405E5A3FA33579D2D410FC6B2862596A2388CE682B21FACF6E9979B4675B859355812C98FC5B409ED4533DAA3D',
             "CMTN" => 50.00,
-            "CDSC" => 'pruebas',
+            "CDSC" => 'Pruebas',
             // "RETURN_URL" => '68747470733A2F2F70616775656C6F666163696C73612E7A656E6465736B2E636F6D2F6167656E742F66696C746572732F3439313933393538',
             "PF_CF" => '5B7B226964223A227472616D6974654964222C226E616D654F724C6162656C223A2249642064656C205472616D697465222C2276616C7565223A2254494432333435227D5D',
             "PARM_1" => '19816201',
@@ -38,7 +41,7 @@ class HomeController extends Controller
             $postR="";
             foreach($data as $mk=>$mv) { $postR .= "&".$mk."=".$mv; }
             $ch = curl_init();
-            curl_setopt($ch,CURLOPT_URL, "https://sandbox.paguelofacil.com/");
+            curl_setopt($ch,CURLOPT_URL, "https://secure.paguelofacil.com/LinkDeamon.cfm");
             
             //curl_setopt($ch,CURLOPT_URL, "https://secure.paguelofacil.com/LinkDeamon.cfm/AUTH");   ****En Caso de querer Pre-autorizar  y capturar en procesos separados.
             curl_setopt($ch, CURLOPT_POST, true);

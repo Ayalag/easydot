@@ -1,4 +1,4 @@
-<body>
+{{-- <body>
     <div align="center">
         <div id="container-form" style="width: 45%;">
         </div>
@@ -69,4 +69,4 @@
             setup
         );
     }
-</script>
+</script> --}}

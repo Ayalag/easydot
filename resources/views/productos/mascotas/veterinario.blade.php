@@ -23,7 +23,7 @@
                                         </div>
                                     </div>
                                     <div class="card-detail">
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Gastos medicos por accidente
                                             </div>
@@ -31,7 +31,7 @@
                                                 650.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Robo o extravio de mascota
                                             </div>
@@ -39,7 +39,7 @@
                                                 1,500.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Responsabilidad Civil
                                             </div>
@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
                                     <div class="card-detail">
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Gastos médicos por accidente
                                             </div>
@@ -101,7 +101,7 @@
                                                 650.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 robo o extravio de mascota
                                             </div>
@@ -109,7 +109,7 @@
                                                 1,500.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Responsabilidad Civil
                                             </div>
@@ -117,7 +117,7 @@
                                                 5,000.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Asistencia legal
                                             </div>
@@ -125,7 +125,7 @@
                                                 1 evento
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Consulta veterinaria telefónica
                                             </div>
@@ -133,7 +133,7 @@
                                                 Ilimitado
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Vacunación <span class="h6">(Mayores de 6 meses)</span>
                                             </div>
@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
                                     <div class="card-detail">
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Gastos médicos por accidente
                                             </div>
@@ -195,7 +195,7 @@
                                                 650.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 robo o extravio de mascota
                                             </div>
@@ -203,7 +203,7 @@
                                                 1,500.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Responsabilidad Civil
                                             </div>
@@ -211,7 +211,7 @@
                                                 5,000.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Asistencia legal
                                             </div>
@@ -219,7 +219,7 @@
                                                 1 evento
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Consulta veterinaria telefónica
                                             </div>
@@ -227,7 +227,7 @@
                                                 Ilimitado
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Vacunación <span class="h6">(Mayores de 6 meses)</span>
                                             </div>
@@ -235,7 +235,7 @@
                                                 50.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-9">
                                                 Esterilización <span class="h6">(si compromete su salud)</span>
                                             </div>
@@ -243,7 +243,7 @@
                                                 150.00
                                             </div>
                                         </div>
-                                        <div class="row no-gutters">
+                                        <div class="row no-gutters pb-1">
                                             <div class="col-8">
                                                 Extracción dental por accidente
                                             </div>

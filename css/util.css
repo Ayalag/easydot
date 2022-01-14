@@ -11,6 +11,9 @@
     --star-background: var(--easyRose);
 }
 
+.fntw-600 {
+    font-weight: 600;
+}
 .fntw-800 {
     font-weight: 800;
 }
@@ -56,6 +59,7 @@ input[type="radio"]:before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    background-color: lightgray;
 }
 
 input[type="radio"]:checked:before {
@@ -1665,13 +1669,21 @@ input[name="categoria"]:checked + .clickable {
     font-size: 15px;
 }
 
+.card-list__items ul li {
+    margin-bottom: 8px;
+}
+
+.card-list__items ul li:before {
+    margin: 0px 12px 0px -16px;
+}
+
 .card-list__items ul li::before {
     content: "\2022";
     color: var(--easyRose);
     font-weight: bold;
     display: inline-block;
-    width: 1em;
-    margin-bottom: 8px;
+    /* width: 1em; */
+    /* margin-bottom: 8px; */
 }
 
 .grouping_price {
@@ -1723,6 +1735,19 @@ button[class="btn-comprar"] > a {
 /*-------------------------------*/
 
 /*-------------------------------*/
+/*       Global inputForm        */
+/*-------------------------------*/
+.input__style {
+    background-color: #eff1f4;
+    border: none;
+    border-radius: 8px;
+}
+
+/*-------------------------------*/
+/*   Global inputForm  FIN       */
+/*-------------------------------*/
+
+/*-------------------------------*/
 /*       Register Page Auto      */
 /*-------------------------------*/
 
@@ -1731,7 +1756,7 @@ button[class="btn-comprar"] > a {
 }
 
 .product-card-selected {
-    width: 30rem;
+    width: 40rem;
 }
 
 .detail-selected {
@@ -1782,8 +1807,8 @@ button[class="btn-comprar"] > a {
     line-height: 35px;
     display: block;
     font-size: 18px;
-    color: #333;
-    background: white;
+    color: darkgray;
+    background: lightgray;
     border-radius: 25px;
     margin: 0 auto 10px auto;
     position: relative;
@@ -1796,7 +1821,7 @@ button[class="btn-comprar"] > a {
     content: "";
     width: 100%;
     height: 14px;
-    background: white;
+    background: lightgray;
     position: absolute;
     left: -50%;
     top: 9px;
@@ -1821,6 +1846,28 @@ button[class="btn-comprar"] > a {
     color: var(--easyBlue);
     border-radius: 1%;
     height: max-content;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: flex;
+    padding: 10px 50px;
+    cursor: pointer;
+    color: gray;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 /*-------------------------------*/

@@ -29,9 +29,7 @@ Route::get('/producto/motor', function () {
     return view('productos.motor.motor');
 })->name('motor');
 
-Route::get('/registro', function () {
-    return view('registro.registro');
-})->name('registro-motor');
+
 
 Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
 Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
@@ -43,6 +41,7 @@ Route::view('/producto/personas/landing','productos.personas.landing')->name('pe
 Route::view('/producto/personas/er','productos.personas.er')->name('personas-er');
 Route::view('/producto/personas/erm','productos.personas.erm')->name('personas-erm');
 Route::view('/producto/personas/dental','productos.personas.dental')->name('personas-dental');
+Route::view('/producto/personas/registro','productos.personas.registro')->name('personas-registro');
 
 Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
 Route::view('/producto/mascotas/coberturas','productos.mascotas.coberturas')->name('mascotas-cobertura');
@@ -58,6 +57,7 @@ Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pagosFacil', [App\Http\Controllers\HomeController::class, 'pay'])->name('pagalofacil');
 
-Route::view('/pagosFacil','pagos')->name('pagalofacil');//pruebas de pago
+// Route::view('/pagosFacil','pagos')->name('pagalofacil');//pruebas de pago
+Route::view('/pruebaslivewire','pruebaslivewire')->name('multistep');

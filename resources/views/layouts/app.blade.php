@@ -34,7 +34,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!--===============================================================================================-->
-
+    @livewireStyles
 
 </head>
 
@@ -47,6 +47,8 @@
     <div>@yield('content')</div>
 
     <div>@include('layouts.footer')</div>
+
+    @livewireScripts
 
     <!--===============================================================================================-->
     <script src="{{ url('js/app.js') }}"></script>
