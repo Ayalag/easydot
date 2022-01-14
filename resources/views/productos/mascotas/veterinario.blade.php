@@ -51,7 +51,7 @@
                                     <div class="grouping_price">
                                         <div class="row mt-4 annuity">
                                             <div class="col-12 text-muted text-center">
-                                                Vigencia por 1 año / 1 pago anual
+                                                Vigencia por 1 año / 1 pago <br> anual
                                             </div>
                                         </div>
                                         <div class="row mb-3 price">

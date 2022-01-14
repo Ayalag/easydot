@@ -19,7 +19,7 @@
         /*        Cobertura              */
         /*-------------------------------*/
         document.querySelector('#veterinario').addEventListener('click', function(e) {
-            location.href = "/producto/personas/er";
+            location.href = "/producto/mascotas/veterinario";
         });
     </script>
 

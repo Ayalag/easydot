@@ -21,7 +21,7 @@
                 <a href="#works" data-toggle="dropdown">mascotas <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="#">seguro Veterinario</a></li>
+                    <li><a class="underline" href="/producto/mascotas/coberturas">seguro Veterinario</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -90,7 +90,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/mascotas/coberturas'>
             mascotas
         </x-a-link>
     </x-btn-main>

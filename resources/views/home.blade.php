@@ -144,7 +144,7 @@
                     <h1>mascota</h1>
                 </div>
                 <div class="box-category__button">
-                    <a href="/persona">ver planes</a>
+                    <a href="/producto/mascotas/coberturas">ver planes</a>
                 </div>
             </div>
         </div>
