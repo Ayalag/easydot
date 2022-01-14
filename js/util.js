@@ -199,7 +199,7 @@ $(document).ready(function () {
     });
 
     $(".soat-slider, .soat-slider-motor").slick({
-        dots: false,
+        dots: true,
         infinite: false,
         speed: 300,
         slidesToShow: 3,
@@ -211,6 +211,7 @@ $(document).ready(function () {
             {
                 breakpoint: 960,
                 settings: {
+                    arrows: false,
                     slidesToShow: 2,
                     slidesToScroll: 1,
                 },
@@ -218,6 +219,7 @@ $(document).ready(function () {
             {
                 breakpoint: 768,
                 settings: {
+                    arrows: false,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },

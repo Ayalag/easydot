@@ -20,9 +20,16 @@
 .fntw-900 {
     font-weight: 900;
 }
-.fnt-size-22px {
-    font-size: 22px;
+.fnt-size-1 {
+    font-size: 1rem;
 }
+.fnt-size-2 {
+    font-size: 2rem;
+}
+.fnt-size-3 {
+    font-size: 3rem;
+}
+
 .hide {
     display: none;
 }
@@ -42,6 +49,14 @@ div > p > span {
 .easyBlue600 {
     font-weight: 600;
     color: var(--easyBlue);
+}
+.easyBlue800 {
+    font-weight: 800;
+    color: var(--easyBlue);
+}
+.easyRose800 {
+    font-weight: 800;
+    color: var(--easyRose);
 }
 
 /* input[type='radio'] {
@@ -830,6 +845,12 @@ html {
     .slider-text-price {
         font-size: 25px;
     }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: var(--easyRose);
+    font-size: 30px;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -1636,12 +1657,9 @@ input[name="categoria"]:checked + .clickable {
 }
 
 .card-container__insurance {
-    height: 595px;
+    height: 615px;
     width: 350px;
 }
-/* .card-container__insurance.erm {
-    height: 595px;
-} */
 
 .card_box {
     margin-left: 15px;
@@ -2433,4 +2451,35 @@ input[type="number"] {
 
 /*-------------------------------*/
 /*      Coberura Buttons  /fin\    */
+/*-------------------------------*/
+
+/*-------------------------------*/
+/*           producto Hogar      */
+/*-------------------------------*/
+
+.container-hogar {
+    color: var(--easyBlue);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    font-size: 2.1rem;
+    text-align: center;
+}
+
+.container-hogar__subtitle {
+    text-align: center;
+    font-weight: 800;
+    width: 24rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.container-hogar__subtitle-2 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/*-------------------------------*/
+/*     producto Hogar  /FIN\     */
 /*-------------------------------*/

@@ -35,6 +35,7 @@ Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-la
 Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
 
 Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
+Route::view('/producto/hogar/hogar','productos.hogar.hogar')->name('hogar-hogar');
 
 Route::view('/producto/personas/cobertura','productos.personas.cobertura')->name('personas-cobertura');
 Route::view('/producto/personas/landing','productos.personas.landing')->name('personas-landing');
