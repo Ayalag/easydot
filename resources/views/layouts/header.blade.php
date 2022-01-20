@@ -13,7 +13,7 @@
                 <a href="#works" data-toggle="dropdown">autos <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    <li><a class="underline" href="/userconfirmation">soat</a></li>
+                    <li><a class="underline" href="/producto/motor/motor">soat</a></li>
                     <li><a class="underline" href="{{ route('autos-landing') }}">cobertura Completa</a></li>
                 </ul>
             </li>
@@ -86,7 +86,7 @@
 
 <div class="menu-container container-fluid">
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/motor/cobertura'>
             autos
         </x-a-link>
     </x-btn-main>
@@ -106,7 +106,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/userconfirmation'>
+        <x-a-link link='/producto/motor/cobertura'>
             motos
         </x-a-link>
     </x-btn-main>

@@ -1,11 +1,10 @@
 <?php
 
-use App\Mail\ContactoMailable;
+use App\Http\Controllers\productos\motor\motorController;
+use App\Http\Livewire\Productos\Motor\Registro;
 use App\Mail\landingMailContactForm;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\landing\MailSender;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +17,7 @@ use App\Http\Controllers\landing\MailSender;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 Route::get('/userconfirmation', function () {
     return view('userConfirmation');
 })->name('userconfirmation');
@@ -31,8 +28,13 @@ Route::get('/producto/motor', function () {
 
 
 
+Route::view('/','home')->name('home');
+
 Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
 Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
+Route::get('/producto/motor/motor',[motorController::class,'index'])->name('autos-motor');
+Route::get('/producto/motor/registro/{motor}/{type}/{card}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
+
 
 Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
 Route::view('/producto/hogar/hogar','productos.hogar.hogar')->name('hogar-hogar');

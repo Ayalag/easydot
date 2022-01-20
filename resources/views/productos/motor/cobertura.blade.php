@@ -4,41 +4,30 @@
 
 
     <div class="container-fluid container-cobertura pt-5">
-        <div class="container-check">
-            <div class="container container-daños__terceros mb-3  shadow-lg bg-white rounded">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label underline" for="terceros">daños a terceros</label>
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="terceros" value="option1">
-                </div>
+        <div class="container container-button">
+            <div class="box-bottom pt-5" id="danosaterceros">Daños a terceros
+                <div class="muted-buttons text-muted pt-1">SOAT</div>
             </div>
-            <div class="container container-cobertura__completa  shadow-lg bg-white rounded">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label underline" for="completa">cobertura completa</label>
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="completa" value="option1">
-                </div>
+            <div class="box-bottom pt-5" id="coberturacompleta">Cobertura completa
             </div>
         </div>
+
     </div>
 
 @endsection
 
 @section('scripts')
 
-<script>
-    /*-------------------------------*/
-    /*        Cobertura              */
-    /*-------------------------------*/
-
-
-    document.querySelector('#terceros').addEventListener('click', function (e) {
-        location.href = "/producto/motor";
-    });
-
-    document.querySelector('#completa').addEventListener('click', function (e) {
-        location.href = "/producto/motor/landing";
-    });
-
-</script>
+    <script>
+        /*-------------------------------*/
+        /*        Cobertura              */
+        /*-------------------------------*/
+        document.querySelector('#danosaterceros').addEventListener('click', function(e) {
+            location.href = "/producto/motor/motor";
+        });
+        document.querySelector('#coberturacompleta').addEventListener('click', function(e) {
+            location.href = "roducto/motor/landing";
+        });
+    </script>
 
 @endsection
-

@@ -171,8 +171,8 @@
       }
 
       .container-footer_ssrp {
-              font-size: 0.8rem
-          }
+          font-size: 0.8rem
+      }
 
       .container-footer_ssrp>div:first-child {
           margin-right: 10px
@@ -193,28 +193,28 @@
               <div class="col-xs-6 col-md-3">
                   <h6>Categorias</h6>
                   <ul class="footer-links">
-                      <li><a href="">Autos</a></li>
-                      <li><a href="">Hogar</a></li>
-                      <li><a href="">Motos</a></li>
-                      <li><a href="">Mascotas</a></li>
-                      <li><a href="">Personas</a></li>
+                      <li><a href="/producto/motor/cobertura">Autos</a></li>
+                      <li><a href="/producto/hogar/cobertura">Hogar</a></li>
+                      <li><a href="/producto/motor/cobertura">Motos</a></li>
+                      <li><a href="/producto/mascotas/coberturas">Mascotas</a></li>
+                      <li><a href="/producto/personas/cobertura">Personas</a></li>
                   </ul>
               </div>
 
               <div class="col-xs-6 col-md-3">
                   <h6>Quick Links</h6>
                   <ul class="footer-links">
-                      <li><a href="">Conoce easy</a></li>
-                      <li><a href="">Centro de ayuda</a></li>
-                      <li><a href="">Términos y condiciones</a></li>
+                      <li><a href="/conoce-easy">Conoce easy</a></li>
+                      <li><a href="/centro-de-ayuda">Centro de ayuda</a></li>
+                      <li><a href="/terminos-y-condiciones">Términos y condiciones</a></li>
                   </ul>
               </div>
               <div class="col-sm-12 col-md-6">
-                {{-- <h6>Acerca de easydot</h6>
+                  {{-- <h6>Acerca de easydot</h6>
                 <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, odio
                     blanditiis? Illum placeat consequuntur voluptate dolores aspernatur quo maxime nesciunt ea tempore
                     eveniet, neque non. Ea voluptates veritatis quo eaque?</p> --}}
-            </div>
+              </div>
           </div>
           <hr>
       </div>
@@ -228,8 +228,10 @@
 
               <div class="col-md-4 col-sm-6 col-xs-12">
                   <ul class="social-icons">
-                      <li><a class="facebook" href="https://www.facebook.com/easydotpanama" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a class="dribbble" href="https://www.instagram.com/easydotpanama/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                      <li><a class="facebook" href="https://www.facebook.com/easydotpanama" target="_blank"><i
+                                  class="fab fa-facebook-f"></i></a></li>
+                      <li><a class="dribbble" href="https://www.instagram.com/easydotpanama/" target="_blank"><i
+                                  class="fab fa-instagram"></i></a></li>
                       <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
                   </ul>
               </div>

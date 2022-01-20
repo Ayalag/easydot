@@ -1244,7 +1244,7 @@ html {
     align-items: center;
     background-color: #eff1f4;
     color: var(--easyBlue);
-    height: 500px;
+    height: 740px;
     position: relative;
 }
 
@@ -1362,6 +1362,10 @@ html {
     z-index: 2;
     bottom: -73px;
     left: 100px;
+}
+
+.slick-track {
+    margin: auto;
 }
 
 .container-box__one,
@@ -1659,6 +1663,7 @@ input[name="categoria"]:checked + .clickable {
 .card-container__insurance {
     height: 615px;
     width: 350px;
+    margin: auto;
 }
 
 .card_box {

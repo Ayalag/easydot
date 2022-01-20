@@ -483,8 +483,19 @@
 
 
 
+public $motor;
+public $type;
+public $card;
+
+protected $queryString = ['motor','type','card'];
 
 
+,[
+          'selected' =>  motor::where('Motor_tipo' ,$this->motor)
+            ->where('Motor_Tipo_Seguro',$this->type)
+            ->where('Motor_tipo_Aseguradora', $this->card)
+            ->get()
+        ]
 
 
 

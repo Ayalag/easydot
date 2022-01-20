@@ -181,7 +181,7 @@
                     <div>
                         <div class="card card-container__insurance erm">
                             <div class="card-body">
-                                <p class="card-title d-flex justify-content-end">
+                                <p class="card-title d-flex justify-content-end pb-2">
                                     <img src="{{ asset('/public/includes/images/logos-aliados/color/mapfre_color.png') }}"
                                         alt="">
                                 </p>
