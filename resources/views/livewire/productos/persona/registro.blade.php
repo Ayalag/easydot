@@ -265,12 +265,5 @@
                         </div>
                     </div>
                 </div>
-                <div class="container pt-3 d-flex flex-column text-center">
-                    <x-btn-main class='fntw-600 mt-3'>
-                        <x-a-link class="slider_btn__comprar" link='/autos'>
-                            siguiente
-                        </x-a-link>
-                    </x-btn-main>
-                </div>
             </form>
         </div>

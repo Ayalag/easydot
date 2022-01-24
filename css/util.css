@@ -1797,9 +1797,16 @@ button[class="btn-comprar"] > a {
     font-weight: 800;
 }
 
-.registro-datos__title,
+.registro-datos__title {
+    color: var(--easyBlue);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.registro-datos__subtitle,
 .registro-contactos__title {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
     color: var(--easyBlue);
 }
 
@@ -1867,7 +1874,7 @@ button[class="btn-comprar"] > a {
 .container-registro-datos,
 .container-registro-contactos {
     color: var(--easyBlue);
-    border-radius: 1%;
+    border-radius: 10px;
     height: max-content;
 }
 
