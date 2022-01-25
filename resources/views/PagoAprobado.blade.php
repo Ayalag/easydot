@@ -18,7 +18,7 @@
                 Hemos enviado un correo electrónico a la <br>
                 dirección que nos indicaste en tus datos, por <br>
                 lo que en un instante podr'as verlo en tu <br>
-                bandeja de entrada.</p>
+                bandeja de entrada..</p>
         </div>
     </div>
 
