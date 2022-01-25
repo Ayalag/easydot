@@ -81,6 +81,18 @@ input[type="radio"]:checked:before {
     background: var(--easyRose);
 }
 
+.btn_payeasy--load {
+    background: var(--easyRose);
+    box-shadow: 0 2px 7px rgb(104 107 113 / 25%);
+    border-radius: 5px;
+    padding: 13px 16px;
+    color: white;
+    font-size: medium;
+    transition: font-size 2s;
+    width: min-content;
+    border: none;
+}
+
 html,
 body,
 div,

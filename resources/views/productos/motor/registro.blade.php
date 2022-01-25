@@ -51,15 +51,11 @@
             </div>
         </div>
     </div>
-
     <div class="container container-registro mb-5">
-
         @isset($cardHtml)
             {!! $cardHtml[0]->html !!}
         @endisset
-
         <livewire:productos.motor.registro />
-
     </div>
 
 @endsection
@@ -71,5 +67,13 @@
             card[index].setAttribute("style", "top: 5.7rem; left: -2rem; border: none; border-radius:10px;")
             card[index].classList.add('shadow-lg');
         }
+
+        const insurance = $('input[name="seguro"]').val();
+        const type = $('input[name="tipo"]').val();
+        const amount = $('input[name="valor"]').val();
+
+        $(window).on('load', function() {
+            Livewire.emit("getInfoInsurance", insurance, type, amount);
+        })
     </script>
 @endsection

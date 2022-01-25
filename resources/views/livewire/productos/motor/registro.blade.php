@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="container container-registro-datos shadow-lg text-center">
-        <form action="">
+        <form wire:submit.prevent="submit">
             <div class="col-lg-4 offset-lg-4 pb-3">
                 <div class="row justify-content-center pt-5">
                     <input type="text" class="form-control input__style" id="placa" placeholder="Placa"
@@ -69,17 +69,15 @@
                                                 <input id="file-upload" type="file" />
                                             </div>
                                         </div>
-                                    </form>
+
                                 </div>
                                 <div class="container pb-5 pt-2 d-flex flex-column text-center">
-                                    <x-btn-main class='fntw-600 mt-3'>
-                                        <x-a-link class="slider_btn__comprar" link='/autos'>
-                                            siguiente
-                                        </x-a-link>
-                                    </x-btn-main>
-
+                                    <button class="btn_payeasy--load m-auto" id="process">
+                                        <span wire:loading class="spinner-border spinner-border-sm" role="status"
+                                            aria-hidden="true"></span>siguiente</button>
                                     <div class="pt-4 pb-5 mr-4">
                                         <a href="javascript:history.back()"><i class="fas fa-arrow-left easyRose800"></i> atrás</a>
                                     </div>
                                 </div>
+                                </form>
                             </div>

@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\productos\motor\motorController;
-use App\Http\Livewire\Productos\Motor\Registro;
 use App\Mail\landingMailContactForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\payeasyController;
+use App\Http\Controllers\productos\motor\motorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])
 
 Auth::routes();
 
-Route::get('/pagosFacil', [App\Http\Controllers\HomeController::class, 'pay'])->name('pagalofacil');
+Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 
-// Route::view('/pagosFacil','pagos')->name('pagalofacil');//pruebas de pago
+
 Route::view('/pruebaslivewire','pruebaslivewire')->name('multistep');
