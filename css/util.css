@@ -2507,3 +2507,35 @@ input[type="number"] {
 /*-------------------------------*/
 /*     producto Hogar  /FIN\     */
 /*-------------------------------*/
+
+/*-------------------------------*/
+/*       Payment Accepted        */
+/*-------------------------------*/
+.container-payment__accepted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: var(--easyBlue);
+}
+.container-payment__accepted--title {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.container-payment__accepted--subtitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.container-payment__accepted--legend {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: normal;
+}
+
+.container-payment__accepted--legend > p:last-child {
+    font-size: 0.9rem;
+}
+/*-------------------------------*/
+/*    Payment Accepted  /FIN\    */
+/*-------------------------------*/

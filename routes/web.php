@@ -64,4 +64,4 @@ Auth::routes();
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 
 
-Route::view('/pruebaslivewire','pruebaslivewire')->name('multistep');
+Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');

@@ -8,6 +8,7 @@ class payeasyController extends Controller
 {
     function payprocessresponce(){
         $response = $_REQUEST; 
-        dd($response);
+
+        return view('PagoAprobado');
     }
 }
