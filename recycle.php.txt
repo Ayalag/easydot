@@ -520,3 +520,24 @@ protected $queryString = ['motor','type','card'];
 
 *****************-----------***************
 
+
+
+    <div class="container container-identity__pets">
+        <div class="container-card__selected"></div>
+        <div class="container-icon__pet">
+            <div class="pet__dog">
+                <img src="{{ asset('/public/includes/images/registro/mascotas/perro.png') }}" alt="">
+                <div class="form-check form-check-inline pt-2 pl-4">
+                    <label class="form-check-label pr-2" for="inlineRadioPerro">perro</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pet__dog" value="dog">
+                </div>
+            </div>
+            <div class="pet__cat">
+                <img src="{{ asset('/public/includes/images/registro/mascotas/gato.png') }}" alt="">
+                <div class="form-check form-check-inline pt-2 pl-4">
+                    <label class="form-check-label pr-2" for="inlineRadioGato">gato</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pet__gato" value="gato">
+                </div>
+            </div>
+        </div>
+    </div>

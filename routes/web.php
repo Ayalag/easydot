@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\payeasyController;
 use App\Http\Controllers\productos\motor\motorController;
+use App\Http\Controllers\productos\veterinario\veterinarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +48,9 @@ Route::view('/producto/personas/erm','productos.personas.erm')->name('personas-e
 Route::view('/producto/personas/dental','productos.personas.dental')->name('personas-dental');
 Route::view('/producto/personas/registro','productos.personas.registro')->name('personas-registro');
 
-Route::view('/producto/mascotas/registro','productos.mascotas.registro')->name('mascotas-registro');
 Route::view('/producto/mascotas/coberturas','productos.mascotas.coberturas')->name('mascotas-cobertura');
-Route::view('/producto/mascotas/veterinario','productos.mascotas.veterinario')->name('mascotas-veterinario');
+Route::get('/producto/mascotas/veterinario',[veterinarioController::class,'index'])->name('mascotas-veterinario');
+Route::get('/producto/mascotas/registro/{aseguradora}/{plan}',[veterinarioController::class,'isnuranceSeleted'])->name('mascotas-registro');
 
 Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');

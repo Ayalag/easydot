@@ -1,4 +1,4 @@
-<div class="">
+<div>
     <div class="container-fluid mb-3">
         <div class="col-12 text-center">
             <div class="registro-datos__title">

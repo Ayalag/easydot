@@ -1,56 +1,78 @@
 @extends('layouts.app')
 
+@section('styles')
+
+    <style>
+        .container-registro {
+            /* height: 100vh; */
+            justify-content: center;
+            /* position: relative; */
+        }
+
+        .btn-comprar {
+            display: none
+        }
+
+        .card-container__insurance {
+            height: 474px !important;
+        }
+
+        .condicion_poliza {
+            position: relative;
+            top: 4rem;
+            margin-right: 5rem
+        }
+
+        .card-subtitle {
+            color: #ff0180 !important;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="file"]::placeholder,
+        textarea::placeholder {
+            /* Firefox, Chrome, Opera */
+            text-align: center;
+        }
+
+    </style>
+
 @section('content')
-
-<div class="container stepper__mascotas">
-    <div class="row mt-5">
-        <div class="col-3"></div>
-        <div class="col-12 col-md-8 offset-md-4 col-lg-10 offset-lg-2 col-xl-12 text-center">
-            <!-- progressbar -->
-            <ul id="progressbar">
-                <li class="active"></li>
-                <li class="active"></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col-5"></div>
-        <div class="col-12 col-md-8 offset-md-4 col-lg-10 offset-lg-2 col-xl-12 text-center">
-            <div class="registro-datos__title__mascotas">
-                <p>¡ya falta muy poco!</p>
-            </div>
-            <div class="registro-datos__subtitle__mascotas">
-                <p class="underline">datos personales</p>
+    <div class="container stepper">
+        <div class="row mt-5 justify-content-end">
+            {{-- <div class="col-3"></div> --}}
+            <div class="col-12 text-center">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active"></li>
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
-
-<div class="container container-identity__pets">
-    <div class="container-card__selected"></div>
-    <div class="container-icon__pet">
-        <div class="pet__dog">
-            <img src="{{ asset('/public/includes/images/registro/mascotas/perro.png') }}" alt="">
-            <div class="form-check form-check-inline pt-2 pl-4">
-                <label class="form-check-label pr-2" for="inlineRadioPerro">perro</label>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pet__dog" value="dog">
-            </div>
-        </div>
-        <div class="pet__cat">
-            <img src="{{ asset('/public/includes/images/registro/mascotas/gato.png') }}" alt="">
-            <div class="form-check form-check-inline pt-2 pl-4">
-                <label class="form-check-label pr-2" for="inlineRadioGato">gato</label>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="pet__gato" value="gato">
-            </div>
-        </div>
-    </div> 
-</div>
-
+    <div class="container container-registro mb-5">
+        @isset($cardHtml)
+            {!! $cardHtml[0]->html !!}
+        @endisset
+        <livewire:productos.mascotas.registro />
+    </div>
 @endsection
 
 @section('scripts')
-<script>
-    document.getElementById("landing-area").value = "mascota";
-</script>
+    <script>
+        let card = document.getElementsByClassName("card-container__insurance");
+        for (let index = 0; index < card.length; ++index) {
+            card[index].setAttribute("style", "top: 5.7rem; left: -2rem; border: none; border-radius:10px;")
+            card[index].classList.add('shadow-lg');
+        }
+
+        const clase = $('input[name="clase"]').val();
+        const insurance = $('input[name="seguro"]').val();
+        const type = $('input[name="tipo"]').val();
+        const amount = $('input[name="valor"]').val();
+
+        $(window).on('load', function() {
+            Livewire.emit("getInfoInsuranceVet", insurance, type, amount, clase);
+        })
+    </script>
 @endsection
