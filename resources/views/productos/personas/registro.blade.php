@@ -4,19 +4,12 @@
 
     <style>
         .container-registro {
-            height: 100vh;
             justify-content: center;
-            /* position: relative; */
         }
 
         .btn-comprar {
             display: none
         }
-
-        /* 
-                .card-container__insurance {
-                    height: 474px !important;
-                } */
 
         .condicion_poliza {
             position: relative;
@@ -65,7 +58,7 @@
     <script>
         let card = document.getElementsByClassName("card-container__insurance");
         for (let index = 0; index < card.length; ++index) {
-            card[index].setAttribute("style", "top: 5.7rem; left: -2rem; border: none; border-radius:10px;")
+            card[index].setAttribute("style", "left: -2rem; border: none; border-radius:10px;")
             card[index].classList.add('shadow-lg');
         }
 
