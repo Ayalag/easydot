@@ -14,7 +14,7 @@
         }
 
         .card-container__insurance {
-            height: 474px !important;
+            height: 570px !important;
         }
 
         .condicion_poliza {

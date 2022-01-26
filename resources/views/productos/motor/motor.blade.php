@@ -72,7 +72,7 @@
                     {{-- AQUI VA LA ITERACION DE SOAT  CARROS --}}
                     @isset($motores)
                         @foreach ($motores as $motor)
-                            @if ($motor->Motor_Tipo === 1 and $motor->Motor_Tipo_Seguro === 1)
+                            @if ($motor->tipo === 1 and $motor->plan === 1)
                                 {!! $motor->html !!}
                             @endif
                         @endforeach
@@ -84,7 +84,7 @@
                     {{-- AQUI VA LA ITERACION DE BASICO  CARROS --}}
                     @isset($motores)
                         @foreach ($motores as $motor)
-                            @if ($motor->Motor_Tipo === 1 and $motor->Motor_Tipo_Seguro === 2)
+                            @if ($motor->tipo === 1 and $motor->plan === 2)
                                 {!! $motor->html !!}
                             @endif
                         @endforeach
@@ -96,7 +96,7 @@
                     {{-- AQUI VA LA ITERACION DE ESTANDART  CARROS --}}
                     @isset($motores)
                         @foreach ($motores as $motor)
-                            @if ($motor->Motor_Tipo === 1 and $motor->Motor_Tipo_Seguro === 3)
+                            @if ($motor->tipo === 1 and $motor->plan === 3)
                                 {!! $motor->html !!}
                             @endif
                         @endforeach
@@ -111,7 +111,7 @@
                     {{-- AQUI VA LA ITERACION DE SOAT  MOTOS --}}
                     @isset($motores)
                         @foreach ($motores as $motor)
-                            @if ($motor->Motor_Tipo === 2 and $motor->Motor_Tipo_Seguro === 1)
+                            @if ($motor->tipo === 2 and $motor->plan === 1)
                                 {!! $motor->html !!}
                             @endif
                         @endforeach
@@ -124,7 +124,7 @@
                 {{-- AQUI VA LA ITERACION DE BASICO  MOTOS --}}
                 @isset($motores)
                     @foreach ($motores as $motor)
-                        @if ($motor->Motor_Tipo === 2 and $motor->Motor_Tipo_Seguro === 2)
+                        @if ($motor->tipo === 2 and $motor->plan === 2)
                             {!! $motor->html !!}
                         @endif
                     @endforeach
@@ -136,7 +136,7 @@
                 {{-- AQUI VA LA ITERACION DE ESTANDART  MOTOS --}}
                 @isset($motores)
                     @foreach ($motores as $motor)
-                        @if ($motor->Motor_Tipo === 2 and $motor->Motor_Tipo_Seguro === 3)
+                        @if ($motor->tipo === 2 and $motor->plan === 3)
                             {!! $motor->html !!}
                         @endif
                     @endforeach

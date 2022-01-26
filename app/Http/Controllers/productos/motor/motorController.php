@@ -20,12 +20,12 @@ class motorController extends Controller
         return view('productos.motor.motor', compact('motores'));
     }
 
-    public function isnuranceSeleted($motor, $type, $card )
+    public function isnuranceSeleted($tipo, $aseguradora, $plan )
     {
 
-        $cardHtml = motor::where('Motor_tipo' ,$motor)
-        ->where('Motor_Tipo_Seguro',$type)
-        ->where('Motor_tipo_Aseguradora', $card)
+        $cardHtml = motor::where('tipo' ,$tipo)
+        ->where('plan',$plan)
+        ->where('aseguradora', $aseguradora)
         ->get();
 
         // return $cardHtml;
