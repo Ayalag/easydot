@@ -27,12 +27,6 @@ Route::get('/userconfirmation', function () {
     return view('userConfirmation');
 })->name('userconfirmation');
 
-// Route::get('/producto/motor', function () {
-//     return view('productos.motor.motor');
-// })->name('motor');
-
-
-
 Route::view('/','home')->name('home');
 
 Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
@@ -65,12 +59,14 @@ Route::view('/producto/correo/contacto','emails.productos.productosMail')->name(
 // Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
 
 
-Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
+
 
 
 Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');
 
 });
+
+Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 
 
 Auth::routes();

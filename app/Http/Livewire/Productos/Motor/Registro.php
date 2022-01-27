@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire\Productos\Motor;
 
-use App\Models\pendingOrders;
-use Dotenv\Parser\Value;
 use Livewire\Component;
+use Dotenv\Parser\Value;
+use App\Models\pendingOrders;
+use Illuminate\Support\Facades\Auth;
 
 class Registro extends Component
 {
@@ -60,16 +61,19 @@ class Registro extends Component
         $newOrderInsert->info_plan_id = $this->plan_id;
         $newOrderInsert->info_valor = $this->valor;
 
+        Auth::user()->id ? $newOrderInsert->resgister_user_id = Auth::user()->id : $newOrderInsert->resgister_user_id = 'NULL';
+
         $newOrderInsert->save();
 
         $order = $newOrderInsert->id;
-  
+        
         $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
-
         $PaymentWeb = json_decode($PaymentWeb);
 
-        return redirect()->to($PaymentWeb->data->url);
+        pendingOrders::where('id',$order)
+        ->update(['Payment_url'=>$PaymentWeb->data->url]);
 
+        return redirect()->to($PaymentWeb->data->url);
     }
     
     public function render()

@@ -78,10 +78,27 @@
     <!-- /#page-content-wrapper -->
 
 </div>
-<div class="header-container__logo basic-drop-shadow">
+<div class="header-container__logo basic-drop-shadow d-flex justify-content-center">
     <a href="/"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}"
             alt="easydot.com.pa"></a>
+
+    @if (Route::has('login'))
+        <div class="container-login">
+            @auth
+                <a href="#">{{ Auth::user()->name }}</a>
+            @else
+                <a href="{{ route('login') }}" class="underline">mi cuenta</a>
+
+                {{-- @if (Route::has('register'))
+                    <a href="{{ route('register') }}"
+                        class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                @endif --}}
+            @endauth
+        </div>
+    @endif
 </div>
+
+
 <!-- /#wrapper -->
 
 <div class="menu-container container-fluid">

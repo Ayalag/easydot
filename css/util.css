@@ -1604,6 +1604,14 @@ button[class="btn-login"] {
     }
 }
 
+.container-login {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    height: 95px;
+    align-items: center;
+}
+
 /*-------------------------------*/
 /*    Page UserConfirmation      */
 /*-------------------------------*/
