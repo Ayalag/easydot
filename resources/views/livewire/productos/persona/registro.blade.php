@@ -1,4 +1,11 @@
 <div>
+    <div class="container-fluid mb-3">
+        <div class="col-12 text-center">
+            <div class="registro-datos__subtitle">
+                <p class="underline">datos personales</p>
+            </div>
+        </div>
+    </div>
     <form>
         <div class="container-fluid container-registro-datos shadow-lg ">
             <div class="p-4">
@@ -187,6 +194,13 @@
                         </div>
                     </div>
                 </div>
+                <div class="container pb-5 pt-2 d-flex flex-column text-center">
+                    <button class="btn_payeasy--load m-auto" id="process">
+                        <span wire:loading class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>siguiente</button>
+                    <div class="pt-4 pb-5 mr-4">
+                        <a href="javascript:history.back()"><i class="fas fa-arrow-left easyRose800"></i> atrás</a>
+                    </div>
+                </div>
             </form>
-        </div>
         </div>

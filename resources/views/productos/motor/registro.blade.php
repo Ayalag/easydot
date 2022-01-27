@@ -68,12 +68,16 @@
             card[index].classList.add('shadow-lg');
         }
 
-        const insurance = $('input[name="seguro"]').val();
-        const type = $('input[name="tipo"]').val();
-        const amount = $('input[name="valor"]').val();
-
         $(window).on('load', function() {
-            Livewire.emit("getInfoInsurance", insurance, type, amount);
+            const tipo_id = $('#tipo').attr("data-tipo-id")
+            const aseguradora_id = $('#aseguradora').attr("data-aseguradora-id")
+            const aseguradora_name = $('#aseguradora').attr("data-aseguradora-name")
+            const plan_id = $('#plan').attr("data-plan-id")
+            const plan_name = $('#plan').attr("data-plan-name")
+            const valor = $('#valor').attr("data-valor")
+
+            Livewire.emit("getMotorPlanDetail", tipo_id, aseguradora_id, aseguradora_name, plan_id, valor,
+                plan_name);
         })
     </script>
 @endsection

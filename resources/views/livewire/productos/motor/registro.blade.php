@@ -13,50 +13,50 @@
         <form wire:submit.prevent="submit">
             <div class="col-lg-4 offset-lg-4 pb-3">
                 <div class="row justify-content-center pt-5">
-                    <input type="text" class="form-control input__style" id="placa" placeholder="Placa"
-                        wire:model="placa">
+                    <input type="text" class="form-control input__style" id="placa" placeholder="placa"
+                        wire:model="placa" required>
                     <span class="text-danger">@error('placa'){{ $message }}@enderror</span>
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-2  pb-3">
                     <div class="row justify-content-center ">
-                        <input type="text" class="form-control input__style" id="marca" placeholder="Marca"
-                            wire:model="marca">
+                        <input type="text" class="form-control input__style" id="marca" placeholder="marca"
+                            wire:model="marca" required>
                         <span class="text-danger">@error('marca'){{ $message }}@enderror</span>
                         </div>
                     </div>
                     <div class="col-lg-8 offset-lg-2  pb-3">
                         <div class="row justify-content-center">
-                            <input type="text" class="form-control input__style" id="modelo" placeholder="Modelo"
-                                wire:model="modelo">
+                            <input type="text" class="form-control input__style" id="modelo" placeholder="modelo"
+                                wire:model="modelo" required>
                             <span class="text-danger">@error('modelo'){{ $message }}@enderror</span>
                             </div>
                         </div>
                         <div class="col-lg-8  offset-lg-2 pb-3">
                             <div class="row">
                                 <div class="col-4">
-                                    <input type="text" class="form-control input__style" id="ano" placeholder="Año"
-                                        wire:model="year">
+                                    <input type="text" class="form-control input__style" id="ano" placeholder="año"
+                                        wire:model="year" required>
                                     <span class="text-danger">@error('year'){{ $message }}@enderror</span>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" class="form-control input__style" id="ano" placeholder="Color"
-                                            wire:model="color">
+                                        <input type="text" class="form-control input__style" id="ano" placeholder="color"
+                                            wire:model="color" required>
                                         <span class="text-danger">@error('color'){{ $message }}@enderror</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-8 offset-lg-2 pb-3">
                                     <div class="row justify-content-center">
-                                        <input type="text" class="form-control input__style" id="motorNum" placeholder="Numero de motor"
-                                            wire:model="motorNum">
+                                        <input type="text" class="form-control input__style" id="motorNum" placeholder="numero de motor"
+                                            wire:model="motorNum" required>
                                         <span class="text-danger">@error('motorNum'){{ $message }}@enderror</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-8 offset-lg-2  pb-3">
                                         <div class="row justify-content-center">
-                                            <input type="text" class="form-control input__style" id="chasisNum" placeholder="Numero de chasis"
-                                                wire:model="chasisNum">
+                                            <input type="text" class="form-control input__style" id="chasisNum" placeholder="numero de chasis"
+                                                wire:model="chasisNum" required>
                                             <span class="text-danger">@error('chasisNum'){{ $message }}@enderror</span>
                                             </div>
                                         </div>
