@@ -20,6 +20,9 @@ use App\Http\Controllers\productos\veterinario\veterinarioController;
 */
 
 
+Route::middleware(['auth'])->group(function () {
+
+
 Route::get('/userconfirmation', function () {
     return view('userConfirmation');
 })->name('userconfirmation');
@@ -59,11 +62,15 @@ Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('termino
 
 Route::view('/producto/correo/contacto','emails.productos.productosMail')->name('productos-mail');  //Plantilla de correo de productos
 
-Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
+// Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
 
-Auth::routes();
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 
 
 Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');
+
+});
+
+
+Auth::routes();

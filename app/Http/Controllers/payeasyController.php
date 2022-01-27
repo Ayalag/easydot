@@ -9,8 +9,9 @@ class payeasyController extends Controller
     function payprocessresponce(){
         $response = $_REQUEST; 
 
-        dd($response);
-
-        // return view('PagoAprobado');
+        if($response['Estado'] === 'Aprobada'){
+            $ordernumber = str_pad($response['OrderNumber'],7,"0",STR_PAD_LEFT);
+            return view('PagoAprobado', compact('ordernumber'));
+        }
     }
 }

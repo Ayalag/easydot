@@ -13,11 +13,11 @@
             <span>Compra realizada</span>
         </div>
         <div class="container-payment__accepted--legend pt-3">
-            <p>Transación N°0000000</p>
+            <p>Transación N°{{ $ordernumber }}</p>
             <p class="pt-2">Muchas gracias por tu compra. <br>
                 Hemos enviado un correo electrónico a la <br>
                 dirección que nos indicaste en tus datos, por <br>
-                lo que en un instante podr'as verlo en tu <br>
+                lo que en un instante podrás verlo en tu <br>
                 bandeja de entrada.</p>
         </div>
     </div>
