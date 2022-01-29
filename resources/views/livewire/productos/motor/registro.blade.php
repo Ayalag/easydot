@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <div class="container container-registro-datos shadow-lg text-center">
+    <div wire:ignore.self class="container container-registro-datos shadow-lg text-center">
         <form wire:submit.prevent="submit">
             <div class="col-lg-4 offset-lg-4 pb-3">
                 <div class="row justify-content-center pt-5">
@@ -66,7 +66,9 @@
                                                 <label for="file-upload" class="custom-file-upload input__style">
                                                     <i class="fas fa-paperclip"></i> clic para adjuntar
                                                 </label>
-                                                <input id="file-upload" type="file" />
+                                                <input class="@error('file') is invalid @enderror" id="file-upload" type="file" wire:model="file"
+                                                    required />
+                                                {{-- <span class="text-danger">@error('file') {{ $message }} @enderror</span> --}}
                                             </div>
                                         </div>
 

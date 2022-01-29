@@ -4,11 +4,17 @@ namespace App\Http\Livewire\Productos\Motor;
 
 use Livewire\Component;
 use Dotenv\Parser\Value;
+use Illuminate\Support\Arr;
 use App\Models\pendingOrders;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
 class Registro extends Component
 {
+
+    use WithFileUploads;
+
+    public $file;
 
     public $placa;
     public $marca;
@@ -24,9 +30,6 @@ class Registro extends Component
     public $plan_id;
     public $plan_name;
     public $valor;
-
-
-
 
     protected $listeners = [
         'getMotorPlanDetail'
@@ -47,6 +50,10 @@ class Registro extends Component
     
     public function submit(){
 
+        $this->validate([
+            'file' => 'required'
+        ]);
+
         $newOrderInsert = new pendingOrders;
 
         $newOrderInsert->placa = $this->placa;
@@ -61,19 +68,25 @@ class Registro extends Component
         $newOrderInsert->info_plan_id = $this->plan_id;
         $newOrderInsert->info_valor = $this->valor;
 
-        Auth::user()->id ? $newOrderInsert->resgister_user_id = Auth::user()->id : $newOrderInsert->resgister_user_id = 'NULL';
+        Auth::check() ? $newOrderInsert->register_user_id = Auth::user()->id : $newOrderInsert->register_user_id = null;
 
         $newOrderInsert->save();
 
         $order = $newOrderInsert->id;
         
-        $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
-        $PaymentWeb = json_decode($PaymentWeb);
+        // $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
+        // $PaymentWeb = json_decode($PaymentWeb);
 
-        pendingOrders::where('id',$order)
-        ->update(['Payment_url'=>$PaymentWeb->data->url]);
+        // pendingOrders::where('id',$order)
+        // ->update(['Payment_url'=>$PaymentWeb->data->url]);
 
-        return redirect()->to($PaymentWeb->data->url);
+        $orderget = pendingOrders::where('id',$order)
+        ->get();
+
+        $orderget["key3"] = "value3";
+
+        dd($orderget);
+        // return redirect()->to($PaymentWeb->data->url);
     }
     
     public function render()

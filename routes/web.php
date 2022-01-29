@@ -58,11 +58,7 @@ Route::view('/producto/correo/contacto','emails.productos.productosMail')->name(
 
 // Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
 
-
-
-
-
-Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');
+// Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');
 
 });
 
