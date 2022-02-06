@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container container-helpcenter p-5">
+    <div class="container container-helpcenter">
         <div class="container container-helpcenter__title">
             <span class="underline">centro de ayuda</span>
         </div>
@@ -30,7 +30,7 @@
                 <div class="container-genreal__info__bartoli-img">
                     <img src="{{ asset('/public/includes/images/centro-de-ayuda/bartoli.png') }}" alt="">
                 </div>
-                <div class="container-general__info_contact pt-2">
+                <div class="container-general__info_contact_bartoli">
                     <p><span>Miguel Bartoli</span></p>
                     <p class="pt-2">mbartoli@bartoliseguros.com</p>
                     <p class="pt-2">+(507) 6981-2660</p>
@@ -56,16 +56,16 @@
                 <div class="container">
                     <div class="container-genreal__info__easy_partner pt-3">
                         <div class="container-general__info_contact pt-2">
-                            <p><span>Asistencia</span></p>
-                            <p class="pt-2">+507 800-7872</p>
-                        </div>
-                        <div class="container-general__info_contact pt-4">
                             <p><span>Whatsapp</span></p>
-                            <p class="pt-2">+(507) 6328-7872</p>
+                            <p class="pt-2">+507 6328-7872</p>
                         </div>
                         <div class="container-general__info_contact pt-4">
                             <p><span>Línea de información</span></p>
-                            <p class="pt-2">+(507) 800-7872</p>
+                            <p class="pt-2">507 800-7872</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Asistencia</span></p>
+                            <p class="pt-2">+507 800-7872</p>
                         </div>
                         <div class="container-general__info_contact pt-4">
                             <p><span>Correo electrónico</span></p>
@@ -75,15 +75,83 @@
                 </div>
             </div>
         </div>
+        <!----------------------     Our partners cards  ------------------------>
+
         <div class="card card-general__info shadow-lg">
-            <div class="card-body"></div>
+            <div class="card-body">
+                <div class="card-title d-flex justify-content-center pt-5">
+                    <img src="public/includes/images/centro-de-ayuda/optima_color.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="container-genreal__info__easy_partner pt-3">
+                        <div class="container-general__info_contact pt-2">
+                            <p><span>Whatsapp</span></p>
+                            <p class="pt-2">+(507) 6288-7452</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Línea de información</span></p>
+                            <p class="pt-2">+(507) 269-5000</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Asistencia</span></p>
+                            <p class="pt-2">+507 62887452</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!----------------------     Our partners cards  ------------------------>
+
+        <div class="card card-general__info shadow-lg">
+            <div class="card-body">
+                <div class="card-title d-flex justify-content-center pt-5">
+                    <img src="public/includes/images/centro-de-ayuda/mapfre_color.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="container-genreal__info__easy_partner pt-3">
+                        <div class="container-general__info_contact pt-2">
+                            <p><span>Whatsapp</span></p>
+                            <p class="pt-2">+507 6319-9457</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Línea de información</span></p>
+                            <p class="pt-2">+507 378-9800</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Asistencia</span></p>
+                            <p class="pt-2">+507 390-9090</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Correo electrónico</span></p>
+                            <p class="pt-2">info@mapfre.com.pa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----------------------     Our partners cards  ------------------------>
+
         <div class="card card-general__info shadow-lg">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-center pt-5">
                     <img src="public/includes/images/centro-de-ayuda/panama-sonrie.png" alt="">
                 </div>
-                <div class="container"></div>
+                <div class="container">
+                    <div class="container-genreal__info__easy_partner pt-3">
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Whatsapp</span></p>
+                            <p class="pt-2">+507 6140-5700</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Línea de información</span></p>
+                            <p class="pt-2">507 399-5541</p>
+                        </div>
+                        <div class="container-general__info_contact pt-4">
+                            <p><span>Correo electrónico</span></p>
+                            <p class="pt-2">dentalpty@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -93,7 +161,7 @@
             <span id="faq" class="underline">preguntas frecuentes</span>
         </div>
 
-        <div class="container-frequent-question__response d-flex justify-content-between p-5">
+        <div class="container-frequent-question__response d-flex justify-content-between">
             <div class="container-frequent-question__response__categories pt-5">
 
                 <div class="content">
@@ -278,7 +346,8 @@
                                 </ul>
                             </div>
                             <br>
-                            <div class="bigger-margin">2.&nbsp;¿Qué se puede asegurar con un seguro de contenido del hogar?
+                            <div class="bigger-margin">2.&nbsp;¿Qué se puede asegurar con un seguro de contenido del
+                                hogar?
                                 <ul>
                                     <li>
                                         <ul>

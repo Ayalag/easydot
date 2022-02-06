@@ -44,11 +44,11 @@
             <li class="dropdown">
                 <a href="/centro-de-ayuda" data-toggle="dropdown">centro de ayuda <span
                         class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
-                    <div class="dropdown-header">Dropdown heading</div>
-                    <li><a class="underline" href="#">contacto easy.</a></li>
-                    <li><a class="underline" href="#">contactos de aseguradoras</a></li>
-                </ul> --}}
+                <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+                    <li><a class="underline" href="/centro-de-ayuda">centro de ayuda</a></li>
+                    {{-- <li><a class="underline" href="#">contactos de aseguradoras</a></li> --}}
+                </ul>
             </li>
             <li class="dropdown">
                 <a href="#works" data-toggle="dropdown">Conoce easy. <span class="caret"></span></a>

@@ -1,242 +1,385 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-/*//////////////////////////////////////////////////////////////////
-[ LOADDING ]*/
-.animsition-loading-1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
 
-.loader05 {
-  width: 56px;
-  height: 56px;
-  border: 4px solid #717fe0;
-  border-radius: 50%;
-  position: relative;
-  -webkit-animation: loader-scale 1s ease-out infinite;
-          animation: loader-scale 1s ease-out infinite;
-  top: 50%;
-  margin: -28px auto 0 auto;
-}
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@-webkit-keyframes loader-scale {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
+    <title>comprobante de compra</title>
 
-@keyframes loader-scale {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ SIDEBAR ]*/
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 10px;
-  z-index: 1;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: tomato;
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  /* hide this */
-  z-index: 2;
-  /* and place it over the hamburger */
-  -webkit-touch-callout: none;
-}
-
-/*
-  * Just a quick hamburger
-  */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-/* 
-  * Transform all the slices of hamburger
-  * into a crossmark.
-  */
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-/*
-  * But let's hide the middle one.
-  */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
-  * Ohyeah and the last one should go the other direction
-  */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
-  * Make this absolute positioned
-  * at the top left of the screen
-  */
-#menu {
-  position: absolute;
-  width: 300px;
-  margin: -37px 0 0 -50px;
-  padding: 50px;
-  height: 100vh;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
-  font-family: "Montserrat";
-  color: #FF0180;
-}
-
-/*
-  * And let's slide it in from the left
-  */
-#menuToggle input:checked ~ ul {
-  transform: none;
-}
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="{{ url('css/util.css') }}" rel="stylesheet">
 
 
+    <style>
+        .condicion_poliza,
+        .btn-comprar {
+            display: none;
+        }
 
-.container-home {
-    width: 100%;
-    /* padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: white; */
-}
+        .btn-comprar {
+            display: none
+        }
 
-.container-categories{
-    text-align: center;
-    position: relative;
-    margin-top: -8%;
-    margin-bottom: 4%;
-}
+        .card-container__insurance {
+            height: 474px !important;
+        }
 
-.drops-categories {
-    display: flex;
-}
+        .card-subtitle {
+            color: #ff0180 !important;
+        }
 
-.categories_title{
-    color: white;
-    font-weight:800;
-    font-size: 35px;
-}
+        input[type="text"]::placeholder {
+            /* Firefox, Chrome, Opera */
+            text-align: center;
+        }
 
-.drops-category {
-    width: 34%;
-    border-radius: 25px;
-    background-color: white;
-    margin-right: 2%;
-    display: inline-block;
-    position: relative;
-}
+    </style>
 
-.drops-category>div {
-    padding-top: calc(192px / 2);
-}
+</head>
 
-@media screen and (min-width: 768px) {
-    .container-home {
-        max-width: 768px;
+<body>
+
+    <div class="container container-comprobante-compra">
+        <div class="container container-comprobante-compra__header easyBlue800  p-4">
+            <div class="row align-items-center">
+                <div class="col-sm ">
+                    <p class="fnt-size-1-5">Comprobante de compra</p>
+                    <p class="easyBlue400">Transacción xxxxxxxx</p>
+                    <p class="easyBlue400 fnt-size-1">dd/mm/aa hh:mm</p>
+                </div>
+                <div class="col-sm text-right">
+                    <img src="{{ asset('/public/includes/images/logos/easydot_276x143_formated.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container container-datos__cliente shadow-lg pb-2">
+            <div class="container-datos__cliente-titulo p-2">
+                Datos del cliente
+            </div>
+            <div>
+                <div class="form-row p-2">
+                    <div class="col-5">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" class="form-control input__style_comprobante" id="nombre" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="nombre">
+                            <div class="col-5 form-check form-check-inline">
+                                <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="cedula">
+                            </div>
+                            <div class="col-3 form-check form-check-inline">
+                                <label class="form-check-label mr-2" for="inlineRadio1">Pasaporte</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="pasaporte">
+                            </div>
+                        </label>
+                        <input type="text" class="form-control input__style_comprobante" id="pasaportenum"
+                            placeholder="">
+                    </div>
+                    <div class="col-4">
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <div class="row no-gutters">
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante " id="dd"
+                                    placeholder="">
+                            </div>
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="mm" placeholder="">
+                            </div>
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="yyyy"
+                                    placeholder="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row p-2">
+                    <div class="col-2">
+                        <label for="genero">Genero</label>
+                        <div class="container row">
+                            <div class="col-3 form-check form-check-inline">
+                                <label class="form-check-label pr-2" for="inlineRadio1">M</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="cedula">
+                            </div>
+                            <div class="col-1 form-check form-check-inline">
+                                <label class="form-check-label mr-2" for="inlineRadio1">F</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="pasaporte">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <label for="estadocivil">Estado civil</label>
+                        <input type="text" class="form-control input__style_comprobante" id="estadocivil"
+                            placeholder="">
+                    </div>
+                    <div class="col-2">
+                        <label for="pais">Pais de nacimiento</label>
+                        <input type="text" class="form-control input__style_comprobante" id="pais" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="celular">Celular</label>
+                        <input type="text" class="form-control input__style_comprobante" id="celular" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="mail">Correo Electronico</label>
+                        <input type="text" class="form-control input__style_comprobante" id="mail" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container container-datos__cliente shadow-lg mt-3">
+            <div class="container-datos__cliente-titulo p-2">
+                Dirección
+            </div>
+            <div>
+                <div class="form-row p-2">
+                    <div class="col-2">
+                        <label for="provincia">Provincia</label>
+                        <input type="text" class="form-control input__style_comprobante" id="provincia" placeholder="">
+                    </div>
+                    <div class="col-2">
+                        <label for="distrito">Distrito</label>
+                        <input type="text" class="form-control input__style_comprobante" id="distrito" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="corregimiento">Corregimiento</label>
+                        <input type="text" class="form-control input__style_comprobante" id="corregimiento"
+                            placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="barrio">Barrio / P.H</label>
+                        <input type="text" class="form-control input__style_comprobante" id="barrio" placeholder="">
+                    </div>
+                    <div class="col-2">
+                        <label for="barrio">N° Casa/Apto.</label>
+                        <input type="text" class="form-control input__style_comprobante" id="barrio" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container container-datos__cliente shadow-lg mt-3">
+
+            <div>
+                <div class="form-row p-2">
+                    <div class="col-2">
+                        <label for="genero">Persona politicamente expuesta</label>
+                        <div class="container row">
+                            <div class="col-4 form-check form-check-inline">
+                                <label class="form-check-label pr-2" for="inlineRadio1">Si</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="cedula">
+                            </div>
+                            <div class="col-1 form-check form-check-inline">
+                                <label class="form-check-label mr-2" for="inlineRadio1">No</label>
+                                <input class="form-check-input" type="radio" name="identificacion" id="pasaporte">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <label for="cargo">Cargo</label>
+                        <input type="cargo" class="form-control input__style_comprobante" id="cargo" placeholder="">
+                    </div>
+                    <div class="col-2 text-center">
+                        <label for="fechainicio">Fecha de inicio</label>
+                        <div class="row no-gutters">
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante " id="dd"
+                                    placeholder="">
+                            </div>
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="mm" placeholder="">
+                            </div>
+                            <div class="col-4 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="yyyy"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 text-center">
+                        <label for="fechafinal">Fecha de finalización</label>
+                        <div class="row no-gutters">
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante " id="dd"
+                                    placeholder="">
+                            </div>
+                            <div class="col-3 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="mm" placeholder="">
+                            </div>
+                            <div class="col-4 mr-1">
+                                <input type="text" class="form-control input__style_comprobante" id="yyyy"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <label for="mail">Correo Electronico</label>
+                        <input type="mail" class="form-control input__style_comprobante" id="mail" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container container-datos__cliente shadow-lg mt-3 d-flex p-2">
+            <div class="container-datos__cliente-titulo p-2">
+                Corredor de seguros
+            </div>
+            <div class="ml-2" style="width: 50rem">
+                <input type="nombre" class="form-control input__style_comprobante" id="nombre" placeholder=""
+                    value="Bartoli Asesores de seguros">
+            </div>
+        </div>
+    </div>
+    <div class="container container-comprobante-compra-para mt-4 mb-4 d-flex">
+        <div>
+            <div class="card card-container__insurance">
+                <div style="display: none;">
+                    <input type="hidden" id="tipo" data-tipo-id="1" data-tipo-name="auto">
+                    <input type="hidden" id="aseguradora" data-aseguradora-id="1" data-aseguradora-name="sura">
+                    <input type="hidden" id="plan" data-plan-id="1" data-plan-name="soat">
+                    <input type="hidden" id="valor" data-valor="103.39">
+                </div>
+                <div class="card-body">
+                    <div class="card-title d-flex justify-content-end">
+                        <img src="{{ asset('/public/includes/images/logos-aliados/color/sura_color.png') }}" alt="">
+                    </div>
+                    <div class="container">
+                        <div class="card-subtitle">soat</div>
+                        <p class="card-text underline mb-3 easyBlue600">cobertura por accidente</p>
+                        <div class="card-detail">
+                            <div class="row no-gutters mb-3">
+                                <div class="col-9">
+                                    Lesiones corporales
+                                </div>
+                                <div class="col-3 justify-content-end easyBlue600">
+                                    10,000
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-9">
+                                    Daños a la propiedad ajena
+                                </div>
+                                <div class="col-3 justify-content-end easyBlue600">
+                                    5,000
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-list__items">
+                            <ul>
+                                <li>Revisado vehicular gratuito</li>
+                                <li>3 servicios de grúa al año</li>
+                                <li>Servicios de asistencia vial</li>
+                                <li>Servicio de ambulancia</li>
+                                <li>Asistencia legal</li>
+                                <li>Descuento en trámite de placa</li>
+                            </ul>
+                        </div>
+                        <div class="grouping_price">
+                            <div class="row mt-4 annuity">
+                                <div class="col-12 text-muted text-center">
+                                    anual
+                                </div>
+                            </div>
+                            <div class="row mb-3 price">
+                                <div class="col-12 text-center">
+                                    $ 103.39
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-12 text-center">
+                                    <button class="btn-comprar">
+                                        <a href="/producto/motor/registro/1/1/1">comprar</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/public/includes/polizas/CONDICIONES-GENERALES-SURA-AUTOS.pdf" target="_blank">
+                <p class="underline condicion_poliza">condiciones de la póliza</p>
+            </a>
+        </div>
+        <div class="container container-datos__cliente mt-3">
+            <div class="container-datos__cliente-titulo p-2">
+                Cobertura para:
+            </div>
+            <div>
+                <div class="form-row p-2">
+                    <div class="col-3">
+                        <label for="placa">Placa</label>
+                        <input type="text" class="form-control input__style_comprobante" id="placa" placeholder="">
+                    </div>
+                </div>
+                <div class="form-row p-2">
+                    <div class="col-3">
+                        <label for="marca">Marca</label>
+                        <input type="text" class="form-control input__style_comprobante" id="marca" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" class="form-control input__style_comprobante" id="modelo" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="year">Año</label>
+                        <input type="text" class="form-control input__style_comprobante" id="year" placeholder="">
+                    </div>
+                </div>
+                <div class="form-row p-2">
+                    <div class="col-3">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control input__style_comprobante" id="color" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="motor">Motor</label>
+                        <input type="text" class="form-control input__style_comprobante" id="motor" placeholder="">
+                    </div>
+                    <div class="col-3">
+                        <label for="chasis">Chasis</label>
+                        <input type="text" class="form-control input__style_comprobante" id="chasis" placeholder="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-comprobante-compra-footer d-flex p-4">
+        <div class="container-comprobante-compra-footer-legend">
+            <p>
+                La póliza está siendo procesada en este momento con la compañía seleccionada, tan pronto esté lista,
+                podrás recibirla en la bandeja <br> de tu correo electrónico.
+            </p>
+            <br>
+            <p>
+                En caso de tener alguna consulta, puedes contactarnos a través de nuestro correo de atención a clientes,
+                <span style="color: #ff0180 ">clientes@easydot.com.pa</span> o <br>vía WhatsApp.
+            </p>
+            <br>
+            <p>
+                Recuerda que en nuestro Centro de Ayuda podrás encontrar un directorio telefónico con los contactos de
+                asistencia y atención <br> de las diferentes compañías con las que trabajamos.
+            </p>
+            {{-- <div class="footer-image"> --}}
+            {{-- </div> --}}
+        </div>
+        <img src="{{ asset('/public/includes/images/cintillo_footer.png') }}" alt="">
+
+    </div>
+
+</body>
+
+<script src="{{ url('js/app.js') }}"></script>
+<script>
+    let card = document.getElementsByClassName("card-container__insurance");
+    for (let index = 0; index < card.length; ++index) {
+        card[index].setAttribute("style", "top: 1rem; border: none; border-radius:10px;")
+        card[index].classList.add('shadow-lg');
     }
-}
+</script>
 
-@media screen and (min-width: 992px) {
-    .container-home {
-        max-width: 960px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .container-home {
-        max-width: 768px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .container-home {
-        padding-right: 0;
-        padding-left: 0;
-        justify-content: space-around;
-    }
-
-    .drops-category {
-        width: 45%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
+</html>

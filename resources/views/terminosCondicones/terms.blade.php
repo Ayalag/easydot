@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container container-terms-and-conditions p-5">
+    <div class="container container-terms-and-conditions pt-5">
         <div class="container-terms-and-conditions__nav">
             <nav class="bigger-margin">
                 <ul>

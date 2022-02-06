@@ -3,6 +3,7 @@
 use App\Mail\landingMailContactForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\payeasyController;
 use App\Http\Controllers\productos\motor\motorController;
 use App\Http\Controllers\productos\persona\personaController;
@@ -54,15 +55,17 @@ Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');
 Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('terminos-y-condiciones');
 
-Route::view('/producto/correo/contacto','emails.productos.productosMail')->name('productos-mail');  //Plantilla de correo de productos
-
-// Route::post('/landings/forms/contacto', [landingMailContactForm::class, 'send'])->name('landings-form');
-
-// Route::view('/pago/aprobado','PagoAprobado')->name('paymentAccepted');
-
 });
+
+
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 
 
 Auth::routes();
+
+
+// Route::get('/mail/template/compra', [HomeController::class, 'exportPDF']);
+
+
+Route::view('/mail/template/compra', 'emails.productos.compra')->name('templatemail');

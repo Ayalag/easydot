@@ -74,19 +74,14 @@ class Registro extends Component
 
         $order = $newOrderInsert->id;
         
-        // $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
-        // $PaymentWeb = json_decode($PaymentWeb);
+        $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
+        $PaymentWeb = json_decode($PaymentWeb);
 
-        // pendingOrders::where('id',$order)
-        // ->update(['Payment_url'=>$PaymentWeb->data->url]);
+        pendingOrders::where('id',$order)
+        ->update(['Payment_url'=>$PaymentWeb->data->url]);
 
-        $orderget = pendingOrders::where('id',$order)
-        ->get();
+        return redirect()->to($PaymentWeb->data->url);
 
-        $orderget["key3"] = "value3";
-
-        dd($orderget);
-        // return redirect()->to($PaymentWeb->data->url);
     }
     
     public function render()
