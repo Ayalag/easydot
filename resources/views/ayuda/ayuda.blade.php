@@ -48,7 +48,7 @@
 
         <!----------------------     Our partners cards  ------------------------>
 
-        <div class="card card-general__info shadow-lg">
+        <div class="card card-general__info shadow">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-center pt-5">
                     <img src="public/includes/images/centro-de-ayuda/sura.png" alt="">
@@ -77,7 +77,7 @@
         </div>
         <!----------------------     Our partners cards  ------------------------>
 
-        <div class="card card-general__info shadow-lg">
+        <div class="card card-general__info shadow">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-center pt-5">
                     <img src="public/includes/images/centro-de-ayuda/optima_color.png" alt="">
@@ -102,7 +102,7 @@
         </div>
         <!----------------------     Our partners cards  ------------------------>
 
-        <div class="card card-general__info shadow-lg">
+        <div class="card card-general__info shadow">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-center pt-5">
                     <img src="public/includes/images/centro-de-ayuda/mapfre_color.png" alt="">
@@ -131,7 +131,7 @@
         </div>
         <!----------------------     Our partners cards  ------------------------>
 
-        <div class="card card-general__info shadow-lg">
+        <div class="card card-general__info shadow">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-center pt-5">
                     <img src="public/includes/images/centro-de-ayuda/panama-sonrie.png" alt="">
@@ -165,7 +165,7 @@
             <div class="container-frequent-question__response__categories pt-5">
 
                 <div class="content">
-                    <div class="container-frequent-question__response__easy shadow-lg">
+                    <div class="container-frequent-question__response__easy shadow">
                         <input type="checkbox" id="question1" name="q" class="questions">
                         {{-- <div class="plus">+</div> --}}
                         <label for="question1" class="question">
@@ -220,7 +220,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-frequent-question__response__easy shadow-lg">
+                    <div class="container-frequent-question__response__easy shadow">
                         <input type="checkbox" id="question2" name="q" class="questions">
                         {{-- <div class="plus">+</div> --}}
                         <label for="question2" class="question">
@@ -297,7 +297,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-frequent-question__response__easy shadow-lg">
+                    <div class="container-frequent-question__response__easy shadow">
                         <input type="checkbox" id="question3" name="q" class="questions">
                         {{-- <div class="plus">+</div> --}}
                         <label for="question3" class="question">
@@ -326,7 +326,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-frequent-question__response__easy shadow-lg">
+                    <div class="container-frequent-question__response__easy shadow">
                         <input type="checkbox" id="question4" name="q" class="questions">
                         {{-- <div class="plus">+</div> --}}
                         <label for="question4" class="question">

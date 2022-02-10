@@ -3,17 +3,50 @@
 namespace App\Http\Livewire\Productos\Motor;
 
 use Livewire\Component;
-use Dotenv\Parser\Value;
-use Illuminate\Support\Arr;
+use App\Models\distrito;
+use App\Models\provincia;
+use App\Models\corregimiento;
 use App\Models\pendingOrders;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
 class Registro extends Component
 {
-
     use WithFileUploads;
 
+    public $provincia;
+    public $distrito;
+    public $corregimiento;
+
+    public $selectedProvincia = null;
+    public $selectedDistrito = null;
+    public $selectedCorregimiento = null;
+
+    public $nombres;
+    public $apellidos;
+    public $typeId;
+    public $identificacion;
+    public $dia;
+    public $mes;
+    public $año;
+    public $eCivil;
+    public $pais;
+    public $genero;
+    public $barrio;
+    public $casa;
+    public $celular;
+    public $contactMail;
+
+    public $ppe;
+    public $ppecargo;
+    public $ppemail;
+    public $ppe_inicio_dia;
+    public $ppe_inicio_mes;
+    public $ppe_inicio_año;
+    public $ppe_final_dia;
+    public $ppe_final_mes;
+    public $ppe_final_año;
+    
     public $file;
 
     public $placa;
@@ -31,10 +64,158 @@ class Registro extends Component
     public $plan_name;
     public $valor;
 
+
+
+    public $totalSteps = 2;
+    public $currentStep = 1;
+    public $show = false;
+
     protected $listeners = [
         'getMotorPlanDetail'
     ];
 
+    public function mount(){
+        $this->currentStep = 1;
+        $this->provincia = provincia::all();
+    }
+
+    public function updatedSelectedProvincia($id_provincia){
+
+        $this->distrito = distrito::where('id_provincia',$id_provincia)->get();
+    }
+        
+    public function updatedSelectedDistrito($id_distrito){
+
+        $this->corregimiento = corregimiento::where('id_distrito',$id_distrito)->get();
+        
+    }
+
+    public function increaseStep(){
+        $this->validateData();
+        $this->currentStep++;
+
+        return $this->currentStep;
+    }
+
+    public function validateData(){
+        if($this->currentStep == 1){
+
+            if(($this->typeId =='cedula') and ($this->ppe == 'ppeSi')){
+                $this->validate([
+                    'nombres' => 'required|string',
+                    'apellidos' => 'required|string',
+                    'typeId' => 'required|min:1',
+                    'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                    'dia' => 'required|numeric',
+                    'mes' => 'required|numeric',
+                    'año' => 'required|numeric',
+                    'eCivil' => 'required|string',
+                    'pais' => 'required|string',
+                    'genero' => 'required|min:1',
+                    'barrio' => 'required|string',
+                    'casa' => 'required|string',
+                    'celular' => 'required|string',
+                    'contactMail' => 'required|string',
+                    'ppe' => 'required|min:1',
+                    'ppecargo' => 'required|string',
+                    'ppemail' => 'required|string',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_final_dia' => 'required|numeric',
+                    'ppe_final_mes' => 'required|numeric',
+                    'ppe_final_año' => 'required|numeric',
+                ]);
+            }
+            else{
+                $this->validate([
+                    'nombres' => 'required|string',
+                    'apellidos' => 'required|string',
+                    'typeId' => 'required|min:1',
+                    'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                    'dia' => 'required|string',
+                    'mes' => 'required|string',
+                    'año' => 'required|string',
+                    'dia' => 'required|numeric',
+                    'mes' => 'required|numeric',
+                    'año' => 'required|numeric',
+                    'eCivil' => 'required|string',
+                    'pais' => 'required|string',
+                    'genero' => 'required|min:1',
+                    'barrio' => 'required|string',
+                    'casa' => 'required|string',
+                    'celular' => 'required|string',
+                    'contactMail' => 'required|string',
+                    'ppe' => 'required|min:1',
+                    
+                ]);
+            } 
+            if(($this->typeId =='pasaporte') and ($this->ppe == 'ppeSi')){
+                $this->validate([
+                    'nombres' => 'required|string',
+                    'apellidos' => 'required|string',
+                    'typeId' => 'required|min:1',
+                    'identificacion' => 'required',
+                    'dia' => 'required|numeric',
+                    'mes' => 'required|numeric',
+                    'año' => 'required|numeric',
+                    'eCivil' => 'required|string',
+                    'pais' => 'required|string',
+                    'genero' => 'required|min:1',
+                    'barrio' => 'required|string',
+                    'casa' => 'required|string',
+                    'celular' => 'required|string',
+                    'contactMail' => 'required|string',
+                    'ppe' => 'required|min:1',
+                    'ppecargo' => 'required|string',
+                    'ppemail' => 'required|string',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_final_dia' => 'required|numeric',
+                    'ppe_final_mes' => 'required|numeric',
+                    'ppe_final_año' => 'required|numeric',
+                ]);
+            }
+            else{
+                $this->validate([
+                    'nombres' => 'required|string',
+                    'apellidos' => 'required|string',
+                    'typeId' => 'required|min:1',
+                    'identificacion' => 'required',
+                    'dia' => 'required|string',
+                    'mes' => 'required|string',
+                    'año' => 'required|string',
+                    'dia' => 'required|numeric',
+                    'mes' => 'required|numeric',
+                    'año' => 'required|numeric',
+                    'eCivil' => 'required|string',
+                    'pais' => 'required|string',
+                    'genero' => 'required|min:1',
+                    'barrio' => 'required|string',
+                    'casa' => 'required|string',
+                    'celular' => 'required|string',
+                    'contactMail' => 'required|string',
+                    'ppe' => 'required|min:1',
+                    
+                ]);
+            } 
+            
+           
+        }
+        if($this->currentStep == 2){
+            $this->validate([
+
+                'placa' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                'marca' => 'required|string',
+                'modelo' => 'required|string',
+                'year' => 'required|string',
+                'color' => 'required|string',
+                'motorNum' => 'required|string',
+                'chasisNum' => 'required|string',
+            ]);
+        }
+    }
 
     public function getMotorPlanDetail($value1, $value2, $value3, $value4, $value5, $value6)
     {
@@ -50,11 +231,37 @@ class Registro extends Component
     
     public function submit(){
 
-        $this->validate([
-            'file' => 'required'
-        ]);
+        $this->validateData();
 
         $newOrderInsert = new pendingOrders;
+
+        $newOrderInsert->nombre = $this->nombres;
+        $newOrderInsert->apellido = $this->apellidos;
+        $newOrderInsert->id_type = $this->typeId;
+        $newOrderInsert->identificacion = $this->identificacion;
+        $newOrderInsert->dia = $this->dia;
+        $newOrderInsert->mes = $this->mes;
+        $newOrderInsert->year = $this->año;
+        $newOrderInsert->estado_civil = $this->eCivil;
+        $newOrderInsert->pais = $this->pais;
+        $newOrderInsert->genero = $this->genero;
+        $newOrderInsert->barrio = $this->barrio;
+        $newOrderInsert->casa = $this->casa;
+        $newOrderInsert->celular = $this->celular;
+        $newOrderInsert->contactMail = $this->contactMail;
+        $newOrderInsert->provincia = $this->selectedProvincia;
+        $newOrderInsert->distrito = $this->selectedDistrito;
+        $newOrderInsert->corregimiento = $this->selectedCorregimiento;
+
+        $newOrderInsert->ppe = $this->ppe;
+        $newOrderInsert->ppe_cargo = $this->ppecargo;
+        $newOrderInsert->ppe_mail = $this->ppemail;
+        $newOrderInsert->ppe_inicio_dia = $this->ppe_inicio_dia;
+        $newOrderInsert->ppe_inicio_mes = $this->ppe_inicio_mes;
+        $newOrderInsert->ppe_inicio_year = $this->ppe_inicio_año;
+        $newOrderInsert->ppe_fin_dia = $this->ppe_final_dia;
+        $newOrderInsert->ppe_fin_mes = $this->ppe_final_mes;
+        $newOrderInsert->ppe_fin_year =$this->ppe_final_año;
 
         $newOrderInsert->placa = $this->placa;
         $newOrderInsert->marca = $this->marca;

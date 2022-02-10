@@ -13,29 +13,19 @@ class payeasyController extends Controller
     function payprocessresponce(){
         $response = $_REQUEST; 
 
+        $url_dowload = 'https://www.easydot.com.pa/producto/motor/comprobante/'.$response['OrderNumber'];
+
         if($response['Estado'] === 'Aprobada'){
             $ordernumber = str_pad($response['OrderNumber'],7,"0",STR_PAD_LEFT);
-
-            if(Auth::check()){
-                pendingOrders::where('id',$response['OrderNumber'])
-                ->update(['fecha_pago'=>$response['Fecha'],
-                          'hora_pago'=>$response['Hora'],
-                          'tipo_pago'=>$response['Tipo']
-                ]);
-
-                DB::statement('call pending_order_HST_TRANSFER(?)',[$response['OrderNumber']]);
-
-            }else{
+            
                 pendingOrders::where('id',$response['OrderNumber'])
                 ->update(['fecha_pago'=>$response['Fecha'],
                           'hora_pago'=>$response['Hora'],
                           'tipo_pago'=>$response['Tipo'],
-                          'non_register_user'=>$response['Usuario'],
-                          'non_register_user_mail'=>$response['Email']
+                          'url_dowload'=>$url_dowload
                 ]);
-                
+
                 DB::statement('call pending_order_HST_TRANSFER(?)',[$response['OrderNumber']]);
-            }
 
             return view('PagoAprobado', compact('ordernumber'));
         }

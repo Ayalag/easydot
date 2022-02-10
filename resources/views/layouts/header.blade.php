@@ -6,7 +6,7 @@
         <ul class="nav sidebar-nav">
             <div class="sidebar-header">
                 <div class="sidebar-brand">
-                    {{-- <a href="#">Brand</a> --}}
+                    <a href="/">inicio</a>
                 </div>
             </div>
             <li class="dropdown">
@@ -104,32 +104,32 @@
 <div class="menu-container container-fluid">
     <x-btn-main>
         <x-a-link link='/producto/motor/cobertura'>
-            autos
+            Autos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/mascotas/coberturas'>
-            mascotas
+            Mascotas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/personas/cobertura'>
-            personas
+            Personas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/hogar/cobertura'>
-            hogar
+            Hogar
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/motor/cobertura'>
-            motos
+            Motos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/personas/dental'>
-            dental
+            Dental
         </x-a-link>
     </x-btn-main>
     <x-btn-main>

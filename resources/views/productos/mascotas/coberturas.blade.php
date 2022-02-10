@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+{{-- <style>
+    .container-cobertura {
+        height: 100vh;
+    }
+
+</style> --}}
+
 @section('content')
 
 

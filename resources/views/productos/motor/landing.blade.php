@@ -21,13 +21,16 @@
             </div>
         </div>
         <div class="container container-formulario">
-            <x-productos-contacto />
+            <livewire:mails.product-contact-us />
         </div>
     </div>
 @endsection
 
 @section('scripts')
     <script>
-        document.getElementById("landing-area").value = "motor";
+        $(window).on('load', function() {
+            let tipo = 'Auto'
+            Livewire.emit("landingArea", tipo);
+        })
     </script>
 @endsection

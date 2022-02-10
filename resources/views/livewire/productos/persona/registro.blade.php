@@ -1,5 +1,5 @@
 <div>
-    <div class="container-fluid mb-3">
+    <div class="container-fluid p-3">
         <div class="col-12 text-center">
             <div class="registro-datos__subtitle">
                 <p class="underline">datos personales</p>

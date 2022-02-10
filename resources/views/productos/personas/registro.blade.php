@@ -26,6 +26,73 @@
             text-align: center;
         }
 
+        input {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .input-group {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+
+            .stepper,
+            .container-registo__datos-header,
+            .condicion_poliza,
+            .card-list__items,
+            .card-detail {
+                display: none;
+            }
+
+            .container-registro {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .card-container__insurance {
+                height: auto !important;
+                width: auto !important;
+            }
+
+            .card-subtitle {
+                font-size: 1.5rem
+            }
+
+            .card-text {
+                font-size: 1rem
+            }
+
+            .grouping_price {
+                display: flex;
+                align-items: center;
+                font-size: 1rem !important;
+                width: auto;
+                right: 10px;
+            }
+
+            .grouping_price div.row {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                font-size: 1rem !important;
+            }
+
+            .price {
+                font-weight: 600
+            }
+
+            .annuity {
+                margin-right: 1px;
+            }
+
+            .card-text.easyBlue600::before {
+                content: 'Daños a terceros';
+                display: block;
+                color: var(--easyblue);
+            }
+        }
+
     </style>
 
 @endsection
@@ -58,7 +125,11 @@
     <script>
         let card = document.getElementsByClassName("card-container__insurance");
         for (let index = 0; index < card.length; ++index) {
-            card[index].setAttribute("style", "left: -2rem; border: none; border-radius:10px;")
+            if ($(window).width() >= 768) {
+                card[index].setAttribute("style", "left: -2rem; border: none; border-radius:10px;")
+            } else {
+                card[index].setAttribute("style", "border: none; border-radius:10px;")
+            }
             card[index].classList.add('shadow-lg');
         }
 

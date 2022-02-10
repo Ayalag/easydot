@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="container-fluid container-cobertura pt-5">
         <div class="container container-button">
             <div class="box-bottom pt-5" id="danosaterceros">Daños a terceros
@@ -26,7 +25,7 @@
             location.href = "/producto/motor/motor";
         });
         document.querySelector('#coberturacompleta').addEventListener('click', function(e) {
-            location.href = "roducto/motor/landing";
+            location.href = "/producto/motor/landing";
         });
     </script>
 

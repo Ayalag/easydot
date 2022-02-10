@@ -4,10 +4,12 @@ use App\Mail\landingMailContactForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\comprobanteCompra;
 use App\Http\Controllers\payeasyController;
 use App\Http\Controllers\productos\motor\motorController;
 use App\Http\Controllers\productos\persona\personaController;
 use App\Http\Controllers\productos\veterinario\veterinarioController;
+use App\Mail\mail\userSelectedInsuranceMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,15 +59,16 @@ Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('termino
 
 });
 
-
-
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
+Route::get('/producto/motor/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
 
+
+Route::get('/email',function(){
+    return new userSelectedInsuranceMail();
+});
 
 Auth::routes();
 
 
-// Route::get('/mail/template/compra', [HomeController::class, 'exportPDF']);
 
-
-Route::view('/mail/template/compra', 'emails.productos.compra')->name('templatemail');
+// Route::view('/mail/template/compra', 'emails.productos.compra')->name('templatemail');

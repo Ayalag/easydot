@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container container-conoce__easy p-5">
+    <div class="container container-conoce__easy pt-5">
         <div class="container container-conocenos__title">
             <span class="underline">conoce un poco más</span>
         </div>
@@ -9,7 +9,7 @@
             <p>sobre nosotros</p>
         </div>
 
-        <div class="container-conocenos__paragraph p-5">
+        <div class="container-conocenos__paragraph pt-2 pb-5">
             Somos una empresa panameña <br>
             que busca poder ofrecerte las mejores <br> soluciones del mercado para tu <br>
             bienestar y el de tus seres queridos
@@ -38,7 +38,7 @@
     <div class="container-fluid forma2">
         <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
     </div>
-    <div class="container container-legenda p-5">
+    <div class="container container-legenda pt-5">
         <div class="container-legenda__paragraph">
             <p>Sabemos que hay soluciones y productos que tradicionalmente han sido algo complicados, pero hemos trabajado
                 de la mano con empresas aliadas para que estos sean mucho más sencillos, fáciles de entender y de obtener.
@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <div class="container-fluid container-categorias p-5">
+    <div class="container-fluid container-categorias pt-5">
         <div class="container-categorias__title">
             <span class="underline">las</span> soluciones que ofrecemos han sido <br> agrupadas en categorías para que
             sea <br>
@@ -133,11 +133,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid container-footer">
+    <div class="container-fluid container-footer d-flex">
         <div class="container container-form">
-            {{-- Hola mundo --}}
-            <x-contact-us />
+            <livewire:mails.contact-us />
         </div>
     </div>
-
+    {{-- <div class="container container-footer__image">
+        <img src="{{ asset('/public/includes/images/conocenos/footer-conocenos.png') }}" alt="">
+    </div> --}}
 @endsection

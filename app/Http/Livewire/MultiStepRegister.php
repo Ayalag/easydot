@@ -65,9 +65,9 @@ class MultiStepRegister extends Component
                     'nombres' => 'required|string',
                     'apellidos' => 'required|string',
                     'typeId' => 'required|min:1',
-                    'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
-                    'genero' => 'required|min:1',
-                    'fecha_de_nacimiento' => 'required',
+                    // 'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                    // 'genero' => 'required|min:1',
+                    // 'fecha_de_nacimiento' => 'required',
                 ]);
             }
             else{
@@ -75,11 +75,11 @@ class MultiStepRegister extends Component
                 $this->validate([
                     'nombres' => 'required|string',
                     'apellidos' => 'required|string',
-                    'typeId' => 'required|min:1',
-                    'identificacion' => 'required',
-                    'pais' => 'required',
-                    'genero' => 'required|min:1',
-                    'fecha_de_nacimiento' => 'required',
+                    // 'typeId' => 'required|min:1',
+                    // 'identificacion' => 'required',
+                    // 'pais' => 'required',
+                    // 'genero' => 'required|min:1',
+                    // 'fecha_de_nacimiento' => 'required',
                 ]);
             }
         }
