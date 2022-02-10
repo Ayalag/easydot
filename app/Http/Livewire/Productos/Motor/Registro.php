@@ -225,8 +225,7 @@ class Registro extends Component
         $this->aseguradora_name = $value3;
         $this->plan_id = $value4;
         $this->valor = $value5;
-        $this->plan_name = $value6;
-        
+        $this->plan_name = $value6;   
     }
     
     public function submit(){
@@ -288,7 +287,6 @@ class Registro extends Component
         ->update(['Payment_url'=>$PaymentWeb->data->url]);
 
         return redirect()->to($PaymentWeb->data->url);
-
     }
     
     public function render()

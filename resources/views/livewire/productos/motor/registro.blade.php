@@ -272,13 +272,7 @@
                                                 ¿Eres una persona <br>
                                                 politicamente expuesta?
                                             </div>
-                                            <label class="
-                                                
-                                                
-                                                
-                                                                                    form-check-label mr-1 h4"
-                                                for="">
-                                                Si</label>
+                                            <label class="form-check-label mr-1 h4" for="">Si</label>
                                                 <input wire:model.defer="ppe" class="form-check-input" type="radio"
                                                     name="ppe" id="ppeSi" value="ppeSi" wire:click="$set('show',true)">
                                                 <label class="form-check-label mr-1 h4" for="">No</label>

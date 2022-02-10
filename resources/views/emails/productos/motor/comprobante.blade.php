@@ -73,18 +73,22 @@
                                 placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="nombre">
+                            <label for="cedula">
                                 <div class="col-5 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
                                     <input disabled class="form-check-input"
-                                        {{ $response[0]->id_type == 'cedula' ? 'checked' : '' }} type="radio"
-                                        name="identificacion" id="cedula">
+                                        type="radio"
+                                        name="type_id" 
+                                        id="cedula"
+                                        {{ $response[0]->id_type == 'cedula' ? 'checked' : '' }}>
                                 </div>
                                 <div class="col-3 form-check form-check-inline">
                                     <label class="form-check-label mr-2" for="inlineRadio1">Pasaporte</label>
-                                    <input disabled class="form-check-input"
-                                        {{ $response[0]->id_type == 'pasaporte' ? 'checked' : '' }} type="radio"
-                                        name="identificacion" id="pasaporte">
+                                    <input disabled class="form-check-input" 
+                                        type="radio"
+                                        name="type_id" 
+                                        id="pasaporte"
+                                        {{ $response[0]->id_type == 'pasaporte' ? 'checked' : '' }}>
                                 </div>
                             </label>
                             <input disabled type="text" value="{{ $response[0]->identificacion }}"
@@ -117,13 +121,13 @@
                                     <label class="form-check-label pr-2" for="inlineRadio1">M</label>
                                     <input disabled class="form-check-input"
                                         {{ $response[0]->genero == 'hombre' ? 'checked' : '' }} type="radio"
-                                        name="identificacion" id="hombre">
+                                        name="genero" id="hombre">
                                 </div>
                                 <div class="col-1 form-check form-check-inline">
                                     <label class="form-check-label mr-2" for="inlineRadio1">F</label>
                                     <input disabled class="form-check-input"
-                                        {{ $response[0]->genero == 'mujer' ? 'checked' : '' }}type="radio"
-                                        name="identificacion" id="mujer">
+                                        {{ $response[0]->genero == 'mujer' ? 'checked' : '' }} type="radio"
+                                        name="genero" id="mujer">
                                 </div>
                             </div>
                         </div>
@@ -193,12 +197,12 @@
                                 <div class="col-4 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Si</label>
                                     <input disabled {{ $response[0]->ppe == 'ppeSi' ? 'checked' : '' }}
-                                        class="form-check-input" type="radio" name="identificacion" id="ppesi">
+                                        class="form-check-input" type="radio" name="ppe" id="ppesi">
                                 </div>
                                 <div class="col-1 form-check form-check-inline">
                                     <label class="form-check-label mr-2" for="inlineRadio1">No</label>
                                     <input disabled {{ $response[0]->ppe == 'ppeNo' ? 'checked' : '' }}
-                                        class="form-check-input" type="radio" name="identificacion" id="ppeno">
+                                        class="form-check-input" type="radio" name="ppe" id="ppeno">
                                 </div>
                             </div>
                         </div>
@@ -236,7 +240,7 @@
                                         class="form-control input__style_comprobante" id="mm" placeholder="">
                                 </div>
                                 <div class="col-4 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_fin_year }} type=" text"
+                                    <input disabled value="{{ $response[0]->ppe_fin_year }}" type=" text"
                                         class="form-control input__style_comprobante" id="yyyy" placeholder="">
                                 </div>
                             </div>
