@@ -19,7 +19,7 @@
 
         .condicion_poliza {
             position: relative;
-            top: 4rem;
+            top: 12rem;
             margin-right: 5rem
         }
 
