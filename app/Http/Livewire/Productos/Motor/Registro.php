@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Productos\Motor;
 
+use App\Models\CarroMarca;
+use App\Models\CarroTipo;
 use Livewire\Component;
 use App\Models\distrito;
 use App\Models\provincia;
@@ -17,6 +19,11 @@ class Registro extends Component
     public $provincia;
     public $distrito;
     public $corregimiento;
+
+    public $carBrand;
+    public $carType;
+
+    public $selectedCarBrand = null;
 
     public $selectedProvincia = null;
     public $selectedDistrito = null;
@@ -75,8 +82,10 @@ class Registro extends Component
     ];
 
     public function mount(){
-        $this->currentStep = 1;
+        $this->currentStep = 2;
         $this->provincia = provincia::all();
+        $this->carBrand= CarroMarca::all();
+
     }
 
     public function updatedSelectedProvincia($id_provincia){
@@ -87,6 +96,12 @@ class Registro extends Component
     public function updatedSelectedDistrito($id_distrito){
 
         $this->corregimiento = corregimiento::where('id_distrito',$id_distrito)->get();
+        
+    }
+
+    public function updatedSelectedCarBrand($id_marca){
+
+        $this->carType = CarroTipo::where('id_Marca',$id_marca)->get();
         
     }
 
@@ -263,8 +278,8 @@ class Registro extends Component
         $newOrderInsert->ppe_fin_year =$this->ppe_final_año;
 
         $newOrderInsert->placa = $this->placa;
-        $newOrderInsert->marca = $this->marca;
-        $newOrderInsert->modelo = $this->modelo;
+        $newOrderInsert->marca = $this->selectedCarBrand;
+        $newOrderInsert->modelo = $this->selectedCarType;
         $newOrderInsert->car_year = $this->year;
         $newOrderInsert->color = $this->color;
         $newOrderInsert->numero_de_motor = $this->motorNum;

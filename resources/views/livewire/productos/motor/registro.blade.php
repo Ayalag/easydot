@@ -477,16 +477,28 @@
                     </div>
                     <div class="col-lg-8 offset-lg-2  pb-3">
                         <div class="row justify-content-center ">
-                            <input type="text" class="form-control input__style" id="marca" placeholder="marca"
-                                wire:model.defer="marca">
-                            <span class="text-danger">@error('marca'){{ $message }}@enderror</span>
-                            </div>
+                            <select wire:model="selectedCarBrand"
+                                class="form-control input__style @if ($errors->has('carBrand')) border border-danger @endif"
+                                title="CarBrand" name="CarBrand" id="CarBrand" required>
+                                <option value="" selected>Marca</option>
+                                @foreach ($carBrand as $cb)
+                                    <option value="{{ $cb->id }}">{{ $cb->Marca }}</option>
+                                @endforeach
+                            </select>
                         </div>
+                    </div>
                         <div class="col-lg-8 offset-lg-2  pb-3">
                             <div class="row justify-content-center">
-                                <input type="text" class="form-control input__style" id="modelo" placeholder="modelo"
-                                    wire:model.defer="modelo">
-                                <span class="text-danger">@error('modelo'){{ $message }}@enderror</span>
+                                <select wire:model="selectedCarType"
+                                class="form-control input__style @if ($errors->has('carType')) border border-danger @endif"
+                                title="carType" name="carType" id="carType" required>
+                                <option value="" selected>Marca</option>
+                                @if (!is_null($carType))
+                                @foreach ($carType as $ct)
+                                    <option value="{{ $ct->id_Marca }}">{{ $ct->Tipo }}</option>
+                                @endforeach
+                            @endif
+                            </select>
                                 </div>
                             </div>
                             <div class="col-lg-8  offset-lg-2 pb-3">
