@@ -24,6 +24,7 @@ class Registro extends Component
     public $carType;
 
     public $selectedCarBrand = null;
+    public $selectedCarType = null;
 
     public $selectedProvincia = null;
     public $selectedDistrito = null;
@@ -82,7 +83,7 @@ class Registro extends Component
     ];
 
     public function mount(){
-        $this->currentStep = 2;
+        $this->currentStep = 1;
         $this->provincia = provincia::all();
         $this->carBrand= CarroMarca::all();
 
@@ -222,8 +223,8 @@ class Registro extends Component
             $this->validate([
 
                 'placa' => ['required','regex:/[a-zA-Z0-9\s]+/'],
-                'marca' => 'required|string',
-                'modelo' => 'required|string',
+                'selectedCarBrand' => 'required|string',
+                'selectedCarType' => 'required|string',
                 'year' => 'required|string',
                 'color' => 'required|string',
                 'motorNum' => 'required|string',
