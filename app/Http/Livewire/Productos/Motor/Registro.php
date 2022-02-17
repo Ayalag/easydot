@@ -77,6 +77,7 @@ class Registro extends Component
     public $totalSteps = 2;
     public $currentStep = 1;
     public $show = false;
+    public $showPais = false;
 
     protected $listeners = [
         'getMotorPlanDetail'
@@ -108,33 +109,52 @@ class Registro extends Component
 
     public function increaseStep(){
         $this->validateData();
+        $this->validaPpe();
         $this->currentStep++;
 
         return $this->currentStep;
     }
 
+    public function validaPpe(){
+
+        if($this->currentStep == 1){
+            if($this->ppe == 'ppeSi'){
+                $this->validate([
+                    'ppecargo' => 'required|string',
+                    'ppemail' => 'required|email',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_final_dia' => 'required|numeric',
+                    'ppe_final_mes' => 'required|numeric',
+                    'ppe_final_año' => 'required|numeric',
+                 ]);
+            }
+        }
+    }
+
     public function validateData(){
         if($this->currentStep == 1){
 
-            if(($this->typeId =='cedula') and ($this->ppe == 'ppeSi')){
+            if($this->typeId =='cedula'){
                 $this->validate([
-                    'nombres' => 'required|string',
-                    'apellidos' => 'required|string',
+                    'nombres' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                    'apellidos' => ['required','regex:/[a-zA-Z0-9\s]+/'],
                     'typeId' => 'required|min:1',
                     'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
                     'dia' => 'required|numeric',
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
-                    'pais' => 'required|string',
+                    // 'pais' => 'required|string',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
-                    'contactMail' => 'required|string',
+                    'contactMail' => 'required|email',
                     'ppe' => 'required|min:1',
                     'ppecargo' => 'required|string',
-                    'ppemail' => 'required|string',
+                    'ppemail' => 'required|email',
                     'ppe_inicio_dia' => 'required|numeric',
                     'ppe_inicio_mes' => 'required|numeric',
                     'ppe_inicio_año' => 'required|numeric',
@@ -145,10 +165,10 @@ class Registro extends Component
             }
             else{
                 $this->validate([
-                    'nombres' => 'required|string',
-                    'apellidos' => 'required|string',
+                    'nombres' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                    'apellidos' => ['required','regex:/[a-zA-Z0-9\s]+/'],
                     'typeId' => 'required|min:1',
-                    'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                    'identificacion' => 'required|string',
                     'dia' => 'required|string',
                     'mes' => 'required|string',
                     'año' => 'required|string',
@@ -156,68 +176,16 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
-                    'pais' => 'required|string',
+                    // 'pais' => 'required|string',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
-                    'contactMail' => 'required|string',
+                    'contactMail' => 'required|email',
                     'ppe' => 'required|min:1',
                     
                 ]);
             } 
-            if(($this->typeId =='pasaporte') and ($this->ppe == 'ppeSi')){
-                $this->validate([
-                    'nombres' => 'required|string',
-                    'apellidos' => 'required|string',
-                    'typeId' => 'required|min:1',
-                    'identificacion' => 'required',
-                    'dia' => 'required|numeric',
-                    'mes' => 'required|numeric',
-                    'año' => 'required|numeric',
-                    'eCivil' => 'required|string',
-                    'pais' => 'required|string',
-                    'genero' => 'required|min:1',
-                    'barrio' => 'required|string',
-                    'casa' => 'required|string',
-                    'celular' => 'required|string',
-                    'contactMail' => 'required|string',
-                    'ppe' => 'required|min:1',
-                    'ppecargo' => 'required|string',
-                    'ppemail' => 'required|string',
-                    'ppe_inicio_dia' => 'required|numeric',
-                    'ppe_inicio_mes' => 'required|numeric',
-                    'ppe_inicio_año' => 'required|numeric',
-                    'ppe_final_dia' => 'required|numeric',
-                    'ppe_final_mes' => 'required|numeric',
-                    'ppe_final_año' => 'required|numeric',
-                ]);
-            }
-            else{
-                $this->validate([
-                    'nombres' => 'required|string',
-                    'apellidos' => 'required|string',
-                    'typeId' => 'required|min:1',
-                    'identificacion' => 'required',
-                    'dia' => 'required|string',
-                    'mes' => 'required|string',
-                    'año' => 'required|string',
-                    'dia' => 'required|numeric',
-                    'mes' => 'required|numeric',
-                    'año' => 'required|numeric',
-                    'eCivil' => 'required|string',
-                    'pais' => 'required|string',
-                    'genero' => 'required|min:1',
-                    'barrio' => 'required|string',
-                    'casa' => 'required|string',
-                    'celular' => 'required|string',
-                    'contactMail' => 'required|string',
-                    'ppe' => 'required|min:1',
-                    
-                ]);
-            } 
-            
-           
         }
         if($this->currentStep == 2){
             $this->validate([
