@@ -588,7 +588,7 @@
                         {{-- <label for="">celular</label> --}}
                         <input wire:model.defer="celular" type="tel"
                             class="form-control input__style @if ($errors->has('celular')) border border-danger @endif"
-                            id="celular" placeholder="Celular">
+                            id="celular" placeholder="Celular" maxlength="8">
                     </div>
                     <div class="form-group col-md-6">
                         {{-- <label for="">correo electrónico</label> --}}

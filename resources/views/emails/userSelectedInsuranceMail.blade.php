@@ -10,7 +10,7 @@ momento ya tienes cobertura.
 <img src="https://www.easydot.com.pa/public/includes/images/mails/body_mail.png" alt="">
 </p>
 
-Recuerda que, si tiens alguna consulta puedes comunicarte con nosotros a 
+Recuerda que, si tienes alguna consulta puedes comunicarte con nosotros a 
 través de nuestro correo info@easydot.com.pa o vía whatsapp en nuestros horario
 de atención.
 

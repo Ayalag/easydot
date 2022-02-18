@@ -15,7 +15,12 @@ class payeasyController extends Controller
     function payprocessresponce(){
         $response = $_REQUEST; 
 
-        $url_dowload = 'https://www.easydot.com.pa/producto/motor/comprobante/'.$response['OrderNumber'];
+        if($response['id_insurance'] == '1' || $response['id_insurance'] == '2'){
+
+            $url_dowload = 'https://www.easydot.com.pa/producto/motor/comprobante/'.$response['OrderNumber'];
+        }
+
+        
 
         if($response['Estado'] === 'Aprobada'){
             $ordernumber = str_pad($response['OrderNumber'],7,"0",STR_PAD_LEFT);
