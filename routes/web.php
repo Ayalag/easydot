@@ -47,7 +47,7 @@ Route::view('/producto/personas/landing','productos.personas.landing')->name('pe
 Route::view('/producto/personas/dental','productos.personas.dental')->name('personas-dental');
 Route::get('/producto/personas/er',[personaController::class,'er'])->name('personas-er');
 Route::get('/producto/personas/erm',[personaController::class,'erm'])->name('personas-erm');
-Route::get('/producto/mascotas/registro/{id}',[personaController::class,'isnuranceSeleted'])->name('personas-registro');
+Route::get('/producto/personas/registro/{id}',[personaController::class,'isnuranceSeleted'])->name('personas-registro');
 
 Route::view('/producto/mascotas/coberturas','productos.mascotas.coberturas')->name('mascotas-cobertura');
 Route::get('/producto/mascotas/veterinario',[veterinarioController::class,'index'])->name('mascotas-veterinario');
@@ -61,14 +61,18 @@ Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('termino
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 Route::get('/producto/motor/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
+Route::get('/producto/mascota/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_mascota'])->name('comprobante_mascota');
+Route::get('/producto/persona/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_persona'])->name('comprobante_persona');
+Route::get('/producto/hogar/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_hogar'])->name('comprobante_hogar');
+Route::get('/producto/dental/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_dental'])->name('comprobante_dental');
 
 
-Route::get('/email',function(){
-    return new userSelectedInsuranceMail();
-});
+
 
 Auth::routes();
 
 
-
+// Route::get('/email',function(){
+//     return new userSelectedInsuranceMail();
+// });
 // Route::view('/mail/template/compra', 'emails.productos.compra')->name('templatemail');
