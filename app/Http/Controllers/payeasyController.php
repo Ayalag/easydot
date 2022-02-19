@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 class payeasyController extends Controller
 {
     function payprocessresponce(){
+        
         $response = $_REQUEST; 
 
         if($response['id_insurance'] == '1' || $response['id_insurance'] == '2'){
@@ -20,7 +21,10 @@ class payeasyController extends Controller
             $url_dowload = 'https://www.easydot.com.pa/producto/motor/comprobante/'.$response['OrderNumber'];
         }
 
-        
+        if($response['id_insurance'] == '4') {
+
+            $url_dowload = 'https://www.easydot.com.pa/producto/persona/comprobante/'.$response['OrderNumber'];
+        }
 
         if($response['Estado'] === 'Aprobada'){
             $ordernumber = str_pad($response['OrderNumber'],7,"0",STR_PAD_LEFT);

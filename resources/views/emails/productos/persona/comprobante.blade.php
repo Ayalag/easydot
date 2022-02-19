@@ -28,7 +28,7 @@
         }
 
         .card-container__insurance {
-            height: 474px !important;
+            height: 522px !important;
         }
 
         .card-subtitle {
@@ -272,7 +272,7 @@
                 <div class="container-datos__cliente-titulo p-2">
                     Cobertura para:
                 </div>
-                <div>
+                {{-- <div>
                     <div class="form-row p-2">
                         <div class="col-3">
                             <label for="placa">Placa</label>
@@ -314,7 +314,7 @@
                                 class="form-control input__style_comprobante" id="chasis" placeholder="">
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="container container-comprobante-compra-footer d-flex p-4">

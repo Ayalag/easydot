@@ -117,21 +117,13 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
-                    // 'pais' => 'required|string',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
                     'contactMail' => 'required|email',
                     'ppe' => 'required|min:1',
-                    // 'ppecargo' => 'required|string',
-                    // 'ppemail' => 'required|email',
-                    // 'ppe_inicio_dia' => 'required|numeric',
-                    // 'ppe_inicio_mes' => 'required|numeric',
-                    // 'ppe_inicio_año' => 'required|numeric',
-                    // 'ppe_final_dia' => 'required|numeric',
-                    // 'ppe_final_mes' => 'required|numeric',
-                    // 'ppe_final_año' => 'required|numeric',
+
                 ]);
             }
             else{
@@ -206,7 +198,7 @@ class Registro extends Component
     
             $order = $newOrderInsert->id;
             
-            $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order);
+            $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order, $this->tipo_id);
             $PaymentWeb = json_decode($PaymentWeb);
     
             pendingOrders::where('id',$order)
