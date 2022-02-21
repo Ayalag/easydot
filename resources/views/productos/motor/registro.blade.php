@@ -104,20 +104,6 @@
 @endsection
 
 @section('content')
-
-    {{-- <div class="container stepper">
-        <div class="row mt-5 justify-content-end"> --}}
-    {{-- <div class="col-3"></div> --}}
-    {{-- <div class="col-10 text-center"> --}}
-    <!-- progressbar -->
-    {{-- <ul id="progressbar">
-                    <li class="active"></li>
-                    <li class="active"></li>
-                    <li></li>
-                </ul>
-            </div>
-        </div>
-    </div> --}}
     <div class="container container-registro mb-5">
         @isset($cardHtml)
             {!! $cardHtml[0]->html !!}

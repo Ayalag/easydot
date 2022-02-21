@@ -95,7 +95,7 @@ class Registro extends Component
         if($this->ppe == 'ppeSi'){
             $this->validate([
                 'ppecargo' => 'required|string',
-                'ppemail' => 'required|email',
+                'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                 'ppe_inicio_dia' => 'required|numeric',
                 'ppe_inicio_mes' => 'required|numeric',
                 'ppe_inicio_año' => 'required|numeric',
@@ -121,7 +121,7 @@ class Registro extends Component
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
-                    'contactMail' => 'required|email',
+                    'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
 
                 ]);
@@ -144,7 +144,7 @@ class Registro extends Component
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
-                    'contactMail' => 'required|email',
+                    'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
                     
                 ]);
