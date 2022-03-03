@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="submit">
+    <form wire:submit.prevent="submit" enctype="multipart/form-data">
         <div class="container-fluid stepper">
             <div class="row mt-5 justify-content-end">
                 {{-- <div class="col-3"></div> --}}
@@ -29,13 +29,13 @@
                         {{-- <label for="nombres">nombres</label> --}}
                         <input type="text"
                             class="form-control input__style @if ($errors->has('nombres')) border border-danger @endif"
-                            id="nombres" placeholder="Nombres" wire:model.defer="nombres">
+                            id="nombres" placeholder="nombres" wire:model.defer="nombres">
                     </div>
                     <div class="form-group col-md-6">
                         {{-- <label for="apellidos">apellidos</label> --}}
                         <input type="text"
                             class="form-control input__style @if ($errors->has('apellidos')) border border-danger @endif"
-                            id="apellidos" placeholder="Apellidos" wire:model.defer="apellidos">
+                            id="apellidos" placeholder="apellidos" wire:model.defer="apellidos">
                     </div>
                 </div>
                 <div class="form-row mb-2">
@@ -59,15 +59,16 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4">
-                        <div class="form-check-inline ">
+                        <div class="form-check-inline">
                             <label class="easyBlue600 pb-2">Fecha de nacimiento</label>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tooltipAge">
+
                             <div class="d-flex">
                                 <select wire:model.defer="dia"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2 @if ($errors->has('dia')) border border-danger @endif"
-                                    id="dd" placeholder="dd">
-                                    <option value="" selected>dd</option>
+                                    id="birthdayDay" placeholder="dd">
+                                    <option value="" selected>día</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -102,8 +103,8 @@
                                 </select>
                                 <select wire:model.defer="mes"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('mes')) border border-danger @endif"
-                                    id="mm" placeholder="mm">
-                                    <option value="" selected>mm</option>
+                                    id="birthdayMonth" placeholder="mm">
+                                    <option value="" selected>mes</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -118,9 +119,9 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="año"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
-                                    id="aa" placeholder="aa">
-                                    <option value="" selected>aa</option>
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-5 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
+                                    id="birthdayYear" placeholder="aa">
+                                    <option value="" selected>año</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
                                     <option value="2020">2020</option>
@@ -223,6 +224,7 @@
                                     <option value="1923">1923</option>
                                 </select>
                             </div>
+                            <span class="ageError" id="ageError">*mayoria de edad requerida</span>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
@@ -262,12 +264,14 @@
                         <div class="input-group input-file" name="upload">
                             {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
                             <label for="file-upload" class="custom-file-upload input__style">
-                                <i class="fas fa-paperclip"></i> adjuntar identificación
+                                <i class="fas fa-paperclip"></i>identificación
                             </label>
-                            <input id="file-upload" type="file" />
+                            <input id="file-upload" type="file" wire:model="cedulaFoto" />
+                            <span wire:loading wire:target="cedulaFoto" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true" style="position: relative;left:-30px;bottom:-10px" ></span>
+                            @error('cedulaFoto') <span class="error">{{ $message }}</span> @enderror
                         </div>
                     </div>
-
                     <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
                         @if($showPais)
                         <select wire:model.defer="pais"
@@ -614,23 +618,24 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
                                     <div class="form-check-inline ">
-                                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif"">
-                                                ¿Eres una persona <br>
-                                                politicamente expuesta?
-                                            </div>
-                                            <label class=" form-check-label mr-1 h4" for="">Si</label>
-                                            <input wire:model.defer="ppe" class="form-check-input" type="radio"
-                                                name="ppe" id="ppeSi" value="ppeSi" wire:click="$set('show',true)">
-                                            <label class="form-check-label mr-1 h4" for="">No</label>
-                                            <input wire:model.defer="ppe" class="form-check-input" type="radio"
-                                                name="ppe" id="ppeNo" value="ppeNo" wire:click="$set('show',false)">
+                                        <div
+                                            class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
+                                            ¿Eres una persona <br>
+                                            politicamente expuesta?
                                         </div>
+                                        <label class=" form-check-label mr-1 h4" for="">Si</label>
+                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
+                                            id="ppeSi" value="ppeSi">
+                                        <label class="form-check-label mr-1 h4" for="">No</label>
+                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
+                                            id="ppeNo" value="ppeNo">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @if ($show)
+                </div>
+                <div class="show-hide" id="show-hide" style="display: none;">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for=""></label>
@@ -639,10 +644,19 @@
                                 id="cargo" placeholder="Cargo">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for=""></label>
-                            <input wire:model.defer="ppemail" type="mail"
-                                class="form-control input__style @if ($errors->has('ppemail')) border border-danger @endif"
-                                id="casa" placeholder="Correo electrónico">
+                            <div class="container-ppe__activo d-flex flex-column">
+                                <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
+                                    ¿estas en el cargo <br> actualmente?
+                                </div>
+                                <div class="ppe_otipons text-center">
+                                    <label class=" form-check-label mr-4 h5" for="">Si</label>
+                                    <input wire:model.defer="ppe_activo" class="form-check-input" type="radio" name="ppe_activo"
+                                        id="ppe_activoSi" value="si">
+                                    <label class="form-check-label mr-4 h5" for="">No</label>
+                                    <input wire:model.defer="ppe_activo" class="form-check-input" type="radio" name="ppe_activo"
+                                        id="ppe_activoNo" value="no">
+                                </div>
+                            </div>                            
                         </div>
                     </div>
                     <div class="form-row">
@@ -706,12 +720,111 @@
                                     class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
                                     id="aa" placeholder="aa">
                                     <option value="" selected>aa</option>
-                                    <option value="1922">1922</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2000">2000</option>
+                                    <option value="1999">1999</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1974">1974</option>
+                                    <option value="1973">1973</option>
+                                    <option value="1972">1972</option>
+                                    <option value="1971">1971</option>
+                                    <option value="1970">1970</option>
+                                    <option value="1969">1969</option>
+                                    <option value="1968">1968</option>
+                                    <option value="1967">1967</option>
+                                    <option value="1966">1966</option>
+                                    <option value="1965">1965</option>
+                                    <option value="1964">1964</option>
+                                    <option value="1963">1963</option>
+                                    <option value="1962">1962</option>
+                                    <option value="1961">1961</option>
+                                    <option value="1960">1960</option>
+                                    <option value="1959">1959</option>
+                                    <option value="1958">1958</option>
+                                    <option value="1957">1957</option>
+                                    <option value="1956">1956</option>
+                                    <option value="1955">1955</option>
+                                    <option value="1954">1954</option>
+                                    <option value="1953">1953</option>
+                                    <option value="1952">1952</option>
+                                    <option value="1951">1951</option>
+                                    <option value="1950">1950</option>
+                                    <option value="1949">1949</option>
+                                    <option value="1948">1948</option>
+                                    <option value="1947">1947</option>
+                                    <option value="1946">1946</option>
+                                    <option value="1945">1945</option>
+                                    <option value="1944">1944</option>
+                                    <option value="1943">1943</option>
+                                    <option value="1942">1942</option>
+                                    <option value="1941">1941</option>
+                                    <option value="1940">1940</option>
+                                    <option value="1939">1939</option>
+                                    <option value="1938">1938</option>
+                                    <option value="1937">1937</option>
+                                    <option value="1936">1936</option>
+                                    <option value="1935">1935</option>
+                                    <option value="1934">1934</option>
+                                    <option value="1933">1933</option>
+                                    <option value="1932">1932</option>
+                                    <option value="1931">1931</option>
+                                    <option value="1930">1930</option>
+                                    <option value="1929">1929</option>
+                                    <option value="1928">1928</option>
+                                    <option value="1927">1927</option>
+                                    <option value="1926">1926</option>
+                                    <option value="1925">1925</option>
+                                    <option value="1924">1924</option>
+                                    <option value="1923">1923</option>
 
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col-md-6 text-center">
+                        <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
                             <label class="easyBlue600">Fecha de finalización</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_final_dia"
@@ -771,25 +884,124 @@
                                     class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
                                     id="aa" placeholder="aa">
                                     <option value="" selected>aa</option>
-                                    <option value="1922">1922</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2000">2000</option>
+                                    <option value="1999">1999</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1974">1974</option>
+                                    <option value="1973">1973</option>
+                                    <option value="1972">1972</option>
+                                    <option value="1971">1971</option>
+                                    <option value="1970">1970</option>
+                                    <option value="1969">1969</option>
+                                    <option value="1968">1968</option>
+                                    <option value="1967">1967</option>
+                                    <option value="1966">1966</option>
+                                    <option value="1965">1965</option>
+                                    <option value="1964">1964</option>
+                                    <option value="1963">1963</option>
+                                    <option value="1962">1962</option>
+                                    <option value="1961">1961</option>
+                                    <option value="1960">1960</option>
+                                    <option value="1959">1959</option>
+                                    <option value="1958">1958</option>
+                                    <option value="1957">1957</option>
+                                    <option value="1956">1956</option>
+                                    <option value="1955">1955</option>
+                                    <option value="1954">1954</option>
+                                    <option value="1953">1953</option>
+                                    <option value="1952">1952</option>
+                                    <option value="1951">1951</option>
+                                    <option value="1950">1950</option>
+                                    <option value="1949">1949</option>
+                                    <option value="1948">1948</option>
+                                    <option value="1947">1947</option>
+                                    <option value="1946">1946</option>
+                                    <option value="1945">1945</option>
+                                    <option value="1944">1944</option>
+                                    <option value="1943">1943</option>
+                                    <option value="1942">1942</option>
+                                    <option value="1941">1941</option>
+                                    <option value="1940">1940</option>
+                                    <option value="1939">1939</option>
+                                    <option value="1938">1938</option>
+                                    <option value="1937">1937</option>
+                                    <option value="1936">1936</option>
+                                    <option value="1935">1935</option>
+                                    <option value="1934">1934</option>
+                                    <option value="1933">1933</option>
+                                    <option value="1932">1932</option>
+                                    <option value="1931">1931</option>
+                                    <option value="1930">1930</option>
+                                    <option value="1929">1929</option>
+                                    <option value="1928">1928</option>
+                                    <option value="1927">1927</option>
+                                    <option value="1926">1926</option>
+                                    <option value="1925">1925</option>
+                                    <option value="1924">1924</option>
+                                    <option value="1923">1923</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
             </div>
+        </div>
 
 
 
-            <div class="container pb-5 pt-2 d-flex flex-column text-center">
-                <button type="submit" class="btn_payeasy--load m-auto" id="process">
-                    <span wire:loading class="spinner-border spinner-border-sm" role="status"
-                        aria-hidden="true"></span>siguiente</button>
-                <div class="pt-4 pb-5 mr-4">
-                    <a href="javascript:history.back()"><i class="fas fa-arrow-left easyRose800"></i> atrás</a>
-                </div>
+        <div class="container pb-5 pt-2 d-flex flex-column text-center">
+            <button type="submit" class="btn_payeasy--load m-auto" id="process">
+                <span wire:loading class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true"></span>siguiente</button>
+            <div class="pt-4 pb-5 mr-4">
+                <a href="javascript:history.back()"><i class="fas fa-arrow-left easyRose800"></i> atrás</a>
             </div>
+        </div>
 
     </form>
 </div>

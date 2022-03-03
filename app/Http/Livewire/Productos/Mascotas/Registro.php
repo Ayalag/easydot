@@ -39,6 +39,7 @@ class Registro extends Component
     public $contactMail;
 
     public $ppe;
+    public $ppe_activo;
     public $ppecargo;
     public $ppemail;
     public $ppe_inicio_dia;
@@ -48,7 +49,10 @@ class Registro extends Component
     public $ppe_final_mes;
     public $ppe_final_año;
     
-    public $file;
+    public $cedulaFoto;
+    public $mascota1Foto;
+    public $mascota2Foto;
+    public $mascota3Foto;
 
     public $mascotaTipo;
     public $mascotaNombre;
@@ -210,6 +214,18 @@ class Registro extends Component
     public function submit(){
   
         $this->validateData();
+        $this->validaPpe();
+
+        $extension = $this->cedulaFoto->getClientOriginalExtension();
+        $extensionMascota1 = $this->mascota1Foto->getClientOriginalExtension();
+        $extensionMascota2 = $this->mascota2Foto->getClientOriginalExtension();
+        $extensionMascota3 = $this->mascota3Foto->getClientOriginalExtension();
+
+        $filePath = $this->cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extension);
+
+        $filePathMascota1 = $this->mascota1Foto->storeAs('public/mascotas',$this->identificacion.'_'.$this->mascotaNombre.'_'.'1'.'.'.$extensionMascota1);
+        $filePathMascota2 = $this->mascota2Foto->storeAs('public/mascotas',$this->identificacion.'_'.$this->mascotaNombre.'_'.'2'.'.'.$extensionMascota2);
+        $filePathMascota3 = $this->mascota3Foto->storeAs('public/mascotas',$this->identificacion.'_'.$this->mascotaNombre.'_'.'3'.'.'.$extensionMascota3);
 
         $newOrderInsert = new pendingOrders;
     
@@ -230,6 +246,10 @@ class Registro extends Component
         $newOrderInsert->provincia = $this->selectedProvincia;
         $newOrderInsert->distrito = $this->selectedDistrito;
         $newOrderInsert->corregimiento = $this->selectedCorregimiento;
+        $newOrderInsert->foto_ced_pas = $filePath;
+        $newOrderInsert->foto_mascota_1 = $filePathMascota1;
+        $newOrderInsert->foto_mascota_2 = $filePathMascota2;
+        $newOrderInsert->foto_mascota_3 = $filePathMascota3;
 
         $newOrderInsert->ppe = $this->ppe;
         $newOrderInsert->ppe_cargo = $this->ppecargo;

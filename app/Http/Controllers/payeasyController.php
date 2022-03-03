@@ -28,6 +28,10 @@ class payeasyController extends Controller
 
             $url_dowload = 'https://www.easydot.com.pa/producto/persona/comprobante/'.$response['OrderNumber'];
         }
+        if($response['id_insurance'] == '6') {
+
+            $url_dowload = 'https://www.easydot.com.pa/producto/dental/comprobante/'.$response['OrderNumber'];
+        }
 
         if($response['Estado'] === 'Aprobada'){
             $ordernumber = str_pad($response['OrderNumber'],7,"0",STR_PAD_LEFT);

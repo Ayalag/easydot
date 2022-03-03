@@ -46,6 +46,7 @@ class Registro extends Component
     public $contactMail;
 
     public $ppe;
+    public $ppe_activo;
     public $ppecargo;
     public $ppemail;
     public $ppe_inicio_dia;
@@ -55,7 +56,8 @@ class Registro extends Component
     public $ppe_final_mes;
     public $ppe_final_año;
     
-    public $file;
+    public $cedulaFoto;
+    public $registroVehicular;
 
     public $placa;
     public $marca;
@@ -150,6 +152,8 @@ class Registro extends Component
                     'celular' => 'required|string',
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
+                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+                    
                 ]);
             }
             else{
@@ -172,6 +176,7 @@ class Registro extends Component
                     'celular' => 'required|string',
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
+                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
                     
                 ]);
             } 
@@ -186,6 +191,7 @@ class Registro extends Component
                 'color' => 'required|string',
                 'motorNum' => 'required|string',
                 'chasisNum' => 'required|string',
+                'registroVehicular' => 'required | mimes:jpeg,jpg,png',
             ]);
         }
     }
@@ -204,6 +210,13 @@ class Registro extends Component
     public function submit(){
 
         $this->validateData();
+        $this->validaPpe();
+
+        $extension = $this->cedulaFoto->getClientOriginalExtension();
+        $regVehiculo = $this->registroVehicular->getClientOriginalExtension();
+
+        $filePath = $this->cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extension);
+        $filePathregVehicular = $this->registroVehicular->storeAs('public/registros/vehiculos',$this->identificacion.'_'.$this->placa.'.'.$regVehiculo);
 
         $newOrderInsert = new pendingOrders;
 
@@ -224,6 +237,8 @@ class Registro extends Component
         $newOrderInsert->provincia = $this->selectedProvincia;
         $newOrderInsert->distrito = $this->selectedDistrito;
         $newOrderInsert->corregimiento = $this->selectedCorregimiento;
+        $newOrderInsert->foto_ced_pas = $filePath;
+        $newOrderInsert->foto_registro_vehicular = $filePathregVehicular;
 
         $newOrderInsert->ppe = $this->ppe;
         $newOrderInsert->ppe_cargo = $this->ppecargo;

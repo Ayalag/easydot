@@ -100,6 +100,14 @@ input[type="radio"]:checked:before {
     border: none;
 }
 
+.ageError{
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+
+
+
 html,
 body,
 div,

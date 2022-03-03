@@ -40,6 +40,7 @@ class Registro extends Component
     public $contactMail;
 
     public $ppe;
+    public $ppe_activo;
     public $ppecargo;
     public $ppemail;
     public $ppe_inicio_dia;
@@ -49,7 +50,7 @@ class Registro extends Component
     public $ppe_final_mes;
     public $ppe_final_año;
     
-    public $file;
+    public $cedulaFoto;
 
     public $data_pk_id;
     public $tipo_id;
@@ -95,13 +96,14 @@ class Registro extends Component
         if($this->ppe == 'ppeSi'){
             $this->validate([
                 'ppecargo' => 'required|string',
-                'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                 'ppe_inicio_dia' => 'required|numeric',
                 'ppe_inicio_mes' => 'required|numeric',
                 'ppe_inicio_año' => 'required|numeric',
                 'ppe_final_dia' => 'required|numeric',
                 'ppe_final_mes' => 'required|numeric',
                 'ppe_final_año' => 'required|numeric',
+                'ppe_activo' =>'required|min:1',
                 ]);
         }
     }
@@ -123,6 +125,7 @@ class Registro extends Component
                     'celular' => 'required|string',
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
+                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
 
                 ]);
             }
@@ -146,6 +149,8 @@ class Registro extends Component
                     'celular' => 'required|string',
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
+                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+                    
                     
                 ]);
             } 
@@ -156,6 +161,10 @@ class Registro extends Component
 
             $this->validateData();
             $this->validaPpe();
+
+            $extension = $this->cedulaFoto->getClientOriginalExtension();
+
+            $filePath = $this->cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extension);
     
             $newOrderInsert = new pendingOrders;
     
@@ -176,6 +185,7 @@ class Registro extends Component
             $newOrderInsert->provincia = $this->selectedProvincia;
             $newOrderInsert->distrito = $this->selectedDistrito;
             $newOrderInsert->corregimiento = $this->selectedCorregimiento;
+            $newOrderInsert->foto_ced_pas = $filePath;
     
             $newOrderInsert->ppe = $this->ppe;
             $newOrderInsert->ppe_cargo = $this->ppecargo;
