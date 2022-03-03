@@ -53,7 +53,7 @@
                         <p class="fnt-size-1-5">Comprobante de compra</p>
                         <p class="easyBlue400">Transacción {{ str_pad($response[0]->id, 7, '0', STR_PAD_LEFT) }}
                         </p>
-                        <p class="easyBlue400 fnt-size-1">dd/mm/aa hh:mm</p>
+                        <p class="easyBlue400 fnt-size-1">{{  $response[0]->fecha_pago . ' ' . $response[0]->hora_pago }}</p>
                     </div>
                     <div class="col-sm text-right">
                         <img src="{{ asset('/public/includes/images/logos/easydot_276x143_formated.png') }}" alt="">
@@ -147,7 +147,7 @@
                                 class="form-control input__style_comprobante" id="celular" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="mail">Correo Electronico</label>
+                            <label for="mail">Correo Electrónico</label>
                             <input disabled value="{{ $response[0]->contactMail }}" type="text"
                                 class="form-control input__style_comprobante" id="mail" placeholder="">
                         </div>
@@ -272,49 +272,54 @@
                 <div class="container-datos__cliente-titulo p-2">
                     Cobertura para:
                 </div>
-                {{-- <div>
+                <div>
                     <div class="form-row p-2">
-                        <div class="col-3">
-                            <label for="placa">Placa</label>
-                            <input disabled value="{{ $response[0]->placa }}" type=" text"
-                                class="form-control input__style_comprobante" id="placa" placeholder="">
+                        <div class="col-6">
+                            <label for="placa">Nombre</label>
+                            <input disabled value="{{ $response[0]->nombre . ' ' . $response[0]->apellido }}" type=" text"
+                                class="form-control input__style_comprobante" id="nombre" placeholder="">
+                        </div>
+                        <div class="col-4">
+                            <label for="placa">Cedula</label>
+                            <input disabled value="{{ $response[0]->identificacion }}" type=" text"
+                                class="form-control input__style_comprobante" id="Cedula" placeholder="">
                         </div>
                     </div>
                     <div class="form-row p-2">
                         <div class="col-3">
-                            <label for="marca">Marca</label>
-                            <input disabled value="{{ $response[0]->marca }}" type="text"
-                                class="form-control input__style_comprobante" id="marca" placeholder="">
+                            <label for="marca">Fecxha de naciemiento</label>
+                            <input disabled value="{{ $response[0]->dia.'/'.$response[0]->mes.'/'. $response[0]->year }}" type="text"
+                                class="form-control input__style_comprobante" id="nacimiento" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="modelo">Modelo</label>
-                            <input disabled value="{{ $response[0]->modelo }}" type="text"
-                                class="form-control input__style_comprobante" id="modelo" placeholder="">
+                            <label for="year">Celular</label>
+                            <input disabled value="{{ $response[0]->celular }}" type="text"
+                                class="form-control input__style_comprobante" id="celular" placeholder="">
                         </div>
-                        <div class="col-3">
-                            <label for="year">Año</label>
-                            <input disabled value="{{ $response[0]->car_year }}" type="text"
-                                class="form-control input__style_comprobante" id="year" placeholder="">
+                        <div class="col-4">
+                            <label for="modelo">Correo Electrónico</label>
+                            <input disabled value="{{ $response[0]->contactMail }}" type="text"
+                                class="form-control input__style_comprobante" id="mail" placeholder="">
                         </div>
                     </div>
                     <div class="form-row p-2">
                         <div class="col-3">
-                            <label for="color">Color</label>
-                            <input disabled value="{{ $response[0]->color }}" type="text"
-                                class="form-control input__style_comprobante" id="color" placeholder="">
+                            <label for="color">Provincia</label>
+                            <input disabled value="{{ $response[0]->Nombre_Provincia }}" type="text"
+                                class="form-control input__style_comprobante" id="provincia" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="motor">Motor</label>
-                            <input disabled value="{{ $response[0]->numero_de_chasis }}" type="text"
-                                class="form-control input__style_comprobante" id="motor" placeholder="">
+                            <label for="motor">Distrito</label>
+                            <input disabled value="{{ $response[0]->nombre_distrito }}" type="text"
+                                class="form-control input__style_comprobante" id="distrito" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="chasis">Chasis</label>
-                            <input disabled value="{{ $response[0]->numero_de_motor }}" type="text"
-                                class="form-control input__style_comprobante" id="chasis" placeholder="">
+                            <label for="chasis">Corregimiento</label>
+                            <input disabled value="{{ $response[0]->nombre_corregimiento }}" type="text"
+                                class="form-control input__style_comprobante" id="corregimiento" placeholder="">
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
         <div class="container container-comprobante-compra-footer d-flex p-4">

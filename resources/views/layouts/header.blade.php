@@ -6,11 +6,11 @@
         <ul class="nav sidebar-nav">
             <div class="sidebar-header">
                 <div class="sidebar-brand">
-                    <a href="/">inicio</a>
+                    <a href="/">Inicio</a>
                 </div>
             </div>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">autos <span class="caret"></span></a>
+                <a href="#works" data-toggle="dropdown">Autos <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
                     <li><a class="underline" href="/producto/motor/motor">soat</a></li>
@@ -18,14 +18,14 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">mascotas <span class="caret"></span></a>
+                <a href="#works" data-toggle="dropdown">Mascotas <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
                     <li><a class="underline" href="/producto/mascotas/coberturas">seguro Veterinario</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">personas <span class="caret"></span></a>
+                <a href="#works" data-toggle="dropdown">Personas <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
                     <li><a class="underline" href="/producto/personas/er">ap + gastos médicos</a></li>
@@ -34,7 +34,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#works" data-toggle="dropdown">hogar <span class="caret"></span></a>
+                <a href="#works" data-toggle="dropdown">Hogar <span class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
                     <li><a class="underline" href="/producto/hogar/hogar">contenido del hogar</a></li>
@@ -42,7 +42,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="/centro-de-ayuda" data-toggle="dropdown">centro de ayuda <span
+                <a href="/centro-de-ayuda" data-toggle="dropdown">Centro de ayuda <span
                         class="caret"></span></a>
                 <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     {{-- <div class="dropdown-header">Dropdown heading</div> --}}
@@ -104,37 +104,37 @@
 <div class="menu-container container-fluid">
     <x-btn-main>
         <x-a-link link='/producto/motor/cobertura'>
-            Autos
+            autos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/mascotas/coberturas'>
-            Mascotas
+            mascotas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/personas/cobertura'>
-            Personas
+            personas
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/hogar/cobertura'>
-            Hogar
+            hogar
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/motor/cobertura'>
-            Motos
+            motos
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/producto/personas/dental'>
-            Dental
+            dental
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
         <x-a-link link='/centro-de-ayuda'>
-            Centro de ayuda
+            centro de ayuda
         </x-a-link>
     </x-btn-main>
 </div>

@@ -4,6 +4,7 @@
     <!-- Slider -->
     <div class="wrap-slick1">
         <div class="slick1">
+           
             <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final.png')">
                 <div class="container container-slider">
                     <div class="layer-slick1">
@@ -26,22 +27,19 @@
                 </div>
             </div>
 
+
             <div class="item-slick1" style="background-image: url('public/includes/images/slider/insurance_final2.png')">
                 <div class="container container-slider">
                     <div class="layer-slick1">
-                        <span class="slider-text-descripcion">adquiere tu póliza <br> de PERSONA desde</span>
+                        <span class="slider-text-descripcion-easy">easy<span
+                            style="color:#009ee2">.</span></span>
                     </div>
 
-                    <div class="layer-slick1 slider-text-price">
-                        <div>
-                            basico 175.00 / año
-                        </div>
-                        <div>
-                            completa 275.00 / año
-                        </div>
+                    <div class="slider-text-descripcion-whoami">
+                        <span class="underline">somos una compañía <br> creada pensando <br>primero en ti</span>
                     </div>
                     <x-btn-main class='fntw-800 mt-3'>
-                        <x-a-link class="slider_btn__comprar" link='/persona'>
+                        <x-a-link class="slider_btn__comprar" link='/conoce-easy'>
                             Comprar Ahora
                         </x-a-link>
                     </x-btn-main>
@@ -169,7 +167,7 @@
                     <div class="step-one-letter shadow-lg">
                         <div>1</div>
                         <div>
-                            Selecciona la categoria del
+                            Selecciona la categoría del
                             producto que buscas y elige
                             tu opción favorita.
                         </div>

@@ -76,10 +76,25 @@ class Registro extends Component
     public $show = false;
     public $showPais = false;
 
+    public $dogSelected = false;
+    public $catSelected = false;
+
     protected $listeners = [
         'getInfoInsuranceVet'
     ];
 
+    public function petDropdown($pet){
+        if ($pet === 'dog'){
+            $this->dogSelected = true;
+            $this->catSelected = false;
+
+        }
+        if ($pet === 'cat'){
+            $this->dogSelected = false;
+            $this->catSelected = true;
+
+        }
+    }
 
     public function getInfoInsuranceVet($value1, $value2, $value3, $value4, $value5)
     {
@@ -233,7 +248,7 @@ class Registro extends Component
         $newOrderInsert->mascotaNacMonth =$this->mascotaNacMonth;
         $newOrderInsert->mascotaNacYear =$this->mascotaNacYear;
         $newOrderInsert->mascotaSexo =$this->mascotaSexo;
-        $newOrderInsert->valor =$this->mascotaSexo;
+        $newOrderInsert->valor =$this->mascotaValor;
 
         $newOrderInsert->nombre_clinica	 =$this->nombreClinica;
         $newOrderInsert->telefono_clinica =$this->telefonoClinica;

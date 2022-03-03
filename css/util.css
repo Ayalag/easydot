@@ -841,10 +841,14 @@ html {
     cursor: pointer;
 }
 
-.slider-text-descripcion {
+.slider-text-descripcion,
+.slider-text-descripcion-easy {
     color: var(--easyBlue);
     font-size: 40px;
     font-weight: 900;
+}
+.slider-text-descripcion-easy {
+    color: var(--easyRose);
 }
 
 .slider-text-descripcion::before {
@@ -852,10 +856,15 @@ html {
     color: var(--easyRose);
 }
 
-.slider-text-price {
+.slider-text-price,
+.slider-text-descripcion-whoami {
     color: var(--easyRose);
     font-size: 32.333px;
     font-weight: 900;
+}
+.slider-text-descripcion-whoami {
+    color: var(--easyBlue);
+    font-size: 18.333px;
 }
 
 @media screen and (max-width: 40rem) {
@@ -873,6 +882,8 @@ html {
     color: var(--easyRose);
     font-size: 30px;
 }
+
+
 
 /*//////////////////////////////////////////////////////////////////
 [ BLUE SQUARE ]*/
@@ -1123,9 +1134,9 @@ html {
     overflow: hidden;
     font-size: 2rem;
 }
-.step-to-buy__title > div:first-child {
+/* .step-to-buy__title > div:first-child {
     font-weight: 800;
-}
+} */
 
 .steps-container__box {
     display: flex;
@@ -1136,7 +1147,7 @@ html {
 .steps-by-steps .step-two-letter,
 .steps-by-steps .step-three-letter {
     display: flex;
-    margin: 12px;
+    margin: 20px;
     width: 120%;
     border-radius: 10px;
 }
@@ -1209,7 +1220,7 @@ html {
     }
 
     .container-step__image2 {
-        left: 12rem;
+        left: 9rem;
     }
 
     .steps-container__box {
@@ -2687,6 +2698,10 @@ input[type="number"] {
     font-size: 1rem;
     font-weight: 600;
     line-height: normal;
+}
+
+.container-hogar__question{
+    width: 20rem;
 }
 
 /*-------------------------------*/

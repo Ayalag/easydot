@@ -48,12 +48,13 @@
                                 class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
                             <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
-                                name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)" required>
+                                name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)"
+                                required>
                             <label
                                 class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Pasaporte</label>
-                            <input wire:model="typeId" class="form-check-input mb-2" type="radio"
-                                name="identificacion" id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)" required>
+                            <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
+                                id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)" required>
                         </div>
                         <div class="form-group">
                             <input wire:model.defer="identificacion" type="text"
@@ -244,9 +245,9 @@
                 </div>
                 <div class="form-row">
                     {{-- <div class="form-group col-md-3 text-center"> --}}
-                        {{-- <label for="eCivil">estado civil</label> --}}
-                        {{-- <input wire:model.defer="eCivil" type="text" --}}
-                            {{-- class="form-control input__style @if ($errors->has('eCivil')) border border-danger @endif"
+                    {{-- <label for="eCivil">estado civil</label> --}}
+                    {{-- <input wire:model.defer="eCivil" type="text" --}}
+                    {{-- class="form-control input__style @if ($errors->has('eCivil')) border border-danger @endif"
                             id="eCivil" placeholder="Estado Civil"> --}}
                     {{-- </div> --}}
                     <div class="form-group col-sm-12 col-md-3">
@@ -270,8 +271,8 @@
                             <input id="file-upload" type="file" />
                         </div>
                     </div>
-                    
-                    <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px"> 
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
                         @if($showPais)
                         <select wire:model.defer="pais"
                             class="form-control input__style @if ($errors->has('pais')) border border-danger @endif"
@@ -526,7 +527,7 @@
                         </select>
                         @endif
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -817,104 +818,147 @@
                     </div>
                 </div>
             </div>
-            <div class="container container-registro-datos shadow-lg text-center">
-                <div class="col-lg-4 offset-lg-4 pb-3">
-                    <div class="row justify-content-center pt-5">
-                        <input type="text" class="form-control input__style" id="placa" placeholder="placa"
-                            wire:model.defer="placa" maxlength="6" pattern="[a-zA-Z0-9]+">
-                        <span class="text-danger">@error('placa'){{ $message }}@enderror</span>
+            @if ($userAddress == 'si')
+            <div class="container-registro-datos__title easyBlue600 fnt-size-1 pt-2 text-center">
+                ¿deseas utilizar los mismos datos de tu dirección de contacto?
+            </div>
+
+            <div class="container container-hogar__question shadow-lg bg-white rounded mt-3 text-center">
+                <div class="row p-2">
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">si!</label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes_address"
+                                value="si">
+                        </div>
                     </div>
+                    {{-- <a href="/motor"> --}}
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">no</label>
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_address"
+                                    value="no">
+                            </div>
+                        </div>
+                    {{-- </a> --}}
                 </div>
-                <div class="col-lg-8 offset-lg-2  pb-3">
-                    <div class="row justify-content-center ">
-                        <select wire:model="selectedCarBrand"
-                            class="form-control input__style @if ($errors->has('carBrand')) border border-danger @endif"
-                            title="CarBrand" name="CarBrand" id="CarBrand" required>
-                            <option value="" selected>Marca</option>
-                            @foreach ($carBrand as $cb)
-                            <option value="{{ $cb->id }}">{{ $cb->Marca }}</option>
+            </div>
+            <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        {{-- <label for="">Dirección</label> --}}
+                        <select wire:model="selectedProvincia"
+                            class="form-control input__style @if ($errors->has('selectedProvincia')) border border-danger @endif"
+                            data-live-search="true" title="Provincia" name="provincia" id="provincia" required>
+                            <option value="" selected>Provincia</option>
+                            @foreach ($provincia as $p)
+                            <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
                             @endforeach
                         </select>
                     </div>
-                </div>
-                <div class="col-lg-8 offset-lg-2  pb-3">
-                    <div class="row justify-content-center">
-                        <select wire:model="selectedCarType"
-                            class="form-control input__style @if ($errors->has('carType')) border border-danger @endif"
-                            title="carType" name="carType" id="carType" required>
-                            <option value="" selected>Modelo</option>
-                            @if (!is_null($carType))
-                            @foreach ($carType as $ct)
-                            <option value="{{ $ct->id }}">{{ $ct->Tipo }}</option>
+                    <div class="form-group col-md-4">
+                        {{-- <label for=""></label> --}}
+                        <select wire:model="selectedDistrito" class="form-control input__style " data-live-search="true"
+                            title="Distrito" name="distrito" id="distrito" required>
+                            <option value="" selected>Distrito</option>
+                            @if (!is_null($distrito))
+                            @foreach ($distrito as $d)
+                            <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
+                            @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{-- <label for=""></label> --}}
+                        <select wire:model.defer="selectedCorregimiento" class="form-control input__style "
+                            data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento"
+                            required>
+                            <option value="" selected>Corregimiento</option>
+                            @if (!is_null($corregimiento))
+                            @foreach ($corregimiento as $c)
+                            <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
+                            </option>
                             @endforeach
                             @endif
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-8  offset-lg-2 pb-3">
-                    <div class="row">
-
-                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5" wire:ignore id="for-caryear">
-                            <select  wire:model.defer="year"
-                            class="form-control input__style mr-2 @if ($errors->has('year')) border border-danger @endif"
-                            id="ano" placeholder="año"  data-container="#for-caryear"  title="Escoja una opcion" data-live-search="true" data-width="100%">
-                            <option value="">Año</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                            <option value="2013">2013</option>
-                            <option value="2012">2012</option>
-                            <option value="2011">2011</option>
-                            <option value="2010">2010</option>
-                            <option value="2009">2009</option>
-                            <option value="2008">2008</option>
-                            <option value="2007">2007</option>
-                            <option value="2006">2006</option>
-                            <option value="2005">2005</option>
-                            <option value="2004">2004</option>
-                            </select>
-                        </div>
-     
-                        <div class="col-7">
-                            <input type="text" class="form-control input__style" id="ano" placeholder="color"
-                                wire:model.defer="color">
-                            <span class="text-danger">@error('color'){{ $message }}@enderror</span>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{-- <label for=""></label> --}}
+                        <input  type="text"
+                            class="form-control input__style @if ($errors->has('barrio')) border border-danger @endif"
+                            id="barrio" placeholder="Barrio / P.H">
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{-- <label for=""></label> --}}
+                        <input type="text"
+                            class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
+                            id="casa" placeholder="# Casa / Apto.">
                     </div>
                 </div>
-                <div class="col-lg-8 offset-lg-2 pb-3">
-                    <div class="row justify-content-center">
-                        <input type="text" class="form-control input__style" id="motorNum" placeholder="numero de motor"
-                            wire:model.defer="motorNum" maxlength="17">
-                        <span class="text-danger">@error('motorNum'){{ $message }}@enderror</span>
-                    </div>
-                </div>
-                <div class="col-lg-8 offset-lg-2  pb-3">
-                    <div class="row justify-content-center">
-                        <input type="text" class="form-control input__style" id="chasisNum"
-                            placeholder="numero de chasis" wire:model.defer="chasisNum" maxlength="17">
-                        <span class="text-danger">@error('chasisNum'){{ $message }}@enderror</span>
-                    </div>
-                </div>
-                <div class="col-lg-8 offset-lg-3 pb-5 input-group input-file" name="upload">
-                    <span class="pb-1 text-center">Foto de registro vehicular</span>
-                    <div class="row justify-content-center">
-                        <label for="file-upload" class="custom-file-upload input__style">
-                            <i class="fas fa-paperclip"></i> clic para adjuntar
-                        </label>
-                        <input class="@error('file') is invalid @enderror" id="file-upload" type="file"
-                            wire:model.defer="file" />
-                    </div>
-                </div>
-
             </div>
+            @else
+
+            <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        {{-- <label for="">Dirección</label> --}}
+                        <select wire:model="selectedProvincia"
+                            class="form-control input__style @if ($errors->has('selectedProvincia')) border border-danger @endif"
+                            data-live-search="true" title="Provincia" name="provincia" id="provincia" required>
+                            <option value="" selected>Provincia</option>
+                            @foreach ($provincia as $p)
+                            <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{-- <label for=""></label> --}}
+                        <select wire:model="selectedDistrito" class="form-control input__style " data-live-search="true"
+                            title="Distrito" name="distrito" id="distrito" required>
+                            <option value="" selected>Distrito</option>
+                            @if (!is_null($distrito))
+                            @foreach ($distrito as $d)
+                            <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
+                            @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        {{-- <label for=""></label> --}}
+                        <select wire:model.defer="selectedCorregimiento" class="form-control input__style "
+                            data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento"
+                            required>
+                            <option value="" selected>Corregimiento</option>
+                            @if (!is_null($corregimiento))
+                            @foreach ($corregimiento as $c)
+                            <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
+                            </option>
+                            @endforeach
+                            @endif
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{-- <label for=""></label> --}}
+                        <input  type="text"
+                            class="form-control input__style @if ($errors->has('barrio')) border border-danger @endif"
+                            id="barrio" placeholder="Barrio / P.H">
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{-- <label for=""></label> --}}
+                        <input type="text"
+                            class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
+                            id="casa" placeholder="# Casa / Apto.">
+                    </div>
+                </div>
+            </div>
+
+            @endif
+
+
             <div class="container pb-5 pt-2 d-flex flex-column text-center">
                 <button type="submit" class="btn_payeasy--load m-auto" id="process">
                     <span wire:loading class="spinner-border spinner-border-sm" role="status"

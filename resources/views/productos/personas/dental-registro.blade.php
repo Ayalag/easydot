@@ -42,7 +42,8 @@
             .container-registo__datos-header,
             .condicion_poliza,
             .card-list__items,
-            .card-detail {
+            .card-detail,
+            .card-text {
                 display: none;
             }
 
@@ -84,12 +85,6 @@
 
             .annuity {
                 margin-right: 1px;
-            }
-
-            .card-text.easyBlue600::before {
-                content: 'Daños a terceros';
-                display: block;
-                color: var(--easyblue);
             }
         }
 

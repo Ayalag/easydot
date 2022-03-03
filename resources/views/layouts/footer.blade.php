@@ -4,7 +4,8 @@
           padding: 45px 0 20px;
           font-size: 15px;
           line-height: 24px;
-          color: #737373;
+          color: white;
+          font-family: "Montserrat", sans-serif;
       }
 
       .site-footer hr {
@@ -17,19 +18,19 @@
       }
 
       .site-footer h6 {
-          color: #fff;
-          font-size: 16px;
+          color: white;
+          font-size: 18px;
           /* text-transform: uppercase; */
           margin-top: 5px;
           letter-spacing: 2px
       }
 
       .site-footer a {
-          color: #737373;
+          color: white;
       }
 
       .site-footer a:hover {
-          color: #3366cc;
+          /* color: #3366cc; */
           text-decoration: none;
       }
 
@@ -43,13 +44,13 @@
       }
 
       .footer-links a {
-          color: #737373
+          color: white
       }
 
       .footer-links a:active,
       .footer-links a:focus,
       .footer-links a:hover {
-          color: #3366cc;
+          /* color: #3366cc; */
           text-decoration: none;
       }
 
@@ -190,8 +191,11 @@
   <footer class="site-footer">
       <div class="container">
           <div class="row">
+            <div class="col-xs-6 col-md-3">
+               logo
+            </div>
               <div class="col-xs-6 col-md-3">
-                  <h6>Categorias</h6>
+                  <h6>Categorías</h6>
                   <ul class="footer-links">
                       <li><a href="/producto/motor/cobertura">Autos</a></li>
                       <li><a href="/producto/hogar/cobertura">Hogar</a></li>
@@ -202,19 +206,19 @@
               </div>
 
               <div class="col-xs-6 col-md-3">
-                  <h6>Quick Links</h6>
+                  <h6>Información</h6>
                   <ul class="footer-links">
                       <li><a href="/conoce-easy">Conoce easy</a></li>
                       <li><a href="/centro-de-ayuda">Centro de ayuda</a></li>
                       <li><a href="/terminos-y-condiciones">Términos y condiciones</a></li>
                   </ul>
               </div>
-              <div class="col-sm-12 col-md-6">
-                  {{-- <h6>Acerca de easydot</h6>
+              {{-- <div class="col-sm-12 col-md-6">
+                  <h6>Acerca de easydot</h6>
                 <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, odio
                     blanditiis? Illum placeat consequuntur voluptate dolores aspernatur quo maxime nesciunt ea tempore
-                    eveniet, neque non. Ea voluptates veritatis quo eaque?</p> --}}
-              </div>
+                    eveniet, neque non. Ea voluptates veritatis quo eaque?</p>
+              </div> --}}
           </div>
           <hr>
       </div>

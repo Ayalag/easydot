@@ -926,27 +926,111 @@
                         <div class="col-6">
                             <img src="{{ asset('/public/includes/images/registro/mascotas/perro.png') }}" alt="">
                             <div>
-                                <label class="form-check-label m-1 easyBlue600  @if ($errors->has('mascotaTipo'))text-danger @endif" for="dog">perro</label>
-                                <input wire:model.defer="mascotaTipo" class="form-check-input m-1" type="radio" name="vet" id="dog" value="dog">
+                                <label
+                                    class="form-check-label m-1 easyBlue600  @if ($errors->has('mascotaTipo'))text-danger @endif"
+                                    for="dog">perro</label>
+                                <input wire:model.defer="mascotaTipo" class="form-check-input m-1" type="radio"
+                                    name="vet" id="dog" value="perro" wire:click="petDropdown('dog')">
                             </div>
                         </div>
                         <div class="col-6">
                             <img src="{{ asset('/public/includes/images/registro/mascotas/gato.png') }}" alt="">
                             <div>
-                                <label class="form-check-label ml-1 mt-2 easyBlue600 @if ($errors->has('mascotaTipo'))text-danger @endif" for="cat">gato</label>
-                                <input wire:model.defer="mascotaTipo" class="form-check-input ml-1 mt-2" type="radio" name="vet" id="cat"
-                                    value="cat">
+                                <label
+                                    class="form-check-label ml-1 mt-2 easyBlue600 @if ($errors->has('mascotaTipo'))text-danger @endif"
+                                    for="cat">gato</label>
+                                <input wire:model.defer="mascotaTipo" class="form-check-input ml-1 mt-2" type="radio"
+                                    name="vet" id="cat" value="gato"wire:click="petDropdown('cat')">
                             </div>
                         </div>
                     </div>
                     <div class="row pb-2">
                         <div class="col">
-                            <input wire:model.defer="mascotaNombre" type="text" class="form-control input__style  @if ($errors->has('mascotaNombre')) border border-danger @endif " id="nombre" placeholder="nombre">
+                            <input wire:model.defer="mascotaNombre" type="text"
+                                class="form-control input__style  @if ($errors->has('mascotaNombre')) border border-danger @endif "
+                                id="nombre" placeholder="nombre">
                         </div>
                     </div>
                     <div class="row pb-2">
                         <div class="col">
-                            <input wire:model.defer="mascotaRaza" type="text" class="form-control input__style  @if ($errors->has('mascotaRaza')) border border-danger @endif" id="raza" placeholder="raza">
+                            <select wire:model.defer="mascotaRaza"
+                                class="form-control input__style mr-2  @if ($errors->has('mascotaRaza')) border border-danger @endif"
+                                id="raza" placeholder="raza">
+                                {{-- <input wire:model.defer="mascotaRaza" type="text" class="form-control input__style  @if ($errors->has('mascotaRaza')) border border-danger @endif" id="raza" placeholder="raza"> --}}
+                                <option value="">Escoja una opción</option>
+                                @if($dogSelected)
+                                <option value="Pembroke Welsh Corgi">Pembroke Welsh Corgi</option>
+                                <option value="Perro de Agua Español">Perro de Agua Español</option>
+                                <option value="Perro de Agua Francés">Perro de Agua Francés</option>
+                                <option value="Perro sin Pelo Mexicano o Xoloitzcuintle">Perro sin Pelo Mexicano o
+                                    Xoloitzcuintle</option>
+                                <option value="Perro sin Pelo del Perú">Perro sin Pelo del Perú</option>
+                                <option value="Petit Basset Griffon">Petit Basset Griffon</option>
+                                <option value="Pinscher">Pinscher</option>
+                                <option value="Podenco Canario">Podenco Canario</option>
+                                <option value="Podenco Ibicenco">Podenco Ibicenco</option>
+                                <option value="Pointer Inglés">Pointer Inglés</option>
+                                <option value="Pomerania">Pomerania</option>
+                                <option value="Presa Canario">Presa Canario</option>
+                                <option value="Puli">Puli</option>
+                                <option value="Ratón Bodeguero Andaluz">Ratón Bodeguero Andaluz</option>
+                                <option value="Retriever de pelo rizado">Retriever de pelo rizado</option>
+                                <option value="Rottweiler">Rottweiler</option>
+                                <option value="San Bernardo">San Bernardo</option>
+                                <option value="Samoyedo">Samoyedo</option>
+                                <option value="Schnauzer">Schnauzer</option>
+                                <option value="Scottish Terrier">Scottish Terrier</option>
+                                <option value="Setter Irlandés">Setter Irlandés</option>
+                                <option value="Shar Pei">Shar Pei</option>
+                                <option value="Shetland Sheepdog">Shetland Sheepdog</option>
+                                <option value="Shih Tzu">Shih Tzu</option>
+                                <option value="Spinone italiano">Spinone italiano</option>
+                                <option value="Teckel">Teckel</option>
+                                <option value="Terranova">Terranova</option>
+                                <option value="Terrier Australiano">Terrier Australiano</option>
+                                <option value="Terrier Checo">Terrier Checo</option>
+                                <option value="Terrier Japonés">Terrier Japonés</option>
+                                <option value="Terrier Tibetano">Terrier Tibetano</option>
+                                <option value="Tosa Inu">Tosa Inu</option>
+                                <option value="Weimaraner">Weimaraner</option>
+                                <option value="West Highland White Terrier">West Highland White Terrier</option>
+                                <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+                                @endif
+                                @if($catSelected)
+                                <option value="Cartujo o Chartreaux">Cartujo o Chartreaux</option>
+                                <option value="Común Europeo">Común Europeo</option>
+                                <option value="Cornish Rex">Cornish Rex</option>
+                                <option value="Devon Rex">Devon Rex</option>
+                                <option value="Exótico">Exótico</option>
+                                <option value="Himalayo ">Himalayo </option>
+                                <option value="Korat">Korat</option>
+                                <option value="Lykoi">Lykoi</option>
+                                <option value="Maine Coon">Maine Coon</option>
+                                <option value="Manx">Manx</option>
+                                <option value="Mau Egipcio">Mau Egipcio</option>
+                                <option value="Munchkin">Munchkin</option>
+                                <option value="Nebelung">Nebelung</option>
+                                <option value="Ocicat">Ocicat</option>
+                                <option value="Oriental">Oriental</option>
+                                <option value="Persa">Persa</option>
+                                <option value="Persa Chinchilla">Persa Chinchilla</option>
+                                <option value="Persa Tabby">Persa Tabby</option>
+                                <option value="Peterbald">Peterbald</option>
+                                <option value="Ragamuffin">Ragamuffin</option>
+                                <option value="Ragdoll">Ragdoll</option>
+                                <option value="Rex">Rex</option>
+                                <option value="Savannah">Savannah</option>
+                                <option value="Scottish Fold">Scottish Fold</option>
+                                <option value="Selkirk Rex">Selkirk Rex</option>
+                                <option value="Siamés">Siamés</option>
+                                <option value="Siberiano">Siberiano</option>
+                                <option value="Snowshoe">Snowshoe</option>
+                                <option value="Somalí">Somalí</option>
+                                <option value="Sphynx">Sphynx</option>
+                                <option value="Toyger">Toyger</option>
+                                <option value="Van Turco">Van Turco</option>
+                                @endif
+                            </select>
                         </div>
                     </div>
                     <div class="text-left p-2">
@@ -1117,16 +1201,19 @@
                     <div class="row pb-2 justify-content-center">
                         <div class="col-5 mr-1">
                             <select wire:model.defer="mascotaSexo"
-                            class="form-control input__style @if ($errors->has('mascotaSexo')) border border-danger @endif"
-                            data-live-search="true" title="mascotaSexo" name="mascotaSexo" id="mascotaSexo" required>
-                            <option>sexo</option>
-                            <option value="Hembra">Hembra</option>
-                            <option value="Macho">Macho</option>
-                        </select>
+                                class="form-control input__style @if ($errors->has('mascotaSexo')) border border-danger @endif"
+                                data-live-search="true" title="mascotaSexo" name="mascotaSexo" id="mascotaSexo"
+                                required>
+                                <option>sexo</option>
+                                <option value="Hembra">Hembra</option>
+                                <option value="Macho">Macho</option>
+                            </select>
                         </div>
                         <div class="col-6">
-                            <input wire:model.defer="mascotaValor" type="number" class="form-control input__style @if ($errors->has('mascotaValor')) border border-danger @endif" id="valor" placeholder="valor" min="1.00" max="1500" step="0.01">
-                            
+                            <input wire:model.defer="mascotaValor" type="number"
+                                class="form-control input__style @if ($errors->has('mascotaValor')) border border-danger @endif"
+                                id="valor" placeholder="valor" min="1.00" max="1500" step="0.01">
+
                         </div>
                     </div>
                 </div>
@@ -1137,19 +1224,19 @@
                         </div>
                         <div class="row pt-2 pb-2">
                             <div class="col">
-                                <input wire:model.defer="nombreClinica" type="text" class="form-control input__style" id="nombreClinica"
-                                    placeholder="nombre de la clinica">
+                                <input wire:model.defer="nombreClinica" type="text" class="form-control input__style"
+                                    id="nombreClinica" placeholder="nombre de la clinica">
                             </div>
                         </div>
                         <div class="row pt-2 pb-2">
                             <div class="col">
-                                <input wire:model.defer="telefonoClinica" type="text" class="form-control input__style" id="telefonoClinica"
-                                    placeholder="telefono de la clinica">
+                                <input wire:model.defer="telefonoClinica" type="text" class="form-control input__style"
+                                    id="telefonoClinica" placeholder="telefono de la clinica">
                             </div>
                         </div>
                         <div class="row pt-2 pb-2">
                             <div class="col">
-                                <textarea  wire:model.defer="direccionClinica" class="input__style" rows="4" cols="33"
+                                <textarea wire:model.defer="direccionClinica" class="input__style" rows="4" cols="33"
                                     placeholder="dirección de la clinica"></textarea>
                             </div>
                         </div>

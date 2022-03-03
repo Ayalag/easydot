@@ -4,16 +4,22 @@
 
     <style>
         .container-registro {
+            /* height: 100vh; */
             justify-content: center;
+            /* position: relative; */
         }
 
         .btn-comprar {
             display: none
         }
 
+        .card-container__insurance {
+            height: 570px !important;
+        }
+
         .condicion_poliza {
             position: relative;
-            top: 10rem;
+            top: 12rem;
             margin-right: 5rem
         }
 
@@ -42,8 +48,13 @@
             .container-registo__datos-header,
             .condicion_poliza,
             .card-list__items,
-            .card-detail {
-                display: none;
+            .card-detail{
+                display: none !important;
+            }
+
+            .container .card-subtitle+div
+            {
+                display: none
             }
 
             .container-registro {
@@ -65,11 +76,14 @@
             }
 
             .grouping_price {
+                position: relative !important;
                 display: flex;
+                flex-direction:column;
                 align-items: center;
                 font-size: 1rem !important;
-                width: auto;
+                width: auto !important;
                 right: 10px;
+                bottom: -10px !important;
             }
 
             .grouping_price div.row {
@@ -85,17 +99,10 @@
             .annuity {
                 margin-right: 1px;
             }
-
-            .card-text.easyBlue600::before {
-                content: 'Daños a terceros';
-                display: block;
-                color: var(--easyblue);
-            }
         }
 
-    </style>
 
-@endsection
+    </style>
 
 @section('content')
 
@@ -103,17 +110,16 @@
         @isset($cardHtml)
             {!! $cardHtml[0]->html !!}
         @endisset
-        <livewire:productos.persona.registro />
+        <livewire:productos.hogar.registro />
     </div>
-
 @endsection
 
 @section('scripts')
     <script>
-        let card = document.getElementsByClassName("card-container__insurance");
+          let card = document.getElementsByClassName("card-container__insurance");
         for (let index = 0; index < card.length; ++index) {
             if ($(window).width() >= 768) {
-                card[index].setAttribute("style", "top:11.7rem; left: -2rem; border: none; border-radius:10px;")
+                card[index].setAttribute("style", "top: 6.7rem; left: -2rem; border: none; border-radius:10px;")
             } else {
                 card[index].setAttribute("style", "border: none; border-radius:10px;")
             }
@@ -121,13 +127,14 @@
         }
 
         $(window).on('load', function() {
+            
             const data_pk_id = $('#pk').attr("data-pk-id")
             const tipo_id = $('#tipo').attr("data-tipo-id")
             const tipo_name = $('#tipo').attr("data-tipo-name")
             const plan_name = $('#plan').attr("data-plan-name")
             const valor = $('#valor').attr("data-valor")
 
-            Livewire.emit("getPersonaPlanDetail", data_pk_id, tipo_id, tipo_name, plan_name, valor);
+            Livewire.emit("getInfoInsuranceHogar", data_pk_id, tipo_id, tipo_name, plan_name, valor);
         })
     </script>
 @endsection

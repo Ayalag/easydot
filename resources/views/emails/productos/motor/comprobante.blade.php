@@ -53,7 +53,7 @@
                         <p class="fnt-size-1-5">Comprobante de compra</p>
                         <p class="easyBlue400">Transacción {{ str_pad($response[0]->id, 7, '0', STR_PAD_LEFT) }}
                         </p>
-                        <p class="easyBlue400 fnt-size-1">dd/mm/aa hh:mm</p>
+                        <p class="easyBlue400 fnt-size-1">{{  $response[0]->fecha_pago . ' ' . $response[0]->hora_pago }}</p>
                     </div>
                     <div class="col-sm text-right">
                         <img src="{{ asset('/public/includes/images/logos/easydot_276x143_formated.png') }}" alt="">
@@ -283,12 +283,12 @@
                     <div class="form-row p-2">
                         <div class="col-3">
                             <label for="marca">Marca</label>
-                            <input disabled value="{{ $response[0]->marca }}" type="text"
+                            <input disabled value="{{ $response[0]->Marca }}" type="text"
                                 class="form-control input__style_comprobante" id="marca" placeholder="">
                         </div>
                         <div class="col-3">
                             <label for="modelo">Modelo</label>
-                            <input disabled value="{{ $response[0]->modelo }}" type="text"
+                            <input disabled value="{{ $response[0]->Tipo }}" type="text"
                                 class="form-control input__style_comprobante" id="modelo" placeholder="">
                         </div>
                         <div class="col-3">

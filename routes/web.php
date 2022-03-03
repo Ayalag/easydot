@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\comprobanteCompra;
 use App\Http\Controllers\payeasyController;
+use App\Mail\mail\userSelectedInsuranceMail;
+use App\Http\Controllers\productos\hogar\hogarController;
 use App\Http\Controllers\productos\motor\motorController;
+use App\Http\Controllers\productos\dental\dentalController;
 use App\Http\Controllers\productos\persona\personaController;
 use App\Http\Controllers\productos\veterinario\veterinarioController;
-use App\Mail\mail\userSelectedInsuranceMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,16 +40,21 @@ Route::get('/producto/motor/motor',[motorController::class,'index'])->name('auto
 Route::get('/producto/motor/registro/{tipo}/{aseguradora}/{plan}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
 
 
+Route::get('/producto/hogar/hogar',[hogarController::class,'index'])->name('hogar-hogar');
 Route::view('/producto/hogar/landing','productos.hogar.landing')->name('hogar-landing');
-Route::view('/producto/hogar/hogar','productos.hogar.hogar')->name('hogar-hogar');
 Route::view('/producto/hogar/cobertura','productos.hogar.coberturas')->name('hogar-cobertura');
+Route::get('/producto/hogar/registro/{id}',[hogarController::class,'isnuranceSeleted'])->name('hogar-registro');
+
 
 Route::view('/producto/personas/cobertura','productos.personas.cobertura')->name('personas-cobertura');
 Route::view('/producto/personas/landing','productos.personas.landing')->name('personas-landing');
-Route::view('/producto/personas/dental','productos.personas.dental')->name('personas-dental');
 Route::get('/producto/personas/er',[personaController::class,'er'])->name('personas-er');
 Route::get('/producto/personas/erm',[personaController::class,'erm'])->name('personas-erm');
 Route::get('/producto/personas/registro/{id}',[personaController::class,'isnuranceSeleted'])->name('personas-registro');
+
+Route::get('/producto/personas/dental',[dentalController::class,'index'])->name('personas-dental');
+Route::get('/producto/personas/dental/registro/{id}',[dentalController::class,'isnuranceSeleted'])->name('dental-registro');
+
 
 Route::view('/producto/mascotas/coberturas','productos.mascotas.coberturas')->name('mascotas-cobertura');
 Route::get('/producto/mascotas/veterinario',[veterinarioController::class,'index'])->name('mascotas-veterinario');
