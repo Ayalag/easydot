@@ -5,7 +5,7 @@
         <div class="row justify-content-center align-items-center">
             <div
                 class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
-                <input id="auto" type="radio" name="motor" checked>
+                <input id="auto" type="radio" name="motor" checked value="auto">
                 <label for="auto" class="clickable"><span class="checked-box">&#10004;</span></label>
                 <div>
                     <img src="{{ asset('/public/includes/images/icons8-car-64.png') }}" alt="easydot_automoviles">
@@ -16,7 +16,7 @@
             </div>
             <div
                 class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center ml-2 py-2">
-                <input id="moto" type="radio" name="motor">
+                <input id="moto" type="radio" name="motor" value="motos">
                 <label for="moto" class="clickable"><span class="checked-box">&#10004;</span></label>
                 <div>
                     <img src="{{ asset('/public/includes/images/icons8-motorcycle-64.png') }}" alt="easydot_automoviles">
@@ -258,7 +258,24 @@
                 $(basico).addClass("hide");
                 $('.soat-slider').get(2).slick.setPosition()
             });
+
+
+            $('#moto').click(function() {
+                Livewire.emit("getAutoMoto",'moto');
+
+            });
+
+            $('#auto').click(function() {
+                Livewire.emit("getAutoMoto",'auto');
+
+            });
+
+
+
+
         });
+
+
     </script>
 
 @endsection

@@ -1343,7 +1343,7 @@
                     </div>
                     <div class="row pt-2 pb-2">
                         <div class="col">
-                            <input wire:model.defer="telefonoClinica" type="text" class="form-control input__style"
+                            <input wire:model.defer="telefonoClinica" type="text" class="form-control input__style @if ($errors->has('telefonoClinica')) border border-danger @endif"
                                 id="telefonoClinica" placeholder="telefono de la clinica">
                         </div>
                     </div>
@@ -1366,6 +1366,7 @@
                                 clic para adjuntar
                             </label>
                             <input id="mascota1Foto" type="file" wire:model="mascota1Foto" />
+                            @error('mascota1Foto') <span style="font-size: 14px; color:red;">*Campo obligatorio</span> @enderror
                             <span wire:loading wire:target="mascota1Foto"  class="spinner-border spinner-border-sm" role="status"
                             aria-hidden="true" style="position: relative;left:134px;bottom:25px" ></span>
                         </div>
@@ -1376,6 +1377,7 @@
                                 clic para adjuntar
                             </label>
                             <input id="mascota2Foto" type="file" wire:model="mascota2Foto" />
+                            @error('mascota2Foto') <span style="font-size: 14px; color:red;">*Campo obligatorio</span> @enderror
                             <span wire:loading wire:target="mascota2Foto" class="spinner-border spinner-border-sm" role="status"
                             aria-hidden="true" style="position: relative;left:134px;bottom:25px" ></span>
                         </div>
@@ -1386,6 +1388,7 @@
                                 clic para adjuntar
                             </label>
                             <input  id="mascota3Foto" type="file" wire:model="mascota3Foto" />
+                            @error('mascota3Foto') <span style="font-size: 14px; color:red;">*Campo obligatorio</span> @enderror
                             <span wire:loading wire:target="mascota3Foto" class="spinner-border spinner-border-sm" role="status"
                             aria-hidden="true" style="position: relative;left:134px;bottom:25px" ></span>
                         </div>

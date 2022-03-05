@@ -16,10 +16,10 @@
                 <br>
                 <p>Siempre hemos pensado que estos seguros solo pueden ser utilizados al finalizar nuestra vida, pero, <br>
                     con el pasar del tiempo las pólizas de vida han ido evolucionando para poder brindarte beneficios y <br>
-                    valores agreagdis que pueden ser utilizados en cualquier momento.
+                    valores agregados que pueden ser utilizados en cualquier momento.
                 </p>
                 <br>
-                <p>Recuerda que estos seguros también se utulizan para respaldar compromisos financieros, como <br>
+                <p>Recuerda que estos seguros también se utilizan para respaldar compromisos financieros, como <br>
                     hipotecas y otros tipos de prestamos.
                 </p>
 

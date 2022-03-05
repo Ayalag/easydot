@@ -12,6 +12,11 @@ class comprobanteCompra extends Controller
 
        return view('emails.productos.motor.comprobante', compact('response'));
     }
+    public function comprobante_moto(Request $request){
+       $response = DB::select('call comprobante_moto(?)',[$request->order_number]);
+
+       return view('emails.productos.motor.comprobante', compact('response'));
+    }
     public function comprobante_mascota(Request $request){
        $response = DB::select('call comprobante_mascota(?)',[$request->order_number]);
 

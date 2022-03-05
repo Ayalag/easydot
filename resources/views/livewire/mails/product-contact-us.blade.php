@@ -10,8 +10,8 @@
             </div>
             <div class="form-group">
                 <label for="celular">Celular</label>
-                <input wire:model.defer="celular" type="text" class="form-control" id="celular" name="celular"
-                    aria-describedby="celular" placeholder="celular" required>
+                <input wire:model.defer="celular" type="tel" class="form-control" id="celular" name="celular"
+                    aria-describedby="celular" placeholder="celular"  pattern="[0-9]{8}" required>
             </div>
             <div class="form-group">
                 <label for="mail">Correo electrónico</label>

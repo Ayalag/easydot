@@ -185,7 +185,7 @@
                             Realiza el pago y listo,
                             estarás recibiendo el
                             certificado en tu correo
-                            electronico
+                            electrónico
                         </div>
                     </div>
                 </div>

@@ -67,7 +67,8 @@ Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('termino
 // });
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
-Route::get('/producto/motor/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
+Route::get('/producto/motor/auto/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
+Route::get('/producto/motor/moto/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_moto'])->name('comprobante_moto');
 Route::get('/producto/mascota/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_mascota'])->name('comprobante_mascota');
 Route::get('/producto/persona/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_persona'])->name('comprobante_persona');
 Route::get('/producto/hogar/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_hogar'])->name('comprobante_hogar');

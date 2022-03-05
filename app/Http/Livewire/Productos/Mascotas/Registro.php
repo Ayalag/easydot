@@ -192,6 +192,7 @@ class Registro extends Component
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
                     
+                    
                 ]);
             } 
         }
@@ -206,7 +207,12 @@ class Registro extends Component
                     'mascotaNacMonth' => 'required',
                     'mascotaNacYear' => 'required',
                     'mascotaSexo' => 'required|string',
-                    'mascotaValor' => 'required|numeric',                   
+                    'mascotaValor' => 'required|numeric',  
+                    'telefonoClinica' => 'numeric',
+                    'mascota1Foto' => 'required | mimes:jpeg,jpg,png',
+                    'mascota2Foto' => 'required | mimes:jpeg,jpg,png',
+                    'mascota3Foto' => 'required | mimes:jpeg,jpg,png',
+
                 ]);
             }
         }

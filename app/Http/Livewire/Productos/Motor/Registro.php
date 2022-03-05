@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Productos\Motor;
 
-use App\Models\CarroMarca;
-use App\Models\CarroTipo;
 use Livewire\Component;
 use App\Models\distrito;
+use App\Models\MotoTipo;
+use App\Models\CarroTipo;
+use App\Models\MotoMarca;
 use App\Models\provincia;
+use App\Models\CarroMarca;
 use App\Models\corregimiento;
 use App\Models\pendingOrders;
 use Livewire\WithFileUploads;
@@ -66,6 +68,8 @@ class Registro extends Component
     public $color;
     public $motorNum;
     public $chasisNum;
+
+    public $autoMoto ='auto';
     
     public $tipo_id;
     public $aseguradora_id;
@@ -80,14 +84,28 @@ class Registro extends Component
     public $showPais = false;
 
     protected $listeners = [
-        'getMotorPlanDetail'
+        'getMotorPlanDetail',
     ];
+
+    
+    public function getAutoMoto($value1)
+    {
+        if(!is_null($value1))
+        $this->autoMoto = $value1; 
+    }
 
     public function mount(){
         $this->currentStep = 1;
         $this->provincia = provincia::all();
-        $this->carBrand= CarroMarca::all();
+    }
 
+    public function hydrate()
+    {
+        if($this->tipo_id == 1){
+            $this->carBrand= CarroMarca::all();
+        }else{
+            $this->carBrand= MotoMarca::all();
+        }
     }
 
     public function updatedSelectedProvincia($id_provincia){
@@ -97,13 +115,18 @@ class Registro extends Component
         
     public function updatedSelectedDistrito($id_distrito){
 
-        $this->corregimiento = corregimiento::where('id_distrito',$id_distrito)->get();
         
+        $this->corregimiento = corregimiento::where('id_distrito',$id_distrito)->get();
+
     }
 
     public function updatedSelectedCarBrand($id_marca){
 
-        $this->carType = CarroTipo::where('id_Marca',$id_marca)->get();
+        if($this->tipo_id == 1){
+             $this->carType = CarroTipo::where('id_Marca',$id_marca)->get();
+        }else{
+            $this->carType = MotoTipo::where('id_Marca',$id_marca)->get();
+        }
         
     }
 
@@ -111,7 +134,7 @@ class Registro extends Component
         $this->validateData();
         $this->validaPpe();
         $this->currentStep++;
-
+        
         return $this->currentStep;
     }
 

@@ -233,7 +233,7 @@
                                         <ul>
                                             <li>Lo primero es verificar si hay heridos. Luego debes informar de inmediato a
                                                 tu compañía aseguradora llamando al número de asistencia y ellos te apoyaran
-                                                en los pasos. Siguientes ya que es importante conocer la situación y evaluar
+                                                en los pasos siguientes ya que es importante conocer la situación y evaluar
                                                 si es necesario llamar a la autoridad correspondiente (ATTT).
                                         </ul>
                                     </li>
@@ -255,7 +255,7 @@
                                     <li>
                                         <ul>
                                             <li>Es la cobertura que aplica para hacer frente a las lesiones ocasionadas a
-                                                otras personas fuera del vehículo asegurado en casodeun accidente.
+                                                otras personas fuera del vehículo asegurado en caso de un accidente.
                                         </ul>
                                     </li>
                                 </ul>
