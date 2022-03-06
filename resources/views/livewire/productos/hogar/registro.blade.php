@@ -1,5 +1,4 @@
 <div>
-
     <form wire:submit.prevent="submit">
 
         @if ($currentStep == 1)
@@ -70,8 +69,8 @@
                             <div class="d-flex">
                                 <select wire:model.defer="dia"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2 @if ($errors->has('dia')) border border-danger @endif"
-                                    id="dd" placeholder="dd">
-                                    <option value="" selected>dd</option>
+                                    id="birthdayDay" placeholder="día">
+                                    <option value="" selected>día</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -106,8 +105,8 @@
                                 </select>
                                 <select wire:model.defer="mes"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('mes')) border border-danger @endif"
-                                    id="mm" placeholder="mm">
-                                    <option value="" selected>mm</option>
+                                    id="birthdayMonth" placeholder="mes">
+                                    <option value="" selected>mes</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -123,8 +122,8 @@
                                 </select>
                                 <select wire:model.defer="año"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
-                                    id="aa" placeholder="aa">
-                                    <option value="" selected>aa</option>
+                                    id="birthdayYear" placeholder="año">
+                                    <option value="" selected>año</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
                                     <option value="2020">2020</option>
@@ -227,6 +226,7 @@
                                     <option value="1923">1923</option>
                                 </select>
                             </div>
+                            <span class="ageError" id="ageError">*mayoria de edad requerida</span>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
@@ -266,9 +266,13 @@
                         <div class="input-group input-file" name="upload">
                             {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
                             <label for="file-upload" class="custom-file-upload input__style">
-                                <i class="fas fa-paperclip"></i> adjuntar identificación
+                                <i class="fas fa-paperclip"></i>identificación
                             </label>
-                            <input id="file-upload" type="file" />
+                            <input id="file-upload" type="file" wire:model="cedulaFoto" />
+                            <span wire:loading wire:target="cedulaFoto" class="spinner-border spinner-border-sm"
+                                role="status" aria-hidden="true"
+                                style="position: relative;left:-30px;bottom:-10px"></span>
+                            @error('cedulaFoto') <span class="error">{{ $message }}</span> @enderror
                         </div>
                     </div>
 
@@ -555,7 +559,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for=""></label>
+                        <label for="">&nbsp;</label>
                         <select wire:model="selectedDistrito" class="form-control input__style " data-live-search="true"
                             title="Distrito" name="distrito" id="distrito" required>
                             <option value="" selected>Distrito</option>
@@ -567,7 +571,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for=""></label>
+                        <label for="">&nbsp;</label>
                         <select wire:model.defer="selectedCorregimiento" class="form-control input__style "
                             data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento"
                             required>
@@ -619,169 +623,277 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
                                     <div class="form-check-inline ">
-                                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif"">
+                                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
                                                 ¿Eres una persona <br>
                                                 politicamente expuesta?
                                             </div>
                                             <label class=" form-check-label mr-1 h4" for="">Si</label>
                                             <input wire:model.defer="ppe" class="form-check-input" type="radio"
-                                                name="ppe" id="ppeSi" value="ppeSi" wire:click="$set('show',true)">
+                                                name="ppe" id="ppeSi" value="ppeSi">
                                             <label class="form-check-label mr-1 h4" for="">No</label>
                                             <input wire:model.defer="ppe" class="form-check-input" type="radio"
-                                                name="ppe" id="ppeNo" value="ppeNo" wire:click="$set('show',false)">
+                                                name="ppe" id="ppeNo" value="ppeNo">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @if ($show)
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for=""></label>
-                            <input wire:model.defer="ppecargo" type="text"
-                                class="form-control input__style @if ($errors->has('ppecargo')) border border-danger @endif"
-                                id="cargo" placeholder="Cargo">
+                    <div class="show-hide" id="show-hide" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for=""></label>
+                                <input wire:model.defer="ppecargo" type="text"
+                                    class="form-control input__style @if ($errors->has('ppecargo')) border border-danger @endif"
+                                    id="cargo" placeholder="Cargo">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="container-ppe__activo d-flex flex-column">
+                                    <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
+                                        ¿estas en el cargo <br> actualmente?
+                                    </div>
+                                    <div class="ppe_otipons text-center">
+                                        <label class=" form-check-label mr-4 h5" for="">Si</label>
+                                        <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
+                                            name="ppe_activo" id="ppe_activoSi" value="si">
+                                        <label class="form-check-label mr-4 h5" for="">No</label>
+                                        <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
+                                            name="ppe_activo" id="ppe_activoNo" value="no">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for=""></label>
-                            <input wire:model.defer="ppemail" type="mail"
-                                class="form-control input__style @if ($errors->has('ppemail')) border border-danger @endif"
-                                id="casa" placeholder="Correo electrónico">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6 text-center">
-                            <label class="easyBlue600">Fecha de inicio del cargo</label>
-                            <div class="col-12 d-flex">
-                                <select wire:model.defer="ppe_inicio_dia"
-                                    class="form-control input__style mr-2 @if ($errors->has('ppe_inicio_dia')) border border-danger @endif"
-                                    id="dd" placeholder="dd">
-                                    <option value="" selected>dd</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                </select>
-                                <select wire:model.defer="ppe_inicio_mes"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_mes')) border border-danger @endif"
-                                    id="mm" placeholder="mm">
-                                    <option value="" selected>mm</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                                <select wire:model.defer="ppe_inicio_año"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
-                                    id="aa" placeholder="aa">
-                                    <option value="" selected>aa</option>
-                                    <option value="1922">1922</option>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 text-center">
+                                <label class="easyBlue600">Fecha de inicio del cargo</label>
+                                <div class="col-12 d-flex">
+                                    <select wire:model.defer="ppe_inicio_dia"
+                                        class="form-control input__style mr-2 @if ($errors->has('ppe_inicio_dia')) border border-danger @endif"
+                                        id="dd" placeholder="dd">
+                                        <option value="" selected>dd</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                    </select>
+                                    <select wire:model.defer="ppe_inicio_mes"
+                                        class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_mes')) border border-danger @endif"
+                                        id="mm" placeholder="mm">
+                                        <option value="" selected>mm</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <select wire:model.defer="ppe_inicio_año"
+                                        class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
+                                        id="aa" placeholder="aa">
+                                        <option value="" selected>aa</option>
+                                        <option value="1922">1922</option>
 
-                                </select>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group col-md-6 text-center">
-                            <label class="easyBlue600">Fecha de finalización</label>
-                            <div class="col-12 d-flex">
-                                <select wire:model.defer="ppe_final_dia"
-                                    class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
-                                    id="dd" placeholder="dd">
-                                    <option value="" selected>dd</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21</option>
-                                    <option value="22">22</option>
-                                    <option value="23">23</option>
-                                    <option value="24">24</option>
-                                    <option value="25">25</option>
-                                    <option value="26">26</option>
-                                    <option value="27">27</option>
-                                    <option value="28">28</option>
-                                    <option value="29">29</option>
-                                    <option value="30">30</option>
-                                    <option value="31">31</option>
-                                </select>
-                                <select wire:model.defer="ppe_final_mes"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
-                                    id="mm" placeholder="mm">
-                                    <option value="" selected>mm</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                                <select wire:model.defer="ppe_final_año"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
-                                    id="aa" placeholder="aa">
-                                    <option value="" selected>aa</option>
-                                    <option value="1922">1922</option>
-                                </select>
+                            <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
+                                <label class="easyBlue600">Fecha de finalización</label>
+                                <div class="col-12 d-flex">
+                                    <select wire:model.defer="ppe_final_dia"
+                                        class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
+                                        id="dd" placeholder="dd">
+                                        <option value="" selected>dd</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                    </select>
+                                    <select wire:model.defer="ppe_final_mes"
+                                        class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
+                                        id="mm" placeholder="mm">
+                                        <option value="" selected>mm</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                    <select wire:model.defer="ppe_final_año"
+                                        class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
+                                        id="aa" placeholder="aa">
+                                        <option value="" selected>aa</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1993">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                        <option value="1987">1987</option>
+                                        <option value="1986">1986</option>
+                                        <option value="1985">1985</option>
+                                        <option value="1984">1984</option>
+                                        <option value="1983">1983</option>
+                                        <option value="1982">1982</option>
+                                        <option value="1981">1981</option>
+                                        <option value="1980">1980</option>
+                                        <option value="1979">1979</option>
+                                        <option value="1978">1978</option>
+                                        <option value="1977">1977</option>
+                                        <option value="1976">1976</option>
+                                        <option value="1975">1975</option>
+                                        <option value="1974">1974</option>
+                                        <option value="1973">1973</option>
+                                        <option value="1972">1972</option>
+                                        <option value="1971">1971</option>
+                                        <option value="1970">1970</option>
+                                        <option value="1969">1969</option>
+                                        <option value="1968">1968</option>
+                                        <option value="1967">1967</option>
+                                        <option value="1966">1966</option>
+                                        <option value="1965">1965</option>
+                                        <option value="1964">1964</option>
+                                        <option value="1963">1963</option>
+                                        <option value="1962">1962</option>
+                                        <option value="1961">1961</option>
+                                        <option value="1960">1960</option>
+                                        <option value="1959">1959</option>
+                                        <option value="1958">1958</option>
+                                        <option value="1957">1957</option>
+                                        <option value="1956">1956</option>
+                                        <option value="1955">1955</option>
+                                        <option value="1954">1954</option>
+                                        <option value="1953">1953</option>
+                                        <option value="1952">1952</option>
+                                        <option value="1951">1951</option>
+                                        <option value="1950">1950</option>
+                                        <option value="1949">1949</option>
+                                        <option value="1948">1948</option>
+                                        <option value="1947">1947</option>
+                                        <option value="1946">1946</option>
+                                        <option value="1945">1945</option>
+                                        <option value="1944">1944</option>
+                                        <option value="1943">1943</option>
+                                        <option value="1942">1942</option>
+                                        <option value="1941">1941</option>
+                                        <option value="1940">1940</option>
+                                        <option value="1939">1939</option>
+                                        <option value="1938">1938</option>
+                                        <option value="1937">1937</option>
+                                        <option value="1936">1936</option>
+                                        <option value="1935">1935</option>
+                                        <option value="1934">1934</option>
+                                        <option value="1933">1933</option>
+                                        <option value="1932">1932</option>
+                                        <option value="1931">1931</option>
+                                        <option value="1930">1930</option>
+                                        <option value="1929">1929</option>
+                                        <option value="1928">1928</option>
+                                        <option value="1927">1927</option>
+                                        <option value="1926">1926</option>
+                                        <option value="1925">1925</option>
+                                        <option value="1924">1924</option>
+                                        <option value="1923">1923</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
             </div>
             <div class="container pb-5 pt-2 d-flex flex-column text-center">
@@ -808,7 +920,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid container-registo__datos-header  mb-3">
+            <div class="container-fluid container-registo__datos-header  mb-3 pt-4">
                 <div class="col-12 text-center">
                     <div class="registro-datos__title">
                         <p class="">¡ya falta muy poco!</p>
@@ -816,148 +928,170 @@
                     <div class="registro-datos__subtitle">
                         <p class="underline">datos del producto</p>
                     </div>
-                </div>
-            </div>
-            @if ($userAddress == 'si')
-            <div class="container-registro-datos__title easyBlue600 fnt-size-1 pt-2 text-center">
-                ¿deseas utilizar los mismos datos de tu dirección de contacto?
-            </div>
 
-            <div class="container container-hogar__question shadow-lg bg-white rounded mt-3 text-center">
-                <div class="row p-2">
-                    <div class="col">
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">si!</label>
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yes_address"
-                                value="si">
-                        </div>
+                    @if ($userAddress == 'si')
+
+                    <div class="container-registro-datos__title easyBlue600 fnt-size-1 pt-2 text-center pt-3  @if ($errors->has('sameaddress'))  text-danger @endif">
+                        ¿deseas utilizar los mismos datos de tu dirección de contacto?
                     </div>
-                    {{-- <a href="/motor"> --}}
-                        <div class="col">
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">no</label>
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_address"
-                                    value="no">
+
+                    <div class="container container-hogar__question shadow-lg bg-white rounded mt-3 text-center">
+                        <div class="row p-2">
+                            <div class="col">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">si!</label>
+                                    <input wire:model.defer="sameaddress" class="form-check-input" type="radio"
+                                        name="sameaddress" id="yes_address" value="yes_address"
+                                        wire:click="$set('showAddress',false)" checked="checked">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label pr-2 easyBlue800" for="inlineRadio1">no</label>
+                                    <input wire:model.defer="sameaddress" class="form-check-input" type="radio"
+                                        name="sameaddress" id="no_address" value="no_address"
+                                        wire:click="$set('showAddress',true)">
+                                </div>
                             </div>
                         </div>
-                    {{-- </a> --}}
+                    </div>
+                    @if($showAddress)
+                    <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                {{-- <label for="">Dirección</label> --}}
+                                <select wire:model="selectedProvincia2"
+                                    class="form-control input__style @if ($errors->has('selectedProvincia2')) border border-danger @endif"
+                                    data-live-search="true" title="Provincia" name="selectedProvincia2"
+                                    id="selectedProvincia2">
+                                    <option value="" selected>Provincia</option>
+                                    @if (!is_null($provincia2))
+                                    @foreach ($provincia2 as $p)
+                                    <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{-- <label for=""></label> --}}
+                                <select wire:model="selectedDistrito2"
+                                    class="form-control input__style @if ($errors->has('selectedDistrito2')) border border-danger @endif "
+                                    data-live-search="true" title="Distrito" name="selectedDistrito2"
+                                    id="selectedDistrito2">
+                                    <option value="" selected>Distrito</option>
+                                    @if (!is_null($distrito2))
+                                    @foreach ($distrito2 as $d)
+                                    <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{-- <label for=""></label> --}}
+                                <select wire:model.defer="selectedCorregimiento2"
+                                    class="form-control input__style @if ($errors->has('selectedCorregimiento2')) border border-danger @endif"
+                                    data-live-search="true" title="Corregimiento" name="selectedCorregimiento2"
+                                    id="selectedCorregimiento2">
+                                    <option value="" selected>Corregimiento</option>
+                                    @if (!is_null($corregimiento2))
+                                    @foreach ($corregimiento2 as $c)
+                                    <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
+                                    </option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{-- <label for=""></label> --}}
+                                <input wire:model.defer="barrio2" type="text"
+                                    class="form-control input__style @if ($errors->has('barrio2')) border border-danger @endif"
+                                    id="barrio2" placeholder="Barrio / P.H">
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{-- <label for=""></label> --}}
+                                <input wire:model.defer="casa2" type="text"
+                                    class="form-control input__style @if ($errors->has('casa2')) border border-danger @endif"
+                                    id="casa2" placeholder="# Casa / Apto.">
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @else
+                    <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                {{-- <label for="">Dirección</label> --}}
+                                <select wire:model="selectedProvincia2"
+                                    class="form-control input__style @if ($errors->has('selectedProvincia2')) border border-danger @endif"
+                                    data-live-search="true" title="Provincia" name="selectedProvincia2"
+                                    id="selectedProvincia2">
+                                    <option value="" selected>Provincia</option>
+                                    @if (!is_null($provincia2))
+                                    @foreach ($provincia2 as $p)
+                                    <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{-- <label for=""></label> --}}
+                                <select wire:model="selectedDistrito2"
+                                    class="form-control input__style @if ($errors->has('selectedDistrito2')) border border-danger @endif "
+                                    data-live-search="true" title="Distrito" name="selectedDistrito2"
+                                    id="selectedDistrito2">
+                                    <option value="" selected>Distrito</option>
+                                    @if (!is_null($distrito2))
+                                    @foreach ($distrito2 as $d)
+                                    <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                {{-- <label for=""></label> --}}
+                                <select wire:model.defer="selectedCorregimiento2"
+                                    class="form-control input__style @if ($errors->has('selectedCorregimiento2')) border border-danger @endif"
+                                    data-live-search="true" title="Corregimiento" name="selectedCorregimiento2"
+                                    id="selectedCorregimiento2">
+                                    <option value="" selected>Corregimiento</option>
+                                    @if (!is_null($corregimiento2))
+                                    @foreach ($corregimiento2 as $c)
+                                    <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
+                                    </option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{-- <label for=""></label> --}}
+                                <input wire:model.defer="barrio2" type="text"
+                                    class="form-control input__style @if ($errors->has('barrio2')) border border-danger @endif"
+                                    id="barrioLogged" placeholder="Barrio / P.H">
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{-- <label for=""></label> --}}
+                                <input wire:model.defer="casa2" type="text"
+                                    class="form-control input__style @if ($errors->has('casa2')) border border-danger @endif"
+                                    id="casaLogged" placeholder="# Casa / Apto.">
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
-            <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        {{-- <label for="">Dirección</label> --}}
-                        <select wire:model="selectedProvincia"
-                            class="form-control input__style @if ($errors->has('selectedProvincia')) border border-danger @endif"
-                            data-live-search="true" title="Provincia" name="provincia" id="provincia" required>
-                            <option value="" selected>Provincia</option>
-                            @foreach ($provincia as $p)
-                            <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        {{-- <label for=""></label> --}}
-                        <select wire:model="selectedDistrito" class="form-control input__style " data-live-search="true"
-                            title="Distrito" name="distrito" id="distrito" required>
-                            <option value="" selected>Distrito</option>
-                            @if (!is_null($distrito))
-                            @foreach ($distrito as $d)
-                            <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
-                            @endforeach
-                            @endif
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        {{-- <label for=""></label> --}}
-                        <select wire:model.defer="selectedCorregimiento" class="form-control input__style "
-                            data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento"
-                            required>
-                            <option value="" selected>Corregimiento</option>
-                            @if (!is_null($corregimiento))
-                            @foreach ($corregimiento as $c)
-                            <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
-                            </option>
-                            @endforeach
-                            @endif
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        {{-- <label for=""></label> --}}
-                        <input  type="text"
-                            class="form-control input__style @if ($errors->has('barrio')) border border-danger @endif"
-                            id="barrio" placeholder="Barrio / P.H">
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{-- <label for=""></label> --}}
-                        <input type="text"
-                            class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
-                            id="casa" placeholder="# Casa / Apto.">
-                    </div>
-                </div>
-            </div>
-            @else
-
-            <div class="container-fluid container-registro-contactos shadow p-3 mt-5">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        {{-- <label for="">Dirección</label> --}}
-                        <select wire:model="selectedProvincia"
-                            class="form-control input__style @if ($errors->has('selectedProvincia')) border border-danger @endif"
-                            data-live-search="true" title="Provincia" name="provincia" id="provincia" required>
-                            <option value="" selected>Provincia</option>
-                            @foreach ($provincia as $p)
-                            <option value="{{ $p->id_Provincia }}">{{ $p->Nombre_Provincia }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        {{-- <label for=""></label> --}}
-                        <select wire:model="selectedDistrito" class="form-control input__style " data-live-search="true"
-                            title="Distrito" name="distrito" id="distrito" required>
-                            <option value="" selected>Distrito</option>
-                            @if (!is_null($distrito))
-                            @foreach ($distrito as $d)
-                            <option value="{{ $d->id_distrito }}">{{ $d->nombre_distrito }}</option>
-                            @endforeach
-                            @endif
-                        </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                        {{-- <label for=""></label> --}}
-                        <select wire:model.defer="selectedCorregimiento" class="form-control input__style "
-                            data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento"
-                            required>
-                            <option value="" selected>Corregimiento</option>
-                            @if (!is_null($corregimiento))
-                            @foreach ($corregimiento as $c)
-                            <option value="{{ $c->id_corregimiento }}">{{ $c->nombre_corregimiento }}
-                            </option>
-                            @endforeach
-                            @endif
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        {{-- <label for=""></label> --}}
-                        <input  type="text"
-                            class="form-control input__style @if ($errors->has('barrio')) border border-danger @endif"
-                            id="barrio" placeholder="Barrio / P.H">
-                    </div>
-                    <div class="form-group col-md-6">
-                        {{-- <label for=""></label> --}}
-                        <input type="text"
-                            class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
-                            id="casa" placeholder="# Casa / Apto.">
-                    </div>
-                </div>
-            </div>
-
-            @endif
-
 
             <div class="container pb-5 pt-2 d-flex flex-column text-center">
                 <button type="submit" class="btn_payeasy--load m-auto" id="process">
