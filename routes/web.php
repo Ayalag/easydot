@@ -25,7 +25,7 @@ use App\Http\Controllers\productos\veterinario\veterinarioController;
 */
 
 
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/userconfirmation', function () {
@@ -64,7 +64,7 @@ Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');
 Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('terminos-y-condiciones');
 
-// });
+});
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 Route::get('/producto/motor/auto/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
