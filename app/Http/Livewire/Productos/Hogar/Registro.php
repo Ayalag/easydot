@@ -193,9 +193,11 @@ class Registro extends Component
         }
         if($this->currentStep == 2){
 
+            if(Auth::check()){
             $this->validate([
                 'sameaddress' => 'required|min:1',
             ]);
+        }
 
             if(Auth::check()){
                 if( !empty(auth()->user()->address[0]->user_pais) 

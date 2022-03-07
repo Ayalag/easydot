@@ -276,7 +276,7 @@
                     <div class="form-row p-2">
                         <div class="col-4">
                             <label for="placa">Provincia</label>
-                            <input disabled value="{{ $response[0]-hogar_provincia }}" type=" text"
+                            <input disabled value="{{ $response[0]->hogar_provincia }}" type=" text"
                                 class="form-control input__style_comprobante" id="prov" placeholder="">
                         </div>
                         <div class="col-4">
