@@ -73,7 +73,7 @@
                                 placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="cedula">
+                            <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
                                     <input disabled class="form-check-input"

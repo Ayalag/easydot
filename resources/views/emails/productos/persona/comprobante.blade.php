@@ -73,7 +73,7 @@
                                 placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="cedula">
+                            <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
                                     <input disabled class="form-check-input"
@@ -287,7 +287,7 @@
                     </div>
                     <div class="form-row p-2">
                         <div class="col-3">
-                            <label for="marca">Fecxha de naciemiento</label>
+                            <label for="marca">Fecha de naciemiento</label>
                             <input disabled value="{{ $response[0]->dia.'/'.$response[0]->mes.'/'. $response[0]->year }}" type="text"
                                 class="form-control input__style_comprobante" id="nacimiento" placeholder="">
                         </div>

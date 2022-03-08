@@ -73,7 +73,7 @@
                                 placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="cedula">
+                            <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
                                     <input disabled class="form-check-input"
@@ -297,14 +297,14 @@
                                 class="form-control input__style_comprobante" id="tipo" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="modelo">Raza</label>
-                            <input disabled value="{{ $response[0]->raza }}" type="text"
-                                class="form-control input__style_comprobante" id="raza" placeholder="">
-                        </div>
-                        <div class="col-3">
                             <label for="year">Genero</label>
                             <input disabled value="{{ $response[0]->mascotaSexo }}" type="text"
                                 class="form-control input__style_comprobante" id="genero" placeholder="">
+                        </div>
+                        <div class="col-6">
+                            <label for="modelo">Raza</label>
+                            <input disabled value="{{ $response[0]->raza }}" type="text"
+                                class="form-control input__style_comprobante" id="raza" placeholder="">
                         </div>
                     </div>
                     <div class="form-row p-2">

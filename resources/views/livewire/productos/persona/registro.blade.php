@@ -660,7 +660,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6 text-center">
+                        <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
                             <label class="easyBlue600">Fecha de inicio del cargo</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_inicio_dia"
@@ -824,7 +824,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
+                        <div class="form-group col-md-6 text-center">
                             <label class="easyBlue600">Fecha de finalización</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_final_dia"

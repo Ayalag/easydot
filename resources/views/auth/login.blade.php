@@ -110,6 +110,9 @@
             font-size: 10px;
             text-align: end;
             text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #033777;
         }
 
         /* @media screen and (max-width: 599px) {
@@ -125,7 +128,7 @@
 </head>
 
 <body>
-    <div class="container-account pt-4">
+    <div class="container-account__login pt-4">
         <div class="container header-container text-center">
             <div class="header-container__tittle">
                 ¡Hola!
@@ -189,7 +192,7 @@
                     </div>
                 </div>
                 <div class="col-12 nRegister ">
-                    <a href="{{ route('autos-cobertura') }}">
+                    <a href="{{ route('register') }}">
                         <p class="underline">crear una cuenta</p>
                     </a>
                 </div>
