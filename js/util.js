@@ -37,8 +37,25 @@ $(document).ready(function () {
     trigger.click(function () {
         hamburger_cross();
     });
+    overlay.click(function () {
+        overlay_cross();
+    });
 
     function hamburger_cross() {
+        if (isClosed == true) {
+            overlay.hide();
+            trigger.removeClass("is-open");
+            trigger.addClass("is-closed");
+            isClosed = false;
+        } else {
+            overlay.show();
+            trigger.removeClass("is-closed");
+            trigger.addClass("is-open");
+            isClosed = true;
+        }
+    }
+
+    function overlay_cross() {
         if (isClosed == true) {
             overlay.hide();
             trigger.removeClass("is-open");
@@ -55,131 +72,121 @@ $(document).ready(function () {
     $('[data-toggle="offcanvas"]').click(function () {
         $("#wrapper").toggleClass("toggled");
     });
+    overlay.click(function () {
+        $("#wrapper").toggleClass("toggled");
+    });
+    /*[ Sidebar ]
+        ===========================================================*/
+
+
+    // Hero slider
+    /*==============================================================*/
+
+    var sliderTimer = 5000;
+    var beforeEnd = 500;
+    var $bannerSlider = jQuery('.banner-slider');
+    var $bannerFirstSlide = $('div.banner-slide:first-child');
+
+    $bannerSlider.on('init', function (e, slick) {
+        var $firstAnimatingElements = $bannerFirstSlide.find('[data-animation]');
+        slideanimate($firstAnimatingElements);
+    });
+    $bannerSlider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+        var $animatingElements = $('div.slick-slide[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+        slideanimate($animatingElements);
+    });
+
+    $bannerSlider.slick({
+        pauseOnFocus: false,
+        pauseOnHover: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        speed: 1000,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: sliderTimer,
+        arrows: false,
+        adaptiveHeight: true,
+    });
+
+    function slideanimate(elements) {
+        var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        elements.each(function () {
+            var $this = $(this);
+            var $animationDelay = $this.data('delay');
+            var $animationType = 'animated ' + $this.data('animation');
+            $this.css({
+                'animation-delay': $animationDelay,
+                '-webkit-animation-delay': $animationDelay
+            });
+            $this.addClass($animationType).one(animationEndEvents, function () {
+                $this.removeClass($animationType);
+            });
+        });
+    }
+
+    function progressBar() {
+        $('.slider-progress').find('span').removeAttr('style');
+        $('.slider-progress').find('span').removeClass('active');
+        setTimeout(function () {
+            $('.slider-progress').find('span').css('transition-duration', (sliderTimer / 1000) + 's').addClass('active');
+        }, 100);
+    }
+    progressBar();
+    $bannerSlider.on('beforeChange', function (e, slick) {
+        progressBar();
+    });
+    $bannerSlider.on('afterChange', function (e, slick, nextSlide) {
+        titleAnim(nextSlide);
+    });
+
+    // Title Animation JS
+    function titleAnim(ele) {
+        $bannerSlider.find('.slick-current').find('h1').addClass('show');
+        setTimeout(function () {
+            $bannerSlider.find('.slick-current').find('h1').removeClass('show');
+        }, sliderTimer - beforeEnd);
+    }
+    titleAnim();
+
+    // // data color
+    // jQuery("[data-color]").each(function () {
+    // 		jQuery(this).css('color', jQuery(this).attr('data-color'));
+    // });
+    // // data background color
+    // jQuery("[data-bgcolor]").each(function () {
+    // 	jQuery(this).css('background-color', jQuery(this).attr('data-bgcolor'));
+    // });
+
 
     /*==================================================================
                    [ Slick1 ]*/
-    $(".wrap-slick1").each(function () {
-        var wrapSlick1 = $(this);
-        var slick1 = $(this).find(".slick1");
 
-        var itemSlick1 = $(slick1).find(".item-slick1");
-        var layerSlick1 = $(slick1).find(".layer-slick1");
-        var actionSlick1 = [];
-
-        $(slick1).on("init", function () {
-            var layerCurrentItem = $(itemSlick1[0]).find(".layer-slick1");
-
-            for (var i = 0; i < actionSlick1.length; i++) {
-                clearTimeout(actionSlick1[i]);
-            }
-
-            $(layerSlick1).each(function () {
-                $(this).removeClass($(this).data("appear") + " visible-true");
-            });
-
-            for (var i = 0; i < layerCurrentItem.length; i++) {
-                actionSlick1[i] = setTimeout(
-                    function (index) {
-                        $(layerCurrentItem[index]).addClass(
-                            $(layerCurrentItem[index]).data("appear") +
-                                " visible-true"
-                        );
-                    },
-                    $(layerCurrentItem[i]).data("delay"),
-                    i
-                );
-            }
-        });
-
-        var showDot = false;
-        if ($(wrapSlick1).find(".wrap-slick1-dots").length > 0) {
-            showDot = true;
-        }
-
-        $(slick1).slick({
-            pauseOnFocus: false,
-            pauseOnHover: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            fade: true,
-            speed: 1000,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 6000,
-            arrows: false,
-            appendArrows: $(wrapSlick1),
-            prevArrow:
-                '<button class="arrow-slick1 prev-slick1"><i class="zmdi zmdi-caret-left"></i></button>',
-            nextArrow:
-                '<button class="arrow-slick1 next-slick1"><i class="zmdi zmdi-caret-right"></i></button>',
-            dots: showDot,
-            appendDots: $(wrapSlick1).find(".wrap-slick1-dots"),
-            dotsClass: "slick1-dots",
-            customPaging: function (slick, index) {
-                var linkThumb = $(slick.$slides[index]).data("thumb");
-                var caption = $(slick.$slides[index]).data("caption");
-                return (
-                    '<img src="' +
-                    linkThumb +
-                    '">' +
-                    '<span class="caption-dots-slick1">' +
-                    caption +
-                    "</span>"
-                );
-            },
-        });
-
-        $(slick1).on("afterChange", function (event, slick, currentSlide) {
-            var layerCurrentItem = $(itemSlick1[currentSlide]).find(
-                ".layer-slick1"
-            );
-
-            for (var i = 0; i < actionSlick1.length; i++) {
-                clearTimeout(actionSlick1[i]);
-            }
-
-            $(layerSlick1).each(function () {
-                $(this).removeClass($(this).data("appear") + " visible-true");
-            });
-
-            for (var i = 0; i < layerCurrentItem.length; i++) {
-                actionSlick1[i] = setTimeout(
-                    function (index) {
-                        $(layerCurrentItem[index]).addClass(
-                            $(layerCurrentItem[index]).data("appear") +
-                                " visible-true"
-                        );
-                    },
-                    $(layerCurrentItem[i]).data("delay"),
-                    i
-                );
-            }
-        });
-    });
 
     $(".menu-container").slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplaySpeed: 2000,
-        arrows: false,
-        infinite: false,
+        // slidesToShow: 2,
+        // slidesToScroll: 1,
+        // autoplaySpeed: 2000,
+        // arrows: false,
+        // infinite: false,
         // centerMode: true,
         variableWidth: true,
-        mobilrFirst: true,
-        responsive: [
-            {
+        // mobileFirst: true,
+        responsive: [{
                 breakpoint: 9999,
                 settings: "unslick",
             },
             {
                 breakpoint: 767,
                 settings: {
-                    slidesToShow: 2,
+                    // slidesToShow: 2,
                     slidesToScroll: 1,
-                    autoplaySpeed: 2000,
+                    // autoplaySpeed: 2000,
                     arrows: false,
+                    variableWidth: true,
                     infinite: false,
-                    mobilrFirst: true,
+                    mobileFirst: true,
                 },
             },
         ],
@@ -207,8 +214,7 @@ $(document).ready(function () {
         arrows: true,
         prevArrow: '<button class="slick-prev slick-arrow"></button>',
         nextArrow: '<button class="slick-next slick-arrow"></button>',
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 960,
                 settings: {
                     arrows: false,
@@ -238,8 +244,7 @@ $(document).ready(function () {
         arrows: false,
         // prevArrow: '<button class="slick-prev slick-arrow"></button>',
         // nextArrow: '<button class="slick-next slick-arrow"></button>',
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 768,
                 settings: {
                     arrows: false,

@@ -181,9 +181,9 @@ class Registro extends Component
             $newOrderInsert->casa = $this->casa;
             $newOrderInsert->celular = $this->celular;
             $newOrderInsert->contactMail = $this->contactMail;
-            $newOrderInsert->provincia = $this->provincia;
-            $newOrderInsert->distrito = $this->distrito;
-            $newOrderInsert->corregimiento = $this->corregimiento;
+            $newOrderInsert->provincia = $this->selectedProvincia;
+            $newOrderInsert->distrito = $this->selectedDistrito;
+            $newOrderInsert->corregimiento = $this->selectedCorregimiento;
             $newOrderInsert->foto_ced_pas = $filePath;
     
             $newOrderInsert->ppe = $this->ppe;
