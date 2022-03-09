@@ -998,9 +998,6 @@
                 @endif
             </div>
         </div>
-
-
-
         <div class="container pb-5 pt-2 d-flex flex-column text-center">
             <button type="submit" class="btn_payeasy--load m-auto" id="process">
                 <span wire:loading class="spinner-border spinner-border-sm" role="status"
