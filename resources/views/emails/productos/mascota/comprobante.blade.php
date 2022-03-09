@@ -245,11 +245,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3">
+                        {{-- <div class="col-3">
                             <label for="mail">Correo Electronico</label>
                             <input disabled value="{{ $response[0]->ppe_mail }}" type="mail"
                                 class="form-control input__style_comprobante" id="mail" placeholder="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

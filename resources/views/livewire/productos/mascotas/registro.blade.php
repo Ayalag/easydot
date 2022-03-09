@@ -629,17 +629,18 @@
                                         </div>
                                         <label class=" form-check-label mr-1 h4" for="">Si</label>
                                         <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeSi" value="ppeSi">
+                                            id="ppeSi" value="ppeSi" wire:click="$set('showppe',true)">
                                         <label class="form-check-label mr-1 h4" for="">No</label>
                                         <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeNo" value="ppeNo">
+                                            id="ppeNo" value="ppeNo" wire:click="$set('showppe',false)">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="show-hide" id="show-hide" style="display: none;">
+                @if ($showppe)
+                <div class="show-hide" id="show-hide">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for=""></label>
@@ -655,16 +656,16 @@
                                 <div class="ppe_otipons text-center">
                                     <label class=" form-check-label mr-4 h5" for="">Si</label>
                                     <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                        name="ppe_activo" id="ppe_activoSi" value="si">
+                                        name="ppe_activo" id="ppe_activoSi" value="si" wire:click="$set('showppeend',false)" >
                                     <label class="form-check-label mr-4 h5" for="">No</label>
                                     <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                        name="ppe_activo" id="ppe_activoNo" value="no">
+                                        name="ppe_activo" id="ppe_activoNo" value="no" wire:click="$set('showppeend',true)" >
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
+                        <div class="form-group col-md-6 text-center">
                             <label class="easyBlue600">Fecha de inicio del cargo</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_inicio_dia"
@@ -828,12 +829,13 @@
                                 </select>
                             </div>
                         </div>
+                        @if($showppeend)
                         <div class="form-group col-md-6 text-center">
                             <label class="easyBlue600">Fecha de finalización</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_final_dia"
                                     class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
-                                    id="dd" placeholder="dd">
+                                    id="ddend" placeholder="ddend">
                                     <option value="" selected>dd</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -869,7 +871,7 @@
                                 </select>
                                 <select wire:model.defer="ppe_final_mes"
                                     class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
-                                    id="mm" placeholder="mm">
+                                    id="mmed" placeholder="mmed">
                                     <option value="" selected>mm</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -886,7 +888,7 @@
                                 </select>
                                 <select wire:model.defer="ppe_final_año"
                                     class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
-                                    id="aa" placeholder="aa">
+                                    id="aaend" placeholder="aaend">
                                     <option value="" selected>aa</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
@@ -991,8 +993,10 @@
                                 </select>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="container pb-5 pt-2 d-flex flex-column text-center">
