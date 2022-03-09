@@ -639,358 +639,389 @@
                             </div>
                         </div>
                     </div>
-                    <div class="show-hide" id="show-hide" style="display: none;">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for=""></label>
-                                <input wire:model.defer="ppecargo" type="text"
-                                    class="form-control input__style @if ($errors->has('ppecargo')) border border-danger @endif"
-                                    id="cargo" placeholder="Cargo">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class="container-ppe__activo d-flex flex-column">
-                                    <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
-                                        ¿estas en el cargo <br> actualmente?
+                    <div class="datos-de-ppp pt-4">
+                        <div class="container-fluid container-registro-contactos shadow pt-4">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
+                                                <div class="form-check-inline ">
+                                                    <div
+                                                        class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
+                                                        ¿Eres una persona <br>
+                                                        politicamente expuesta?
+                                                    </div>
+                                                    <label class=" form-check-label mr-1 h4" for="">Si</label>
+                                                    <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
+                                                        id="ppeSi" value="ppeSi" wire:click="$set('showppe',true)">
+                                                    <label class="form-check-label mr-1 h4" for="">No</label>
+                                                    <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
+                                                        id="ppeNo" value="ppeNo" wire:click="$set('showppe',false)">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ppe_otipons text-center">
-                                        <label class=" form-check-label mr-4 h5" for="">Si</label>
-                                        <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                            name="ppe_activo" id="ppe_activoSi" value="si">
-                                        <label class="form-check-label mr-4 h5" for="">No</label>
-                                        <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                            name="ppe_activo" id="ppe_activoNo" value="no">
+                                </div>
+                            </div>
+                            @if ($showppe)
+                            <div class="show-hide" id="show-hide">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for=""></label>
+                                        <input wire:model.defer="ppecargo" type="text"
+                                            class="form-control input__style @if ($errors->has('ppecargo')) border border-danger @endif"
+                                            id="cargo" placeholder="Cargo">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="container-ppe__activo d-flex flex-column">
+                                            <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
+                                                ¿estas en el cargo <br> actualmente?
+                                            </div>
+                                            <div class="ppe_otipons text-center">
+                                                <label class=" form-check-label mr-4 h5" for="">Si</label>
+                                                <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
+                                                    name="ppe_activo" id="ppe_activoSi" value="si" wire:click="$set('showppeend',false)" >
+                                                <label class="form-check-label mr-4 h5" for="">No</label>
+                                                <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
+                                                    name="ppe_activo" id="ppe_activoNo" value="no" wire:click="$set('showppeend',true)" >
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6 text-center ppeFin" style="display: none;">
-                                <label class="easyBlue600">Fecha de inicio del cargo</label>
-                                <div class="col-12 d-flex">
-                                    <select wire:model.defer="ppe_inicio_dia"
-                                        class="form-control input__style mr-2 @if ($errors->has('ppe_inicio_dia')) border border-danger @endif"
-                                        id="dd" placeholder="dd">
-                                        <option value="" selected>dd</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                    </select>
-                                    <select wire:model.defer="ppe_inicio_mes"
-                                        class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_mes')) border border-danger @endif"
-                                        id="mm" placeholder="mm">
-                                        <option value="" selected>mm</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                    <select wire:model.defer="ppe_inicio_año"
-                                        class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
-                                        id="aa" placeholder="aa">
-                                        <option value="" selected>aa</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2012">2012</option>
-                                        <option value="2011">2011</option>
-                                        <option value="2010">2010</option>
-                                        <option value="2009">2009</option>
-                                        <option value="2008">2008</option>
-                                        <option value="2007">2007</option>
-                                        <option value="2006">2006</option>
-                                        <option value="2005">2005</option>
-                                        <option value="2004">2004</option>
-                                        <option value="2003">2003</option>
-                                        <option value="2002">2002</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2000">2000</option>
-                                        <option value="1999">1999</option>
-                                        <option value="1998">1998</option>
-                                        <option value="1997">1997</option>
-                                        <option value="1996">1996</option>
-                                        <option value="1995">1995</option>
-                                        <option value="1994">1994</option>
-                                        <option value="1993">1993</option>
-                                        <option value="1992">1992</option>
-                                        <option value="1991">1991</option>
-                                        <option value="1990">1990</option>
-                                        <option value="1989">1989</option>
-                                        <option value="1988">1988</option>
-                                        <option value="1987">1987</option>
-                                        <option value="1986">1986</option>
-                                        <option value="1985">1985</option>
-                                        <option value="1984">1984</option>
-                                        <option value="1983">1983</option>
-                                        <option value="1982">1982</option>
-                                        <option value="1981">1981</option>
-                                        <option value="1980">1980</option>
-                                        <option value="1979">1979</option>
-                                        <option value="1978">1978</option>
-                                        <option value="1977">1977</option>
-                                        <option value="1976">1976</option>
-                                        <option value="1975">1975</option>
-                                        <option value="1974">1974</option>
-                                        <option value="1973">1973</option>
-                                        <option value="1972">1972</option>
-                                        <option value="1971">1971</option>
-                                        <option value="1970">1970</option>
-                                        <option value="1969">1969</option>
-                                        <option value="1968">1968</option>
-                                        <option value="1967">1967</option>
-                                        <option value="1966">1966</option>
-                                        <option value="1965">1965</option>
-                                        <option value="1964">1964</option>
-                                        <option value="1963">1963</option>
-                                        <option value="1962">1962</option>
-                                        <option value="1961">1961</option>
-                                        <option value="1960">1960</option>
-                                        <option value="1959">1959</option>
-                                        <option value="1958">1958</option>
-                                        <option value="1957">1957</option>
-                                        <option value="1956">1956</option>
-                                        <option value="1955">1955</option>
-                                        <option value="1954">1954</option>
-                                        <option value="1953">1953</option>
-                                        <option value="1952">1952</option>
-                                        <option value="1951">1951</option>
-                                        <option value="1950">1950</option>
-                                        <option value="1949">1949</option>
-                                        <option value="1948">1948</option>
-                                        <option value="1947">1947</option>
-                                        <option value="1946">1946</option>
-                                        <option value="1945">1945</option>
-                                        <option value="1944">1944</option>
-                                        <option value="1943">1943</option>
-                                        <option value="1942">1942</option>
-                                        <option value="1941">1941</option>
-                                        <option value="1940">1940</option>
-                                        <option value="1939">1939</option>
-                                        <option value="1938">1938</option>
-                                        <option value="1937">1937</option>
-                                        <option value="1936">1936</option>
-                                        <option value="1935">1935</option>
-                                        <option value="1934">1934</option>
-                                        <option value="1933">1933</option>
-                                        <option value="1932">1932</option>
-                                        <option value="1931">1931</option>
-                                        <option value="1930">1930</option>
-                                        <option value="1929">1929</option>
-                                        <option value="1928">1928</option>
-                                        <option value="1927">1927</option>
-                                        <option value="1926">1926</option>
-                                        <option value="1925">1925</option>
-                                        <option value="1924">1924</option>
-                                        <option value="1923">1923</option>
-
-                                    </select>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6 text-center">
+                                        <label class="easyBlue600">Fecha de inicio del cargo</label>
+                                        <div class="col-12 d-flex">
+                                            <select wire:model.defer="ppe_inicio_dia"
+                                                class="form-control input__style mr-2 @if ($errors->has('ppe_inicio_dia')) border border-danger @endif"
+                                                id="dd" placeholder="dd">
+                                                <option value="" selected>dd</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                            <select wire:model.defer="ppe_inicio_mes"
+                                                class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_mes')) border border-danger @endif"
+                                                id="mm" placeholder="mm">
+                                                <option value="" selected>mm</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <select wire:model.defer="ppe_inicio_año"
+                                                class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
+                                                id="aa" placeholder="aa">
+                                                <option value="" selected>aa</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1990">1990</option>
+                                                <option value="1989">1989</option>
+                                                <option value="1988">1988</option>
+                                                <option value="1987">1987</option>
+                                                <option value="1986">1986</option>
+                                                <option value="1985">1985</option>
+                                                <option value="1984">1984</option>
+                                                <option value="1983">1983</option>
+                                                <option value="1982">1982</option>
+                                                <option value="1981">1981</option>
+                                                <option value="1980">1980</option>
+                                                <option value="1979">1979</option>
+                                                <option value="1978">1978</option>
+                                                <option value="1977">1977</option>
+                                                <option value="1976">1976</option>
+                                                <option value="1975">1975</option>
+                                                <option value="1974">1974</option>
+                                                <option value="1973">1973</option>
+                                                <option value="1972">1972</option>
+                                                <option value="1971">1971</option>
+                                                <option value="1970">1970</option>
+                                                <option value="1969">1969</option>
+                                                <option value="1968">1968</option>
+                                                <option value="1967">1967</option>
+                                                <option value="1966">1966</option>
+                                                <option value="1965">1965</option>
+                                                <option value="1964">1964</option>
+                                                <option value="1963">1963</option>
+                                                <option value="1962">1962</option>
+                                                <option value="1961">1961</option>
+                                                <option value="1960">1960</option>
+                                                <option value="1959">1959</option>
+                                                <option value="1958">1958</option>
+                                                <option value="1957">1957</option>
+                                                <option value="1956">1956</option>
+                                                <option value="1955">1955</option>
+                                                <option value="1954">1954</option>
+                                                <option value="1953">1953</option>
+                                                <option value="1952">1952</option>
+                                                <option value="1951">1951</option>
+                                                <option value="1950">1950</option>
+                                                <option value="1949">1949</option>
+                                                <option value="1948">1948</option>
+                                                <option value="1947">1947</option>
+                                                <option value="1946">1946</option>
+                                                <option value="1945">1945</option>
+                                                <option value="1944">1944</option>
+                                                <option value="1943">1943</option>
+                                                <option value="1942">1942</option>
+                                                <option value="1941">1941</option>
+                                                <option value="1940">1940</option>
+                                                <option value="1939">1939</option>
+                                                <option value="1938">1938</option>
+                                                <option value="1937">1937</option>
+                                                <option value="1936">1936</option>
+                                                <option value="1935">1935</option>
+                                                <option value="1934">1934</option>
+                                                <option value="1933">1933</option>
+                                                <option value="1932">1932</option>
+                                                <option value="1931">1931</option>
+                                                <option value="1930">1930</option>
+                                                <option value="1929">1929</option>
+                                                <option value="1928">1928</option>
+                                                <option value="1927">1927</option>
+                                                <option value="1926">1926</option>
+                                                <option value="1925">1925</option>
+                                                <option value="1924">1924</option>
+                                                <option value="1923">1923</option>
+            
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @if($showppeend)
+                                    <div class="form-group col-md-6 text-center">
+                                        <label class="easyBlue600">Fecha de finalización</label>
+                                        <div class="col-12 d-flex">
+                                            <select wire:model.defer="ppe_final_dia"
+                                                class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
+                                                id="ddend" placeholder="ddend">
+                                                <option value="" selected>dd</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                            <select wire:model.defer="ppe_final_mes"
+                                                class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
+                                                id="mmed" placeholder="mmed">
+                                                <option value="" selected>mm</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <select wire:model.defer="ppe_final_año"
+                                                class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
+                                                id="aaend" placeholder="aaend">
+                                                <option value="" selected>aa</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1990">1990</option>
+                                                <option value="1989">1989</option>
+                                                <option value="1988">1988</option>
+                                                <option value="1987">1987</option>
+                                                <option value="1986">1986</option>
+                                                <option value="1985">1985</option>
+                                                <option value="1984">1984</option>
+                                                <option value="1983">1983</option>
+                                                <option value="1982">1982</option>
+                                                <option value="1981">1981</option>
+                                                <option value="1980">1980</option>
+                                                <option value="1979">1979</option>
+                                                <option value="1978">1978</option>
+                                                <option value="1977">1977</option>
+                                                <option value="1976">1976</option>
+                                                <option value="1975">1975</option>
+                                                <option value="1974">1974</option>
+                                                <option value="1973">1973</option>
+                                                <option value="1972">1972</option>
+                                                <option value="1971">1971</option>
+                                                <option value="1970">1970</option>
+                                                <option value="1969">1969</option>
+                                                <option value="1968">1968</option>
+                                                <option value="1967">1967</option>
+                                                <option value="1966">1966</option>
+                                                <option value="1965">1965</option>
+                                                <option value="1964">1964</option>
+                                                <option value="1963">1963</option>
+                                                <option value="1962">1962</option>
+                                                <option value="1961">1961</option>
+                                                <option value="1960">1960</option>
+                                                <option value="1959">1959</option>
+                                                <option value="1958">1958</option>
+                                                <option value="1957">1957</option>
+                                                <option value="1956">1956</option>
+                                                <option value="1955">1955</option>
+                                                <option value="1954">1954</option>
+                                                <option value="1953">1953</option>
+                                                <option value="1952">1952</option>
+                                                <option value="1951">1951</option>
+                                                <option value="1950">1950</option>
+                                                <option value="1949">1949</option>
+                                                <option value="1948">1948</option>
+                                                <option value="1947">1947</option>
+                                                <option value="1946">1946</option>
+                                                <option value="1945">1945</option>
+                                                <option value="1944">1944</option>
+                                                <option value="1943">1943</option>
+                                                <option value="1942">1942</option>
+                                                <option value="1941">1941</option>
+                                                <option value="1940">1940</option>
+                                                <option value="1939">1939</option>
+                                                <option value="1938">1938</option>
+                                                <option value="1937">1937</option>
+                                                <option value="1936">1936</option>
+                                                <option value="1935">1935</option>
+                                                <option value="1934">1934</option>
+                                                <option value="1933">1933</option>
+                                                <option value="1932">1932</option>
+                                                <option value="1931">1931</option>
+                                                <option value="1930">1930</option>
+                                                <option value="1929">1929</option>
+                                                <option value="1928">1928</option>
+                                                <option value="1927">1927</option>
+                                                <option value="1926">1926</option>
+                                                <option value="1925">1925</option>
+                                                <option value="1924">1924</option>
+                                                <option value="1923">1923</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
-                            <div class="form-group col-md-6 text-center ">
-                                <label class="easyBlue600">Fecha de finalización</label>
-                                <div class="col-12 d-flex">
-                                    <select wire:model.defer="ppe_final_dia"
-                                        class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
-                                        id="dd" placeholder="dd">
-                                        <option value="" selected>dd</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                    </select>
-                                    <select wire:model.defer="ppe_final_mes"
-                                        class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
-                                        id="mm" placeholder="mm">
-                                        <option value="" selected>mm</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                    <select wire:model.defer="ppe_final_año"
-                                        class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
-                                        id="aa" placeholder="aa">
-                                        <option value="" selected>aa</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2012">2012</option>
-                                        <option value="2011">2011</option>
-                                        <option value="2010">2010</option>
-                                        <option value="2009">2009</option>
-                                        <option value="2008">2008</option>
-                                        <option value="2007">2007</option>
-                                        <option value="2006">2006</option>
-                                        <option value="2005">2005</option>
-                                        <option value="2004">2004</option>
-                                        <option value="2003">2003</option>
-                                        <option value="2002">2002</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2000">2000</option>
-                                        <option value="1999">1999</option>
-                                        <option value="1998">1998</option>
-                                        <option value="1997">1997</option>
-                                        <option value="1996">1996</option>
-                                        <option value="1995">1995</option>
-                                        <option value="1994">1994</option>
-                                        <option value="1993">1993</option>
-                                        <option value="1992">1992</option>
-                                        <option value="1991">1991</option>
-                                        <option value="1990">1990</option>
-                                        <option value="1989">1989</option>
-                                        <option value="1988">1988</option>
-                                        <option value="1987">1987</option>
-                                        <option value="1986">1986</option>
-                                        <option value="1985">1985</option>
-                                        <option value="1984">1984</option>
-                                        <option value="1983">1983</option>
-                                        <option value="1982">1982</option>
-                                        <option value="1981">1981</option>
-                                        <option value="1980">1980</option>
-                                        <option value="1979">1979</option>
-                                        <option value="1978">1978</option>
-                                        <option value="1977">1977</option>
-                                        <option value="1976">1976</option>
-                                        <option value="1975">1975</option>
-                                        <option value="1974">1974</option>
-                                        <option value="1973">1973</option>
-                                        <option value="1972">1972</option>
-                                        <option value="1971">1971</option>
-                                        <option value="1970">1970</option>
-                                        <option value="1969">1969</option>
-                                        <option value="1968">1968</option>
-                                        <option value="1967">1967</option>
-                                        <option value="1966">1966</option>
-                                        <option value="1965">1965</option>
-                                        <option value="1964">1964</option>
-                                        <option value="1963">1963</option>
-                                        <option value="1962">1962</option>
-                                        <option value="1961">1961</option>
-                                        <option value="1960">1960</option>
-                                        <option value="1959">1959</option>
-                                        <option value="1958">1958</option>
-                                        <option value="1957">1957</option>
-                                        <option value="1956">1956</option>
-                                        <option value="1955">1955</option>
-                                        <option value="1954">1954</option>
-                                        <option value="1953">1953</option>
-                                        <option value="1952">1952</option>
-                                        <option value="1951">1951</option>
-                                        <option value="1950">1950</option>
-                                        <option value="1949">1949</option>
-                                        <option value="1948">1948</option>
-                                        <option value="1947">1947</option>
-                                        <option value="1946">1946</option>
-                                        <option value="1945">1945</option>
-                                        <option value="1944">1944</option>
-                                        <option value="1943">1943</option>
-                                        <option value="1942">1942</option>
-                                        <option value="1941">1941</option>
-                                        <option value="1940">1940</option>
-                                        <option value="1939">1939</option>
-                                        <option value="1938">1938</option>
-                                        <option value="1937">1937</option>
-                                        <option value="1936">1936</option>
-                                        <option value="1935">1935</option>
-                                        <option value="1934">1934</option>
-                                        <option value="1933">1933</option>
-                                        <option value="1932">1932</option>
-                                        <option value="1931">1931</option>
-                                        <option value="1930">1930</option>
-                                        <option value="1929">1929</option>
-                                        <option value="1928">1928</option>
-                                        <option value="1927">1927</option>
-                                        <option value="1926">1926</option>
-                                        <option value="1925">1925</option>
-                                        <option value="1924">1924</option>
-                                        <option value="1923">1923</option>
-                                    </select>
-                                </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
