@@ -61,6 +61,9 @@ class Registro extends Component
     public $show = false;
     public $showPais = false;
 
+    public $showppe = false;
+    public $showppeend = false;
+
     protected $listeners = [
         'getPersonaPlanDetail'
     ];
@@ -94,16 +97,32 @@ class Registro extends Component
     public function validaPpe(){
         if($this->ppe == 'ppeSi'){
             $this->validate([
-                'ppecargo' => 'required|string',
-                // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                'ppe_inicio_dia' => 'required|numeric',
-                'ppe_inicio_mes' => 'required|numeric',
-                'ppe_inicio_año' => 'required|numeric',
-                'ppe_final_dia' => 'required|numeric',
-                'ppe_final_mes' => 'required|numeric',
-                'ppe_final_año' => 'required|numeric',
                 'ppe_activo' =>'required|min:1',
                 ]);
+        }
+        if($this->ppe == 'ppeSi'){
+            if($this->ppe_activo  == 'si'){
+                $this->validate([
+                    'ppecargo' => 'required|string',
+                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_activo' =>'required|min:1',
+                    ]);
+            }else{
+                $this->validate([
+                    'ppecargo' => 'required|string',
+                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_final_dia' => 'required|numeric',
+                    'ppe_final_mes' => 'required|numeric',
+                    'ppe_final_año' => 'required|numeric',
+                    'ppe_activo' =>'required|min:1',
+                    ]);
+            }
         }
     }
 
@@ -118,6 +137,9 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
+                    'selectedProvincia' => 'required',
+                    'selectedDistrito' => 'required',
+                    'selectedCorregimiento' => 'required',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
@@ -141,6 +163,9 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
+                    'selectedProvincia' => 'required',
+                    'selectedDistrito' => 'required',
+                    'selectedCorregimiento' => 'required',
                     'pais' => 'required|string',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
@@ -207,7 +232,7 @@ class Registro extends Component
     
             $order = $newOrderInsert->id;
             
-            $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order, $this->tipo_id);
+            $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order, $this->tipo_id,$this->contactMail );
             $PaymentWeb = json_decode($PaymentWeb);
     
             pendingOrders::where('id',$order)

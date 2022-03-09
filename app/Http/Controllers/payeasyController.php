@@ -58,7 +58,7 @@ class payeasyController extends Controller
 
                 DB::statement('call pending_order_HST_TRANSFER(?)',[$response['OrderNumber']]);
 
-                Mail::to($response['Email'])->send(new userSelectedInsuranceMail($details));
+                Mail::to($response['contact_mail'])->send(new userSelectedInsuranceMail($details));
 
             return view('PagoAprobado', compact('ordernumber'));
         }

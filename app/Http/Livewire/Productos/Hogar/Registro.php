@@ -307,7 +307,7 @@ class Registro extends Component
 
         $order = $newOrderInsert->id;
         
-        $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order, $this->tipo_id);
+        $PaymentWeb =  payeasy($this->valor, $this->plan_name, $order, $this->tipo_id, $this->contactMail);
         $PaymentWeb = json_decode($PaymentWeb);
 
         pendingOrders::where('id',$order)
