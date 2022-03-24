@@ -4,7 +4,7 @@
 
 <style>
     .container-registro {
-        height: 1009px;
+        height: 1060px;
         justify-content: center;
         /* position: relative; */
     }
@@ -159,27 +159,27 @@
         }
     }
 
-    var show = document.querySelector('.show-hide');
+    // var show = document.querySelector('.show-hide');
 
-    document.querySelector('#ppeSi').addEventListener('click', function (e) {
+    // document.querySelector('#ppeSi').addEventListener('click', function (e) {
 
-        $(show).slideDown("slow");
-    });
-    document.querySelector('#ppeNo').addEventListener('click', function (e) {
+    //     $(show).slideDown("slow");
+    // });
+    // document.querySelector('#ppeNo').addEventListener('click', function (e) {
 
-        $(show).slideUp("slow");
-    });
+    //     $(show).slideUp("slow");
+    // });
 
-    var ppefin = document.querySelector('.ppeFin');
+    // var ppefin = document.querySelector('.ppeFin');
 
-    document.querySelector('#ppe_activoSi').addEventListener('click', function (e) {
+    // document.querySelector('#ppe_activoSi').addEventListener('click', function (e) {
 
-        $(ppefin).slideDown("slow");
-    });
-    document.querySelector('#ppe_activoNo').addEventListener('click', function (e) {
+    //     $(ppefin).slideDown("slow");
+    // });
+    // document.querySelector('#ppe_activoNo').addEventListener('click', function (e) {
 
-        $(ppefin).slideUp("slow");
-    });
+    //     $(ppefin).slideUp("slow");
+    // });
 
 </script>
 @endsection

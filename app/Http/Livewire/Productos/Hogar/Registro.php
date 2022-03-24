@@ -51,6 +51,7 @@ class Registro extends Component
     public $sameaddress;
 
     public $ppe;
+    public $ppe_activo;
     public $ppecargo;
     public $ppemail;
     public $ppe_inicio_dia;
@@ -75,6 +76,9 @@ class Registro extends Component
 
     public $totalSteps = 2;
     public $currentStep = 1;
+
+    public $showppe = false;
+    public $showppeend = false;
 
     protected $listeners = [
         'getInfoInsuranceHogar'
@@ -137,8 +141,42 @@ class Registro extends Component
     public function increaseStep(){
         $this->validateData();
         $this->currentStep++;
+        $this->validaPpe();
 
         return $this->currentStep;
+    }
+
+    
+    public function validaPpe(){
+        if($this->ppe == 'ppeSi'){
+            $this->validate([
+                'ppe_activo' =>'required|min:1',
+                ]);
+        }
+        if($this->ppe == 'ppeSi'){
+            if($this->ppe_activo  == 'si'){
+                $this->validate([
+                    'ppecargo' => 'required|string',
+                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_activo' =>'required|min:1',
+                    ]);
+            }else{
+                $this->validate([
+                    'ppecargo' => 'required|string',
+                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                    'ppe_inicio_dia' => 'required|numeric',
+                    'ppe_inicio_mes' => 'required|numeric',
+                    'ppe_inicio_año' => 'required|numeric',
+                    'ppe_final_dia' => 'required|numeric',
+                    'ppe_final_mes' => 'required|numeric',
+                    'ppe_final_año' => 'required|numeric',
+                    'ppe_activo' =>'required|min:1',
+                    ]);
+            }
+        }
     }
 
     public function validateData(){
@@ -154,16 +192,16 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
-                    'eCivil' => 'required',
-                    'eCivil' => 'required',
-                    'eCivil' => 'required',
+                    'selectedProvincia' => 'required',
+                    'selectedDistrito' => 'required',
+                    'selectedCorregimiento' => 'required',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
                     'casa' => 'required|string',
                     'celular' => 'required|string',
                     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
                     'ppe' => 'required|min:1',
-                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png'
+                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
                 ]);
             }
             else{
@@ -179,6 +217,9 @@ class Registro extends Component
                     'mes' => 'required|numeric',
                     'año' => 'required|numeric',
                     'eCivil' => 'required|string',
+                    'selectedProvincia' => 'required',
+                    'selectedDistrito' => 'required',
+                    'selectedCorregimiento' => 'required',
                     'pais' => 'required|string',
                     'genero' => 'required|min:1',
                     'barrio' => 'required|string',
@@ -231,6 +272,7 @@ class Registro extends Component
     public function submit(){
 
         $this->validateData();
+        $this->validaPpe();
 
         $extension = $this->cedulaFoto->getClientOriginalExtension();
 
