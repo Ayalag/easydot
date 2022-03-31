@@ -192,7 +192,7 @@
       <div class="container">
           <div class="row">
             <div class="col-xs-6 col-md-3">
-               logo
+              <img src="{{ asset('/public/includes/images/logoblanco2.png') }}" alt="">
             </div>
               <div class="col-xs-6 col-md-3">
                   <h6>Categorías</h6>
@@ -213,12 +213,6 @@
                       <li><a href="/terminos-y-condiciones">Términos y condiciones</a></li>
                   </ul>
               </div>
-              {{-- <div class="col-sm-12 col-md-6">
-                  <h6>Acerca de easydot</h6>
-                <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, odio
-                    blanditiis? Illum placeat consequuntur voluptate dolores aspernatur quo maxime nesciunt ea tempore
-                    eveniet, neque non. Ea voluptates veritatis quo eaque?</p>
-              </div> --}}
           </div>
           <hr>
       </div>

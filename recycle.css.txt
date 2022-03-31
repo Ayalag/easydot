@@ -170,7 +170,7 @@
             <div>
                 <div class="form-row p-2">
                     <div class="col-2">
-                        <label for="genero">Persona politicamente expuesta</label>
+                        <label for="genero">Persona políticamente expuesta</label>
                         <div class="container row">
                             <div class="col-4 form-check form-check-inline">
                                 <label class="form-check-label pr-2" for="inlineRadio1">Si</label>

@@ -5,7 +5,10 @@
 
     <div class="container-fluid container-cobertura pt-5">
         <div class="container container-button">
-            <div class="box-bottom pt-5" id="contenidoHogar">Contendio del hogar</div>
+            <div class="box-bottom pt-5" id="contenidoHogar">Contenido del hogar
+                <div class="muted-buttons text-muted pt-1">Estructura del hogar y contenido</div>
+            </div>
+            
         </div>
         <div class="container container-button">
             <div class="box-bottom pt-5" id="coberturaCompleta">Cobertura completa</div>

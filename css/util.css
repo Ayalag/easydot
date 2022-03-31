@@ -765,7 +765,7 @@ html {
 
 .slick-prev:before,
 .slick-next:before {
-    color: var(--easyRose);
+    color: var(--easyGray);
     font-size: 30px;
 }
 
@@ -1178,7 +1178,11 @@ html {
 }
 
 .box-super_easy .container-super__image {
-    margin-top: 1rem;
+    margin-top: 2.2rem;
+}
+
+.box-super_easy .container-super__image img {
+    width: 25rem;
 }
 
 .container-super__subtitle {
@@ -1271,14 +1275,14 @@ html {
     height: 25rem;
     border-radius: 50%;
     background: #00cef2;
-    bottom: 0;
-    left: 15px;
+    bottom: -52px;
+    left: 12px;
 }
 
 .container-persona_logo {
     position: absolute;
     z-index: 2;
-    bottom: -73px;
+    bottom: -112px;
     left: 100px;
 }
 
@@ -1298,9 +1302,11 @@ html {
     border-radius: 5px;
     padding-left: 15px;
     margin: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .basic-drop-shadow {
+    
     box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px,
         rgb(0 0 0 / 16%) 0px 31px 30px -18px;
 }
@@ -1354,8 +1360,8 @@ html {
 @media screen and (max-width: 48rem) {
     .container-persona_logo {
         z-index: 0;
-        top: -84px;
-        left: -77px;
+        top: 15px;
+        left: -59px;
     }
 
     .circle {
@@ -1565,7 +1571,7 @@ button[class="btn-login"] {
     display: none;
 }
 
-input[name="motor"]:checked + .clickable {
+/* input[name="motor"]:checked + .clickable {
     border-color: #0055ff;
     box-shadow: 0px 0px 6px 2px #0055ff;
 }
@@ -1573,7 +1579,7 @@ input[name="motor"]:checked + .clickable {
 input[name="categoria"]:checked + .clickable {
     border-color: #0055ff;
     box-shadow: 0px 0px 6px 2px #0055ff;
-}
+} */
 
 /*-------------------------------*/
 /*       insurance  card         */

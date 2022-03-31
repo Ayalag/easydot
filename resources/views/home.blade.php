@@ -185,10 +185,10 @@
     </div>
 </div>
 
-<div class="container-fluid container-super__easy mb-5">
+<div class="container-fluid container-super__easy">
     <div class="box-super_easy">
         <div class="container-super__title">
-            <span>SÚPER</span>
+            <span>súper</span>
         </div>
         <div class="container-super__image">
             <img src="public/includes/images/logos/super_easy.png" alt="easydot.com.pa">
@@ -210,7 +210,7 @@
             <img src="public/includes/images/persona_logo.png" alt="">
         </div>
         <div class="container-box__one">
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle " src="https://randomuser.me/api/portraits/med/women/51.jpg" alt="">
@@ -227,7 +227,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/14.jpg" alt="">
@@ -245,7 +245,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/23.jpg" alt="">
@@ -263,7 +263,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/45.jpg" alt="">
@@ -281,7 +281,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/38.jpg" alt="">
@@ -299,7 +299,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/7.jpg" alt="">
@@ -317,7 +317,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/92.jpg" alt="">
@@ -335,7 +335,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/men/18.jpg" alt="">
@@ -353,7 +353,7 @@
                     laudantium cupiditate excepturi officia!
                 </div>
             </div>
-            <div class="box-easy_comments shadow">
+            <div class="box-easy_comments">
                 <div class="user-profile__box">
                     <div class="user-profile__image">
                         <img class="rounded-circle" src="https://randomuser.me/api/portraits/med/women/18.jpg" alt="">
@@ -406,27 +406,5 @@
             </div>
         </div>
     </div>
-    {{-- <div class="container container_aliados__image">
-            <div class="row">
-                <div class="col-sm my-auto-2 col-2 my-auto sura">
-                    <img src="{{ asset('/public/includes/images/logos-aliados/sura.png') }}" alt="Sura">
-</div>
-<div class="col-sm-2 col-2 my-auto mapfre">
-    <img src="{{ asset('/public/includes/images/logos-aliados/mapfre.png') }}" alt="Mapfre">
-</div>
-<div class="col-sm-2 col-2 my-auto sonrie">
-    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
-</div>
-<div class="col-sm-2 col-2 my-auto sonrie">
-    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
-</div>
-<div class="col-sm-2 col-2 my-auto sonrie">
-    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
-</div>
-<div class="col-sm-2 col-2 my-auto sonrie">
-    <img src="{{ asset('/public/includes/images/centro-de-ayuda/panama-sonrie.png') }}" alt="Panama Sonrie">
-</div>
-</div>
-</div> --}}
 </div>
 @endsection

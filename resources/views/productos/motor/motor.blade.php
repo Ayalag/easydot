@@ -43,7 +43,7 @@
                 class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
                 <input id="estandar" type="radio" name="categoria">
                 <label for="estandar" class="clickable"><span class="checked-box">&#10004;</span></label>
-                <span class="product_text_2">éstandar</span>
+                <span class="product_text_2">estándar</span>
             </div>
         </div>
         <div class="row justify-content-center pt-3 mb-3 moto-options hide">

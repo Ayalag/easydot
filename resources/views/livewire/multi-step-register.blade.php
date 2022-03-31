@@ -78,7 +78,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-2">
-                            <label class="submenu--item" for="">Genero</label>
+                            <label class="submenu--item" for="">Género</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="genero" id="genero1" value="hombre"
                                     wire:model="genero">

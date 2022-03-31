@@ -115,7 +115,7 @@
                     </div>
                     <div class="form-row p-2">
                         <div class="col-2">
-                            <label for="genero">Genero</label>
+                            <label for="genero">Género</label>
                             <div class="container row">
                                 <div class="col-3 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">M</label>
@@ -192,7 +192,7 @@
                 <div>
                     <div class="form-row p-2">
                         <div class="col-2">
-                            <label>Persona politicamente expuesta</label>
+                            <label>Persona políticamente expuesta</label>
                             <div class="container row">
                                 <div class="col-4 form-check form-check-inline">
                                     <label class="form-check-label pr-2" for="inlineRadio1">Si</label>

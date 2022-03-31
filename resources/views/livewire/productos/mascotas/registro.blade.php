@@ -231,7 +231,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
                         <div class="form-check-inline ">
-                            <label class="easyBlue600 pb-3">Genero</label>
+                            <label class="easyBlue600 pb-3">Género</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label mr-4 h4" for="">M</label>
@@ -256,7 +256,7 @@
                             data-live-search="true" title="eCivil" name="eCivil" id="eCivil" required>
                             <option>estado civil</option>
                             <option value="soltero">Soltero</option>
-                            <option value="casado">casado</option>
+                            <option value="casado">Casado</option>
                             <option value="viudo">Viudo</option>
                             <option value="Unido">Unido</option>
                         </select>
@@ -625,7 +625,7 @@
                                         <div
                                             class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
                                             ¿Eres una persona <br>
-                                            politicamente expuesta?
+                                            políticamente expuesta?
                                         </div>
                                         <label class=" form-check-label mr-1 h4" for="">Si</label>
                                         <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
@@ -651,7 +651,7 @@
                         <div class="form-group col-md-6">
                             <div class="container-ppe__activo d-flex flex-column">
                                 <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
-                                    ¿estas en el cargo <br> actualmente?
+                                    ¿estás en el cargo <br> actualmente?
                                 </div>
                                 <div class="ppe_otipons text-center">
                                     <label class=" form-check-label mr-4 h5" for="">Si</label>
