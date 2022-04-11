@@ -75,7 +75,7 @@
                         <div class="col-3">
                             <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
-                                    <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
+                                    <label class="form-check-label pr-2" for="inlineRadio1">Cédula</label>
                                     <input disabled class="form-check-input"
                                         type="radio"
                                         name="type_id" 
@@ -137,7 +137,7 @@
                                 class="form-control input__style_comprobante" id="estadocivil" placeholder="">
                         </div>
                         <div class="col-2">
-                            <label for="pais">Pais de nacimiento</label>
+                            <label for="pais">País de nacimiento</label>
                             <input disabled value="{{ $response[0]->pais }}" type="text"
                                 class="form-control input__style_comprobante" id="pais" placeholder="">
                         </div>

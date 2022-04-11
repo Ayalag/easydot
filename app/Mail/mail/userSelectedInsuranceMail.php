@@ -32,6 +32,6 @@ class userSelectedInsuranceMail extends Mailable
     {
         return $this->markdown('emails.userSelectedInsuranceMail')
         ->with('details', $this->details)
-        ->subject('!Gracias por tu compra EASYDOT¡');
+        ->subject('¡Gracias por tu compra EASYDOT!');
     }
 }

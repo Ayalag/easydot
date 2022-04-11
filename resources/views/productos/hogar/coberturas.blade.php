@@ -11,7 +11,9 @@
             
         </div>
         <div class="container container-button">
-            <div class="box-bottom pt-5" id="coberturaCompleta">Cobertura completa</div>
+            <div class="box-bottom pt-5" id="coberturaCompleta">Cobertura completa
+                <div class="muted-buttons text-muted pt-1">Estructura del hogar y contenido</div>
+            </div>
         </div>
 
     </div>

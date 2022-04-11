@@ -50,9 +50,9 @@
                         @if($show)
                         <div class="col-md-4 mb-2 ">
                             <div class="form-group">
-                                <label class="submenu--item" for="">Pais de Nacimiento</label>
+                                <label class="submenu--item" for="">País de Nacimiento</label>
                                 <select class="form-control" wire:model="pais">
-                                    <option value="" selected>Pais</option>
+                                    <option value="" selected>País</option>
                                     <option value="Panama">Panamá</option>
                                     <option value="Colombia">Colombia</option>
                                     <option value="Nivaragua">Rep. Dominicana</option>

@@ -2047,7 +2047,7 @@ input[type="number"] {
     padding-top: 0.8rem;
 }
 
-.container-general__info_partners {
+/* .container-general__info_partners {
     background-image: url("/public/includes/images/centro-de-ayuda/linea-back.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -2058,7 +2058,7 @@ input[type="number"] {
     height: 541px;
     display: flex;
     justify-content: center;
-}
+} */
 
 .container-genreal__info__easy_partner {
     text-align: center;

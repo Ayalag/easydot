@@ -11,8 +11,8 @@
             <div class="container-landing__subtitulo-1 mt-3">
                 <p>Estas pólizas también conocidas como pólizas multiprotección son seguros diseñados para cubrir <br>
                     y proteger la estructura de tu hogar ya sea una casa o un apartamento, esto incluye paredes,<br>
-                    pisos y techos; además podrás incluir coberturas para el contendio del hogar como muebles, <br>
-                    electrodómesticos, equipos electrónicos, entre otros</p>
+                    pisos y techos; además podrás incluir coberturas para el contenido del hogar como muebles, <br>
+                    electrodomésticos, equipos electrónicos, entre otros</p>
                 <br>
                 <p>Algunas pólizas cuentan con grandes beneficios adicionales, como coberturas para los <br>
                     integrantes de la familia, incluyendo mascotas.

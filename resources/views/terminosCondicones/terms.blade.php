@@ -6,7 +6,7 @@
             <nav class="bigger-margin">
                 <ul>
                     <li>
-                        <a href="#one" class="underline">Terminos y condiciones</a>
+                        <a href="#one" class="underline">Términos y condiciones</a>
                         <ul class="mt-3">
                             <li class="mb-3"><a href="#one__one" class="easyBlue">General</a></li>
                             <li class="mb-3"><a href="#one__two" class="easyBlue">Usuarios y Contraseñas</a>
@@ -56,7 +56,7 @@
         </div>
         <div class="container-terms-and-conditions__letter">
             <div id="one" class="container-terms-and-conditions__title m-3">
-                <span class="underline">Terminos y Condiciones</span>
+                <span class="underline">Términos y Condiciones</span>
             </div>
             <div class="container-terms-and-condition__paragraph">
                 <p>Por favor lea estas condiciones de uso detenidamente antes de utilizar el sitio web easydot.com.pa</p>

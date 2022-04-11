@@ -75,7 +75,7 @@
                         <div class="col-3">
                             <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
-                                    <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
+                                    <label class="form-check-label pr-2" for="inlineRadio1">Cédula</label>
                                     <input disabled class="form-check-input"
                                         type="radio"
                                         name="type_id" 
@@ -137,7 +137,7 @@
                                 class="form-control input__style_comprobante" id="estadocivil" placeholder="">
                         </div>
                         <div class="col-2">
-                            <label for="pais">Pais de nacimiento</label>
+                            <label for="pais">País de nacimiento</label>
                             <input disabled value="{{ $response[0]->pais }}" type="text"
                                 class="form-control input__style_comprobante" id="pais" placeholder="">
                         </div>
@@ -246,14 +246,14 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <label for="mail">Correo Electronico</label>
+                            <label for="mail">Correo electrónico</label>
                             <input disabled value="{{ $response[0]->ppe_mail }}" type="mail"
                                 class="form-control input__style_comprobante" id="mail" placeholder="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container container-datos__cliente shadow mt-3 d-flex p-2">
+            {{-- <div class="container container-datos__cliente shadow mt-3 d-flex p-2">
                 <div class="container-datos__cliente-titulo p-2">
                     Corredor de seguros
                 </div>
@@ -261,7 +261,7 @@
                     <input type="nombre" class="form-control input__style_comprobante" id="nombre" placeholder=""
                         value="Bartoli Asesores de seguros" disabled>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="container container-comprobante-compra-para mt-4 mb-5 d-flex">
 
@@ -270,7 +270,7 @@
 
             <div class="container container-datos__cliente mt-3">
                 <div class="container-datos__cliente-titulo p-2">
-                    Cobertura para:
+                    Producto para:
                 </div>
                 <div>
                     <div class="form-row p-2">
@@ -280,14 +280,14 @@
                                 class="form-control input__style_comprobante" id="nombre" placeholder="">
                         </div>
                         <div class="col-4">
-                            <label for="placa">Cedula</label>
+                            <label for="placa">Cédula</label>
                             <input disabled value="{{ $response[0]->identificacion }}" type=" text"
                                 class="form-control input__style_comprobante" id="Cedula" placeholder="">
                         </div>
                     </div>
                     <div class="form-row p-2">
                         <div class="col-3">
-                            <label for="marca">Fecha de naciemiento</label>
+                            <label for="marca">Fecha de nacimiento</label>
                             <input disabled value="{{ $response[0]->dia.'/'.$response[0]->mes.'/'. $response[0]->year }}" type="text"
                                 class="form-control input__style_comprobante" id="nacimiento" placeholder="">
                         </div>

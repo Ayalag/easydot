@@ -75,7 +75,7 @@
                         <div class="col-3">
                             <label for="cédula">
                                 <div class="col-5 form-check form-check-inline">
-                                    <label class="form-check-label pr-2" for="inlineRadio1">Cedula</label>
+                                    <label class="form-check-label pr-2" for="inlineRadio1">Cédula</label>
                                     <input disabled class="form-check-input"
                                         type="radio"
                                         name="type_id" 
@@ -147,7 +147,7 @@
                                 class="form-control input__style_comprobante" id="celular" placeholder="">
                         </div>
                         <div class="col-3">
-                            <label for="mail">Correo Electronico</label>
+                            <label for="mail">Correo electrónico</label>
                             <input disabled value="{{ $response[0]->contactMail }}" type="text"
                                 class="form-control input__style_comprobante" id="mail" placeholder="">
                         </div>
@@ -303,12 +303,12 @@
                             <input disabled value="{{ $response[0]->color }}" type="text"
                                 class="form-control input__style_comprobante" id="color" placeholder="">
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <label for="motor">Motor</label>
                             <input disabled value="{{ $response[0]->numero_de_chasis }}" type="text"
                                 class="form-control input__style_comprobante" id="motor" placeholder="">
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <label for="chasis">Chasis</label>
                             <input disabled value="{{ $response[0]->numero_de_motor }}" type="text"
                                 class="form-control input__style_comprobante" id="chasis" placeholder="">

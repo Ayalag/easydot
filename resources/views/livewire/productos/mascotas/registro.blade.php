@@ -280,7 +280,7 @@
                         <select wire:model.defer="pais"
                             class="form-control input__style @if ($errors->has('pais')) border border-danger @endif"
                             data-live-search="true" title="pais" name="pais" id="pais" required>
-                            <option value=''>país</option>
+                            <option value=''>Nacionalidad</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>
@@ -595,7 +595,7 @@
                         {{-- <label for=""></label> --}}
                         <input wire:model.defer="casa" type="text"
                             class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
-                            id="casa" placeholder="# Casa / Apto.">
+                            id="casa" placeholder="N° Casa/Apto.">
                     </div>
                 </div>
                 <div class="form-row">

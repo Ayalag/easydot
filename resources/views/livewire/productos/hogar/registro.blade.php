@@ -65,7 +65,7 @@
                         <div class="form-check-inline ">
                             <label class="easyBlue600 pb-2">Fecha de nacimiento</label>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tooltipAge">
                             <div class="d-flex">
                                 <select wire:model.defer="dia"
                                     class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2 @if ($errors->has('dia')) border border-danger @endif"
@@ -121,7 +121,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="año"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-5 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
                                     id="birthdayYear" placeholder="año">
                                     <option value="" selected>año</option>
                                     <option value="2022">2022</option>
@@ -281,7 +281,7 @@
                         <select wire:model.defer="pais"
                             class="form-control input__style @if ($errors->has('pais')) border border-danger @endif"
                             data-live-search="true" title="pais" name="pais" id="pais" required>
-                            <option value=''>país</option>
+                            <option value=''>Nacionalidad</option>
                             <option value="Afganistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
                             <option value="Algeria">Algeria</option>
@@ -596,7 +596,7 @@
                         {{-- <label for=""></label> --}}
                         <input wire:model.defer="casa" type="text"
                             class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
-                            id="casa" placeholder="# Casa / Apto.">
+                            id="casa" placeholder="N° Casa/Apto.">
                     </div>
                 </div>
                 <div class="form-row">
@@ -1117,7 +1117,7 @@
                                 {{-- <label for=""></label> --}}
                                 <input wire:model.defer="casa2" type="text"
                                     class="form-control input__style @if ($errors->has('casa2')) border border-danger @endif"
-                                    id="casa2" placeholder="# Casa / Apto.">
+                                    id="casa2" placeholder="N° Casa/Apto.">
                             </div>
                         </div>
                     </div>
@@ -1180,7 +1180,7 @@
                                 {{-- <label for=""></label> --}}
                                 <input wire:model.defer="casa2" type="text"
                                     class="form-control input__style @if ($errors->has('casa2')) border border-danger @endif"
-                                    id="casaLogged" placeholder="# Casa / Apto.">
+                                    id="casaLogged" placeholder="N° Casa/Apto.">
                             </div>
                         </div>
                     </div>

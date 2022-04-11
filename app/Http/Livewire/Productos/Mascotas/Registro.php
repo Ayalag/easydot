@@ -177,8 +177,8 @@ class Registro extends Component
 
             if($this->typeId =='cedula'){
                 $this->validate([
-                    'nombres' => ['required','regex:/[a-zA-Z0-9\s]+/'],
-                    'apellidos' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                    'nombres' => ['required','regex:/^[a-zA-Z]+$/u'],
+                    'apellidos' => ['required','regex:/^[a-zA-Z]+$/u'],
                     'typeId' => 'required|min:1',
                     'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
                     'dia' => 'required|numeric',
@@ -199,8 +199,8 @@ class Registro extends Component
             }
             else{
                 $this->validate([
-                    'nombres' => ['required','regex:/[a-zA-Z0-9\s]+/'],
-                    'apellidos' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                    'nombres' => ['required','regex:/^[a-zA-Z]+$/u'],
+                    'apellidos' => ['required','regex:/^[a-zA-Z]+$/u'],
                     'typeId' => 'required|min:1',
                     'identificacion' => 'required|string',
                     'dia' => 'required|numeric',
@@ -227,8 +227,8 @@ class Registro extends Component
                 $this->validate([
 
                     'mascotaTipo' => 'required|min:1',
-                    'mascotaNombre' => ['required','regex:/[a-zA-Z0-9\s]+/'],
-                    'mascotaRaza' => ['required','regex:/[a-zA-Z0-9\s]+/'],
+                    'mascotaNombre' => ['required','regex:/^[a-zA-Z]+$/u'],
+                    'mascotaRaza' => ['required','regex:/^[a-zA-Z]+$/u'],
                     'mascotaNacDay' => 'required',
                     'mascotaNacMonth' => 'required',
                     'mascotaNacYear' => 'required',
