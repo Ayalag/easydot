@@ -18,7 +18,7 @@
     <div class="container-fluid forma1">
         <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
     </div>
-    <div class="container container-nuestro__propositos__creencias">
+    <div class="container-nuestro__propositos__creencias">
         <div class="container-nuestro__proposito">
             <div class="container-nuestro__proposito__letter p-5">
                 Nuestro principal propósito es lograr que cada vez más personas y familias en Panamá se sientan tranquilas y

@@ -64,15 +64,13 @@
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5">
                         <div class="form-check-inline justify-content-center" style="width: inherit">
                             <label class="easyBlue600 pb-2">Fecha de nacimiento</label>
-                            @if($errors->has('dia') || $errors->has('mes') || $errors->has('año') )
-                            <div class="ownerinvalid" style="right: 0;position: absolute;bottom: 61px;"></div> 
-                            @endif
+                            @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif
                         </div>
                         <div class="form-group tooltipAge">
 
                             <div class="d-flex">
                                 <select wire:model.defer="dia"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('dia') is-invalid @enderror"
                                     id="birthdayDay" placeholder="dd">
                                     <option value="" selected>día</option>
                                     <option value="1">1</option>
@@ -108,7 +106,7 @@
                                     <option value="31">31</option>
                                 </select>
                                 <select wire:model.defer="mes"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('mes') is-invalid @enderror"
                                     id="birthdayMonth" placeholder="mm">
                                     <option value="" selected>mes</option>
                                     <option value="1">1</option>
@@ -125,7 +123,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="año"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1  @error('año') is-invalid @enderror"
                                     id="birthdayYear" placeholder="aa">
                                     <option value="" selected>año</option>
                                     <option value="2022">2022</option>

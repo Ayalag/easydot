@@ -137,7 +137,7 @@
                                 class="form-control input__style_comprobante" id="estadocivil" placeholder="">
                         </div>
                         <div class="col-2">
-                            <label for="pais">País de nacimiento</label>
+                            <label for="pais">Nacionalidad</label>
                             <input disabled value="{{ $response[0]->pais }}" type="text"
                                 class="form-control input__style_comprobante" id="pais" placeholder="">
                         </div>
