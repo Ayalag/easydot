@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Productos\Persona;
+namespace App\Http\Livewire\Productos\Dental;
 
 use Livewire\Component;
 use App\Models\distrito;
@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class Registro extends Component
 {
-
 
     use WithFileUploads;
 
@@ -39,17 +38,6 @@ class Registro extends Component
     public $celular;
     public $contactMail;
 
-    public $ppe;
-    public $ppe_activo;
-    public $ppecargo;
-    public $ppemail;
-    public $ppe_inicio_dia;
-    public $ppe_inicio_mes;
-    public $ppe_inicio_año;
-    public $ppe_final_dia;
-    public $ppe_final_mes;
-    public $ppe_final_año;
-
     public $term1;
     public $term2;
 
@@ -63,9 +51,6 @@ class Registro extends Component
 
     public $show = false;
     public $showPais = false;
-
-    public $showppe = false;
-    public $showppeend = false;
 
     protected $listeners = [
         'getPersonaPlanDetail'
@@ -118,15 +103,6 @@ class Registro extends Component
         'casa' => 'required|string',
         'celular' => 'required|string',
         'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-        'ppe' => 'required|min:1',
-        'ppecargo' => 'required_if:ppe,==,ppeSi',
-        'ppe_inicio_dia' => 'required_if:ppe,==,ppeSi',
-        'ppe_inicio_mes' => 'required_if:ppe,==,ppeSi',
-        'ppe_inicio_año' => 'required_if:ppe,==,ppeSi',
-        'ppe_activo' => 'required_if:ppe,==,ppeSi',
-        'ppe_final_dia' => 'required_if:ppe_activo,==,no',
-        'ppe_final_mes' => 'required_if:ppe_activo,==,no',
-        'ppe_final_año' => 'required_if:ppe_activo,==,no',
     ];
 
         public function submit(){
@@ -157,17 +133,6 @@ class Registro extends Component
             $newOrderInsert->distrito = $this->selectedDistrito;
             $newOrderInsert->corregimiento = $this->selectedCorregimiento;
             $newOrderInsert->foto_ced_pas = $filePath;
-    
-            $newOrderInsert->ppe = $this->ppe;
-            $newOrderInsert->ppe_cargo = $this->ppecargo;
-            $newOrderInsert->ppe_mail = $this->ppemail;
-            $newOrderInsert->ppe_inicio_dia = $this->ppe_inicio_dia;
-            $newOrderInsert->ppe_inicio_mes = $this->ppe_inicio_mes;
-            $newOrderInsert->ppe_inicio_year = $this->ppe_inicio_año;
-            $newOrderInsert->ppe_fin_dia = $this->ppe_final_dia;
-            $newOrderInsert->ppe_fin_mes = $this->ppe_final_mes;
-            $newOrderInsert->ppe_fin_year =$this->ppe_final_año;
-
 
             $newOrderInsert->info_pk_id_insurance =$this->data_pk_id;
             $newOrderInsert->info_tipo_id =$this->tipo_id;
@@ -190,6 +155,6 @@ class Registro extends Component
 
     public function render()
     {
-        return view('livewire.productos.persona.registro');
+        return view('livewire.productos.dental.registro');
     }
 }

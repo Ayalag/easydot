@@ -13,18 +13,27 @@ class ContactUs extends Component
     public $celular;
     public $mail;
     public $mensaje;
+    public $tipo;
 
     public function contactUs(){
 
-        Mail::to('servicioalcliente@easydot.com.pa')->send(new contactFormFromKnowUs(
-            $this->nombre, $this->celular, $this->mail, $this->mensaje
-        ));
 
-        $this->nombre ='';
-        $this->celular ='';
-        $this->mail ='';
-        $this->mensaje='';
-        
+        try{
+            Mail::to([$this->mail,'servicioalcliente@easydot.com.pa'])->send(new contactFormFromKnowUs(
+                $this->nombre, $this->celular, $this->mail, $this->mensaje
+            ));
+    
+            $this->nombre ='';
+            $this->celular ='';
+            $this->mail ='';
+            $this->mensaje='';
+
+            session()->flash('success','Solicitud enviada');
+        } 
+        catch(\Error $ex){
+            session()->flash('error','Error intentenuevamente');
+        }  
+
     }
     
     public function render()

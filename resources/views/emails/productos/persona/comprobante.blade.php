@@ -31,9 +31,9 @@
             height: 522px !important;
         }
 
-        .card-subtitle {
+        /* .card-subtitle {
             color: #ff0180 !important;
-        }
+        } */
 
         input[type="text"]::placeholder {
             /* Firefox, Chrome, Opera */

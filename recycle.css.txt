@@ -383,3 +383,170 @@
 </script>
 
 </html>
+
+
+
+
+@if ($errors->has('typeId')) text-danger @endif
+
+
+                 <div class="form-group col-sm-12 col-md-5 text-center">
+                        {{-- <h3>foto de cédula o pasaporte</h3> --}}
+                        <div class="input-group input-file" name="upload">
+                            {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
+                            <label for="file-upload" class="custom-file-upload input__style">
+                                <i class="fas fa-paperclip"></i>identificación
+                            </label>
+                            <input id="file-upload" class="identificacion" type="file" wire:model="cedulaFoto" />
+                            <span wire:loading wire:target="cedulaFoto" class="spinner-border spinner-border-sm"
+                                role="status" aria-hidden="true"
+                                style="position: relative;left:-30px;bottom:-10px"></span>
+                            @error('cedulaFoto') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+
+
+
+                                        <div wire:ignore class="form-group col-sm-12 col-md-5 text-center idFoto" x-data x-init="() => {
+                        const post = FilePond.create($refs.cedula);
+                        post.setOptions({
+                            server: {
+                                process:(fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
+                                    @this.upload('cedulaFoto', file, load, error, progress)
+                                },
+                                revert: (filename, load) => {
+                                    @this.removeUpload('cedulaFoto', filename, load)
+                                },
+                            },                            
+                        });
+                    }">
+                        <input wire:model.defer="cedulaFoto" id="file-upload" type="file" x-ref="cedula" />
+                    </div>
+
+
+
+
+                    
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nuevo Mensaje</title>
+</head>
+
+<body>
+    <div>
+        Has recibido un nuevo mensaje
+    </div>
+    <div>
+        Nombre: {{ $username ?? '' }}
+    </div>
+    <div>
+        Celular: {{ $usercell ?? '' }}
+    </div>
+    <div>
+        Correo: {{ $usermail ?? '' }}
+    </div>
+    <div>
+        Medio de contacto Preferido: {{ $userpreferedContact ?? '' }}
+    </div>
+    <div>
+        Mensaje: {{ $usermessage ?? '' }}
+    </div>
+    @isset($tipo)
+        Desea cotizar un seguro completo de: {{ $tipo }}
+    @endisset
+</body>
+
+</html> --}}
+
+
+
+
+
+
+
+{{-- <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Register') }}</div>
+
+<div class="card-body">
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+
+        <div class="form-group row">
+            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+            <div class="col-md-6">
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                    value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+            <div class="col-md-6">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                    value="{{ old('email') }}" required autocomplete="email">
+
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+            <div class="col-md-6">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                    name="password" required autocomplete="new-password">
+
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password-confirm"
+                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+            <div class="col-md-6">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required
+                    autocomplete="new-password">
+            </div>
+        </div>
+
+        <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Register') }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div> --}}

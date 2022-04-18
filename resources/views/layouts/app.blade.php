@@ -27,13 +27,10 @@
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--===============================================================================================-->
-    <link href="{{ url('css/util.css') }}" rel="stylesheet">
-    <!--===============================================================================================-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <!--===============================================================================================-->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <!--===============================================================================================-->
+    <link href="{{ url('css/util.css') }}" rel="stylesheet">
 
     @yield('styles')
 
@@ -66,6 +63,8 @@
     <!--===============================================================================================-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <!--===============================================================================================-->
+
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @yield('scripts')
 
 </body>

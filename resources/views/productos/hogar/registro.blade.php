@@ -20,7 +20,8 @@
     .condicion_poliza {
         position: relative;
         top: 12rem;
-        margin-right: 5rem
+        margin-right: 5rem;
+        margin-top: -6.5rem !important;
     }
 
     .card-subtitle {

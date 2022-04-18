@@ -31,9 +31,9 @@
             height: 522px !important;
         }
 
-        .card-subtitle {
+        /* .card-subtitle {
             color: #ff0180 !important;
-        }
+        } */
 
         input[type="text"]::placeholder {
             /* Firefox, Chrome, Opera */
@@ -188,80 +188,6 @@
                     </div>
                 </div>
             </div>
-            <div class="container container-datos__cliente shadow mt-3">
-                <div>
-                    <div class="form-row p-2">
-                        <div class="col-2">
-                            <label>Persona políticamente expuesta</label>
-                            <div class="container row">
-                                <div class="col-4 form-check form-check-inline">
-                                    <label class="form-check-label pr-2" for="inlineRadio1">Si</label>
-                                    <input disabled {{ $response[0]->ppe == 'ppeSi' ? 'checked' : '' }}
-                                        class="form-check-input" type="radio" name="ppe" id="ppesi">
-                                </div>
-                                <div class="col-1 form-check form-check-inline">
-                                    <label class="form-check-label mr-2" for="inlineRadio1">No</label>
-                                    <input disabled {{ $response[0]->ppe == 'ppeNo' ? 'checked' : '' }}
-                                        class="form-check-input" type="radio" name="ppe" id="ppeno">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <label for="cargo">Cargo</label>
-                            <input disabled value="{{ $response[0]->ppe_cargo }}" type=" cargo"
-                                class="form-control input__style_comprobante" id="cargo" placeholder="">
-                        </div>
-                        <div class="col-2 text-center">
-                            <label for="fechainicio">Fecha de inicio</label>
-                            <div class="row no-gutters">
-                                <div class="col-3 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_inicio_dia }}" type="text"
-                                        class="form-control input__style_comprobante " id="dd" placeholder="">
-                                </div>
-                                <div class="col-3 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_inicio_mes }}" type="text"
-                                        class="form-control input__style_comprobante" id="mm" placeholder="">
-                                </div>
-                                <div class="col-4 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_inicio_year }}" type="text"
-                                        class="form-control input__style_comprobante" id="yyyy" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <label for="fechafinal">Fecha de finalización</label>
-                            <div class="row no-gutters">
-                                <div class="col-3 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_fin_dia }}" type="text"
-                                        class="form-control input__style_comprobante " id="dd" placeholder="">
-                                </div>
-                                <div class="col-3 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_fin_mes }}" type="text"
-                                        class="form-control input__style_comprobante" id="mm" placeholder="">
-                                </div>
-                                <div class="col-4 mr-1">
-                                    <input disabled value="{{ $response[0]->ppe_fin_year }}" type=" text"
-                                        class="form-control input__style_comprobante" id="yyyy" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <label for="mail">Correo electrónico</label>
-                            <input disabled value="{{ $response[0]->ppe_mail }}" type="mail"
-                                class="form-control input__style_comprobante" id="mail" placeholder="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="container container-datos__cliente shadow mt-3 d-flex p-2">
-                <div class="container-datos__cliente-titulo p-2">
-                    Corredor de seguros
-                </div>
-                <div class="ml-2" style="width: 50rem">
-                    <input type="nombre" class="form-control input__style_comprobante" id="nombre" placeholder=""
-                        value="Bartoli Asesores de seguros" disabled>
-                </div>
-            </div> --}}
         </div>
         <div class="container container-comprobante-compra-para mt-4 mb-5 d-flex">
 

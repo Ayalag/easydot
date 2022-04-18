@@ -60,6 +60,9 @@ class Registro extends Component
     public $ppe_final_dia;
     public $ppe_final_mes;
     public $ppe_final_año;
+
+    public $term1;
+    public $term2;
     
     public $cedulaFoto;
 
@@ -85,7 +88,7 @@ class Registro extends Component
     ];
 
     public function mount(){
-        $this->currentStep = 1;
+        $this->currentStep = 2;
         $this->provincia = provincia::all();
         $this->provincia2 = provincia::all();
         if(Auth::check()){
@@ -141,96 +144,42 @@ class Registro extends Component
     public function increaseStep(){
         $this->validateData();
         $this->currentStep++;
-        $this->validaPpe();
 
         return $this->currentStep;
-    }
-
-    
-    public function validaPpe(){
-        if($this->ppe == 'ppeSi'){
-            $this->validate([
-                'ppe_activo' =>'required|min:1',
-                ]);
-        }
-        if($this->ppe == 'ppeSi'){
-            if($this->ppe_activo  == 'si'){
-                $this->validate([
-                    'ppecargo' => 'required|string',
-                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                    'ppe_inicio_dia' => 'required|numeric',
-                    'ppe_inicio_mes' => 'required|numeric',
-                    'ppe_inicio_año' => 'required|numeric',
-                    'ppe_activo' =>'required|min:1',
-                    ]);
-            }else{
-                $this->validate([
-                    'ppecargo' => 'required|string',
-                    // 'ppemail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                    'ppe_inicio_dia' => 'required|numeric',
-                    'ppe_inicio_mes' => 'required|numeric',
-                    'ppe_inicio_año' => 'required|numeric',
-                    'ppe_final_dia' => 'required|numeric',
-                    'ppe_final_mes' => 'required|numeric',
-                    'ppe_final_año' => 'required|numeric',
-                    'ppe_activo' =>'required|min:1',
-                    ]);
-            }
-        }
     }
 
     public function validateData(){
         if($this->currentStep == 1){
 
-            if($this->typeId =='cedula'){
-                $this->validate([
-                    'nombres' => ['required','regex:/^[a-zA-Z]+$/u'],
-                    'apellidos' => ['required','regex:/^[a-zA-Z]+$/u'],
-                    'typeId' => 'required|min:1',
-                    'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
-                    'dia' => 'required|numeric',
-                    'mes' => 'required|numeric',
-                    'año' => 'required|numeric',
-                    'eCivil' => 'required|string',
-                    'selectedProvincia' => 'required',
-                    'selectedDistrito' => 'required',
-                    'selectedCorregimiento' => 'required',
-                    'genero' => 'required|min:1',
-                    'barrio' => 'required|string',
-                    'casa' => 'required|string',
-                    'celular' => 'required|string',
-                    'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                    'ppe' => 'required|min:1',
-                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                ]);
-            }
-            else{
-                $this->validate([
-                    'nombres' => ['required','regex:/^[a-zA-Z]+$/u'],
-                    'apellidos' => ['required','regex:/^[a-zA-Z]+$/u'],
-                    'typeId' => 'required|min:1',
-                    'identificacion' => 'required|string',
-                    'dia' => 'required|string',
-                    'mes' => 'required|string',
-                    'año' => 'required|string',
-                    'dia' => 'required|numeric',
-                    'mes' => 'required|numeric',
-                    'año' => 'required|numeric',
-                    'eCivil' => 'required|string',
-                    'selectedProvincia' => 'required',
-                    'selectedDistrito' => 'required',
-                    'selectedCorregimiento' => 'required',
-                    'pais' => 'required|string',
-                    'genero' => 'required|min:1',
-                    'barrio' => 'required|string',
-                    'casa' => 'required|string',
-                    'celular' => 'required|string',
-                    'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-                    'ppe' => 'required|min:1',
-                    'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                    
-                ]);
-            } 
+            $this->validate([ 
+                'nombres' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'apellidos' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'typeId' => 'required|min:1',
+                'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                'dia' => 'required|numeric',
+                'mes' => 'required|numeric',
+                'año' => 'required|numeric',
+                'genero' => 'required|min:1',
+                'eCivil' => 'required|string',
+                'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+                'pais' => 'required_if:typeId,==,pasaporte',
+                'selectedProvincia' => 'required',
+                'selectedDistrito' => 'required',
+                'selectedCorregimiento' => 'required',
+                'barrio' => 'required|string',
+                'casa' => 'required|string',
+                'celular' => 'required|string',
+                'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+                'ppe' => 'required|min:1',
+                'ppecargo' => 'required_if:ppe,==,ppeSi',
+                'ppe_inicio_dia' => 'required_if:ppe,==,ppeSi',
+                'ppe_inicio_mes' => 'required_if:ppe,==,ppeSi',
+                'ppe_inicio_año' => 'required_if:ppe,==,ppeSi',
+                'ppe_activo' => 'required_if:ppe,==,ppeSi',
+                'ppe_final_dia' => 'required_if:ppe_activo,==,no',
+                'ppe_final_mes' => 'required_if:ppe_activo,==,no',
+                'ppe_final_año' => 'required_if:ppe_activo,==,no',
+            ]);
         }
         if($this->currentStep == 2){
 
@@ -255,6 +204,8 @@ class Registro extends Component
                         'selectedProvincia2' => 'required',
                         'selectedDistrito2' => 'required',
                         'selectedCorregimiento2' => 'required',
+                        'term1' => 'required',
+                        'term2' => 'required',
                     ]);
                 }
             }else{
@@ -264,6 +215,8 @@ class Registro extends Component
                     'selectedProvincia2' => 'required',
                     'selectedDistrito2' => 'required',
                     'selectedCorregimiento2' => 'required',
+                    'term1' => 'required',
+                    'term2' => 'required',
                 ]);
             }
         }
@@ -272,7 +225,6 @@ class Registro extends Component
     public function submit(){
 
         $this->validateData();
-        $this->validaPpe();
 
         $extension = $this->cedulaFoto->getClientOriginalExtension();
 

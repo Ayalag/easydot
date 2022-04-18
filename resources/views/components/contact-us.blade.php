@@ -4,7 +4,7 @@
         @csrf
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre"
+            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="Nombre"
                 placeholder="Nombre" required>
         </div>
         <div class="form-group">

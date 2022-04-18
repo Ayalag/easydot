@@ -155,27 +155,5 @@
         }
     }
 
-    // var show = document.querySelector('.show-hide');
-
-    // document.querySelector('#ppeSi').addEventListener('click', function (e) {
-
-    //     $(show).slideDown("slow");
-    // });
-    // document.querySelector('#ppeNo').addEventListener('click', function (e) {
-
-    //     $(show).slideUp("slow");
-    // });
-
-    // var ppefin = document.querySelector('.ppeFin');
-
-    // document.querySelector('#ppe_activoSi').addEventListener('click', function (e) {
-
-    //     $(ppefin).slideUp("slow");
-    // });
-    // document.querySelector('#ppe_activoNo').addEventListener('click', function (e) {
-
-    //     $(ppefin).slideDown("slow");
-    // });
-
 </script>
 @endsection

@@ -88,7 +88,7 @@
     @if (Route::has('login'))
         <div class="container-login">
             @auth
-                <a href="#">{{ Auth::user()->name }}</a>
+                <a href="#">{{ Auth::user()->usuario }}</a>
             @else
                 <a href="{{ route('login') }}" class="underline">mi cuenta</a>
 

@@ -27,20 +27,18 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         {{-- <label for="nombres">nombres</label> --}}
-                        <input type="text"
-                            class="form-control input__style @if ($errors->has('nombres')) border border-danger @endif"
+                        <input type="text" class="form-control input__style @error('nombres') is-invalid @enderror"
                             id="nombres" placeholder="nombres" wire:model.defer="nombres">
                     </div>
                     <div class="form-group col-md-6">
                         {{-- <label for="apellidos">apellidos</label> --}}
-                        <input type="text"
-                            class="form-control input__style @if ($errors->has('apellidos')) border border-danger @endif"
+                        <input type="text" class="form-control input__style @error('apellidos') is-invalid @enderror"
                             id="apellidos" placeholder="apellidos" wire:model.defer="apellidos">
                     </div>
                 </div>
                 <div class="form-row mb-2">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                        <div class="form-check-inline ">
+                        <div class="form-check-inline" style="width: 100%;justify-content: center;">
                             <label
                                 class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
@@ -52,21 +50,22 @@
                             <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
                                 id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)">
                         </div>
+
                         <div class="form-group">
                             <input wire:model.defer="identificacion" type="text"
-                                class="form-control input__style @if ($errors->has('identificacion')) border border-danger @endif "
+                                class="form-control input__style  @error('identificacion') is-invalid @enderror"
                                 id="identificacion" placeholder="identificacion">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4">
-                        <div class="form-check-inline">
-                            <label class="easyBlue600 pb-2">Fecha de nacimiento</label>
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5">
+                        <div class="form-check-inline justify-content-center" style="width: inherit">
+                            <label class="easyBlue600 pb-2  @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif">Fecha de nacimiento</label>
                         </div>
                         <div class="form-group tooltipAge">
 
                             <div class="d-flex">
                                 <select wire:model.defer="dia"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2 @if ($errors->has('dia')) border border-danger @endif"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1  @error('dia') is-invalid @enderror"
                                     id="birthdayDay" placeholder="dd">
                                     <option value="" selected>día</option>
                                     <option value="1">1</option>
@@ -102,7 +101,7 @@
                                     <option value="31">31</option>
                                 </select>
                                 <select wire:model.defer="mes"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-2  @if ($errors->has('mes')) border border-danger @endif"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('mes') is-invalid @enderror"
                                     id="birthdayMonth" placeholder="mm">
                                     <option value="" selected>mes</option>
                                     <option value="1">1</option>
@@ -119,7 +118,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="año"
-                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-5 form-control input__style mr-2  @if ($errors->has('año')) border border-danger @endif"
+                                    class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('año') is-invalid @enderror"
                                     id="birthdayYear" placeholder="aa">
                                     <option value="" selected>año</option>
                                     <option value="2022">2022</option>
@@ -227,9 +226,10 @@
                             <span class="ageError" id="ageError">*mayoria de edad requerida</span>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-3 text-center">
                         <div class="form-check-inline ">
-                            <label class="easyBlue600 pb-3">Género</label>
+                            <label
+                                class="easyBlue600 pb-3 @if ($errors->has('genero')) text-danger @endif">Género</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label mr-4 h4" for="">M</label>
@@ -242,15 +242,9 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    {{-- <div class="form-group col-md-3 text-center"> --}}
-                    {{-- <label for="eCivil">estado civil</label> --}}
-                    {{-- <input wire:model.defer="eCivil" type="text" --}}
-                    {{-- class="form-control input__style @if ($errors->has('eCivil')) border border-danger @endif"
-                            id="eCivil" placeholder="Estado Civil"> --}}
-                    {{-- </div> --}}
                     <div class="form-group col-sm-12 col-md-3">
                         <select wire:model.defer="eCivil"
-                            class="form-control input__style @if ($errors->has('eCivil')) border border-danger @endif"
+                            class="form-control input__style @error('eCivil') is-invalid @enderror"
                             data-live-search="true" title="eCivil" name="eCivil" id="eCivil">
                             <option>estado civil</option>
                             <option value="soltero">Soltero</option>
@@ -261,22 +255,31 @@
                     </div>
                     <div class="form-group col-sm-12 col-md-5 text-center">
                         {{-- <h3>foto de cédula o pasaporte</h3> --}}
-                        <div class="input-group input-file" name="upload">
+                        <div class="input-file" name="upload"
+                        x-data="{ isUploading: false, progress: 0 }"
+                        x-on:livewire-upload-start="isUploading = true; progress = 5"
+                        x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false"
+                        x-on:livewire-upload-progress="progress = $event.detail.progress"
+                        class="row justify-content-center d-flex flex-column">
                             {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
                             <label for="file-upload" class="custom-file-upload input__style">
                                 <i class="fas fa-paperclip"></i>identificación
                             </label>
                             <input id="file-upload" type="file" wire:model="cedulaFoto" />
-                            <span wire:loading wire:target="cedulaFoto" class="spinner-border spinner-border-sm"
-                                role="status" aria-hidden="true"
-                                style="position: relative;left:-30px;bottom:-10px"></span>
-                            @error('cedulaFoto') <span class="error">{{ $message }}</span> @enderror
+                            <div class="progress customBar">
+                                <div  x-show.transition="true" class="progress-bar progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
+                              </div>
+                              @if ($cedulaFoto)
+                              <div class="preview">
+                                  <img class="img-thumbnail img-thumbnail__id " src="{{ $cedulaFoto->temporaryUrl() }}">
+                              </div>
+                              @endif
                         </div>
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
                         @if($showPais)
                         <select wire:model.defer="pais"
-                            class="form-control input__style @if ($errors->has('pais')) border border-danger @endif"
+                            class="form-control input__style @error('pais') is-invalid @enderror"
                             data-live-search="true" title="pais" name="pais" id="pais">
                             <option value=''>Nacionalidad</option>
                             <option value="Afganistan">Afghanistan</option>
@@ -547,7 +550,7 @@
                     <div class="form-group col-md-4">
                         <label for="">Dirección</label>
                         <select wire:model="selectedProvincia"
-                            class="form-control input__style @if ($errors->has('selectedProvincia')) border border-danger @endif"
+                            class="form-control input__style @error('selectedProvincia') is-invalid @enderror"
                             data-live-search="true" title="Provincia" name="provincia" id="provincia">
                             <option value="" selected>Provincia</option>
                             @foreach ($provincia as $p)
@@ -558,7 +561,7 @@
                     <div class="form-group col-md-4">
                         <label for=""></label>
                         <select wire:model="selectedDistrito"
-                            class="form-control input__style @if ($errors->has('selectedDistrito')) border border-danger @endif "
+                            class="form-control input__style @error('selectedDistrito') is-invalid @enderror"
                             data-live-search="true" title="Distrito" name="distrito" id="distrito">
                             <option value="" selected>Distrito</option>
                             @if (!is_null($distrito))
@@ -571,7 +574,7 @@
                     <div class="form-group col-md-4">
                         <label for=""></label>
                         <select wire:model.defer="selectedCorregimiento"
-                            class="form-control input__style @if ($errors->has('selectedCorregimiento')) border border-danger @endif "
+                            class="form-control input__style @error('selectedCorregimiento') is-invalid @enderror"
                             data-live-search="true" title="Corregimiento" name="corregimiento" id="corregimiento">
                             <option value="" selected>Corregimiento</option>
                             @if (!is_null($corregimiento))
@@ -587,28 +590,28 @@
                     <div class="form-group col-md-6">
                         {{-- <label for=""></label> --}}
                         <input wire:model.defer="barrio" type="text"
-                            class="form-control input__style @if ($errors->has('barrio')) border border-danger @endif"
-                            id="barrio" placeholder="Barrio / P.H">
+                            class="form-control input__style @error('barrio') is-invalid @enderror" id="barrio"
+                            placeholder="Barrio / P.H">
                     </div>
                     <div class="form-group col-md-6">
                         {{-- <label for=""></label> --}}
                         <input wire:model.defer="casa" type="text"
-                            class="form-control input__style @if ($errors->has('casa')) border border-danger @endif"
-                            id="casa" placeholder="N° Casa/Apto.">
+                            class="form-control input__style @error('casa') is-invalid @enderror" id="casa"
+                            placeholder="N° Casa/Apto.">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         {{-- <label for="">celular</label> --}}
                         <input wire:model.defer="celular" type="tel"
-                            class="form-control input__style @if ($errors->has('celular')) border border-danger @endif"
-                            id="celular" placeholder="Celular">
+                            class="form-control input__style @error('celular') is-invalid @enderror" id="celular"
+                            placeholder="Celular">
                     </div>
                     <div class="form-group col-md-6">
                         {{-- <label for="">correo electrónico</label> --}}
                         <input wire:model.defer="contactMail" type="email"
-                            class="form-control input__style @if ($errors->has('contactMail')) border border-danger @endif"
-                            id="email" placeholder="Correo electrónico">
+                            class="form-control input__style @error('contactMail') is-invalid @enderror" id="email"
+                            placeholder="Correo electrónico">
                     </div>
                 </div>
             </div>
@@ -644,21 +647,23 @@
                         <div class="form-group col-md-6">
                             <label for=""></label>
                             <input wire:model.defer="ppecargo" type="text"
-                                class="form-control input__style @if ($errors->has('ppecargo')) border border-danger @endif"
-                                id="cargo" placeholder="Cargo">
+                                class="form-control input__style @error('ppecargo') is-invalid @enderror" id="cargo"
+                                placeholder="Cargo">
                         </div>
                         <div class="form-group col-md-6">
                             <div class="container-ppe__activo d-flex flex-column">
-                                <div class="text-center @if ($errors->has('ppe_activo')) text-danger @endif">
+                                <div class="text-center @error('ppe_activo') is-invalid @enderror">
                                     ¿estás en el cargo <br> actualmente?
                                 </div>
                                 <div class="ppe_otipons text-center">
                                     <label class=" form-check-label mr-4 h5" for="">Si</label>
                                     <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                        name="ppe_activo" id="ppe_activoSi" value="si" wire:click="$set('showppeend',false)" >
+                                        name="ppe_activo" id="ppe_activoSi" value="si"
+                                        wire:click="$set('showppeend',false)">
                                     <label class="form-check-label mr-4 h5" for="">No</label>
                                     <input wire:model.defer="ppe_activo" class="form-check-input" type="radio"
-                                        name="ppe_activo" id="ppe_activoNo" value="no" wire:click="$set('showppeend',true)" >
+                                        name="ppe_activo" id="ppe_activoNo" value="no"
+                                        wire:click="$set('showppeend',true)">
                                 </div>
                             </div>
                         </div>
@@ -668,7 +673,7 @@
                             <label class="easyBlue600">Fecha de inicio del cargo</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_inicio_dia"
-                                    class="form-control input__style mr-2 @if ($errors->has('ppe_inicio_dia')) border border-danger @endif"
+                                    class="form-control input__style mr-2 @error('ppe_inicio_dia') is-invalid @enderror"
                                     id="dd" placeholder="dd">
                                     <option value="" selected>dd</option>
                                     <option value="1">1</option>
@@ -704,7 +709,7 @@
                                     <option value="31">31</option>
                                 </select>
                                 <select wire:model.defer="ppe_inicio_mes"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_mes')) border border-danger @endif"
+                                    class="form-control input__style mr-2 @error('ppe_inicio_mes') is-invalid @enderror"
                                     id="mm" placeholder="mm">
                                     <option value="" selected>mm</option>
                                     <option value="1">1</option>
@@ -721,7 +726,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="ppe_inicio_año"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_inicio_año')) border border-danger @endif"
+                                    class="form-control input__style mr-2 @error('ppe_inicio_año') is-invalid @enderror"
                                     id="aa" placeholder="aa">
                                     <option value="" selected>aa</option>
                                     <option value="2022">2022</option>
@@ -833,7 +838,7 @@
                             <label class="easyBlue600">Fecha de finalización</label>
                             <div class="col-12 d-flex">
                                 <select wire:model.defer="ppe_final_dia"
-                                    class="form-control input__style mr-2 @if ($errors->has('ppe_final_dia')) border border-danger @endif"
+                                    class="form-control input__style mr-2 @error('ppe_final_dia') is-invalid @enderror"
                                     id="ddend" placeholder="ddend">
                                     <option value="" selected>dd</option>
                                     <option value="1">1</option>
@@ -869,7 +874,7 @@
                                     <option value="31">31</option>
                                 </select>
                                 <select wire:model.defer="ppe_final_mes"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_final_mes')) border border-danger @endif"
+                                    class="form-control input__style mr-2  @error('ppe_final_mes') is-invalid @enderror"
                                     id="mmed" placeholder="mmed">
                                     <option value="" selected>mm</option>
                                     <option value="1">1</option>
@@ -886,7 +891,7 @@
                                     <option value="12">12</option>
                                 </select>
                                 <select wire:model.defer="ppe_final_año"
-                                    class="form-control input__style mr-2  @if ($errors->has('ppe_final_año')) border border-danger @endif"
+                                    class="form-control input__style mr-2  @error('ppe_final_año') is-invalid @enderror"
                                     id="aaend" placeholder="aaend">
                                     <option value="" selected>aa</option>
                                     <option value="2022">2022</option>
@@ -996,6 +1001,27 @@
                     </div>
                 </div>
                 @endif
+            </div>
+        </div>
+        <div class="container container-term-and-condition p-3 mt-3 easyBlue600">
+            <div class="d-flex">
+                <input wire:model.defer="term1" type="radio" name="term1" id="term1_accepted" value="term1"
+                    style="margin-right: 15px;">
+                <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}"  class="easyLigth600">Términos y condiciones</a> de <span
+                        class="easyRose600">easy</span>. así como la politica de <br> <span
+                        class="easyLigth600">Proteccion de datos</span>.</span>
+                </label>
+                @error('term1') <div class="ownerinvalid ml-2"></div> @enderror
+            </div>
+            <br>
+            <div class="d-flex">
+                <input wire:model.defer="term2" type="radio" name="term2" id="term2_accepted" value="term2"
+                    style="margin-right: 15px;">
+                <label class="radio-inline mr-2">
+                    <span>Acepto las <span class="easyLigth600">condiciones generales </span>del producto
+                        seleccionado</span>
+                </label>
+                @error('term2') <div class="ownerinvalid"></div> @enderror
             </div>
         </div>
         <div class="container pb-5 pt-2 d-flex flex-column text-center">

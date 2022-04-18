@@ -98,7 +98,7 @@
     @isset($cardHtml)
     {!! $cardHtml[0]->html !!}
     @endisset
-    <livewire:productos.persona.registro />
+    <livewire:productos.dental.registro />
 </div>
 
 @endsection

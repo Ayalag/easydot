@@ -30,18 +30,25 @@ class ProductContactUs extends Component
     }
 
     public function productContactUs(){
-        Mail::to('servicioalcliente@easydot.com.pa')->send(new productsContacUs(
-            $this->nombre, $this->celular, $this->mail, $this->contacto,$this->landingArea
-        ));
 
-        $this->nombre ='';
-        $this->celular ='';
-        $this->mail ='';
-        $this->contacto='';
-        $this->landingArea='';
+        try{
+            Mail::to([$this->mail, 'servicioalcliente@easydot.com.pa'])->send(new productsContacUs(
+                $this->nombre, $this->celular, $this->mail, $this->contacto,$this->landingArea
+            ));
+    
+            $this->nombre ='';
+            $this->celular ='';
+            $this->mail ='';
+            $this->contacto='';
+            $this->landingArea='';
+
+            session()->flash('success','Solicitud enviada');
+        } 
+        catch(\Error $ex){
+            session()->flash('error','Error intentenuevamente');
+        }         
         
     }
-    
 
     public function render()
     {

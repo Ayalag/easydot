@@ -37,8 +37,8 @@ class contactFormFromKnowUs extends Mailable
     public function build()
     {
         return $this->from($this->mail)
-                    ->subject('contactar con: '.$this->nombre)
-                    ->view('emails.contactFromWebsite.ContactFromWebsite')->with([
+                    ->subject('gracias por contactarnos: '.$this->nombre)
+                    ->markdown('emails.contactFromWebsite.ContactFromWebsite')->with([
                         'username' => $this->nombre,
                         'usercell' => $this->celular,
                         'usermail' => $this->mail,

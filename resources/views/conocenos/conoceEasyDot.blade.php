@@ -38,7 +38,7 @@
     <div class="container-fluid forma2">
         <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
     </div>
-    <div class="container container-legenda pt-5">
+    <div class="container container-legenda p-5">
         <div class="container-legenda__paragraph">
             <p>Sabemos que hay soluciones y productos que tradicionalmente han sido algo complicados, pero hemos trabajado
                 de la mano con empresas aliadas para que estos sean mucho más sencillos, fáciles de entender y de obtener.
