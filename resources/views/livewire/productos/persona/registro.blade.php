@@ -267,7 +267,7 @@
                             </label>
                             <input id="file-upload" type="file" wire:model="cedulaFoto" />
                             <div class="progress customBar">
-                                <div  x-show.transition="true" class="progress-bar progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
+                                <div  x-show.transition="true" class="progress-bar progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
                               </div>
                               @if ($cedulaFoto)
                               <div class="preview">

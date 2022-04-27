@@ -197,8 +197,8 @@
               <div class="col-xs-6 col-md-3">
                   <h6>Categorías</h6>
                   <ul class="footer-links">
-                      <li><a href="/producto/motor/cobertura">Autos</a></li>
-                      <li><a href="/producto/hogar/cobertura">Hogar</a></li>
+                      <li><a href="/producto/motor/cobertura/autos">Autos</a></li>
+                      <li><a href="/producto/hogar/cobertura/moto">Hogar</a></li>
                       <li><a href="/producto/motor/cobertura">Motos</a></li>
                       <li><a href="/producto/mascotas/coberturas">Mascotas</a></li>
                       <li><a href="/producto/personas/cobertura">Personas</a></li>

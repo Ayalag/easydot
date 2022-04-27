@@ -39,6 +39,10 @@
 
 .fnt-size-3 {
     font-size: 3rem;
+
+}
+.fnt-size-4 {
+    font-size: 4rem;
 }
 
 .hide {
@@ -106,6 +110,10 @@ div>p>span {
 .easyRose600 {
     font-weight: 600;
     color: var(--easyRose);
+}
+
+.cursorPointer{
+    cursor: pointer;
 }
 
 .ownerinvalid {
@@ -2593,12 +2601,16 @@ input[type="number"] {
 /*       Coberura Buttons           */
 /*-------------------------------*/
 
-.container-cobertura {
-    height: 100vh;
+.container-cobertura, .container-cobertura-mascotas{
     color: var(--easyBlue);
     font-weight: 800;
     font-size: 2rem;
 }
+
+.container-cobertura {
+    height: 100vh;
+}
+
 
 .container-button {
     display: flex;

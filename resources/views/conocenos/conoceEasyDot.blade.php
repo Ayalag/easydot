@@ -93,7 +93,7 @@
                     <h1>autos</h1>
                 </div>
                 <div class="box-category__button">
-                    <a href="{{ route('autos-cobertura') }}">ver planes</a>
+                    <a href="{{ route('autos-cobertura-autos') }}">ver planes</a>
                 </div>
             </div>
             <div class="box ">

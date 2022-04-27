@@ -3,9 +3,10 @@
 @section('content')
 <div class="container-fluid container-productos pt-5">
     <div class="row justify-content-center align-items-center">
+
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
-            <input id="auto" type="radio" name="motor" checked value="auto">
+            <input id="auto" type="radio" name="motor" value="auto">
             <label for="auto" class="clickable"><span class="checked-box">&#10004;</span></label>
             <div>
                 <img src="{{ asset('/public/includes/images/icons8-car-64.png') }}" alt="easydot_automoviles">
@@ -25,8 +26,9 @@
                 <span class="product_text_1">motos</span>
             </div>
         </div>
+
     </div>
-    <div class="row justify-content-center pt-3 mb-3 car-options">
+    <div class="row justify-content-center pt-3 mb-3 car-options hide">
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
             <input id="soat" type="radio" name="categoria" checked>
@@ -46,7 +48,7 @@
             <span class="product_text_2">estándar</span>
         </div>
     </div>
-    <div class="row justify-content-center pt-3 mb-3 moto-options hide">
+    <div class="row justify-content-center pt-3 mb-3 moto-options ">
         <div
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
             <input id="soat-motos" type="radio" name="categoria" checked>
@@ -63,58 +65,20 @@
             class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
             <input id="estandar-motos" type="radio" name="categoria">
             <label for="estandar-motos" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">éstandar</span>
-        </div>
-    </div>
-    <div class="container container-autos pb-5">
-        <div class="soat">
-            <div class="soat-slider">
-                {{-- AQUI VA LA ITERACION DE SOAT  CARROS --}}
-                @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 1 and $motor->plan === 1)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
-                @endisset
-            </div>
-        </div>
-        <div class="basico hide">
-            <div class="soat-slider">
-                {{-- AQUI VA LA ITERACION DE BASICO  CARROS --}}
-                @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 1 and $motor->plan === 2)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
-                @endisset
-            </div>
-        </div>
-        <div class="estandar hide">
-            <div class="soat-slider">
-                {{-- AQUI VA LA ITERACION DE ESTANDART  CARROS --}}
-                @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 1 and $motor->plan === 3)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
-                @endisset
-            </div>
+            <span class="product_text_2">estándar</span>
         </div>
     </div>
     {{-- MOTOS --}}
-    <div class="container container-motos hide pb-5">
+    <div class="container container-motos pb-5">
         <div class="soat-motos">
             <div class="soat-slider-motor">
                 {{-- AQUI VA LA ITERACION DE SOAT  MOTOS --}}
                 @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 2 and $motor->plan === 1)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 2 and $motor->plan === 1)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
                 @endisset
             </div>
         </div>
@@ -123,11 +87,11 @@
             <div class="soat-slider-motor">
                 {{-- AQUI VA LA ITERACION DE BASICO  MOTOS --}}
                 @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 2 and $motor->plan === 2)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 2 and $motor->plan === 2)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
                 @endisset
             </div>
         </div>
@@ -135,11 +99,49 @@
             <div class="soat-slider-motor">
                 {{-- AQUI VA LA ITERACION DE ESTANDART  MOTOS --}}
                 @isset($motores)
-                @foreach ($motores as $motor)
-                @if ($motor->tipo === 2 and $motor->plan === 3)
-                {!! $motor->html !!}
-                @endif
-                @endforeach
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 2 and $motor->plan === 3)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
+                @endisset
+            </div>
+        </div>
+    </div>
+    <div class="container container-autos hide pb-5">
+        <div class="soat">
+            <div class="soat-slider">
+                {{-- AQUI VA LA ITERACION DE SOAT  CARROS --}}
+                @isset($motores)
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 1 and $motor->plan === 1)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
+                @endisset
+            </div>
+        </div>
+        <div class="basico hide">
+            <div class="soat-slider">
+                {{-- AQUI VA LA ITERACION DE BASICO  CARROS --}}
+                @isset($motores)
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 1 and $motor->plan === 2)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
+                @endisset
+            </div>
+        </div>
+        <div class="estandar hide">
+            <div class="soat-slider">
+                {{-- AQUI VA LA ITERACION DE ESTANDART  CARROS --}}
+                @isset($motores)
+                    @foreach ($motores as $motor)
+                        @if ($motor->tipo === 1 and $motor->plan === 3)
+                            {!! $motor->html !!}
+                        @endif
+                    @endforeach
                 @endisset
             </div>
         </div>
@@ -276,10 +278,7 @@
 
         });
 
-
-
-
-    });
+    }); 
 
 </script>
 

@@ -205,7 +205,7 @@ $(document).ready(function () {
         variableWidth: true,
     });
 
-    $(".soat-slider, .soat-slider-motor").slick({
+    $(".soat-slider-motor, .soat-slider").slick({
         dots: true,
         infinite: false,
         speed: 300,

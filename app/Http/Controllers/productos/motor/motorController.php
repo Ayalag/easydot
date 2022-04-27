@@ -13,11 +13,24 @@ class motorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $motores = motor::all();
 
-        return view('productos.motor.motor', compact('motores'));
+        // $motores = motor::all();
+
+        if($request->type=='auto'){
+            $motores = motor::orderBy('tipo', 'asc')
+            -> get();
+            return view('productos.motor.motor-auto', compact('motores'));
+        }
+
+        if($request->type=='moto'){
+
+            $motores = motor::orderBy('tipo', 'desc')
+                 -> get();
+            return view('productos.motor.motor-moto', compact('motores'));
+        }
+
     }
 
     public function isnuranceSeleted($tipo, $aseguradora, $plan )

@@ -13,57 +13,56 @@
                 <a href="{{ route('home') }}">Inicio <span class="caret"></span></a>
             </li>
             <li class="dropdown">
-                <a href="{{ route('autos-cobertura') }}">Autos <span class="caret"></span></a>
+                <a href="{{ route('autos-cobertura-autos') }}">Autos <span class="caret"></span></a>
                 {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     <div class="dropdown-header">Dropdown heading</div>
                     <li><a class="underline" href="/producto/motor/motor">soat</a></li>
                     <li><a class="underline" href="{{ route('autos-landing') }}">cobertura Completa</a></li>
-                </ul> --}}
-            </li>
-            <li class="dropdown">
-                <a href="{{ route('mascotas-cobertura') }}">Mascotas <span class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
+        </ul> --}}
+        </li>
+        <li class="dropdown">
+            <a href="{{ route('mascotas-cobertura') }}">Mascotas <span class="caret"></span></a>
+            {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu">
                     <div class="dropdown-header">Dropdown heading</div>
                     <li><a class="underline" href="/producto/mascotas/coberturas">seguro Veterinario</a></li>
                 </ul> --}}
-            </li>
-            <li class="dropdown">
-                <a href="{{ route('personas-cobertura') }}">Personas <span class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
-                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    {{-- <li><a class="underline" href="/producto/personas/er">ap + gastos médicos</a></li>
+        </li>
+        <li class="dropdown">
+            <a href="{{ route('personas-cobertura') }}">Personas <span class="caret"></span></a>
+            {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
+            {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+            {{-- <li><a class="underline" href="/producto/personas/er">ap + gastos médicos</a></li>
                     <li><a class="underline" href="/producto/personas/em">ap motos</a></li>
                     <li><a class="underline" href="/producto/personas/landing">seguro de vida</a></li> --}}
-                {{-- </ul> --}}
-            </li>
-            <li class="dropdown">
-                <a href="{{ route('hogar-cobertura') }}">Hogar <span class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
-                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    {{-- <li><a class="underline" href="/producto/hogar/hogar">contenido del hogar</a></li>
+            {{-- </ul> --}}
+        </li>
+        <li class="dropdown">
+            <a href="{{ route('hogar-cobertura') }}">Hogar <span class="caret"></span></a>
+            {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
+            {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+            {{-- <li><a class="underline" href="/producto/hogar/hogar">contenido del hogar</a></li>
                     <li><a class="underline" href="producto/hogar/landing">cobertura Completa</a></li> --}}
-                {{-- </ul> --}}
-            </li>
-            <li class="dropdown">
-                <a href="{{ route('centro-de-ayuda') }}">Centro de ayuda <span
-                        class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
-                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    {{-- <li><a class="underline" href="/centro-de-ayuda">centro de ayuda</a></li> --}}
-                    {{-- <li><a class="underline" href="#">contactos de aseguradoras</a></li> --}}
-                {{-- </ul> --}}
-            </li>
-            <li class="dropdown">
-                <a href="{{ route('conoce-easy') }}">Conoce easy. <span class="caret"></span></a>
-                {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
-                    {{-- <div class="dropdown-header">Dropdown heading</div> --}}
-                    {{-- <li><a class="underline" href="/conoce-easy">reseña easy</a></li>
+            {{-- </ul> --}}
+        </li>
+        <li class="dropdown">
+            <a href="{{ route('centro-de-ayuda') }}">Centro de ayuda <span class="caret"></span></a>
+            {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
+            {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+            {{-- <li><a class="underline" href="/centro-de-ayuda">centro de ayuda</a></li> --}}
+            {{-- <li><a class="underline" href="#">contactos de aseguradoras</a></li> --}}
+            {{-- </ul> --}}
+        </li>
+        <li class="dropdown">
+            <a href="{{ route('conoce-easy') }}">Conoce easy. <span class="caret"></span></a>
+            {{-- <ul class="dropdown-menu animated fadeInLeft" role="menu"> --}}
+            {{-- <div class="dropdown-header">Dropdown heading</div> --}}
+            {{-- <li><a class="underline" href="/conoce-easy">reseña easy</a></li>
                     <li><a class="underline" href="/centro-de-ayuda#partners">compañías aliadas</a></li>
                     <li><a class="underline" href="/centro-de-ayuda#faq">preguntas frecuentes</a></li>
                     <li><a class="underline" href="/terminos-y-condiciones">términos y Condiciones</a></li>
                 </ul> --}}
-            </li>
-            {{-- <li><a href="#followme">Follow me</a></li> --}}
+        </li>
+        {{-- <li><a href="#followme">Follow me</a></li> --}}
         </ul>
     </nav>
     <!-- /#sidebar-wrapper -->
@@ -82,22 +81,37 @@
 
 </div>
 <div class="header-container__logo basic-drop-shadow d-flex justify-content-center">
-    <a href="/"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}"
+    <a href="{{ route('home') }}"><img src="{{ asset('public/includes/images/logos/easydot_276x143_formated.png') }}"
             alt="easydot.com.pa"></a>
 
     @if (Route::has('login'))
-        <div class="container-login">
-            @auth
-                <a href="#">{{ Auth::user()->usuario }}</a>
-            @else
-                <a href="{{ route('login') }}" class="underline">mi cuenta</a>
+    <div class="container-login">
+        @auth
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ Auth::user()->usuario }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('profile') }}">Perfil</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                        Cerrar sesión
+                    </a>
 
-                {{-- @if (Route::has('register'))
-                    <a href="{{ route('register') }}"
-                        class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif --}}
-            @endauth
-        </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                </div>
+            </li>
+        </ul>
+        @else
+        <a href="{{ route('login') }}" class="underline">mi cuenta</a>
+        @endauth
+    </div>
     @endif
 </div>
 
@@ -106,7 +120,7 @@
 
 <div class="menu-container container-fluid">
     <x-btn-main>
-        <x-a-link link='/producto/motor/cobertura'>
+        <x-a-link link='/producto/motor/cobertura/auto'>
             autos
         </x-a-link>
     </x-btn-main>
@@ -126,7 +140,7 @@
         </x-a-link>
     </x-btn-main>
     <x-btn-main>
-        <x-a-link link='/producto/motor/cobertura'>
+        <x-a-link link='/producto/motor/cobertura/moto'>
             motos
         </x-a-link>
     </x-btn-main>

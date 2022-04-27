@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <x-btn-main class='fntw-800 mt-3'>
-                    <x-a-link class="slider_btn__comprar" link='/producto/motor/cobertura'>
+                    <x-a-link class="slider_btn__comprar" link='/producto/motor/cobertura/auto'>
                         Comprar Ahora
                     </x-a-link>
                 </x-btn-main>
@@ -98,7 +98,7 @@
                 <h1>autos</h1>
             </div>
             <div class="box-category__button">
-                <a href="{{ route('autos-cobertura') }}">ver planes</a>
+                <a href="{{ route('autos-cobertura-autos') }}">ver planes</a>
             </div>
         </div>
         <div class="box ">

@@ -33,10 +33,12 @@ Route::get('/userconfirmation', function () {
 })->name('userconfirmation');
 
 Route::view('/','home')->name('home');
+Route::view('/profile','profile.profile')->name('profile');
 
 Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-landing');
-Route::view('/producto/motor/cobertura','productos.motor.cobertura')->name('autos-cobertura');
-Route::get('/producto/motor/motor',[motorController::class,'index'])->name('autos-motor');
+Route::view('/producto/motor/cobertura/auto','productos.motor.cobertura-auto')->name('autos-cobertura-autos');
+Route::view('/producto/motor/cobertura/moto','productos.motor.cobertura-moto')->name('autos-cobertura-motos');
+Route::get('/producto/motor/motor/{type}',[motorController::class,'index'])->name('autos-motor');
 Route::get('/producto/motor/registro/{tipo}/{aseguradora}/{plan}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
 
 
@@ -75,12 +77,10 @@ Route::get('/producto/hogar/comprobante/{order_number}', [comprobanteCompra::cla
 Route::get('/producto/dental/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_dental'])->name('comprobante_dental');
 
 
-
-
 Auth::routes();
 
 
 // Route::get('/email',function(){
 //     return new userSelectedInsuranceMail();
 // });
-// Route::view('/mail/template/compra', 'emails.productos.compra')->name('templatemail');
+// Route::view('/mail/template/compra', 'emails.contactFromWebsite.ContactFromWebsite')->name('templatemail');
