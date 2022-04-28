@@ -2,17 +2,16 @@
 
 @section('content')
 
-
-    <div class="container-fluid container-cobertura pt-5">
+    <div class="container-fluid container-cobertura pt-3 pb-3">
         <div class="container container-button">
-            <div class="box-bottom pt-5" id="er">Emergencias médicas
+            <div class="box-bottom" id="er">Emergencias médicas
                 <div class="muted-buttons text-muted pt-1">Accidentes Personales</div>
             </div>
-            <div class="box-bottom p-4" id="erm">Emergencias médicas Motorizados
+            <div class="box-bottom" id="erm">Emergencias médicas Motorizados
                 <div class="muted-buttons text-muted pt-1">Accidentes Personales</div>
             </div>
-            <div class="box-bottom p-5" id="lifeinsurance">Seguros de vida</div>
-            <div class="box-bottom p-5" id="dental">Planes dentales</div>
+            <div class="box-bottom" id="lifeinsurance">Seguros de vida</div>
+            <div class="box-bottom" id="dental">Planes dentales</div>
         </div>
 
     </div>

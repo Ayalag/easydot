@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container container-conoce__easy pt-5">
+<div class="container container-conoce__easy-all pt-5">
+    <div class="container container-conoce__easy">
         <div class="container container-conocenos__title">
             <span class="underline">conoce un poco más</span>
         </div>
@@ -133,12 +134,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid container-footer d-flex">
+    <div class="container-footer d-flex">
+        <img src="{{ asset('/public/includes/images/conocenos/footer-conocenos.png') }}"
+        alt="">
         <div class="container container-form">
             <livewire:mails.contact-us />
         </div>
     </div>
-    {{-- <div class="container container-footer__image">
-        <img src="{{ asset('/public/includes/images/conocenos/footer-conocenos.png') }}" alt="">
-    </div> --}}
+</div>
 @endsection

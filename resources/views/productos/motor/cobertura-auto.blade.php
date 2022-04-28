@@ -2,12 +2,18 @@
 
 @section('content')
 
+<style>
+    .container-cobertura{
+        height: 100vh;
+    }
+</style>
+
     <div class="container-fluid container-cobertura pt-5">
         <div class="container container-button">
-            <div class="box-bottom pt-5" id="danosaterceros">Daños a terceros
+            <div class="box-bottom" id="danosaterceros">Daños a terceros
                 <div class="muted-buttons text-muted pt-1">SOAT</div>
             </div>
-            <div class="box-bottom pt-5" id="coberturacompleta">Cobertura completa
+            <div class="box-bottom" id="coberturacompleta">Cobertura completa
             </div>
         </div>
 

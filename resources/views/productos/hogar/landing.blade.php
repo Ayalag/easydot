@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container container-landing pt-5">
+    <div class="container container-landing landing-movil pt-5">
         <div class="container-landing__descripciones">
             <div class="container-landing__titulo">
                 Vive la paz y la tranquilidad que genera contar con una póliza con cobertura completa para el hogar<span
@@ -24,7 +24,7 @@
                 <p>¡Ya verás lo <span>easy </span>que será!</p>
             </div>
             <div class="container container-image__hogar">
-                <img src="{{ asset('/public/includes/images/landings/hogar.png') }}" alt="" srcset="">
+                <img class="imgResponsive" src="{{ asset('/public/includes/images/landings/hogar.png') }}" alt="" srcset="">
             </div>
         </div>
         <div class="container container-formulario">

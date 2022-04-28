@@ -25,6 +25,7 @@ class Profile extends Component
 
     public $pais;
     public $eCivil;
+    public $genero;
     public $celular;
     public $contactMail;
 

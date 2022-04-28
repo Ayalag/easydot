@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container container-landing pt-5">
+    <div class="container container-landing landing-movil pt-5">
         <div class="container-landing__descripciones">
             <div class="container-landing__personas__titulo">
                 Protege tu bienestar y el de tus seres queridos con las bondades que una póliza de vida puede ofrecer<span
@@ -29,7 +29,7 @@
                 <p>¡Ya verás lo <span>easy </span>que será!</p>
             </div>
             <div class="container container-image__persona">
-                <img src="{{ asset('/public/includes/images/landings/persona.png') }}" alt="" srcset="">
+                <img class="imgResponsive" src="{{ asset('/public/includes/images/landings/persona.png') }}" alt="" srcset="">
             </div>
         </div>
         <div class="container container-formulario">
