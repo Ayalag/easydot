@@ -82,32 +82,84 @@ class Registro extends Component
         
     }
 
-    protected $rules = [
-        'nombres' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
-        'apellidos' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
-        'typeId' => 'required|min:1',
-        'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
-        'dia' => 'required|numeric',
-        'mes' => 'required|numeric',
-        'año' => 'required|numeric',
-        'genero' => 'required|min:1',
-        'eCivil' => 'required|string',
-        'term1' => 'required',
-        'term2' => 'required',
-        'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-        'pais' => 'required_if:typeId,==,pasaporte',
-        'selectedProvincia' => 'required',
-        'selectedDistrito' => 'required',
-        'selectedCorregimiento' => 'required',
-        'barrio' => 'required|string',
-        'casa' => 'required|string',
-        'celular' => 'required|string',
-        'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-    ];
+
+    public function validateData(){
+        if($this->typeId =='cedula'){
+            $this->validate([ 
+                'nombres' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'apellidos' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'typeId' => 'required|min:1',
+                'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+                'dia' => 'required|numeric',
+                'mes' => 'required|numeric',
+                'año' => 'required|numeric',
+                'genero' => 'required|min:1',
+                'eCivil' => 'required|string',
+                'term1' => 'required',
+                'term2' => 'required',
+                'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+                'pais' => 'required_if:typeId,==,pasaporte',
+                'selectedProvincia' => 'required',
+                'selectedDistrito' => 'required',
+                'selectedCorregimiento' => 'required',
+                'barrio' => 'required|string',
+                'casa' => 'required|string',
+                'celular' => 'required|string',
+                'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+            ]);
+        }else{
+            $this->validate([
+                'nombres' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'apellidos' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+                'typeId' => 'required|min:1',
+                'identificacion' => 'required|string',
+                'dia' => 'required|numeric',
+                'mes' => 'required|numeric',
+                'año' => 'required|numeric',
+                'genero' => 'required|min:1',
+                'eCivil' => 'required|string',
+                'term1' => 'required',
+                'term2' => 'required',
+                'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+                'pais' => 'required_if:typeId,==,pasaporte',
+                'selectedProvincia' => 'required',
+                'selectedDistrito' => 'required',
+                'selectedCorregimiento' => 'required',
+                'barrio' => 'required|string',
+                'casa' => 'required|string',
+                'celular' => 'required|string',
+                'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+             ]);
+        }
+    }
+
+
+    // protected $rules = [
+    //     'nombres' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+    //     'apellidos' => ['required','regex:/^[a-zA-ZÑñ\s]+$/u'],
+    //     'typeId' => 'required|min:1',
+    //     'identificacion' => ['required','regex:/^P$|^(?:PE|E|N|[23456789]|[23456789](?:A|P)?|1[0123]?|1[0123]?(?:A|P)?)$|^(?:PE|E|N|[23456789]|[23456789](?:AV|PI)?|1[0123]?|1[0123]?(?:AV|PI)?)-?$|^(?:PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(?:\d{1,4})-?$|^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4})-(\d{1,6})$/i'],
+    //     'dia' => 'required|numeric',
+    //     'mes' => 'required|numeric',
+    //     'año' => 'required|numeric',
+    //     'genero' => 'required|min:1',
+    //     'eCivil' => 'required|string',
+    //     'term1' => 'required',
+    //     'term2' => 'required',
+    //     'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
+    //     'pais' => 'required_if:typeId,==,pasaporte',
+    //     'selectedProvincia' => 'required',
+    //     'selectedDistrito' => 'required',
+    //     'selectedCorregimiento' => 'required',
+    //     'barrio' => 'required|string',
+    //     'casa' => 'required|string',
+    //     'celular' => 'required|string',
+    //     'contactMail' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+    // ];
 
         public function submit(){
 
-            $validatedData = $this->validate();
+            $this->validateData();
 
             $extension = $this->cedulaFoto->getClientOriginalExtension();
 

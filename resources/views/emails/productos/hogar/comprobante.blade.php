@@ -298,7 +298,7 @@
                                 class="form-control input__style_comprobante" id="barrio" placeholder="">
                         </div>
                         <div class="col-6">
-                            <label for="modelo">Casa o Apto.</label>
+                            <label for="modelo">N° Casa/Apto.</label>
                             <input disabled value="{{ $response[0]->hogar_casApto }}" type="text"
                                 class="form-control input__style_comprobante" id="casApto" placeholder="">
                         </div>

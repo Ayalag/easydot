@@ -21,7 +21,7 @@
             </div>
             <div class="container-landing__hogar__subtitulo-2">
                 <p>No esperes más y solicita tu cotización. </p>
-                <p>¡Ya verás lo <span>easy </span>que será!</p>
+                <p>!Ya verás lo <span>easy </span>que será¡</p>
             </div>
             <div class="container container-image__hogar">
                 <img class="imgResponsive" src="{{ asset('/public/includes/images/landings/hogar.png') }}" alt="" srcset="">

@@ -1,6 +1,6 @@
 @component('mail::message')
 
-<span style="color: #033777; font-size:20px; font-weight:800;">¡Hola {{$username}}!</span>
+<span style="color: #033777; font-size:20px; font-weight:800;">!Hola {{$username}}¡</span>
 
 <div style="color: #033777; font-size:16px; font-weight:600;">
 Nos alegra mucho que nos hayas contactado.

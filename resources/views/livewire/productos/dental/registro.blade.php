@@ -622,7 +622,7 @@
                     style="margin-right: 15px;">
                 <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}"  class="easyLigth600">Términos y condiciones</a> de <span
                         class="easyRose600">easy</span>. así como la politica de <br> <span
-                        class="easyLigth600">Proteccion de datos</span>.</span>
+                        class="easyLigth600">Protección de datos</span>.</span>
                 </label>
                 @error('term1') <div class="ownerinvalid ml-2"></div> @enderror
             </div>

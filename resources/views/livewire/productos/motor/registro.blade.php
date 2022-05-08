@@ -40,18 +40,15 @@
                 <div class="form-row mb-2">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <div class="form-check-inline" style="width: 100%;justify-content: center;">
-                            @if($errors->has('typeId'))
-                            <div class="ownerinvalid" style="right: -20px;position: absolute;bottom: 61px;"></div> 
-                            @endif
                             <label
-                                class="form-check-label pr-2 easyBlue600 ml-2 mb-2"
+                                class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
                             <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
                                 name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)">
                             <label
-                                class="form-check-label mr-2 easyBlue600 mb-2"
+                                class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Pasaporte</label>
-                            <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
+                            <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
                                 id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)">
                         </div>
 
@@ -63,8 +60,8 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5">
                         <div class="form-check-inline justify-content-center" style="width: inherit">
-                            <label class="easyBlue600 pb-2">Fecha de nacimiento</label>
-                            @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif
+                            <label class="easyBlue600 pb-2 
+                             @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif">Fecha de nacimiento</label>
                         </div>
                         <div class="form-group tooltipAge">
 
@@ -1165,7 +1162,7 @@
                     style="margin-right: 15px;">
                 <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}"  class="easyLigth600">Términos y condiciones</a> de <span
                         class="easyRose600">easy</span>. así como la politica de <br> <span
-                        class="easyLigth600">Proteccion de datos</span>.</span>
+                        class="easyLigth600">Protección de datos</span>.</span>
                 </label>
                 @error('term1') <div class="ownerinvalid ml-2"></div> @enderror
             </div>
