@@ -1348,7 +1348,7 @@ html {
     position: absolute;
     z-index: 2;
     bottom: -112px;
-    left: 100px;
+    left: 64px;
 }
 
 .slick-track {
@@ -2273,7 +2273,7 @@ input[type="number"] {
     position: relative;
     right: 73px;
     z-index: 1;
-    top: 17px;
+    bottom: 17px;
 }
 
 .bigger-margin ul {
