@@ -112,7 +112,7 @@
     @if ($clase == 'auto')
        <livewire:productos.motor.registro />
     @else
-    <livewire:productos.motor.registro-moto />
+        <livewire:productos.motor.registro-moto />
     @endif
     
 </div>
