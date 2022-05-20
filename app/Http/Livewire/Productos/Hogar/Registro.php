@@ -218,43 +218,16 @@ class Registro extends Component
 
         }
         if($this->currentStep == 2){
-
-            if(Auth::check()){
             $this->validate([
                 'sameaddress' => 'required|min:1',
+                'barrio2' => 'required_if:sameaddress,==,no_address',
+                'casa2' => 'required_if:sameaddress,==,no_address',
+                'selectedProvincia2' => 'required_if:sameaddress,==,no_address',
+                'selectedDistrito2' => 'required_if:sameaddress,==,no_address',
+                'selectedCorregimiento2' => 'required_if:sameaddress,==,no_address',
+                'term1' => 'required',
+                'term2' => 'required'
             ]);
-        }
-
-            if(Auth::check()){
-                if( !empty(auth()->user()->address[0]->user_pais) 
-                and !empty(auth()->user()->address[0]->user_provincia)
-                and !empty(auth()->user()->address[0]->user_distrito) 
-                and !empty(auth()->user()->address[0]->user_corregimiento)  
-                and !empty(auth()->user()->address[0]->user_barrio)
-                and !empty(auth()->user()->address[0]->user_apto_casa)
-                and $this->sameaddress == 'no_address')
-                {
-                    $this->validate([
-                        'barrio2' => 'required|string',
-                        'casa2' => 'required|string',
-                        'selectedProvincia2' => 'required',
-                        'selectedDistrito2' => 'required',
-                        'selectedCorregimiento2' => 'required',
-                        'term1' => 'required',
-                        'term2' => 'required',
-                    ]);
-                }
-            }else{
-                $this->validate([
-                    'barrio2' => 'required|string',
-                    'casa2' => 'required|string',
-                    'selectedProvincia2' => 'required',
-                    'selectedDistrito2' => 'required',
-                    'selectedCorregimiento2' => 'required',
-                    'term1' => 'required',
-                    'term2' => 'required',
-                ]);
-            }
         }
     }
 
@@ -297,20 +270,12 @@ class Registro extends Component
         $newOrderInsert->ppe_fin_mes = $this->ppe_final_mes;
         $newOrderInsert->ppe_fin_year =$this->ppe_final_año;
 
-        if(Auth::check()){
-            if( !empty(auth()->user()->address[0]->user_pais) 
-            and !empty(auth()->user()->address[0]->user_provincia)
-            and !empty(auth()->user()->address[0]->user_distrito) 
-            and !empty(auth()->user()->address[0]->user_corregimiento)  
-            and !empty(auth()->user()->address[0]->user_barrio)
-            and !empty(auth()->user()->address[0]->user_apto_casa)
-            and $this->sameaddress == 'yes_address')
-            {
-                $newOrderInsert->hogar_prov = auth()->user()->address[0]->user_provincia;
-                $newOrderInsert->hogar_dist = auth()->user()->address[0]->user_distrito;
-                $newOrderInsert->hogar_barrio = auth()->user()->address[0]->user_barrio;
-                $newOrderInsert->hogar_casApto = auth()->user()->address[0]->user_apto_casa;
-                $newOrderInsert->hogar_corr = auth()->user()->address[0]->user_corregimiento;
+        if($this->sameaddress == 'yes_address'){
+            $newOrderInsert->hogar_prov = $this->selectedProvincia;
+            $newOrderInsert->hogar_dist = $this->selectedDistrito;
+            $newOrderInsert->hogar_barrio = $this->barrio;
+            $newOrderInsert->hogar_casApto = $this->casa;
+            $newOrderInsert->hogar_corr = $this->selectedCorregimiento;
             }else{
                 $newOrderInsert->hogar_prov = $this->selectedProvincia2 ;
                 $newOrderInsert->hogar_dist = $this->selectedDistrito2;
@@ -318,13 +283,6 @@ class Registro extends Component
                 $newOrderInsert->hogar_casApto = $this->casa2;
                 $newOrderInsert->hogar_corr = $this->selectedCorregimiento2;
             }
-        }else{
-            $newOrderInsert->hogar_prov = $this->selectedProvincia2 ;
-            $newOrderInsert->hogar_dist = $this->selectedDistrito2;
-            $newOrderInsert->hogar_barrio = $this->barrio2;
-            $newOrderInsert->hogar_casApto = $this->casa2;
-            $newOrderInsert->hogar_corr = $this->selectedCorregimiento2;
-        }
 
         $newOrderInsert->info_pk_id_insurance =$this->data_pk_id;
         $newOrderInsert->info_tipo_id =$this->tipo_id;

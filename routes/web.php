@@ -39,7 +39,8 @@ Route::view('/producto/motor/landing','productos.motor.landing')->name('autos-la
 Route::view('/producto/motor/cobertura/auto','productos.motor.cobertura-auto')->name('autos-cobertura-autos');
 Route::view('/producto/motor/cobertura/moto','productos.motor.cobertura-moto')->name('autos-cobertura-motos');
 Route::get('/producto/motor/motor/{type}',[motorController::class,'index'])->name('autos-motor');
-Route::get('/producto/motor/registro/{tipo}/{aseguradora}/{plan}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
+// Route::get('/producto/motor/registro/{tipo}/{aseguradora}/{plan}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
+Route::get('/producto/motor/registro/{clase}/{tipo}/{aseguradora}/{plan}',[motorController::class,'isnuranceSeleted'])->name('autos-register');
 
 
 Route::get('/producto/hogar/hogar',[hogarController::class,'index'])->name('hogar-hogar');

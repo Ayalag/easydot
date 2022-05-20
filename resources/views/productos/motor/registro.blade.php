@@ -105,10 +105,16 @@
 
 @section('content')
 <div class="container container-registro mb-5">
+    
     @isset($cardHtml)
     {!! $cardHtml[0]->html !!}
     @endisset
-    <livewire:productos.motor.registro />
+    @if ($clase == 'auto')
+       <livewire:productos.motor.registro />
+    @else
+    <livewire:productos.motor.registro-moto />
+    @endif
+    
 </div>
 
 @endsection

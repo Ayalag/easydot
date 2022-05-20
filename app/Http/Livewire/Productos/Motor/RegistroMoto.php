@@ -14,8 +14,9 @@ use App\Models\pendingOrders;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
-class Registro extends Component
+class RegistroMoto extends Component
 {
+
     use WithFileUploads;
 
     public $provincia;
@@ -305,9 +306,8 @@ class Registro extends Component
 
         return redirect()->to($PaymentWeb->data->url);
     }
-    
     public function render()
     {
-        return view('livewire.productos.motor.registro');
+        return view('livewire.productos.motor.registro-moto');
     }
 }
