@@ -16,7 +16,7 @@
             bienestar y el de tus seres queridos
         </div>
     </div>
-    <div class="container-fluid forma1">
+    <div class="container forma1">
         <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
     </div>
     <div class="container-nuestro__propositos__creencias">
@@ -134,12 +134,12 @@
             </div>
         </div>
     </div>
-    <div class="container-footer d-flex">
-        <img src="{{ asset('/public/includes/images/conocenos/footer-conocenos.png') }}"
-        alt="">
-        <div class="container container-form">
-            <livewire:mails.contact-us />
-        </div>
+</div>
+<div class="container-footer__img-knowus">
+    {{-- <img src="{{ asset('/public/includes/images/conocenos/footer-conocenos.png') }}"
+    alt=""> --}}
+    <div class="container container-form">
+        <livewire:mails.contact-us />
     </div>
 </div>
 @endsection

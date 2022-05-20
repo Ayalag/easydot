@@ -67,6 +67,8 @@ class Registro extends Component
     public $cedulaFoto;
 
     public $data_pk_id;
+    public $aseguradora_id;
+    public $aseguradora_name;
     public $tipo_id;
     public $tipo_name;
     public $plan_name;
@@ -129,14 +131,16 @@ class Registro extends Component
         
     }
 
-    public function getInfoInsuranceHogar($value1, $value2, $value3, $value4, $value5)
+    public function getInfoInsuranceHogar($value1, $value2, $value3, $value4, $value5, $value6, $value7)
     {
         if(!is_null($value1)){
             $this->data_pk_id = $value1;
-            $this->tipo_id = $value2;
-            $this->tipo_name = $value3;
-            $this->plan_name = $value4;
-            $this->valor = $value5;
+            $this->aseguradora_id = $value2;
+            $this->aseguradora_name = $value3;
+            $this->tipo_id = $value4;
+            $this->tipo_name = $value5;
+            $this->plan_name = $value6;
+            $this->valor = $value7;
         }
         
     }

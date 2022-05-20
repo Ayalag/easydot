@@ -2483,12 +2483,12 @@ input[type="number"] {
     margin-right: auto;
 }
 
-.container-form {
+/* .container-form {
     position: absolute;
-}
+} */
 
-/* .container-footer {
-    background-image: url("/easydot/public/includes/images/conocenos/footer-conocenos.png");
+.container-footer__img-knowus {
+    background-image: url("/public/includes/images/conocenos/footer-conocenos.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2497,7 +2497,7 @@ input[type="number"] {
     -o-background-size: cover;
     height: 541px;
     z-index: 1;
-} */
+}
 
 @media (max-width: 768px) {
     .container-legenda__paragraph p {
@@ -2550,6 +2550,10 @@ input[type="number"] {
 
     .container-categorias {
         height: 10rem;
+    }
+
+    .container-footer__img-knowus {
+        background-image: none;
     }
 }
 

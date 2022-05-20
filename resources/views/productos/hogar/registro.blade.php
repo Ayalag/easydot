@@ -127,12 +127,14 @@
     $(window).on('load', function () {
 
         const data_pk_id = $('#pk').attr("data-pk-id")
+        const aseguradora_id = $('#aseguradora').attr("data-aseguradora-id")
+        const aseguradora_name = $('#aseguradora').attr("data-aseguradora-name")
         const tipo_id = $('#tipo').attr("data-tipo-id")
         const tipo_name = $('#tipo').attr("data-tipo-name")
         const plan_name = $('#plan').attr("data-plan-name")
         const valor = $('#valor').attr("data-valor")
 
-        Livewire.emit("getInfoInsuranceHogar", data_pk_id, tipo_id, tipo_name, plan_name, valor);
+        Livewire.emit("getInfoInsuranceHogar", data_pk_id, aseguradora_id, aseguradora_name, tipo_id, tipo_name, plan_name, valor);
     })
 
     document.getElementById("birthdayYear").addEventListener("change", ageCalculator);
@@ -159,28 +161,6 @@
             document.getElementById('process').disabled = true;
         }
     }
-
-    // var show = document.querySelector('.show-hide');
-
-    // document.querySelector('#ppeSi').addEventListener('click', function (e) {
-
-    //     $(show).slideDown("slow");
-    // });
-    // document.querySelector('#ppeNo').addEventListener('click', function (e) {
-
-    //     $(show).slideUp("slow");
-    // });
-
-    // var ppefin = document.querySelector('.ppeFin');
-
-    // document.querySelector('#ppe_activoSi').addEventListener('click', function (e) {
-
-    //     $(ppefin).slideDown("slow");
-    // });
-    // document.querySelector('#ppe_activoNo').addEventListener('click', function (e) {
-
-    //     $(ppefin).slideUp("slow");
-    // });
 
 </script>
 @endsection

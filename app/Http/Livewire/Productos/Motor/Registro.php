@@ -102,7 +102,7 @@ class Registro extends Component
     }
 
     public function mount(){
-        $this->currentStep = 1;
+        $this->currentStep = 2;
         $this->provincia = provincia::all();
     }
 

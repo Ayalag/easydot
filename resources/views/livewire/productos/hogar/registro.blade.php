@@ -1196,7 +1196,7 @@
                 <div class="d-flex">
                     <input wire:model.defer="term1" type="radio" name="term1" id="term1_accepted" value="term1"
                         style="margin-right: 15px;">
-                    <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}"  class="easyLigth600">Términos y condiciones</a> de <span
+                    <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}" target="_blank" class="easyLigth600">Términos y condiciones</a> de <span
                             class="easyRose600">easy</span>. así como la politica de <br> <span
                             class="easyLigth600">Protección de datos</span>.</span>
                     </label>
@@ -1207,7 +1207,7 @@
                     <input wire:model.defer="term2" type="radio" name="term2" id="term2_accepted" value="term2"
                         style="margin-right: 15px;">
                     <label class="radio-inline mr-2">
-                        <span>Acepto las <span class="easyLigth600">condiciones generales </span>del producto
+                        <span>Acepto las  <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-'.strtoupper($aseguradora_name).'-AUTOS.pdf') }}" target="_blank" class="easyLigth600">condiciones generales</a> del producto
                             seleccionado</span>
                     </label>
                     @error('term2') <div class="ownerinvalid"></div> @enderror
