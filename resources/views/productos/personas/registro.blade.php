@@ -4,6 +4,8 @@
 
 <style>
     .container-registro {
+        height: 1154px;
+        display: flex;
         justify-content: center;
     }
 
@@ -33,6 +35,10 @@
     @media screen and (max-width: 768px) {
         .input-group {
             justify-content: center;
+        }
+
+        .container-registro {
+            height: auto;
         }
     }
 
@@ -103,7 +109,11 @@
     @isset($cardHtml)
     {!! $cardHtml[0]->html !!}
     @endisset
+    @if ($clase == 'em')
     <livewire:productos.persona.registro />
+    @else
+    <livewire:productos.persona.registro-erm />
+    @endif
 </div>
 
 @endsection

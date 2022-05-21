@@ -1807,6 +1807,14 @@ button[class="btn-comprar"]>a {
     color: var(--easyBlue);
 }
 
+.container-aditional__person{
+    height: 50px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    /* margin-top: 20%; */
+}
+
 /*progressbar*/
 #progressbar {
     margin-bottom: 30px;
@@ -1919,6 +1927,8 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+
 
 /*-------------------------------*/
 /*       Register Page Auto      */

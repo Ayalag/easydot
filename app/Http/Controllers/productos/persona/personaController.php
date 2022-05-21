@@ -18,11 +18,11 @@ class personaController extends Controller
         
     }
 
-    public function isnuranceSeleted($id)
+    public function isnuranceSeleted($clase, $id)
     {
         $cardHtml = persona::where('id' ,$id)
         ->get();
-
-        return view('productos.personas.registro', compact('cardHtml'));
+        return view('productos.personas.registro', compact('cardHtml','clase'));
     }
+
 }

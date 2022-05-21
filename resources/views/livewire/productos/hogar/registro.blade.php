@@ -1,6 +1,5 @@
 <div>
-    <form wire:submit.prevent="submit">
-
+    <form wire:submit.prevent="submit" enctype="multipart/form-data">
         @if ($currentStep == 1)
         <div class="container-fluid stepper">
             <div class="row mt-5 justify-content-end">

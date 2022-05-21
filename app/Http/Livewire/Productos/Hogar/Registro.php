@@ -116,17 +116,14 @@ class Registro extends Component
     }
         
     public function updatedSelectedDistrito($id_distrito){
-
         $this->corregimiento = corregimiento::where('id_distrito',$id_distrito)->get();
         
     }
     public function updatedSelectedProvincia2 ($id_provincia){
-
         $this->distrito2 = distrito::where('id_provincia',$id_provincia)->get();
     }
         
     public function updatedSelectedDistrito2 ($id_distrito){
-
         $this->corregimiento2 = corregimiento::where('id_distrito',$id_distrito)->get();
         
     }

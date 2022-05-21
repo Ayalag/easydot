@@ -33,14 +33,14 @@ class motorController extends Controller
 
     }
 
-    public function isnuranceSeleted($clase ,$tipo, $aseguradora, $plan )
+    public function isnuranceSeleted($tipo, $aseguradora, $plan )
     {
         $cardHtml = motor::where('tipo' ,$tipo)
         ->where('plan',$plan)
         ->where('aseguradora', $aseguradora)
         ->get();
 
-        return view('productos.motor.registro', compact('cardHtml','clase'));
+        return view('productos.motor.registro', compact('cardHtml'));
     }
   
 }

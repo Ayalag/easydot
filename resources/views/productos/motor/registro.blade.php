@@ -4,9 +4,9 @@
 
 <style>
     .container-registro {
-        /* height: 100vh; */
+        height: 1154px;
+        display: flex;
         justify-content: center;
-        /* position: relative; */
     }
 
     .btn-comprar {
@@ -19,7 +19,7 @@
 
     .condicion_poliza {
         position: relative;
-        top: 12rem;
+        top: 5rem;
         margin-right: 5rem
     }
 
@@ -40,10 +40,13 @@
         .input-group {
             justify-content: center;
         }
+
+        .container-registro {
+            height: auto;
+        }
     }
 
     @media screen and (max-width: 425px) {
-
         .stepper,
         .container-registo__datos-header,
         .condicion_poliza,
@@ -54,7 +57,6 @@
 
         .container-registro {
             flex-direction: column;
-            height: auto;
         }
 
         .card-container__insurance {
@@ -105,16 +107,17 @@
 
 @section('content')
 <div class="container container-registro mb-5">
-    
+
     @isset($cardHtml)
     {!! $cardHtml[0]->html !!}
     @endisset
-    @if ($clase == 'auto')
-       <livewire:productos.motor.registro />
+    <livewire:productos.motor.registro />
+    {{-- @if ($clase == 'auto')
+    <livewire:productos.motor.registro />
     @else
-        <livewire:productos.motor.registro-moto />
-    @endif
-    
+    <livewire:productos.motor.registro-moto />
+    @endif --}}
+
 </div>
 
 @endsection
@@ -124,7 +127,7 @@
     let card = document.getElementsByClassName("card-container__insurance");
     for (let index = 0; index < card.length; ++index) {
         if ($(window).width() >= 768) {
-            card[index].setAttribute("style", "top: 13.7rem; left: -2rem; border: none; border-radius:10px;")
+            card[index].setAttribute("style", "top: 7rem; left: -2rem; border: none; border-radius:10px;")
         } else {
             card[index].setAttribute("style", "border: none; border-radius:10px;")
         }
@@ -167,5 +170,6 @@
             document.getElementById('process').disabled = true;
         }
     }
+
 </script>
 @endsection
