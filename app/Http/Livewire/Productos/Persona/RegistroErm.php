@@ -150,6 +150,13 @@ class RegistroErm extends Component
         $this->corregimiento2 = corregimiento::where('id_distrito',$id_distrito)->get();
     }
 
+    public function increaseStep(){
+        $this->validateData();
+        $this->currentStep++;
+        
+        return $this->currentStep;
+    }
+
     public function validateData(){
         if($this->currentStep == 1){
             if($this->typeId =='cedula'){
@@ -217,7 +224,9 @@ class RegistroErm extends Component
 
         if($this->currentStep == 2){
             $this->validate([
-                'aditionalPerson' => 'required|min:1'     
+                'aditionalPerson' => 'required|min:1',  
+                'term1' => 'required',
+                'term2' => 'required',   
             ]);
             if($this->aditionalPerson == 'si'){
                 if($this->typeId =='cedula'){
@@ -290,10 +299,10 @@ class RegistroErm extends Component
             $this->validateData();
 
             $extension = $this->cedulaFoto->getClientOriginalExtension();
-            $extensionApcedulas = $this->ap_cedulaFoto->getClientOriginalExtension();
+ 
 
             $filePath = $this->cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extension);
-            $filePathAp = $this->ap_cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extensionApcedulas);
+           
     
             $newOrderInsert = new pendingOrders;
     
@@ -332,6 +341,10 @@ class RegistroErm extends Component
             $newOrderInsert->info_valor =$this->valor;
 
             if($this->aditionalPerson == 'si'){
+                
+                $extensionApcedulas = $this->ap_cedulaFoto->getClientOriginalExtension();
+                $filePathAp = $this->ap_cedulaFoto->storeAs('public/cedulas',$this->identificacion.'.'.$extensionApcedulas);
+
                 $newOrderInsert->ap_nombre = $this->ap_nombres;
                 $newOrderInsert->ap_apellido = $this->ap_apellidos;
                 $newOrderInsert->ap_id_type = $this->ap_typeId;

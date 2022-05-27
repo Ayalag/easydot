@@ -741,16 +741,16 @@ html {
 
 .container-home-banner__btn {
     position: absolute;
-    left: 16rem;
+    /* left: 16rem; */
     width: auto;
 }
 
 .container-slider {
     position: relative;
-    top: -30px;
+    top: -0;
     bottom: 0;
     right: 0;
-    left: 65px;
+    left: 0;
 }
 
 .slider_btn__comprar {
@@ -815,7 +815,15 @@ html {
 }
 
 @media screen and (max-width: 40rem) {
-    .slider-text-descripcion {
+    .slider-progress{
+        display: none;
+    }
+    .hero-image {
+        height: 94%;
+    }
+
+    .slider-text-descripcion,
+    .slider-text-descripcion-whoami {
         font-size: 25px;
     }
 
@@ -897,6 +905,11 @@ html {
     }
 }
 
+@media screen and (max-width: 48rem) {
+    .blue_square__container__btn button {
+        margin-left: 0;
+    }
+}
 @media screen and (max-width: 23.4375rem) {
     .blue_square__container__btn button {
         margin-left: 0;
@@ -1263,8 +1276,12 @@ html {
         font-size: 7rem;
     }
 
-    .container-super__image img {
+    /* .container-super__image img {
         width: 22rem;
+    } */
+
+    .box-super_easy .container-super__image img {
+        width: 20rem;
     }
 }
 
@@ -1425,7 +1442,7 @@ html {
 @media screen and (max-width: 48rem) {
     .container-persona_logo {
         z-index: 0;
-        top: 15px;
+        bottom: -24px;
         left: -59px;
     }
 
