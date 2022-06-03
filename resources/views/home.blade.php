@@ -7,8 +7,7 @@
     <div class="banner-slider">
         <!-- hero slide start -->
         <div class="banner-slide">
-            <div class="hero-image" style="background-image: url('/public/includes/images/slider/insurance_final.png')">
-            </div>
+            <div class="hero-image" style="background-image: url('/public/includes/images/slider/insurance_final.png')"></div>
             <div class="container container-slider">
                 <div class="layer-slick1">
                     <span class="slider-text-descripcion">adquiere tu póliza <br> de AUTO desde</span>
@@ -77,7 +76,7 @@
 @section('content')
 
 
-<div class="container box-container mb-5">
+<div class="container box-container">
     <div class="container container-hr">
         <hr size="20" color="grey">
     </div>
@@ -137,7 +136,7 @@
     </div>
 </div>
 
-<div class="container container-step-to-buy p-5">
+<div class="container container-step-to-buy pb-5">
     <div class="row step-to-buy__title p-5">
         <div class="col-md-12 col-sm-12 col-xs-12 fntw-800">
             <p>¡compra súper <span>easy</span>!</p>
@@ -199,9 +198,9 @@
     </div>
 </div>
 
-<div class="container-fluid container-comments pb-5">
-    <div class="container-comments__title p-5">
-        <p class="underline">comentarios que nos hacen sentir orgullosos</p>
+<div class="container-comments pb-5">
+    <div class="container-comments__title">
+        <p class="underline">comentarios que nos <span style="color: inherit; display:inline-block">hacen sentir orgullosos</span> </p>
         <p>¿y tú qué opinas?</p>
     </div>
     <div class="container-logo-comments">
@@ -396,10 +395,10 @@
             <div class="col-sm sura__aliados">
                 <img src="{{ asset('/public/includes/images/logos-aliados/gris/sura/sura.png') }}" alt="sura">
             </div>
-            <div class="col-sm nacional__aliados">
+            {{-- <div class="col-sm nacional__aliados">
                 <img src="{{ asset('/public/includes/images/logos-aliados/gris/nacional/nacional.png') }}"
                     alt="nacional">
-            </div>
+            </div> --}}
             <div class="col-sm panamasonrie__aliados">
                 <img src="{{ asset('/public/includes/images/logos-aliados/gris/panamasonrie/panamsonrie.png') }}"
                     alt="panamsonrie">

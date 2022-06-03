@@ -1182,7 +1182,7 @@ html {
     }
 
     .container-step__image2 {
-        left: 9rem;
+        left: 11.5rem;
     }
 
     .steps-container__box {
@@ -1335,6 +1335,7 @@ html {
     font-weight: 400;
     font-size: 25px;
     position: relative;
+    padding-top: 7rem;
 }
 
 .container-comments p {
@@ -1474,7 +1475,8 @@ html {
     }
 
     .container-comments__title {
-        margin-left: 8rem;
+        margin-right: 9px;
+        margin-bottom: 33px;
     }
 }
 

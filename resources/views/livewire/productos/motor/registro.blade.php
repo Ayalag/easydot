@@ -230,11 +230,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-3 text-center">
                         <div class="form-check-inline ">
-                            <label
-                                class="easyBlue600 pb-3">Género</label>
-                                @if($errors->has('genero'))
-                                <div class="ownerinvalid" style="right: 13px;position: absolute;bottom: 61px;"></div> 
-                                @endif
+                            <label class="easyBlue600 pb-3 @if ($errors->has('genero')) text-danger @endif">Género</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label mr-4 h4" for="">M</label>
