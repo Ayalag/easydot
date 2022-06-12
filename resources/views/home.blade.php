@@ -382,7 +382,7 @@
         <p>mercado panameño</p>
     </div>
     <div class="containerl-fluid container_aliados__image pb-5">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-sm bartoli__aliados">
                 <img src="{{ asset('/public/includes/images/logos-aliados/gris/bartoli/bartoli.png') }}" alt="Bartoli">
             </div>

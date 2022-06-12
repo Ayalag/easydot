@@ -169,6 +169,7 @@
       .container-footer_ssrp {
           display: flex;
           align-items: center;
+          justify-content: center
       }
 
       .container-footer_ssrp {

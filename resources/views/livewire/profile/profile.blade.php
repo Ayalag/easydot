@@ -16,17 +16,17 @@
                     <div class="p-4">
                         <div class="form-row mb-2 ">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <div class="form-check-inline" style="width: 100%;justify-content: center;">
-                                    <label
-                                        class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
+                                <div wire:ignore.self class="form-check-inline" style="width: 100%;justify-content: center;">
+                                    <label class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                         for="">Cédula</label>
                                     <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
-                                        name="identificacion" id="cedula" value="cedula" >
-                                    <label
-                                        class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
+                                        name="identificacion" id="cedula" value="cedula" @if ($typeId === 'cedula') checked
+                                    @endif> 
+                                    <label class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                         for="">Pasaporte</label>
                                     <input wire:model="typeId" class="form-check-input mb-2" type="radio"
-                                        name="identificacion" id="pasaporte" value="pasaporte" >
+                                        name="identificacion" id="pasaporte" value="pasaporte" @if ($typeId === 'pasaporte') checked
+                                        @endif >
                                 </div>
                                 <div class="form-group">
                                     <input wire:model.defer="identificacion" type="text"
@@ -43,7 +43,7 @@
                                 <div class="form-group tooltipAge">
                                     <div class="d-flex">
                                         <select wire:model.defer="dia"
-                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1  @error('dia') is-invalid @enderror"
+                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-3 form-control input__style mr-1  @error('dia') is-invalid @enderror"
                                             id="birthdayDay" placeholder="dd" >
                                             <option value="{{ $dia ?? 'dia' }}" selected>{{ $dia ?? 'día' }}</option>
                                             <option value="1">1</option>
@@ -79,7 +79,7 @@
                                             <option value="31">31</option>
                                         </select>
                                         <select wire:model.defer="mes"
-                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('mes') is-invalid @enderror"
+                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-3 form-control input__style mr-1 @error('mes') is-invalid @enderror"
                                             id="birthdayMonth" placeholder="mm" >
                                             <option value="{{ $mes ?? 'mes' }}" selected>{{ $mes ?? 'mes' }}</option>
                                             <option value="1">1</option>
@@ -96,7 +96,7 @@
                                             <option value="12">12</option>
                                         </select>
                                         <select wire:model.defer="año"
-                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-control input__style mr-1 @error('año') is-invalid @enderror"
+                                            class="col-xs-12 col-sm-4 col-md-4 col-lg-5 form-control input__style mr-1 @error('año') is-invalid @enderror"
                                             id="birthdayYear" placeholder="aa" >
                                             <option value="{{ $año ?? 'año' }}" selected>{{ $año ?? 'año' }}</option>
                                             <option value="2022">2022</option>
@@ -214,14 +214,14 @@
                                 <div class="form-check-inline ml-3">
                                     <label class="form-check-label mr-2" for="">M</label>
                                     <input wire:model.defer="genero" class="form-check-input" type="radio" name="genero"
-                                        id="hombre" value="hombre" >
+                                        id="hombre" value="M" @if ($genero === 'M') checked @endif>
                                     <label class="form-check-label mr-2" for="">F</label>
                                     <input wire:model.defer="genero" class="form-check-input" type="radio" name="genero"
-                                        id="mujer" value="mujer" >
+                                        id="mujer" value="F" @if ($genero === 'F') checked @endif>
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5 text-center">
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5 text-center pb-2">
                                 <select wire:model.defer="pais"
                                     class="form-control input__style @error('pais') is-invalid @enderror"
                                     data-live-search="true" title="pais" name="pais" id="pais" >

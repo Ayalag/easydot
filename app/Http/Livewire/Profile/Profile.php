@@ -58,27 +58,29 @@ class Profile extends Component
             if(!auth()->user()->address->isEmpty()){
                 $response = DB::select('call user_info_detail(?)',[Auth::user()->id]);
 
-                $this->identificacion =$response[0]->user_id_number;
+                $this->identificacion = $response[0]->user_id_number;
+                $this->typeId = $response[0]->user_id_type;
+                $this->genero = $response[0]->user_genero;
         
-                $this->dia =$response[0]->user_day_birthday;
-                $this->mes =$response[0]->user_month_birthday;
-                $this->año =$response[0]->user_year_birthday;
+                $this->dia = $response[0]->user_day_birthday;
+                $this->mes = $response[0]->user_month_birthday;
+                $this->año = $response[0]->user_year_birthday;
         
-                $this->pais =$response[0]->user_pais;
-                $this->eCivil =$response[0]->user_ecivil;
-                $this->celular =$response[0]->user_celular;
+                $this->pais = $response[0]->user_pais;
+                $this->eCivil = $response[0]->user_ecivil;
+                $this->celular = $response[0]->user_celular;
                 
         
                 $this->provincia_user = $response[0]->Nombre_Provincia;
-                $this->distrito_user =$response[0]->nombre_distrito;
-                $this->corregimiento_user =$response[0]->nombre_corregimiento;
+                $this->distrito_user = $response[0]->nombre_distrito;
+                $this->corregimiento_user = $response[0]->nombre_corregimiento;
         
                 $this->provincia_user_id = $response[0]->id_Provincia;
                 $this->distrito_user_id = $response[0]->id_distrito;
                 $this->corregimiento_user_id = $response[0]->id_corregimiento;
         
-                $this->casa =$response[0]->user_apto_casa;
-                $this->barrio =$response[0]->user_barrio;
+                $this->casa = $response[0]->user_apto_casa;
+                $this->barrio = $response[0]->user_barrio;
             }
         }
 
@@ -119,7 +121,9 @@ class Profile extends Component
             'user_distrito'=> $this->selectedDistrito, 
             'user_corregimiento'=> $this->selectedCorregimiento,
             'user_barrio' => $this->barrio, 
-            'user_apto_casa' => $this->casa
+            'user_apto_casa' => $this->casa,
+            'user_id_type' => $this->typeId,
+            'user_genero' => $this->genero
             ]
         );
     }

@@ -696,7 +696,11 @@ html {
 
 .menu-container .menu-container__submenu {
     padding-top: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
+}
+
+.menu-container__submenu.slick-slide{
+    margin: 0;
 }
 
 .menu-container__submenu a {
@@ -704,7 +708,7 @@ html {
     box-shadow: 0 2px 7px rgb(104 107 113 / 25%);
     border-radius: 5px;
     padding: 4px 35px;
-    margin-right: 0.8rem;
+    margin-right: 0.4rem;
     white-space: nowrap;
     text-decoration: none;
     color: white;
@@ -1350,6 +1354,7 @@ html {
     flex-direction: column;
     align-items: inherit;
     margin-left: 10rem;
+    margin-bottom: 2rem;
 }
 
 .circle {
@@ -1501,6 +1506,13 @@ html {
     font-size: 1.5rem;
     overflow: hidden;
     z-index: 2;
+}
+
+.bartoli__aliados,
+.mapfre__aliados,
+.optima__aliados{
+    padding-bottom: 1rem;
+
 }
 
 /* @media screen and (max-width: 768px) {
