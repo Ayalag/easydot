@@ -37,7 +37,7 @@ class contactFormFromKnowUs extends Mailable
     public function build()
     {
         return $this->from($this->mail)
-                    ->subject('gracias por contactarnos: '.$this->nombre)
+                    ->subject('Gracias por contactarnos: '.$this->nombre)
                     ->markdown('emails.contactFromWebsite.ContactFromWebsite')->with([
                         'username' => $this->nombre,
                         'usercell' => $this->celular,

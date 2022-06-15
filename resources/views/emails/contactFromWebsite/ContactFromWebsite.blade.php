@@ -1,10 +1,10 @@
 @component('mail::message')
 
-<span style="color: #033777; font-size:20px; font-weight:800;">!Hola {{$username}}¡</span>
+<span style="color: #033777; font-size:20px; font-weight:800;">¡Hola {{$username}}!</span>
 
 <div style="color: #033777; font-size:16px; font-weight:600;">
 Nos alegra mucho que nos hayas contactado.
-Confirmamos que hemos recibido tu información para comunicarnos, muy pronto él,
+Confirmamos que hemos recibido tu información para comunicarnos, muy pronto el
 equipo de Bartoli Asesores de Seguros estará en contacto contigo para cotizar y 
 asesorarte, ofreciéndote siempre las mejores opciones del mercado.
 </div><br>
@@ -29,11 +29,11 @@ asesorarte, ofreciéndote siempre las mejores opciones del mercado.
     <div style="color: #033777;font-size:16px; font-weight:400;">{{$usermessage}}</div><br>
     @endisset
     
-</div>
+</div><br>
 
 #
 
-<div style="color: #033777;font-size:16px; font-weight:400;">¡Saludos!</div>
+<div style="color: #033777;font-size:16px; font-weight:800;">¡Saludos!</div>
 <span style="color: #033777;font-size:16px; font-weight:600;">Equipo </span><span style="color: #ff0180;font-size:16px; font-weight:600;">easy</span>
 
 

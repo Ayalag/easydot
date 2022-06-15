@@ -153,9 +153,9 @@ class RegistroMoto extends Component
     public function hydrate()
     {
         if($this->tipo_id == 1){
-            $this->carBrand= CarroMarca::all();
+            $this->carBrand= CarroMarca::orderBy('Marca', 'ASC')->get();
         }else{
-            $this->carBrand= MotoMarca::all();
+            $this->carBrand= MotoMarca::orderBy('Marca', 'ASC')->get();
         }
     }
 
@@ -204,7 +204,7 @@ class RegistroMoto extends Component
                     'genero' => 'required|min:1',
                     'eCivil' => 'required|string',
                     'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                    'pais' => 'required_if:typeId,==,pasaporte',
+                    'pais' =>  'required|string',
                     'selectedProvincia' => 'required',
                     'selectedDistrito' => 'required',
                     'selectedCorregimiento' => 'required',
@@ -234,7 +234,7 @@ class RegistroMoto extends Component
                     'genero' => 'required|min:1',
                     'eCivil' => 'required|string',
                     'cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                    'pais' => 'required_if:typeId,==,pasaporte',
+                    'pais' =>  'required|string',
                     'selectedProvincia' => 'required',
                     'selectedDistrito' => 'required',
                     'selectedCorregimiento' => 'required',
@@ -272,7 +272,7 @@ class RegistroMoto extends Component
                         'ap_genero' => 'required|min:1',
                         'ap_eCivil' => 'required|string',
                         'ap_cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                        'ap_pais' => 'required_if:typeId,==,pasaporte',
+                        'ap_pais' =>  'required|string',
                         'selectedProvincia2' => 'required',
                         'selectedDistrito2' => 'required',
                         'selectedCorregimiento2' => 'required',
@@ -302,7 +302,7 @@ class RegistroMoto extends Component
                         'ap_genero' => 'required|min:1',
                         'ap_eCivil' => 'required|string',
                         'ap_cedulaFoto' => 'required | mimes:jpeg,jpg,png',
-                        'ap_pais' => 'required_if:typeId,==,pasaporte',
+                        'ap_pais' =>  'required|string',
                         'selectedProvincia2' => 'required',
                         'selectedDistrito2' => 'required',
                         'selectedCorregimiento2' => 'required',
@@ -331,8 +331,8 @@ class RegistroMoto extends Component
                 'selectedCarType' => 'required|string',
                 'year' => 'required',
                 'color' => 'required|string',
-                'motorNum' => 'required|string',
-                'chasisNum' => 'required|string',
+                'motorNum' =>  ['required','regex:/^[a-zA-Z0-9]+$/u'],
+                'chasisNum' =>  ['required','regex:/^[a-zA-Z0-9]+$/u'],
                 'registroVehicular' => 'required | mimes:jpeg,jpg,png',
                 'term1' => 'required',
                 'term2' => 'required',

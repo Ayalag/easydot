@@ -38,8 +38,8 @@ class productsContacUs extends Mailable
      */
     public function build()
     {
-        return $this->from('servicioalcliente@easydot.com.pa')
-                    ->subject('gracias por contactarnos: '.$this->nombre)
+        return $this->from('cotizaciones@easydot.com.pa')
+                    ->subject('Gracias por contactarnos: '.$this->nombre)
                     ->markdown('emails.contactFromWebsite.ContactFromWebsite')->with([
                         'username' => $this->nombre,
                         'usercell' => $this->celular,

@@ -42,7 +42,7 @@
 @section('scripts')
     <script>
         $(window).on('load', function() {
-            let tipo = 'Persona'
+            let tipo = 'Personas'
             Livewire.emit("landingArea", tipo);
         })
     </script>

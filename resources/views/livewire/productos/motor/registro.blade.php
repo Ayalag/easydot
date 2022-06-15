@@ -44,12 +44,12 @@
                                 class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
                             <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
-                                name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)">
+                                name="identificacion" id="cedula" value="cedula">
                             <label
                                 class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Pasaporte</label>
                             <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
-                                id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)">
+                                id="pasaporte" value="pasaporte">
                         </div>
 
                         <div class="form-group">
@@ -60,8 +60,10 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-5">
                         <div class="form-check-inline justify-content-center" style="width: inherit">
-                            <label class="easyBlue600 pb-2 
-                             @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif">Fecha de nacimiento</label>
+                            <label
+                                class="easyBlue600 pb-2 
+                             @if($errors->has('dia') || $errors->has('mes') || $errors->has('año')) text-danger @endif">Fecha
+                                de nacimiento</label>
                         </div>
                         <div class="form-group tooltipAge">
 
@@ -230,7 +232,8 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-3 text-center">
                         <div class="form-check-inline ">
-                            <label class="easyBlue600 pb-3 @if ($errors->has('genero')) text-danger @endif">Género</label>
+                            <label
+                                class="easyBlue600 pb-3 @if ($errors->has('genero')) text-danger @endif">Género</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label mr-4 h4" for="">M</label>
@@ -257,31 +260,30 @@
 
                     <div class="form-group col-sm-12 col-md-5 text-center">
                         {{-- <h3>foto de cédula o pasaporte</h3> --}}
-                        <div class="input-file" name="upload"
-                        x-data="{ isUploading: false, progress: 0 }"
-                        x-on:livewire-upload-start="isUploading = true; progress = 5"
-                        x-on:livewire-upload-finish="isUploading = false" 
-                        x-on:livewire-upload-error="isUploading = false"
-                        x-on:livewire-upload-progress="progress = $event.detail.progress"
-                        class="row justify-content-center d-flex flex-column">
+                        <div class="input-file" name="upload" x-data="{ isUploading: false, progress: 0 }"
+                            x-on:livewire-upload-start="isUploading = true; progress = 5"
+                            x-on:livewire-upload-finish="isUploading = false"
+                            x-on:livewire-upload-error="isUploading = false"
+                            x-on:livewire-upload-progress="progress = $event.detail.progress"
+                            class="row justify-content-center d-flex flex-column">
                             {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
                             <label for="file-upload" class="custom-file-upload input__style">
                                 <i class="fas fa-paperclip"></i>identificación
                             </label>
                             <input id="file-upload" type="file" wire:model="cedulaFoto" />
                             <div class="progress customBar">
-                                <div  x-show.transition="true" class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
-                              </div>
-                              @if ($cedulaFoto)
-                              <div class="preview">
-                                  <img class="img-thumbnail img-thumbnail__id " src="{{ $cedulaFoto->temporaryUrl() }}">
-                              </div>
-                              @endif
+                                <div x-show.transition="true" class="progress-bar" role="progressbar" aria-valuenow="75"
+                                    aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
+                            </div>
+                            @if ($cedulaFoto)
+                            <div class="preview">
+                                <img class="img-thumbnail img-thumbnail__id " src="{{ $cedulaFoto->temporaryUrl() }}">
+                            </div>
+                            @endif
                         </div>
                     </div>
 
                     <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
-                        @if($showPais)
                         <select wire:model.defer="pais"
                             class="form-control input__style @error('pais') is-invalid @enderror"
                             data-live-search="true" title="pais" name="pais" id="pais">
@@ -533,7 +535,6 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                        @endif
                     </div>
 
                 </div>
@@ -621,28 +622,19 @@
             </div>
         </div>
         <div class="datos-de-ppp pt-4">
-            <div class="container-fluid container-registro-contactos shadow pt-4">
+            <div class="container-fluid container-registro-contactos shadow p-4">
                 <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
-                                    <div class="form-check-inline ">
-                                        <div
-                                            class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
-                                            ¿Eres una persona <br>
-                                            políticamente expuesta?
-                                        </div>
-                                        <label class=" form-check-label mr-1 h4" for="">Si</label>
-                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeSi" value="ppeSi" wire:click="$set('showppe',true)">
-                                        <label class="form-check-label mr-1 h4" for="">No</label>
-                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeNo" value="ppeNo" wire:click="$set('showppe',false)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
+                        ¿Eres una persona <br>
+                        políticamente expuesta?
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+                        <label class="h4" for="ppeSi">Si</label>
+                        <input wire:model.defer="ppe" type="radio" name="ppe" id="ppeSi"
+                            value="ppeSi" wire:click="$set('showppe',true)">
+                        <label for="" class="h4" for="ppeNo">No</label>
+                        <input wire:model.defer="ppe" type="radio" name="ppe" id="ppeNo"
+                            value="ppeNo" wire:click="$set('showppe',false)">
                     </div>
                 </div>
                 @if ($showppe)
@@ -1044,8 +1036,8 @@
         <div class="container container-registro-datos shadow-lg text-center">
             <div class="col-lg-4 m-auto pb-3">
                 <div class="row justify-content-center pt-5">
-                    <input type="text" class="form-control input__style  @error('placa') is-invalid @enderror" id="placa" placeholder="placa"
-                        wire:model.defer="placa" maxlength="6">
+                    <input type="text" class="form-control input__style  @error('placa') is-invalid @enderror"
+                        id="placa" placeholder="placa" wire:model.defer="placa" maxlength="6">
                     {{-- <span class="text-danger">@error('placa'){{ $message }}@enderror</span> --}}
                 </div>
             </div>
@@ -1066,8 +1058,8 @@
             <div class="col-lg-8 m-auto  pb-3">
                 <div class="row justify-content-center">
                     <select wire:model="selectedCarType"
-                        class="form-control input__style @error('selectedCarType') is-invalid @enderror"
-                        title="carType" name="carType" id="carType">
+                        class="form-control input__style @error('selectedCarType') is-invalid @enderror" title="carType"
+                        name="carType" id="carType">
                         <option value="" selected>Modelo</option>
                         @if (!is_null($carType))
                         @foreach ($carType as $ct)
@@ -1082,8 +1074,8 @@
 
                     <div class="col-5">
                         <select wire:model.defer="year"
-                            class="form-control input__style mr-2 @error('year') is-invalid @enderror"
-                            id="ano" placeholder="año">
+                            class="form-control input__style mr-2 @error('year') is-invalid @enderror" id="ano"
+                            placeholder="año">
                             <option value="">Año</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>
@@ -1109,56 +1101,56 @@
                     </div>
 
                     <div class="col-7">
-                        <input type="text" class="form-control input__style @error('color') is-invalid @enderror" id="ano" placeholder="color"
-                            wire:model.defer="color">
+                        <input type="text" class="form-control input__style @error('color') is-invalid @enderror"
+                            id="ano" placeholder="color" wire:model.defer="color">
                     </div>
                 </div>
             </div>
             <div class="col-lg-8 m-auto pb-3">
                 <div class="row justify-content-center">
-                    <input type="text" class="form-control input__style @error('color') is-invalid @enderror" id="motorNum" placeholder="numero de motor"
-                        wire:model.defer="motorNum" maxlength="17">
+                    <input type="text" class="form-control input__style @error('color') is-invalid @enderror"
+                        id="motorNum" placeholder="numero de motor" wire:model.defer="motorNum" maxlength="17">
                 </div>
             </div>
             <div class="col-lg-8 m-auto  pb-3">
                 <div class="row justify-content-center">
-                    <input type="text" class="form-control input__style @error('color') is-invalid @enderror" id="chasisNum" placeholder="numero de chasis"
-                        wire:model.defer="chasisNum" maxlength="17">
+                    <input type="text" class="form-control input__style @error('color') is-invalid @enderror"
+                        id="chasisNum" placeholder="numero de chasis" wire:model.defer="chasisNum" maxlength="17">
                 </div>
             </div>
 
             <div class="col-lg-8 m-auto pb-5 input-group input-file justify-content-center" name="upload">
-                <span class="pb-1 text-center @error('registroVehicular') text-danger @enderror">Foto de registro vehicular</span>
-                <div class="input-file" name="upload"
-                x-data="{ isUploading: false, progress: 0 }"
-                x-on:livewire-upload-start="isUploading = true; progress = 5"
-                x-on:livewire-upload-finish="isUploading = false" 
-                x-on:livewire-upload-error="isUploading = false"
-                x-on:livewire-upload-progress="progress = $event.detail.progress"
-                class="row justify-content-center d-flex flex-column">
+                <span class="pb-1 text-center @error('registroVehicular') text-danger @enderror">Foto de registro
+                    vehicular</span>
+                <div class="input-file" name="upload" x-data="{ isUploading: false, progress: 0 }"
+                    x-on:livewire-upload-start="isUploading = true; progress = 5"
+                    x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false"
+                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                    class="row justify-content-center d-flex flex-column">
                     {{-- <input type="file" class="form-control input__style" placeholder='clic para adjuntar' /> --}}
                     <label for="file-upload" class="custom-file-upload input__style">
                         <i class="fas fa-paperclip"></i> clic para adjuntar
                     </label>
                     <input id="file-upload" type="file" wire:model="registroVehicular" />
                     <div class="progress customBar">
-                        <div  x-show.transition="true" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
-                      </div>
-                      @if ($registroVehicular)
-                      <div class="preview">
-                          <img class="img-thumbnail img-thumbnail__reg" src="{{ $registroVehicular->temporaryUrl() }}">
-                      </div>
-                      @endif
+                        <div x-show.transition="true" class="progress-bar" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" x-bind:style="`width:${progress}%`"></div>
+                    </div>
+                    @if ($registroVehicular)
+                    <div class="preview">
+                        <img class="img-thumbnail img-thumbnail__reg" src="{{ $registroVehicular->temporaryUrl() }}">
+                    </div>
+                    @endif
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="container container-term-and-condition p-3 mt-3 easyBlue600">
             <div class="d-flex">
                 <input wire:model.defer="term1" type="radio" name="term1" id="term1_accepted" value="term1"
                     style="margin-right: 15px;">
-                <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}" target="_blank" class="easyLigth600">Términos y condiciones</a> de <span
-                        class="easyRose600">easy</span>. así como la politica de <br> <span
-                        class="easyLigth600">Protección de datos</span>.</span>
+                <span>Acepto los <a href="{{ route('terminos-y-condiciones') }}" target="_blank"
+                        class="easyLigth600">Términos y condiciones</a> de <span class="easyRose600">easy</span>. así
+                    como la politica de <br> <span class="easyLigth600">Protección de datos</span>.</span>
                 </label>
                 @error('term1') <div class="ownerinvalid ml-2"></div> @enderror
             </div>
@@ -1167,7 +1159,9 @@
                 <input wire:model.defer="term2" type="radio" name="term2" id="term2_accepted" value="term2"
                     style="margin-right: 15px;">
                 <label class="radio-inline mr-2">
-                    <span>Acepto las  <a href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-'.strtoupper($aseguradora_name).'-AUTOS.pdf') }}" target="_blank" class="easyLigth600">condiciones generales</a> del producto
+                    <span>Acepto las <a
+                            href="{{ asset('/public/includes/polizas/CONDICIONES-GENERALES-'.strtoupper($aseguradora_name).'-AUTOS.pdf') }}"
+                            target="_blank" class="easyLigth600">condiciones generales</a> del producto
                         seleccionado</span>
                 </label>
                 @error('term2') <div class="ownerinvalid"></div> @enderror

@@ -47,13 +47,12 @@
                                 class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
                             <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
-                                name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)"
-                                required>
+                                name="identificacion" id="cedula" value="cedula" required>
                             <label
                                 class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Pasaporte</label>
                             <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
-                                id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)" required>
+                                id="pasaporte" value="pasaporte" required>
                         </div>
                         <div class="form-group">
                             <input wire:model.defer="identificacion" type="text"
@@ -276,7 +275,6 @@
                     </div>
 
                     <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
-                        @if($showPais)
                         <select wire:model.defer="pais"
                             class="form-control input__style @if ($errors->has('pais')) border border-danger @endif"
                             data-live-search="true" title="pais" name="pais" id="pais" required>
@@ -528,7 +526,6 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                        @endif
                     </div>
 
                 </div>
@@ -617,26 +614,17 @@
         <div class="datos-de-ppp pt-4">
             <div class="container-fluid container-registro-contactos shadow pt-4">
                 <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-4 text-center">
-                                    <div class="form-check-inline ">
-                                        <div
-                                            class="col-xs-12 col-sm-12 col-md-10 col-lg-12 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
-                                            ¿Eres una persona <br>
-                                            políticamente expuesta?
-                                        </div>
-                                        <label class=" form-check-label mr-1 h4" for="">Si</label>
-                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeSi" value="ppeSi" wire:click="$set('showppe',true)">
-                                        <label class="form-check-label mr-1 h4" for="">No</label>
-                                        <input wire:model.defer="ppe" class="form-check-input" type="radio" name="ppe"
-                                            id="ppeNo" value="ppeNo" wire:click="$set('showppe',false)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 easyBlue600 @if ($errors->has('ppe'))  text-danger @endif">
+                        ¿Eres una persona <br>
+                        políticamente expuesta?
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-6">
+                        <label class="h4" for="ppeSi">Si</label>
+                        <input wire:model.defer="ppe" type="radio" name="ppe" id="ppeSi"
+                            value="ppeSi" wire:click="$set('showppe',true)">
+                        <label for="" class="h4" for="ppeNo">No</label>
+                        <input wire:model.defer="ppe" type="radio" name="ppe" id="ppeNo"
+                            value="ppeNo" wire:click="$set('showppe',false)">
                     </div>
                 </div>
                 @if ($showppe)

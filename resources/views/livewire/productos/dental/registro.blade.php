@@ -43,12 +43,12 @@
                                 class="form-check-label pr-2 easyBlue600 ml-2 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Cédula</label>
                             <input wire:model.defer="typeId" class="form-check-input mb-2" type="radio"
-                                name="identificacion" id="cedula" value="cedula" wire:click="$set('showPais',false)">
+                                name="identificacion" id="cedula" value="cedula">
                             <label
                                 class="form-check-label mr-2 easyBlue600 mb-2 @if ($errors->has('typeId')) text-danger @endif"
                                 for="inlineRadio1">Pasaporte</label>
                             <input wire:model="typeId" class="form-check-input mb-2" type="radio" name="identificacion"
-                                id="pasaporte" value="pasaporte" wire:click="$set('showPais',true)">
+                                id="pasaporte" value="pasaporte">
                         </div>
 
                         <div class="form-group">
@@ -277,7 +277,6 @@
                         </div>
                     </div>
                     <div class="form-group col-xs-12 col-sm-12 col-md-4" style="width: 282px">
-                        @if($showPais)
                         <select wire:model.defer="pais"
                             class="form-control input__style @error('pais') is-invalid @enderror"
                             data-live-search="true" title="pais" name="pais" id="pais">
@@ -529,7 +528,6 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-                        @endif
                     </div>
 
                 </div>
