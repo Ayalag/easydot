@@ -2084,7 +2084,7 @@
             <div class="col-lg-4 m-auto pb-3">
                 <div class="row justify-content-center pt-5">
                     <input type="text" class="form-control input__style  @error('placa') is-invalid @enderror"
-                        id="placa" placeholder="placa" wire:model.defer="placa" maxlength="6">
+                        id="placa" placeholder="placa"  onkeypress="return numbersandletters(event)" wire:model.defer="placa" maxlength="6">
                     {{-- <span class="text-danger">@error('placa'){{ $message }}@enderror</span> --}}
                 </div>
             </div>
@@ -2156,13 +2156,13 @@
             <div class="col-lg-8 m-auto pb-3">
                 <div class="row justify-content-center">
                     <input type="text" class="form-control input__style @error('color') is-invalid @enderror"
-                        id="motorNum" placeholder="numero de motor" wire:model.defer="motorNum" maxlength="17">
+                        id="motorNum" placeholder="numero de motor" onkeypress="return onlynumbers(event)" wire:model.defer="motorNum" maxlength="17">
                 </div>
             </div>
             <div class="col-lg-8 m-auto  pb-3">
                 <div class="row justify-content-center">
                     <input type="text" class="form-control input__style @error('color') is-invalid @enderror"
-                        id="chasisNum" placeholder="numero de chasis" wire:model.defer="chasisNum" maxlength="17">
+                        id="chasisNum" placeholder="numero de chasis" onkeypress="return onlynumbers(event)" wire:model.defer="chasisNum" maxlength="17">
                 </div>
             </div>
 

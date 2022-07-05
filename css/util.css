@@ -41,6 +41,7 @@
     font-size: 3rem;
 
 }
+
 .fnt-size-4 {
     font-size: 4rem;
 }
@@ -92,6 +93,7 @@ div>p>span {
     color: var(--easyBlue);
 
 }
+
 .easyBlue900 {
     font-weight: 900;
     color: var(--easyBlue);
@@ -112,7 +114,7 @@ div>p>span {
     color: var(--easyRose);
 }
 
-.cursorPointer{
+.cursorPointer {
     cursor: pointer;
 }
 
@@ -699,7 +701,7 @@ html {
     margin-bottom: 15px !important;
 }
 
-.menu-container__submenu.slick-slide{
+.menu-container__submenu.slick-slide {
     margin: 0;
 }
 
@@ -819,9 +821,10 @@ html {
 }
 
 @media screen and (max-width: 40rem) {
-    .slider-progress{
+    .slider-progress {
         display: none;
     }
+
     .hero-image {
         height: 94%;
     }
@@ -914,6 +917,7 @@ html {
         margin-left: 0;
     }
 }
+
 @media screen and (max-width: 23.4375rem) {
     .blue_square__container__btn button {
         margin-left: 0;
@@ -953,7 +957,7 @@ html {
     margin-top: -16rem;
     display: block;
     position: relative;
-    margin-bottom:5rem;
+    margin-bottom: 5rem;
 }
 
 .box-container__title {
@@ -963,7 +967,6 @@ html {
     /* font-weight: 800; */
 }
 
-@media screen and (max-width: 40rem) {}
 
 .wrap {
     display: -webkit-box;
@@ -1043,7 +1046,40 @@ html {
     font-size: 1rem;
 }
 
+
+@media screen and  (max-width: 1023px) {
+
+    .wrap {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .box-category__button>a {
+        padding: 12px 25px;
+    }
+
+}
+@media screen and (max-width: 768px) and (max-width: 920px) {
+
+    .wrap {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    .box-category__button>a {
+        padding: 12px 25px;
+    }
+
+}
+
+
 @media screen and (max-width: 40rem) {
+
+    .wrap {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
     .box-container__title {
         font-size: 20px;
     }
@@ -1114,8 +1150,9 @@ html {
 .steps-by-steps .step-two-letter,
 .steps-by-steps .step-three-letter {
     display: flex;
-    margin: 20px;
-    width: 120%;
+    /* margin: 20px; */
+    margin: 0 20px 10px 99px;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -1140,7 +1177,7 @@ html {
 
 .container-step__image2 {
     position: relative;
-    /* right: 5.625rem; */
+    right: 5.625rem;
 }
 
 @media screen and (max-width: 48rem) {
@@ -1160,6 +1197,7 @@ html {
     .steps-by-steps .step-two-letter,
     .steps-by-steps .step-three-letter {
         width: 123%;
+        margin: 0 20px 10px 0;
     }
 
     .step-one-letter>div:last-child,
@@ -1192,6 +1230,12 @@ html {
 
     .steps-container__box {
         justify-content: flex-start;
+    }
+
+    .steps-by-steps .step-one-letter,
+    .steps-by-steps .step-two-letter,
+    .steps-by-steps .step-three-letter {
+        margin: 0 20px 16px 22px;
     }
 
     .step-one-letter>div:first-child,
@@ -1340,7 +1384,7 @@ html {
     font-weight: 400;
     font-size: 25px;
     position: relative;
-    padding-top: 7rem;
+    padding-top: 3rem;
 }
 
 .container-comments p {
@@ -1511,7 +1555,7 @@ html {
 
 .bartoli__aliados,
 .mapfre__aliados,
-.optima__aliados{
+.optima__aliados {
     padding-bottom: 1rem;
 
 }
@@ -1649,10 +1693,29 @@ button[class="btn-login"] {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0px;
-    left: 0px;
     border-radius: 4px;
     transition: all ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 3.5px 11px rgb(0 0 0 / 18%) !important;
+    cursor: pointer;
+}
+
+.clickableCat {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transition: all ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    box-shadow: 0 3.5px 11px rgb(0 0 0 / 18%) !important;
+    cursor: pointer;
 }
 
 .checked-box {
@@ -1668,15 +1731,17 @@ button[class="btn-login"] {
     display: none;
 }
 
-/* input[name="motor"]:checked + .clickable {
-    border-color: #0055ff;
-    box-shadow: 0px 0px 6px 2px #0055ff;
+input[name="motor"]:checked+.clickable {
+    background-color: var(--easyBlue);
+    color: white;
 }
 
-input[name="categoria"]:checked + .clickable {
-    border-color: #0055ff;
-    box-shadow: 0px 0px 6px 2px #0055ff;
-} */
+
+
+input[name="categoria"]:checked+.clickableCat {
+    background-color: var(--easyBlue);
+    color: white;
+}
 
 /*-------------------------------*/
 /*       insurance  card         */
@@ -1839,7 +1904,7 @@ button[class="btn-comprar"]>a {
     color: var(--easyBlue);
 }
 
-.container-aditional__person{
+.container-aditional__person {
     height: 50px;
     display: flex;
     border-radius: 5px;
@@ -2119,7 +2184,7 @@ input[type="number"] {
 /* AUTOS */
 
 @media screen and (max-width: 768px) {
-    .container-landing.landing-movil{
+    .container-landing.landing-movil {
         display: flex;
         height: auto;
         flex-direction: column;
@@ -2129,7 +2194,7 @@ input[type="number"] {
         text-align: center;
     }
 
-    .container-landing.landing-movil .container-landing__descripciones{
+    .container-landing.landing-movil .container-landing__descripciones {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -2139,18 +2204,19 @@ input[type="number"] {
     }
 
     .container-landing.landing-movil .container-landing__descripciones .container-landing__titulo,
-    .container-landing.landing-movil .container-landing__descripciones .container-landing__personas__titulo{
+    .container-landing.landing-movil .container-landing__descripciones .container-landing__personas__titulo {
         width: inherit;
     }
+
     .container-landing.landing-movil .container-landing__descripciones .container-landing__subtitulo-2,
-    .container-landing__hogar__subtitulo-2{
+    .container-landing__hogar__subtitulo-2 {
         width: inherit;
         left: 0;
         padding-bottom: 4%;
     }
 
     .container-landing.landing-movil .container-landing__descripciones .container-image__carro .imgResponsive,
-    .container-image__hogar .imgResponsive{
+    .container-image__hogar .imgResponsive {
         width: inherit;
     }
 
@@ -2165,7 +2231,7 @@ input[type="number"] {
         justify-content: center;
     }
 
-    .container-image__persona{
+    .container-image__persona {
         display: none;
     }
 }
@@ -2227,6 +2293,12 @@ input[type="number"] {
     justify-content: center;
 } */
 
+.container-general__info_partners{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-genreal__info__easy_partner {
     text-align: center;
     font-weight: 600;
@@ -2239,6 +2311,15 @@ input[type="number"] {
     width: 23rem !important;
     min-width: 16rem;
     border-radius: 15px;
+    -webkit-transition: 200ms ease-in-out;
+    -o-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-general__info:hover {
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7) !important;
 }
 
 .container-frequent-question__title {
@@ -2396,6 +2477,7 @@ input[type="number"] {
 
 .container-conocenos__paragraph {
     font-size: 1.6rem;
+    height: 15rem;
 }
 
 .forma1 {
@@ -2415,9 +2497,19 @@ input[type="number"] {
     padding-top: 3rem;
     display: flex;
     justify-content: center;
-        align-items: center;
+    align-items: center;
     align-content: center;
+    position: relative;
+    /* background-color: #fbfbfb; */
     /* margin-right: 0 !important; */
+}
+
+.gray-back {
+    position: absolute;
+    width: 100%;
+    background-color: #fbfbfb;
+    height: 22rem;
+    top: 47px;
 }
 
 .container-nuestro__proposito {
@@ -2453,7 +2545,7 @@ input[type="number"] {
 }
 
 .container-nuestra_creencia {
-    width: inherit;
+    /* width: inherit; */
     border-radius: 5px;
     background-color: #fbfbfb;
     z-index: 1;
@@ -2467,19 +2559,24 @@ input[type="number"] {
 .container-legenda__paragraph {
     line-height: normal;
     font-size: 0.9rem;
+    width: 60%;
 }
 
 .container-legenda__paragraph p {
-    margin-left: 6rem;
+    margin-left: 11rem;
+}
+
+.container-legenda__bartoli {
+    width: 40%;
 }
 
 .container-legend__bartoli__info {
     text-align: center;
-    width: 32rem;
+    width: 24rem;
 }
 
 .container_info__owners {
-    width: 21rem;
+    width: 17rem;
     text-align: end;
 }
 
@@ -2542,8 +2639,16 @@ input[type="number"] {
 }
 
 @media (max-width: 768px) {
+    .container-legenda__paragraph {
+        width: auto;
+    }
+
     .container-legenda__paragraph p {
         margin: 0;
+    }
+
+    .container-legenda__bartoli {
+        width: 100%;
     }
 
     .container-legend__bartoli__info {
@@ -2558,6 +2663,7 @@ input[type="number"] {
 @media (max-width: 425px) {
     .container-conocenos__paragraph {
         font-size: 1.2rem;
+        height: auto;
     }
 
     .forma1,
@@ -2706,11 +2812,13 @@ input[type="number"] {
 /*       Coberura Buttons           */
 /*-------------------------------*/
 
-.container-cobertura, .container-cobertura-mascotas{
+.container-cobertura,
+.container-cobertura-mascotas {
     color: var(--easyBlue);
     font-weight: 800;
     font-size: 2rem;
 }
+
 /* 
 .container-cobertura {
     height: 100vh;
@@ -2947,6 +3055,7 @@ input[type="number"] {
     bottom: 9px;
     right: 5px;
 }
+
 .img-thumbnail__reg {
     width: 31px;
     position: absolute;
@@ -2963,11 +3072,11 @@ input[type="number"] {
 	PROFILE
 ==============================================================*/
 
-.container-main__profile-box-userinfo{
+.container-main__profile-box-userinfo {
     display: flex;
 }
 
-.container-main__profile-box-userinfo-names{
+.container-main__profile-box-userinfo-names {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -2977,29 +3086,31 @@ input[type="number"] {
     /* box-shadow: 0 2px 7px rgb(104 107 113 / 25%); */
     border-radius: 5px;
 }
-.container-main__profile-box-datos-generales{
+
+.container-main__profile-box-datos-generales {
     margin-left: 20px;
     border-radius: 5px;
 }
 
 
-.container-secundary__profile-datos-contacto{
+.container-secundary__profile-datos-contacto {
     display: flex;
 }
 
-.box-title, .box-title-userinfo{
+.box-title,
+.box-title-userinfo {
     position: relative;
 }
 
-.box-title{
+.box-title {
     top: 20px;
 }
 
-.box-title-userinfo{
+.box-title-userinfo {
     bottom: 25px;
 }
 
-.container-controllers{
+.container-controllers {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -3007,7 +3118,7 @@ input[type="number"] {
 
 
 @media screen and (max-width: 768px) {
-    .container-main__profile-box-userinfo{
+    .container-main__profile-box-userinfo {
         display: flex;
         flex-direction: column;
     }
@@ -3017,7 +3128,7 @@ input[type="number"] {
         margin-left: 0px;
     }
 
-    .box-title-userinfo{
+    .box-title-userinfo {
         bottom: 12px;
     }
 }

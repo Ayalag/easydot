@@ -7,7 +7,8 @@
     <div class="banner-slider">
         <!-- hero slide start -->
         <div class="banner-slide">
-            <div class="hero-image" style="background-image: url('/public/includes/images/slider/insurance_final.png')"></div>
+            <div class="hero-image" style="background-image: url('/public/includes/images/slider/insurance_final.png')">
+            </div>
             <div class="container container-slider">
                 <div class="layer-slick1">
                     <span class="slider-text-descripcion">adquiere tu póliza <br> de AUTO desde</span>
@@ -31,7 +32,8 @@
         <!-- hero slide end -->
         <!-- hero slide start -->
         <div class="banner-slide">
-            <div class="hero-image" style="background-image: url('/public/includes/images/slider/insurance_final2.png')">
+            <div class="hero-image"
+                style="background-image: url('/public/includes/images/slider/insurance_final2.png')">
             </div>
             <div class="container container-slider">
                 <div class="layer-slick1">
@@ -53,8 +55,8 @@
         <!-- hero slide end -->
     </div>
     <div class="slider-progress">
-		<span></span>
-	</div>
+        <span></span>
+    </div>
 </div>
 <!-- hero slider end -->
 
@@ -200,7 +202,8 @@
 
 <div class="container-comments pb-5">
     <div class="container-comments__title">
-        <p class="underline">comentarios que nos <span style="color: inherit; display:inline-block">hacen sentir orgullosos</span> </p>
+        <p class="underline">comentarios que nos <span style="color: inherit; display:inline-block">hacen sentir
+                orgullosos</span> </p>
         <p>¿y tú qué opinas?</p>
     </div>
     <div class="container-logo-comments">
@@ -381,28 +384,18 @@
         <p>Trabajamos y estamos respaldados por las mejores compañías del</p>
         <p>mercado panameño</p>
     </div>
-    <div class="containerl-fluid container_aliados__image pb-5">
-        <div class="row align-items-center">
-            <div class="col-sm bartoli__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/bartoli/bartoli.png') }}" alt="Bartoli">
+
+    <div class="wrapper">
+        <div class="slider">
+            <div> <img src="{{ asset('/public/includes/images/logos-aliados/gris/bartoli/bartoli.png') }}"
+                    alt="Bartoli"></div>
+            <div> <img src="{{ asset('/public/includes/images/logos-aliados/gris/mpfre/mapfre.png') }}" alt="Mapfre">
             </div>
-            <div class="col-sm mapfre__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/mpfre/mapfre.png') }}" alt="Mapfre">
+            <div> <img src="{{ asset('/public/includes/images/logos-aliados/gris/optima/optima.png') }}" alt="optima">
             </div>
-            <div class="col-sm optima__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/optima/optima.png') }}" alt="optima">
-            </div>
-            <div class="col-sm sura__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/sura/sura.png') }}" alt="sura">
-            </div>
-            {{-- <div class="col-sm nacional__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/nacional/nacional.png') }}"
-                    alt="nacional">
-            </div> --}}
-            <div class="col-sm panamasonrie__aliados">
-                <img src="{{ asset('/public/includes/images/logos-aliados/gris/panamasonrie/panamsonrie.png') }}"
-                    alt="panamsonrie">
-            </div>
+            <div> <img src="{{ asset('/public/includes/images/logos-aliados/gris/sura/sura.png') }}" alt="sura"></div>
+            <div> <img src="{{ asset('/public/includes/images/logos-aliados/gris/panamasonrie/panamsonrie.png') }}"
+                    alt="panamsonrie"></div>
         </div>
     </div>
 </div>

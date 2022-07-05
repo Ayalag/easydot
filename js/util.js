@@ -205,6 +205,31 @@ $(document).ready(function () {
         variableWidth: true,
     });
 
+    $('.slider').slick({
+        centerMode: true,
+        slidesToShow: 3,
+        autoplay: true,
+        speed: 8000,
+        variableWidth: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: true,
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: true,
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+
     $(".soat-slider-motor, .soat-slider").slick({
         dots: true,
         infinite: false,
@@ -242,14 +267,22 @@ $(document).ready(function () {
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: false,
-        // prevArrow: '<button class="slick-prev slick-arrow"></button>',
-        // nextArrow: '<button class="slick-next slick-arrow"></button>',
-        responsive: [{
-                breakpoint: 768,
+        responsive: [
+            {
+                breakpoint: 1025,
                 settings: {
                     arrows: false,
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode:true,
                 },
             },
             {
@@ -260,13 +293,9 @@ $(document).ready(function () {
                     slidesToScroll: 1,
                 },
             },
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ],
     });
 
     /*==================================================================
-    [ ageCalculator ]*/
-
+    [ ]*/
 });

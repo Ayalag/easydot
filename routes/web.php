@@ -24,10 +24,6 @@ use App\Http\Controllers\productos\veterinario\veterinarioController;
 |
 */
 
-
-// Route::middleware(['auth'])->group(function () {
-
-
 Route::get('/userconfirmation', function () {
     return view('userConfirmation');
 })->name('userconfirmation');
@@ -68,7 +64,9 @@ Route::view('/centro-de-ayuda','ayuda.ayuda')->name('centro-de-ayuda');
 Route::view('/conoce-easy','conocenos.conoceEasyDot')->name('conoce-easy');
 Route::view('/terminos-y-condiciones','terminosCondicones.terms')->name('terminos-y-condiciones');
 
-// });
+
+
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/pagosFacil/respuesta', [payeasyController::class, 'payprocessresponce'])->name('Respuestapagalofacil');
 Route::get('/producto/motor/auto/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_motor'])->name('comprobante_motor');
@@ -78,6 +76,7 @@ Route::get('/producto/persona/comprobante/{order_number}', [comprobanteCompra::c
 Route::get('/producto/hogar/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_hogar'])->name('comprobante_hogar');
 Route::get('/producto/dental/comprobante/{order_number}', [comprobanteCompra::class, 'comprobante_dental'])->name('comprobante_dental');
 
+});
 
 Auth::routes();
 
