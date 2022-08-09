@@ -179,7 +179,7 @@
                                     <input id="usuario" type="text"
                                         class="form-control input__style @error('usuario') is-invalid @enderror"
                                         name="usuario" value="{{ old('usuario') }}" required autocomplete="usuario" autofocus
-                                        placeholder="Usuario"  maxlength="8">
+                                        placeholder="Usuario"  maxlength="20">
 
                                     @error('usuario')
                                     <span class="invalid-feedback" role="alert">

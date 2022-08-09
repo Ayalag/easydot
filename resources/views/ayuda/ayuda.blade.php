@@ -45,9 +45,7 @@
 
 </div>
 <div class="container-general__info_partners pt-5 mb-5" id="partners">
-
     <!----------------------     Our partners cards  ------------------------>
-
     <div class="card card-general__info shadow">
         <div class="card-body">
             <div class="card-title d-flex justify-content-center pt-5">
