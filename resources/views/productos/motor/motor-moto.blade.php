@@ -4,12 +4,12 @@
 <div class="container-fluid container-productos pt-5">
     <div class="row justify-content-center align-items-center">
         <div class="col-xl-1 col-lg-2 col-md-2 col-sm-4 col-3 rounded-lg d-flex justify-content-around align-items-center py-4">
-            <input id="auto" type="radio" name="motor" checked value="auto">
+            <input id="auto" type="radio" name="motor"  value="auto">
             <label for="auto" class="clickable">autos</label>
         </div>
         <div
             class="col-xl-1 col-lg-2 col-md-2 col-sm-4 col-3 rounded-lg d-flex justify-content-around align-items-center ml-2 py-4">
-            <input id="moto" type="radio" name="motor" value="motos">
+            <input id="moto" type="radio" name="motor" checked value="motos">
             <label for="moto" class="clickable">motos</label>
         </div>
     </div>
