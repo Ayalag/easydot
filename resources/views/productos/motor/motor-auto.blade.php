@@ -3,67 +3,48 @@
 @section('content')
 <div class="container-fluid container-productos pt-5">
     <div class="row justify-content-center align-items-center">
-        <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
+        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-4 col-3 rounded-lg d-flex justify-content-around align-items-center py-4">
             <input id="auto" type="radio" name="motor" checked value="auto">
-            <label for="auto" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <div>
-                <img src="{{ asset('/public/includes/images/icons8-car-64.png') }}" alt="easydot_automoviles">
-            </div>
-            <div>
-                <span class="product_text_1">autos</span>
-            </div>
+            <label for="auto" class="clickable">autos</label>
         </div>
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center ml-2 py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-4 col-3 rounded-lg d-flex justify-content-around align-items-center ml-2 py-4">
             <input id="moto" type="radio" name="motor" value="motos">
-            <label for="moto" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <div>
-                <img src="{{ asset('/public/includes/images/icons8-motorcycle-64.png') }}" alt="easydot_automoviles">
-            </div>
-            <div>
-                <span class="product_text_1">motos</span>
-            </div>
+            <label for="moto" class="clickable">motos</label>
         </div>
     </div>
     <div class="row justify-content-center pt-3 mb-3 car-options">
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center mr-2 pb-4 pt-2">
             <input id="soat" type="radio" name="categoria" checked>
-            <label for="soat" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">soat</span>
+            <label for="soat" class="clickableCat">soat</label>
         </div>
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center mr-2 pb-4 pt-2">
             <input id="basico" type="radio" name="categoria">
-            <label for="basico" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">básico</span>
+            <label for="basico" class="clickableCat">básico</label>
         </div>
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center pb-4 pt-2">
             <input id="estandar" type="radio" name="categoria">
-            <label for="estandar" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">estándar</span>
+            <label for="estandar" class="clickableCat">estándar</label>
         </div>
     </div>
     <div class="row justify-content-center pt-3 mb-3 moto-options hide">
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center mr-2 pb-4 pt-2">
             <input id="soat-motos" type="radio" name="categoria" checked>
-            <label for="soat-motos" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">soat</span>
+            <label for="soat-motos" class="clickableCat">soat</label>
         </div>
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center mr-2 py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center mr-2 pb-4 pt-2">
             <input id="basico-motos" type="radio" name="categoria">
-            <label for="basico-motos" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">básico</span>
+            <label for="basico-motos" class="clickableCat">básico</label>
         </div>
         <div
-            class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 shadow-lg bg-white rounded-lg d-flex justify-content-around align-items-center py-2">
+            class="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-3 rounded-lg d-flex justify-content-around align-items-center pb-4 pt-2">
             <input id="estandar-motos" type="radio" name="categoria">
-            <label for="estandar-motos" class="clickable"><span class="checked-box">&#10004;</span></label>
-            <span class="product_text_2">estándar</span>
+            <label for="estandar-motos" class="clickableCat">estándar</label>
         </div>
     </div>
     <div class="container container-autos pb-5">

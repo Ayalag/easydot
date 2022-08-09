@@ -180,7 +180,7 @@
                 </div>
             </div>
             <div class="container-step__image2">
-                <img src="{{ asset('/public/includes/images/iphone.png') }}" alt="">
+                <img src="{{ asset('/public/includes/images/iphone.gif') }}" alt="">
             </div>
         </div>
     </div>

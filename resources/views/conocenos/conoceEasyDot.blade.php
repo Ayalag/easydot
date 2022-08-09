@@ -1,25 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container container-conoce__easy-all pt-5">
+<div class="container-conoce__easy-all pt-5">
     <div class="container container-conoce__easy">
         <div class="container container-conocenos__title">
             <span class="underline">conoce un poco más</span>
         </div>
-        <div class="container-conocenos__subtitle">
+        <div class="container-conocenos__subtitle pb-4">
             <p>sobre nosotros</p>
         </div>
 
-        <div class="container-conocenos__paragraph pt-2 pb-5">
+        <div class="container-conocenos__paragraph pt-2 pb-3">
             Somos una empresa panameña <br>
             que busca poder ofrecerte las mejores <br> soluciones del mercado para tu <br>
             bienestar y el de tus seres queridos
         </div>
     </div>
-    <div class="container forma1">
-        <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
-    </div>
-    <div class="container-nuestro__propositos__creencias">
+
+    <div class="container-fluid container-nuestro__propositos__creencias">
+        {{-- <div class="container-fluid forma1">
+            <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
+        </div> --}}
+        <div class="gray-back"></div>
         <div class="container-nuestro__proposito">
             <div class="container-nuestro__proposito__letter p-5">
                 Nuestro principal propósito es lograr que cada vez más personas y familias en Panamá se sientan tranquilas y
@@ -35,11 +37,12 @@
         <div class="container-nuestra_creencia p-5">
             <img src="{{ asset('/public/includes/images/conocenos/creemos-en.png') }}" alt="">
         </div>
+        {{-- <div class="container-fluid forma2">
+            <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
+        </div> --}}
     </div>
-    <div class="container-fluid forma2">
-        <img src="{{ asset('/public/includes/images/conocenos/forma1.png') }}" alt="">
-    </div>
-    <div class="container container-legenda p-5">
+
+    <div class="container container-legenda">
         <div class="container-legenda__paragraph">
             <p>Sabemos que hay soluciones y productos que tradicionalmente han sido algo complicados, pero hemos trabajado
                 de la mano con empresas aliadas para que estos sean mucho más sencillos, fáciles de entender y de obtener.
@@ -49,7 +52,7 @@
                 disposición soluciones de seguros y te asesoran en todo lo referente a ellos.
                 <br>
                 <br>
-                Ana y Miguel cuentan con una amplia trayectoria de más de 15 años en la industria aseguradora
+                Ana y Miguel cuentan con una amplia trayectoria de más <br> de 15 años en la industria aseguradora
             </p>
         </div>
 

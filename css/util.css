@@ -1179,6 +1179,9 @@ html {
     position: relative;
     right: 5.625rem;
 }
+/* .container-step__image2 img {
+    width: 15rem;
+} */
 
 @media screen and (max-width: 48rem) {
     .container-step-to-buy {
@@ -1321,6 +1324,11 @@ html {
 }
 
 @media screen and (max-width: 64rem) {
+
+    .container-super__easy {
+        height: 600px;
+    }
+
     .box-super_easy .container-super__title {
         font-size: 7rem;
     }
@@ -2480,18 +2488,23 @@ input[type="number"] {
     height: 15rem;
 }
 
-.forma1 {
+.forma1{
+    background-image: url("/easydot/public/includes/images/conocenos/forma1.png");
+    background-repeat: repeat-y;
+}
+
+ /* .forma1 {
     position: absolute;
     text-align: end;
     overflow: hidden;
 }
 
 .forma2 {
-    position: relative;
+     position: relative; 
     text-align: end;
-    bottom: 50px;
-    overflow: hidden;
-}
+    bottom: 50px; 
+    overflow: hidden; 
+}  */
 
 .container-nuestro__propositos__creencias {
     padding-top: 3rem;
@@ -2513,18 +2526,20 @@ input[type="number"] {
 }
 
 .container-nuestro__proposito {
-    width: 20rem;
+    width: 29rem;
     border-radius: 5px;
     background-color: #003a73;
     color: white;
     z-index: 1;
+    height: 333px;
+    display: flex;
 }
 
 .container-nuestro__proposito__letter {
-    width: 20rem;
     line-height: initial;
-    text-align: start;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container-nuestro__proposito__letter span:first-of-type {
@@ -2554,16 +2569,17 @@ input[type="number"] {
 .container-legenda {
     display: flex;
     color: var(--easyBlue);
+    padding: 100px;
 }
 
 .container-legenda__paragraph {
     line-height: normal;
     font-size: 0.9rem;
-    width: 60%;
+    width: 54%;
 }
 
 .container-legenda__paragraph p {
-    margin-left: 11rem;
+    margin-left: 6rem;
 }
 
 .container-legenda__bartoli {
@@ -2639,6 +2655,11 @@ input[type="number"] {
 }
 
 @media (max-width: 768px) {
+
+    .container-nuestro__proposito{
+        width: auto;
+    }
+
     .container-legenda__paragraph {
         width: auto;
     }
